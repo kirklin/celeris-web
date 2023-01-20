@@ -1,0 +1,29 @@
+{
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.eslint": true, // this allows ESLint to auto fix on save
+    "source.organizeImports": false
+  },
+  // ESLint config: https://github.com/kirklin/eslint-config
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.quiet": true,
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "json5"
+  ],
+  "prettier.enable": false,
+  "prettier.printWidth": 200,
+  "prettier.semi": true,
+  "prettier.singleQuote": false
+}
