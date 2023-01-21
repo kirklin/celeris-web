@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from "vue-router";
 import { createRouter, createWebHistory } from "vue-router";
-import NProgress from "nprogress";
+import NProgress from "~/config/nprogress";
 
 const routes: RouteRecordRaw[] = [
   {
