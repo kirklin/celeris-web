@@ -4,7 +4,7 @@ import { createApp } from "vue";
 import { createPinia } from "pinia";
 import { createI18n } from "vue-i18n";
 
-import index from "./router";
+import { router } from "./router";
 
 import { registerStore } from "./store";
 import App from "~/App.vue";
@@ -32,5 +32,5 @@ app.use(createI18n({
 }));
 app.use(createPinia());
 registerStore();
-app.use(index);
+app.use(router);
 app.mount("#app");
