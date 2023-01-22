@@ -6,9 +6,18 @@ import layout from "~/router/routes/layout";
 export const RootRoute = {
   path: "/",
   name: "Root",
-  redirect: PageConstant.BASE_HOME,
+  redirect: PageConstant.BASE_LOGIN,
   meta: {
     title: "Root",
+  },
+};
+
+export const LoginRoute = {
+  path: PageConstant.BASE_LOGIN,
+  name: "Login",
+  component: () => import("~/views/login/index.vue"),
+  meta: {
+    title: "Login",
   },
 };
 
@@ -16,6 +25,7 @@ export const RootRoute = {
 // 无需认证的基本路由
 export const basicRoutes = [
   RootRoute,
+  LoginRoute,
   layout,
   PAGE_NOT_FOUND_ROUTE,
 ];
