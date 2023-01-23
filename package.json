@@ -26,6 +26,7 @@
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.0.10",
     "@kirklin/reset-css": "^0.0.1",
     "@vueuse/core": "^9.10.0",
     "element-plus": "^2.2.28",

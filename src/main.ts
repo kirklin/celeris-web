@@ -4,6 +4,7 @@ import { createApp } from "vue";
 import { createPinia } from "pinia";
 import { createI18n } from "vue-i18n";
 
+import * as Icons from "@element-plus/icons-vue";
 import { router } from "./router";
 
 import { registerStore } from "./store";
@@ -13,6 +14,7 @@ import App from "~/App.vue";
 import "@kirklin/reset-css/kirklin.css";
 import "~/styles/index.scss";
 import "uno.css";
+// Element icons
 
 // If you want to use ElMessage, import it.
 import "element-plus/theme-chalk/src/message.scss";
@@ -30,6 +32,10 @@ app.use(createI18n({
   locale: unref(useLocalStorage("locale", "zh-CN")),
   messages,
 }));
+// 注册element Icons组件
+Object.keys(Icons).forEach((key) => {
+  app.component(key, Icons[key as keyof typeof Icons]);
+});
 app.use(createPinia());
 registerStore();
 app.use(router);

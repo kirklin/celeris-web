@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
+import Menu from "./menu/index.vue";
 const route = useRoute();
 </script>
 
 <template>
   <ElContainer>
     <ElAside>
-      side
+      <Menu />
     </ElAside>
     <ElContainer>
       <ElHeader>
