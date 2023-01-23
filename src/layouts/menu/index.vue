@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { menus } from "./data";
+import type { MenuOptions } from "~/layouts/menu/types";
 import SubItem from "~/layouts/menu/compoents/SubItem.vue";
 const route = useRoute();
 const activeMenu = computed((): string => route.path);

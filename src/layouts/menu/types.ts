@@ -1,4 +1,4 @@
-interface MenuOptions {
+export interface MenuOptions {
   id: string;
   path: string;
   title: string;

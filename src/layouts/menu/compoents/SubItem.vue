@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { MenuOptions } from "~/layouts/menu/types";
+
 defineProps<{ menuList: MenuOptions[] }>();
 </script>
 
