@@ -1,13 +1,11 @@
 import { useLocalStorage } from "@vueuse/core";
 import { createApp } from "vue";
-// Vue Router
-import { createPinia } from "pinia";
 import { createI18n } from "vue-i18n";
 
 import * as Icons from "@element-plus/icons-vue";
 import { router } from "./router";
 
-import { registerStore } from "./store";
+import { setupStore } from "./store";
 import App from "~/App.vue";
 
 // reset css
@@ -36,7 +34,8 @@ app.use(createI18n({
 Object.keys(Icons).forEach((key) => {
   app.component(key, Icons[key as keyof typeof Icons]);
 });
-app.use(createPinia());
-registerStore();
+
+setupStore(app);
+
 app.use(router);
 app.mount("#app");
