@@ -69,7 +69,7 @@ export default defineConfig({
     // see unocss.config.ts for config
     UnoCss(
       {
-        configFile: resolve(__dirname, "src/config/index.ts"),
+        configFile: resolve(__dirname, "src/config/unocss/index.ts"),
       },
     ),
   ],
