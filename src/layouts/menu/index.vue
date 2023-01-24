@@ -11,8 +11,8 @@ const menuList: MenuOptions[] = reactive<MenuOptions[]>(menus);
 </script>
 
 <template>
-  <div :class="isCollapse ? 'w-32' : 'w-64'" class="transition-width h-full shrink-0 flex-col border duration-75 lg:flex">
-    <div class="h-16">
+  <div :class="isCollapse ? 'w-32' : 'w-64'" class="transition-width h-full shrink-0 flex-col duration-75 lg:flex">
+    <div class="my-auto flex h-16">
       <AppLogo />
     </div>
     <el-scrollbar>

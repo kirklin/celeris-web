@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="flex h-16 items-center bg-red-300">
+  <div class="flex h-16 items-center ">
     header
   </div>
 </template>

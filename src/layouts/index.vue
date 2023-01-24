@@ -8,15 +8,15 @@ const route = useRoute();
 
 <template>
   <ElContainer class="flex h-full w-full min-w-[970px]">
-    <ElAside class=" w-auto">
+    <ElAside class="w-auto">
       <Menu />
     </ElAside>
-    <ElContainer class="flex h-full w-full min-w-[970px]">
+    <ElContainer class="flex h-full w-full min-w-[970px] dark:bg-gray-900">
       <ElHeader>
         <Header />
       </ElHeader>
-      <ElMain class="overflow-x-hidden bg-amber-300 px-3 py-2">
-        <div class="h-full w-full bg-gray-100">
+      <ElMain class="overflow-x-hidden rounded-2xl">
+        <div class="min-h-full w-full rounded-2xl bg-gray-100 p-4 dark:bg-gray-900">
           <RouterView v-slot="{ Component }">
             <transition>
               <component :is="Component" :key="route.path" />
@@ -39,5 +39,10 @@ const route = useRoute();
 .ca-footer {
   height: auto;
   padding: 0;
+}
+.ca-main {
+  padding-left: 0;
+  padding-right: 1.25rem;
+  padding-top: 0;
 }
 </style>
