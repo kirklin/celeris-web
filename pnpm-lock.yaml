@@ -8,7 +8,7 @@ specifiers:
   '@iconify-json/tabler': ^1.1.54
   '@intlify/unplugin-vue-i18n': ^0.8.1
   '@kirklin/eslint-config': ^0.2.2
-  '@kirklin/reset-css': ^0.0.1
+  '@kirklin/reset-css': ^0.0.2
   '@types/node': ^18.11.18
   '@types/nprogress': ^0.2.0
   '@vitejs/plugin-vue': ^4.0.0
@@ -38,7 +38,7 @@ specifiers:
 
 dependencies:
   '@element-plus/icons-vue': 2.0.10_vue@3.2.45
-  '@kirklin/reset-css': 0.0.1
+  '@kirklin/reset-css': 0.0.2
   '@vueuse/core': 9.10.0_vue@3.2.45
   element-plus: 2.2.28_vue@3.2.45
   nprogress: 0.2.0
@@ -842,8 +842,8 @@ packages:
       - typescript
     dev: true
 
-  /@kirklin/reset-css/0.0.1:
-    resolution: {integrity: sha512-vlT8s/amH4RyzbHRAuMLPDhfFCDtVtA2Kwu7O45E34bNqpLpugRP0/oxRNGdPPBUzQC+MmrQck0uu0LbpZde6w==}
+  /@kirklin/reset-css/0.0.2:
+    resolution: {integrity: sha512-Cy8dj2xehfOKjP5NhrYj21FlOkZBQXuIjVLJ0VR2oAotU+fbo88IzE+fGqltVgDHMtODiP46r9ZBka47s6QiKA==}
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:

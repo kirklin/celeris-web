@@ -11,22 +11,24 @@ const menuList: MenuOptions[] = reactive<MenuOptions[]>(menus);
 </script>
 
 <template>
-  <div :class="isCollapse ? 'w-32' : 'w-64'" class="transition-width fixed top-0 left-0 z-20 h-full shrink-0 flex-col border duration-75 lg:flex">
-    <div class="m-1">
+  <div :class="isCollapse ? 'w-32' : 'w-64'" class="transition-width h-full shrink-0 flex-col border duration-75 lg:flex">
+    <div class="h-16">
       <AppLogo />
     </div>
-    <el-menu
-      :default-active="activeMenu"
-      :router="false"
-      :collapse="isCollapse"
-      :collapse-transition="false"
-      :unique-opened="true"
-      background-color=""
-      text-color="#111827"
-      class=""
-    >
-      <SubItem :menu-list="menuList" />
-    </el-menu>
+    <el-scrollbar>
+      <el-menu
+        :default-active="activeMenu"
+        :router="false"
+        :collapse="isCollapse"
+        :collapse-transition="false"
+        :unique-opened="true"
+        background-color=""
+        text-color="#111827"
+        class=""
+      >
+        <SubItem :menu-list="menuList" />
+      </el-menu>
+    </el-scrollbar>
   </div>
 </template>
 

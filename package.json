@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
-    "@kirklin/reset-css": "^0.0.1",
+    "@kirklin/reset-css": "^0.0.2",
     "@vueuse/core": "^9.10.0",
     "element-plus": "^2.2.28",
     "nprogress": "^0.2.0",
