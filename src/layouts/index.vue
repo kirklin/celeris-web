@@ -17,8 +17,8 @@ const route = useRoute();
       </ElHeader>
       <ElMain class="overflow-x-hidden rounded-2xl">
         <div class="min-h-full w-full rounded-2xl bg-gray-100 p-4 dark:bg-gray-900">
-          <RouterView v-slot="{ Component }">
-            <transition>
+          <RouterView v-slot="{ Component, route }">
+            <transition appear name="fade-transform" mode="out-in">
               <component :is="Component" :key="route.path" />
             </transition>
           </RouterView>
@@ -41,8 +41,6 @@ const route = useRoute();
   padding: 0;
 }
 .ca-main {
-  padding-left: 0;
-  padding-right: 1.25rem;
-  padding-top: 0;
+  @apply pl-0 pr-5 pt-0 pb-6;
 }
 </style>

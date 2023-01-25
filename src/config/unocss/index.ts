@@ -12,6 +12,21 @@ export default defineConfig({
     transformerDirectives(),
     transformerVariantGroup(),
   ],
+  variants: [
+    //   Element样式穿透
+    (matcher) => {
+      // ca:[selector]style
+      if (!matcher.startsWith("ca:")) {
+        return matcher;
+      }
+      const sel = matcher.match(/\[(.*?)]/) || ["", "inject-selector-error"];
+
+      return {
+        matcher: matcher.slice(matcher.lastIndexOf("]") + 1),
+        selector: () => `.${sel[1]}`,
+      };
+    },
+  ],
   theme: {
     fontFamily: {
       "chinese": [

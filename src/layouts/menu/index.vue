@@ -13,19 +13,15 @@ const menuList: MenuOptions[] = reactive<MenuOptions[]>(menus);
 
 <template>
   <div :class="isCollapse ? 'w-16' : 'w-64'" class="transition-width h-full shrink-0 flex-col overflow-hidden duration-75 lg:flex">
-    <div class="my-auto flex h-16" @click="useMenuSetting().toggleCollapsed()">
+    <div class="my-auto flex h-16">
       <AppLogo :show-title="!isCollapse" />
     </div>
     <el-scrollbar>
       <el-menu
         :default-active="activeMenu"
-        :router="false"
+        :router="true"
         :collapse="isCollapse"
         :collapse-transition="false"
-        :unique-opened="true"
-        background-color=""
-        text-color="#111827"
-        class=""
       >
         <SubItem :menu-list="menuList" />
       </el-menu>
