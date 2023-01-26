@@ -1,9 +1,12 @@
 import { execa } from "execa";
-// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import prompts from "prompts";
-// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import scriptPkg from "../package.json";
-// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import rootPkg from "../../package.json";
 
 interface WorkspacePackage {
