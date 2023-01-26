@@ -1,0 +1,10 @@
+{
+  "name": "@celeris/styles",
+  "version": "0.0.1",
+  "description": "styles for Celeris",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "scripts": {
+    "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@celeris/types",
+  "version": "0.0.1",
+  "description": "types for Celeris",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "scripts": {
+    "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
+  },
+  "dependencies": {
+    "@celeris/constants": "workspace:*",
+    "pinia": "2.0.23",
+    "vue": "3.2.45",
+    "vue-router": "^4.1.6"
+  }
+}

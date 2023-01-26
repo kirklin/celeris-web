@@ -1,6 +1,6 @@
 <div align='center'>
 <h1>celeris-admin </h1>
-<img src='README.assets/logo.png' alt='celeris-admin - Opinionated Vite Starter Template' width='344'/>
+<img src='docs/README.assets/logo.png' alt='celeris-admin - Opinionated Vite Starter Template' width='344'/>
 </div>
 
 <p align='center'>

@@ -1,0 +1,10 @@
+{
+  "name": "@celeris/tsconfig",
+  "version": "0.0.1",
+  "private": true,
+  "description": "tsconfig for Celeris",
+  "files": [
+    "tsconfig.base.json",
+    "tsconfig.eslint.json"
+  ]
+}

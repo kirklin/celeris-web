@@ -1,0 +1,21 @@
+{
+  "extends": "@celeris/tsconfig/tsconfig.base.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+    "lib": ["dom", "esnext"],
+    "types": [
+      "vite/client",
+      "@celeris/constant"
+    ]
+  },
+  "include": [
+    "src",
+    "types",
+    "vite.config.ts"
+  ]
+}
