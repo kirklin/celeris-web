@@ -32,15 +32,15 @@ const route = useRoute();
 </template>
 
 <style scoped lang="scss">
-.ca-aside{
+.#{$namespace}-aside{
   width: auto;
 }
-.ca-header,
-.ca-footer {
+.#{$namespace}-header,
+.#{$namespace}-footer {
   height: auto;
   padding: 0;
 }
-.ca-main {
+.#{$namespace}-main {
   @apply pl-0 pr-5 pt-0 pb-6;
 }
 </style>

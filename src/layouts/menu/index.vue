@@ -30,7 +30,7 @@ const menuList: MenuOptions[] = reactive<MenuOptions[]>(menus);
 </template>
 
 <style scoped lang="scss">
-.ca-menu {
+.#{$namespace}-menu {
   overflow: auto;
   overflow-x: hidden;
   border-right: none;
