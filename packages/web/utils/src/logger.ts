@@ -26,8 +26,6 @@ function _log(
   args?: any,
   style = "color: inherit",
 ): void {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
   if (!("console" in window) || !window.console[type]) {
     return;
   }
@@ -59,6 +57,8 @@ function _log(
   }
 
   if (args) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
     argsToPass.push(args);
   }
 
@@ -76,6 +76,8 @@ function _log(
 
   if (labeled) {
     if (isSimpleType) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
       argsToPass.unshift(editorLabelStyle, style);
       msg = `%c${editorLabelText}%c ${msg}`;
     } else {
@@ -85,18 +87,12 @@ function _log(
 
   try {
     if (!isSimpleType) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
       // eslint-disable-next-line no-console
       console[type](msg);
     } else if (args) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
       // eslint-disable-next-line no-console
       console[type](`${msg} %o`, ...argsToPass);
     } else {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
       // eslint-disable-next-line no-console
       console[type](msg, ...argsToPass);
     }

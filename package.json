@@ -27,7 +27,6 @@
     "clean:apps": "pnpm --filter ./apps/admin/** clean",
     "clean:web": "pnpm --filter ./packages/web/** clean",
     "clean:node": "pnpm --filter ./packages/node/** clean",
-    "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

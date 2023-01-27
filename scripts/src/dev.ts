@@ -1,3 +1,3 @@
 import { run } from "./helper";
 
-run("dev");
+void run("dev").then().catch();

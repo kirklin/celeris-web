@@ -9,9 +9,7 @@
     },
     "lib": ["dom", "esnext"],
     "types": [
-      "vite/client",
-      "@celeris/constant",
-      "@celeris/types"
+      "vite/client"
     ]
   },
   "include": [

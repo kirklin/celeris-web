@@ -31,14 +31,14 @@ async function getPackages() {
 }
 
 async function runScript(pkg: WorkspacePackage, script: string) {
-  execa("pnpm", ["run", script, "--filter", `${pkg.name}...`, "--parallel"], {
+  await execa("pnpm", ["run", script, "--filter", `${pkg.name}...`, "--parallel"], {
     stdio: "inherit",
     preferLocal: true,
   });
 }
 
 async function runSingleScript(pkg: WorkspacePackage, script: string) {
-  execa("pnpm", ["--filter", `${pkg.name}`, script], {
+  await execa("pnpm", ["--filter", `${pkg.name}`, script], {
     stdio: "inherit",
     preferLocal: true,
   });
@@ -76,7 +76,7 @@ export async function run(command: string) {
     );
   };
 
-  main().catch((error) => {
+  await main().catch((error) => {
     console.error(error);
     process.exit(1);
   });

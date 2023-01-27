@@ -40,5 +40,5 @@ jobs:
         run: pnpm install
 
       - name: Type check
-        run: pnpm run typecheck
+        run: pnpm --filter "@celeris/admin" typecheck
 

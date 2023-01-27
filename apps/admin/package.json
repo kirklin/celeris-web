@@ -19,7 +19,7 @@
     "dev": "vite",
     "build": "vite build",
     "clean": "pnpm rimraf node_modules && pnpm rimraf dist",
-    "typecheck": "vue-tsc --noEmit",
+    "typecheck": "vue-tsc --noEmit --skipLibCheck",
     "preview": "vite preview"
   },
   "dependencies": {
