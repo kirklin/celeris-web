@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "@celeris/tsconfig": "workspace:*",
+    "@changesets/cli": "^2.26.0",
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "@kirklin/eslint-config": "^0.2.2",
