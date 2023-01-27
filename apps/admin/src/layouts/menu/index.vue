@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import AppLogo from "@celeris/components/Application/src/AppLogo.vue";
+import type { MenuOption } from "naive-ui";
 import { menus } from "./data";
 import { useMenuSetting } from "~/composables/setting/useMenuSetting";
-import type { MenuOptions } from "~/layouts/menu/types";
-import SubItem from "~/layouts/menu/compoents/SubItem.vue";
 const route = useRoute();
+const router = useRouter();
 const activeMenu = computed((): string => route.path);
 const isCollapse = useMenuSetting().getCollapsed;
 
-const menuList: MenuOptions[] = reactive<MenuOptions[]>(menus);
+const menuList = reactive<MenuOption[]>(menus);
+function handleMenuSelect(key, item) {
+  router.push(item.path);
+}
 </script>
 
 <template>
@@ -16,23 +19,11 @@ const menuList: MenuOptions[] = reactive<MenuOptions[]>(menus);
     <div class="my-auto flex h-16">
       <AppLogo :show-title="!isCollapse" />
     </div>
-    <el-scrollbar>
-      <el-menu
-        :default-active="activeMenu"
-        :router="true"
-        :collapse="isCollapse"
-        :collapse-transition="false"
-      >
-        <SubItem :menu-list="menuList" />
-      </el-menu>
-    </el-scrollbar>
+    <n-scrollbar>
+      <n-menu :collapsed="isCollapse" :default-value="activeMenu" :options="menuList" @update:value="handleMenuSelect" />
+    </n-scrollbar>
   </div>
 </template>
 
 <style scoped lang="scss">
-.#{$namespace}-menu {
-  overflow: auto;
-  overflow-x: hidden;
-  border-right: none;
-}
 </style>

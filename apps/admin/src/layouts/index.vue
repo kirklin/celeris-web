@@ -5,15 +5,15 @@ import Header from "./header/index.vue";
 </script>
 
 <template>
-  <ElContainer class="flex h-full w-full min-w-[970px]">
-    <ElAside class="w-auto">
+  <div class="flex flex-row flex-1 h-full w-full min-w-[970px]">
+    <div class="w-auto">
       <Menu />
-    </ElAside>
-    <ElContainer class="flex h-full w-full min-w-[970px] dark:bg-gray-900">
-      <ElHeader>
+    </div>
+    <div class="flex flex-col flex-1 h-full w-full min-w-[970px]">
+      <header class="">
         <Header />
-      </ElHeader>
-      <ElMain class="overflow-x-hidden rounded-2xl">
+      </header>
+      <div class="block flex-1  overflow-x-hidden rounded-2xl pl-0 pr-5 pt-0 pb-6">
         <div class="min-h-full w-full rounded-2xl bg-gray-100 p-4 dark:bg-gray-900">
           <RouterView v-slot="{ Component, route }">
             <transition appear name="fade-transform" mode="out-in">
@@ -21,24 +21,13 @@ import Header from "./header/index.vue";
             </transition>
           </RouterView>
         </div>
-      </ElMain>
-      <ElFooter>
+      </div>
+      <footer>
         <Footer />
-      </ElFooter>
-    </ElContainer>
-  </ElContainer>
+      </footer>
+    </div>
+  </div>
 </template>
 
-<style scoped lang="scss">
-.#{$namespace}-aside{
-  width: auto;
-}
-.#{$namespace}-header,
-.#{$namespace}-footer {
-  height: auto;
-  padding: 0;
-}
-.#{$namespace}-main {
-  @apply pl-0 pr-5 pt-0 pb-6;
-}
+<style scoped>
 </style>

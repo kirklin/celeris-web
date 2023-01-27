@@ -1,4 +1,4 @@
-import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
 import Components from "unplugin-vue-components/vite";
 export function configUNPluginVueComponents() {
   return Components({
@@ -7,9 +7,7 @@ export function configUNPluginVueComponents() {
     dts: "autoResolver/components.d.ts",
     exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
     resolvers: [
-      ElementPlusResolver({
-        importStyle: "sass",
-      }),
+      NaiveUiResolver(),
     ],
   });
 }
