@@ -21,8 +21,6 @@ importers:
       rimraf: ^4.1.2
       typescript: ^4.9.4
       unbuild: ^1.1.1
-      unocss: ^0.49.0
-      vite: ^4.0.4
       vitest: ^0.28.2
     devDependencies:
       '@celeris/tsconfig': link:packages/node/tsconfig
@@ -42,8 +40,6 @@ importers:
       rimraf: 4.1.2
       typescript: 4.9.4
       unbuild: 1.1.1
-      unocss: 0.49.0_vite@4.0.4
-      vite: 4.0.4_@types+node@18.11.18
       vitest: 0.28.2
 
   apps/admin:

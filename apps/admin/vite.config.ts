@@ -5,7 +5,7 @@ import vue from "@vitejs/plugin-vue";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import AutoImport from "unplugin-auto-import/vite";
-import UnoCss from "unocss/vite";
+import { configUnoCSSPlugin } from "./src/config/unocss";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -54,11 +54,7 @@ export default defineConfig({
     }),
     // https://github.com/unocss/unocss
     // see unocss.config.ts for config
-    UnoCss(
-      {
-        configFile: resolve(__dirname, "src/config/unocss/index.ts"),
-      },
-    ),
+    configUnoCSSPlugin(),
   ],
 
   resolve: {
