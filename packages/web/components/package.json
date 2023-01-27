@@ -14,6 +14,6 @@
     "@celeris/constants": "workspace:*",
     "@celeris/utils": "workspace:*",
     "vue": "3.2.45",
-    "vue-router": "^4.1.5"
+    "vue-router": "^4.1.6"
   }
 }

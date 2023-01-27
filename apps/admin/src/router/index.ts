@@ -22,4 +22,3 @@ router.beforeEach(() => {
 router.afterEach(() => {
   NProgress.done();
 });
-
