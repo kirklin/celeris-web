@@ -52,12 +52,6 @@ export function createViteConfig(
     },
     css: {
       preprocessorOptions: {
-        scss: {
-          additionalData: `
-        @use "@celeris/styles/element/index.scss" as *;
-        `,
-          javascriptEnabled: true,
-        },
       },
     },
     plugins: configVitePlugins(root, viteEnv, command === "build"),

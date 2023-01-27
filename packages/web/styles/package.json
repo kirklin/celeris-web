@@ -9,5 +9,11 @@
   "module": "./index.ts",
   "scripts": {
     "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
+  },
+  "dependencies": {
+    "@kirklin/reset-css": "^0.0.3"
+  },
+  "devDependencies": {
+  "unocss": "^0.49.0"
   }
 }

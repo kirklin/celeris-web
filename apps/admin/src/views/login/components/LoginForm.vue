@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ElForm, ElMessage } from "element-plus";
-import type { FormInstance, FormRules } from "element-plus";
 import { PageConstant } from "@celeris/constants/src/pageConstant";
+import type { FormInst, FormRules } from "naive-ui";
 
 // 登录表单数据
 import type { LoginFromType } from "~/views/login/types";
+const message = useMessage();
 
 const loginFormModel: LoginFromType = reactive<LoginFromType>({
   username: "kirklin",
@@ -16,22 +16,20 @@ const loginRules: FormRules = reactive({
 });
 
 const loading = ref<boolean>(false);
-const loginFormRef = ref<FormInstance>();
+const loginFormRef = ref<HTMLElement & FormInst>();
 const router = useRouter();
 // login
-const login = (formEl: FormInstance | undefined) => {
-  if (!formEl) {
-    return;
-  }
-  formEl.validate((valid) => {
-    if (valid) {
+const login = async () => {
+  await loginFormRef.value?.validate((errors) => {
+    if (!errors) {
       loading.value = true;
       setTimeout(() => {
         loading.value = false;
-        ElMessage.success("Login Success");
+        message.success("Login Success");
         router.push(PageConstant.BASE_HOME);
       }, 800);
     } else {
+      message.error("Login Error");
       return false;
     }
   });
@@ -39,18 +37,16 @@ const login = (formEl: FormInstance | undefined) => {
 </script>
 
 <template>
-  <ElForm ref="loginFormRef" :model="loginFormModel" :rules="loginRules" size="large" class="mt-8 space-y-6">
+  <n-form ref="loginFormRef" :model="loginFormModel" :rules="loginRules" size="large" class="mt-8 space-y-6">
     <div>
-      <ElFormItem prop="username">
-        <label for="username" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Your username</label>
-        <el-input v-model="loginFormModel.username" placeholder="kirklin" />
-      </ElFormItem>
+      <n-form-item path="username" label="Your username">
+        <n-input v-model:value="loginFormModel.username" placeholder="input any username" />
+      </n-form-item>
     </div>
     <div>
-      <ElFormItem prop="password">
-        <label for="password" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-        <el-input v-model="loginFormModel.password" type="password" placeholder="••••••••" show-password />
-      </ElFormItem>
+      <n-form-item path="password" label="Your password">
+        <n-input v-model:value="loginFormModel.password" type="password" placeholder="••••••••" show-password-on="click" @keydown.enter="login" />
+      </n-form-item>
     </div>
     <!--    <div class="flex items-start"> -->
     <!--      <div class="flex h-5 items-center"> -->
@@ -61,13 +57,13 @@ const login = (formEl: FormInstance | undefined) => {
     <!--      </div> -->
     <!--      <a href="#" class="text-primary-700 dark:text-primary-500 ml-auto text-sm hover:underline">Lost Password?</a> -->
     <!--    </div> -->
-    <el-button type="primary" :loading="loading" @click="login(loginFormRef)">
+    <n-button type="primary" :loading="loading" @click="login">
       Login to your account
-    </el-button>
+    </n-button>
     <!--    <div class="text-sm font-medium text-gray-500 dark:text-gray-400"> -->
     <!--      Not registered? <a class="text-primary-700 dark:text-primary-500 hover:underline">Create account</a> -->
     <!--    </div> -->
-  </ElForm>
+  </n-form>
 </template>
 
 <style scoped>
