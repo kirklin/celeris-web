@@ -31,7 +31,7 @@ export default defineConfig({
         "vue-i18n",
         "@vueuse/core",
       ],
-      dts: "types/auto-imports.d.ts",
+      dts: "autoResolver/auto-imports.d.ts",
       dirs: [
         "src/composables",
         "src/store",
@@ -44,7 +44,7 @@ export default defineConfig({
     Components({
       extensions: ["vue"],
       include: [/\.vue$/, /\.vue\?vue/],
-      dts: "types/components.d.ts",
+      dts: "autoResolver/components.d.ts",
       exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
       resolvers: [
         ElementPlusResolver({

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AppLogo from "@celeris/components/Application/src/AppLogo.vue";
+import { AppLogo } from "@celeris/components";
 import LoginForm from "~/views/login/components/LoginForm.vue";
 </script>
 

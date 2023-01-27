@@ -10,12 +10,13 @@
     "lib": ["dom", "esnext"],
     "types": [
       "vite/client",
-      "@celeris/constant"
+      "@celeris/constant",
+      "@celeris/types"
     ]
   },
   "include": [
+    "autoResolver",
     "src",
-    "types",
     "vite.config.ts"
   ]
 }
