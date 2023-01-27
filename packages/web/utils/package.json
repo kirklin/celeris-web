@@ -2,8 +2,14 @@
   "name": "@celeris/utils",
   "version": "0.0.1",
   "description": "utils for Celeris",
+  "author": "Kirk Lin (https://github.com/kirklin)",
+  "license": "MIT",
+  "homepage": "https://github.com/kirklin/celeris-admin",
   "main": "./index.ts",
   "module": "./index.ts",
+  "scripts": {
+    "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
+  },
   "dependencies": {
     "@vue/runtime-core": "3.2.45",
     "@vueuse/core": "^9.6.0",
