@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { logLabeled } from "@celeris/utils/src/logger";
-import NaiveProvider from "~/components/NaiveProvider.vue";
-import { designNamespace } from "~/config/designConfig";
+import { designNamespace, designPrefixCls } from "~/config/designConfig";
 logLabeled("I'm ready!  ⸜(๑'ᵕ'๑)⸝⋆*", "log", "", "color: #66ccff");
 </script>
 
 <template>
-  <n-config-provider :cls-prefix="designNamespace" class="w-full h-full">
-    <NaiveProvider>
-      <router-view />
-    </NaiveProvider>
-  </n-config-provider>
+  <NConfigProvider :cls-prefix="designPrefixCls" :namespace="designNamespace" class="w-full h-full">
+    <CAAppNaiveUIProvider>
+      <RouterView />
+    </CAAppNaiveUIProvider>
+  </NConfigProvider>
 </template>

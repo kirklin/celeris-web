@@ -5,7 +5,7 @@ import { router } from "./router";
 import { setupStore } from "./store";
 import App from "~/App.vue";
 
-import "@celeris/styles"
+import "@celeris/styles";
 
 const app = createApp(App);
 

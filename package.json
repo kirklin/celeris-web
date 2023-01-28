@@ -42,7 +42,7 @@
     "@changesets/cli": "^2.26.0",
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
-    "@kirklin/eslint-config": "^0.2.4",
+    "@kirklin/eslint-config": "^0.2.5",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.11.18",
     "@types/nprogress": "^0.2.0",
@@ -55,7 +55,7 @@
     "rimraf": "^4.1.2",
     "typescript": "^4.9.4",
     "unbuild": "^1.1.1",
-    "vitest": "^0.28.2"
+    "vitest": "^0.28.3"
   },
   "lint-staged": {
     "**/*": "eslint --fix"

@@ -8,7 +8,7 @@ export function configUNPluginAutoImportPlugin() {
       "vue-i18n",
       "@vueuse/core",
       {
-        "naive-ui": [
+        "@celeris/ca-components": [
           "useDialog",
           "useMessage",
           "useNotification",

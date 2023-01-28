@@ -14,6 +14,7 @@
     "@kirklin/reset-css": "^0.0.3"
   },
   "devDependencies": {
-  "unocss": "^0.49.0"
+    "unocss": "^0.49.1",
+    "vite": "^4.0.4"
   }
 }

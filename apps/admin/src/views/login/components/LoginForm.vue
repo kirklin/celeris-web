@@ -37,16 +37,16 @@ const login = async () => {
 </script>
 
 <template>
-  <n-form ref="loginFormRef" :model="loginFormModel" :rules="loginRules" size="large" class="mt-8 space-y-6">
+  <NForm ref="loginFormRef" :model="loginFormModel" :rules="loginRules" size="large" class="mt-8 space-y-6">
     <div>
-      <n-form-item path="username" label="Your username">
-        <n-input v-model:value="loginFormModel.username" placeholder="input any username" />
-      </n-form-item>
+      <NFormItem path="username" label="Your username">
+        <NInput v-model:value="loginFormModel.username" placeholder="input any username" />
+      </NFormItem>
     </div>
     <div>
-      <n-form-item path="password" label="Your password">
-        <n-input v-model:value="loginFormModel.password" type="password" placeholder="••••••••" show-password-on="click" @keydown.enter="login" />
-      </n-form-item>
+      <NFormItem path="password" label="Your password">
+        <NInput v-model:value="loginFormModel.password" type="password" placeholder="••••••••" show-password-on="click" @keydown.enter="login" />
+      </NFormItem>
     </div>
     <!--    <div class="flex items-start"> -->
     <!--      <div class="flex h-5 items-center"> -->
@@ -57,13 +57,13 @@ const login = async () => {
     <!--      </div> -->
     <!--      <a href="#" class="text-primary-700 dark:text-primary-500 ml-auto text-sm hover:underline">Lost Password?</a> -->
     <!--    </div> -->
-    <n-button type="primary" :loading="loading" @click="login">
+    <NButton type="primary" :loading="loading" @click="login">
       Login to your account
-    </n-button>
+    </NButton>
     <!--    <div class="text-sm font-medium text-gray-500 dark:text-gray-400"> -->
     <!--      Not registered? <a class="text-primary-700 dark:text-primary-500 hover:underline">Create account</a> -->
     <!--    </div> -->
-  </n-form>
+  </NForm>
 </template>
 
 <style scoped>
