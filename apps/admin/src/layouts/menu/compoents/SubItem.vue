@@ -6,23 +6,23 @@ defineProps<{ menuList: MenuOptions[] }>();
 
 <template>
   <template v-for="subItem in menuList" :key="subItem.id">
-    <el-sub-menu v-if="subItem.children && subItem.children.length > 0" :index="subItem.path">
+    <ElSubMenu v-if="subItem.children && subItem.children.length > 0" :index="subItem.path">
       <template #title>
-        <el-icon>
-          <component :is="subItem.icon" />
-        </el-icon>
+        <ElIcon>
+          <Component :is="subItem.icon" />
+        </ElIcon>
         <span>{{ subItem.title }}</span>
       </template>
       <SubItem :menu-list="subItem.children" />
-    </el-sub-menu>
-    <el-menu-item v-else :index="subItem.path">
-      <el-icon>
-        <component :is="subItem.icon" />
-      </el-icon>
+    </ElSubMenu>
+    <ElMenuItem v-else :index="subItem.path">
+      <ElIcon>
+        <Component :is="subItem.icon" />
+      </ElIcon>
       <template #title>
         <span>{{ subItem.title }}</span>
       </template>
-    </el-menu-item>
+    </ElMenuItem>
   </template>
 </template>
 

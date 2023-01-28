@@ -1,5 +1,5 @@
 {
-  "name": "@celeris/components",
+  "name": "@celeris/ca-components",
   "version": "0.0.1",
   "description": "components for Celeris",
   "author": "Kirk Lin (https://github.com/kirklin)",
@@ -13,10 +13,9 @@
   "dependencies": {
     "@celeris/constants": "workspace:*",
     "@celeris/utils": "workspace:*",
-    "vue": "3.2.45",
-    "vue-router": "^4.1.6"
+    "vue": "3.2.45"
   },
   "devDependencies": {
-    "@celeris/ca-components": "workspace:*"
+    "naive-ui": "2.34.3"
   }
 }

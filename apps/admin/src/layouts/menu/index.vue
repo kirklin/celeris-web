@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import AppLogo from "@celeris/components/Application/src/AppLogo.vue";
 import type { MenuOption } from "naive-ui";
 import { menus } from "./data";
 import { useMenuSetting } from "~/composables/setting/useMenuSetting";
@@ -17,11 +16,11 @@ function handleMenuSelect(key, item) {
 <template>
   <div :class="isCollapse ? 'w-16' : 'w-64'" class="transition-width h-full shrink-0 flex-col overflow-hidden duration-75 lg:flex">
     <div class="my-auto flex h-16">
-      <AppLogo :show-title="!isCollapse" />
+      <CAAppLogo :show-title="!isCollapse" />
     </div>
-    <n-scrollbar>
-      <n-menu :collapsed="isCollapse" :default-value="activeMenu" :options="menuList" @update:value="handleMenuSelect" />
-    </n-scrollbar>
+    <NScrollbar>
+      <NMenu :collapsed="isCollapse" :default-value="activeMenu" :options="menuList" @update:value="handleMenuSelect" />
+    </NScrollbar>
   </div>
 </template>
 
