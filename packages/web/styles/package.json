@@ -11,7 +11,8 @@
     "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
   },
   "dependencies": {
-    "@kirklin/reset-css": "^0.0.3"
+    "@kirklin/reset-css": "^0.0.3",
+    "unocss-preset-chinese": "^0.0.1"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.44",

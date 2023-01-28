@@ -138,9 +138,11 @@ importers:
       '@iconify-json/tabler': ^1.1.57
       '@kirklin/reset-css': ^0.0.3
       unocss: ^0.49.1
+      unocss-preset-chinese: ^0.0.1
       vite: ^4.0.4
     dependencies:
       '@kirklin/reset-css': 0.0.3
+      unocss-preset-chinese: 0.0.1
     devDependencies:
       '@iconify-json/mdi': 1.1.44
       '@iconify-json/tabler': 1.1.57
@@ -1742,7 +1744,6 @@ packages:
 
   /@unocss/core/0.49.1:
     resolution: {integrity: sha512-l+L1c8eCwfaQA1sAYDE+xJ+r9ocfyTo9KzRUOIy5eV/wxC82HoLtJN8wIGuWaY8fGQh/gT74Czfq7g7BFNKhaw==}
-    dev: true
 
   /@unocss/inspector/0.49.1:
     resolution: {integrity: sha512-oC/FOtOCcVP3Yp0me3/2+c/X5OVEnstFKmdEimuJB+z0G8j9l2SLHSqJfBMQm2TCH359sZkybk0kiMg5luwXPA==}
@@ -6392,6 +6393,12 @@ packages:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
     engines: {node: '>= 10.0.0'}
     dev: true
+
+  /unocss-preset-chinese/0.0.1:
+    resolution: {integrity: sha512-qmHH7auhWLhKt88kYqyv3e2CPyLg9QbDvHaopHMEhE+RVpjlhHB4wV7rr+jhnHz1j5fCK+zijomC0iSbmYYYCA==}
+    dependencies:
+      '@unocss/core': 0.49.1
+    dev: false
 
   /unocss/0.49.1_vite@4.0.4:
     resolution: {integrity: sha512-NtbJOA7aF3Qq5fGy94kMKU51XwyTWEzAAuhTx7zbrYOXlJ8QDw2jN3tQC2dMmGLFEspM16qIK0OD6jFuMj2ccQ==}
