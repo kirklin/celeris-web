@@ -1,4 +1,4 @@
 // reset css
 import "@kirklin/reset-css/kirklin.css";
-import "./index.scss";
+import "./src/index.css";
 import "uno.css";
