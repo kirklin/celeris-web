@@ -164,6 +164,7 @@ importers:
   packages/web/utils:
     specifiers:
       '@celeris/types': workspace:*
+      '@kirklin/logger': 0.0.1
       '@types/lodash-es': ^4.17.6
       '@vue/runtime-core': 3.2.45
       '@vueuse/core': ^9.11.1
@@ -171,6 +172,7 @@ importers:
       lodash-es: ^4.17.21
       vue: 3.2.45
     dependencies:
+      '@kirklin/logger': 0.0.1
       '@vue/runtime-core': 3.2.45
       '@vueuse/core': 9.11.1_vue@3.2.45
       '@vueuse/shared': 9.11.1_vue@3.2.45
@@ -1288,6 +1290,10 @@ packages:
       - supports-color
       - typescript
     dev: true
+
+  /@kirklin/logger/0.0.1:
+    resolution: {integrity: sha512-RSnBSl0U/xQwzRDu5nxW7fjZs052gjJrd6Ov28WXM3Wku0R6veaIOz0XAQg7TawZiTDgJsz+QysPQd/kJQ+RMQ==}
+    dev: false
 
   /@kirklin/reset-css/0.0.3:
     resolution: {integrity: sha512-EUfxCc0U8iIn4hwhtsOha6uYKul839pyol4Yt5FJtLT8BH/F9MLMkik6KkKHhvInk8nVu4flSsFBGn/OZuu74g==}

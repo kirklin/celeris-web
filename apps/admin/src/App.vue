@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { logLabeled } from "@celeris/utils/src/logger";
+import { logger } from "@celeris/utils";
 import { designNamespace, designPrefixCls } from "~/config/designConfig";
-logLabeled("I'm ready!  ⸜(๑'ᵕ'๑)⸝⋆*", "log", "", "color: #66ccff");
+logger.info("I'm ready!  ⸜(๑'ᵕ'๑)⸝⋆*");
 </script>
 
 <template>
