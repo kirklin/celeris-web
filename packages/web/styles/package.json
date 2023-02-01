@@ -17,6 +17,7 @@
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.44",
     "@iconify-json/tabler": "^1.1.57",
+    "css-render": "^0.15.12",
     "unocss": "^0.49.1",
     "vite": "^4.0.4"
   }
