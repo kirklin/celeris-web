@@ -18,7 +18,7 @@ function handleMenuSelect(key, item) {
     <div class="my-auto flex h-16">
       <CAAppLogo :show-title="!isCollapse" />
     </div>
-    <NScrollbar>
+    <NScrollbar class="overflow-hidden">
       <NMenu :collapsed="isCollapse" :default-value="activeMenu" :options="menuList" @update:value="handleMenuSelect" />
     </NScrollbar>
   </div>
