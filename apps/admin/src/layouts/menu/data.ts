@@ -1,3 +1,5 @@
+// 开启unocss文件扫描，防止菜单动态icon丢失
+// @unocss-include
 import { CAUnoCSSIcon } from "@celeris/components";
 const renderIcon = (icon?: string) => {
   return () => h(CAUnoCSSIcon, { icon });
@@ -6,7 +8,7 @@ const renderIcon = (icon?: string) => {
 export const menus = [
   {
     key: "1",
-    icon: renderIcon("i-mdi-menu"),
+    icon: renderIcon("i-mdi-monitor-dashboard"),
     title: "首页",
     path: "/dashboard",
   },
