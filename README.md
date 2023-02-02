@@ -37,6 +37,30 @@ Mocking up web app with <b>celeris-admin </b><sup><em>(speed)</em></sup><br>
 - [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
 
+### [packages](packages) dependency relationship
+
+```mermaid
+ graph TD
+   admin{admin}
+   admin --> constants
+   admin --> styles
+   admin --> utils
+   admin --> ca-components
+   admin --> components
+   admin --> types
+   utils --> types
+   components --> constants
+   components --> utils
+   components --> ca-components
+   components --> styles
+   ca-components --> constants
+   ca-components --> utils
+   types --> constants
+   
+```
+
+To update the diagram above edit the README file and open a new PR with the changes.
+
 ## Try it now!
 
 ### GitHub Template

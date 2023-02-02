@@ -33,6 +33,30 @@
 - [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
 
+### [packages](packages)的依赖关系
+
+```mermaid
+ graph TD
+   admin{admin}
+   admin --> constants
+   admin --> styles
+   admin --> utils
+   admin --> ca-components
+   admin --> components
+   admin --> types
+   utils --> types
+   components --> constants
+   components --> utils
+   components --> ca-components
+   components --> styles
+   ca-components --> constants
+   ca-components --> utils
+   types --> constants
+   
+```
+
+要更新上面的图表，请编辑README文件，并在修改后打开一个新的PR。
+
 ## 快来试试吧！！
 
 ### GitHub 模板
