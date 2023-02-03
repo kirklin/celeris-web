@@ -1,16 +1,25 @@
 <div align='center'>
 <h1>celeris-admin </h1>
-<img src='docs/README.assets/logo.png' alt='celeris-admin - Opinionated Vite Starter Template' width='344'/>
+<img src='docs/README.assets/logo.webp' alt='celeris-admin - 一个免费的开源中后台模板' width='344'/>
 </div>
 
-<p align='center'>
-使用celeris-admin快速地创建 Web 应用
-</p>
+<div align='center'>
+<a href="README.md">English</a>| <b>简体中文</b>
+</div>
+
+## 简介
+Celeris-admin是一个免费的开源中后台模板，使用了最新的技术。它使用Vue3、Vite、TypeScript等尖端工具，为前端开发提供了全面的解决方案。此外，其monorepo方法可以轻松管理依赖关系和协作多个项目。
+
+这个模板不仅适用于生产使用，还可以作为开发人员熟悉最新技术栈的有价值学习资源。
+
+开始使用Celeris-admin，简化您的前端开发流程。
+
 
 ## 特性
 
-- ⚡  [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/) - 为速度而生
+- ⚡  [Vue 3](https://github.com/vuejs/vue-next), [Vite](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/) - 为速度而生
 - 💪 [Typescript](https://www.typescriptlang.org/) - 强大的类型检查
+- 📂 使用了 [monorepo](https://en.wikipedia.org/wiki/Monorepo) 方案
 - 🔥 使用 [新的 `<script setup>` 语法](https://github.com/vuejs/rfcs/pull/227)
 - 🤙🏻 默认开启 [响应性语法糖](https://vuejs.org/guide/extras/reactivity-transform.html)
 - 📦 [组件自动化加载](./src/components)

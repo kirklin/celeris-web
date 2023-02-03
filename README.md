@@ -1,20 +1,25 @@
 <div align='center'>
-<h1>celeris-admin </h1>
-<img src='docs/README.assets/logo.png' alt='celeris-admin - Opinionated Vite Starter Template' width='344'/>
+<h1>Celeris Admin</h1>
+<img src='docs/README.assets/logo.webp' alt='celeris-admin - a free and open-source middle and back-end template' width='344'/>
 </div>
-
-<p align='center'>
-Mocking up web app with <b>celeris-admin </b><sup><em>(speed)</em></sup><br>
-</p>
 
 <div align='center'>
 <b>English</b> | <a href="README.zh-CN.md">简体中文</a>
 </div>
 
+## Introduction
+Celeris Admin is a free and open-source middle and back-end template built with the latest technologies. Using Vue3, Vite, TypeScript, and other cutting-edge tools, it provides a comprehensive solution for front-end development. Additionally, its monorepo approach makes it easy to manage dependencies and collaborate on multiple projects.
+
+This template is not only suitable for production use, but it can also serve as a valuable learning resource for developers who want to familiarize themselves with the latest technology stack.
+
+Get started with Celeris-admin today and streamline your front-end development process.
+
+
 ## Features
 
-- ⚡  [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/) - born with fastness
+- ⚡  [Vue 3](https://github.com/vuejs/vue-next), [Vite](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/) - born with fastness
 - 💪 [Typescript](https://www.typescriptlang.org/) - of course! necessary
+- 📂 Use the [monorepo](https://en.wikipedia.org/wiki/Monorepo) 
 - 🔥 Use the [new `<script setup>` syntax](https://github.com/vuejs/rfcs/pull/227)
 - 🤙🏻 [Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html) enabled
 - 📦 [Components auto importing](./src/components)
