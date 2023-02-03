@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PageConstant } from "@celeris/constants/src/pageConstant";
+import { PageConstants } from "@celeris/constants";
 import type { FormInst, FormRules } from "naive-ui";
 
 // 登录表单数据
@@ -26,7 +26,7 @@ const login = async () => {
       setTimeout(() => {
         loading.value = false;
         message.success("Login Success");
-        router.push(PageConstant.BASE_HOME);
+        router.push(PageConstants.BASE_HOME);
       }, 800);
     } else {
       message.error("Login Error");

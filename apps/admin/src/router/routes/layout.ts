@@ -1,4 +1,4 @@
-import { PageConstant } from "@celeris/constants/src/pageConstant";
+import { PageConstants } from "@celeris/constants";
 import { LAYOUT } from "~/router/constant";
 
 const modules = import.meta.glob<{ default: any }>("./modules/**/*.ts", { eager: true });
@@ -18,7 +18,7 @@ const layout = {
   meta: {
     title: "Layout",
   },
-  redirect: PageConstant.BASE_HOME,
+  redirect: PageConstants.BASE_HOME,
   children: routeModuleList,
 };
 

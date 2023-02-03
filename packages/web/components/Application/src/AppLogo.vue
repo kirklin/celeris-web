@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from "vue";
-import { PageConstant } from "@celeris/constants/src/pageConstant";
+import { PageConstants } from "@celeris/constants";
 import { useRouter } from "vue-router";
 import logo from "./assets/logo.webp";
 const props = defineProps({
@@ -16,7 +16,7 @@ const props = defineProps({
 const AppName = computed(() => String(import.meta.env.VITE_GLOB_APP_TITLE));
 const go = useRouter();
 function goHome() {
-  go.push(PageConstant.BASE_HOME);
+  go.push(PageConstants.BASE_HOME);
 }
 </script>
 

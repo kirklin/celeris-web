@@ -1,2 +1,2 @@
-export * from "./pageConstant";
-export * from "./storageConstant";
+export * from "./pageConstants";
+export * from "./storageConstants";

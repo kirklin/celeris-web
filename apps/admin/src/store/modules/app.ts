@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import type { DeepPartial } from "unocss";
 import type { MenuSetting, ProjectConfig } from "@celeris/types";
-import { PROJECT_CONFIG_KEY } from "@celeris/constants/src/storageConstant";
+import { PROJECT_CONFIG_KEY } from "@celeris/constants";
 import { deepMerge } from "@celeris/utils";
 
 interface AppState {

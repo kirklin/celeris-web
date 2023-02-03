@@ -1,4 +1,4 @@
-import { PageConstant } from "@celeris/constants/src/pageConstant";
+import { PageConstants } from "@celeris/constants";
 import { PAGE_NOT_FOUND_ROUTE } from "~/router/routes/basic";
 import layout from "~/router/routes/layout";
 
@@ -6,14 +6,14 @@ import layout from "~/router/routes/layout";
 export const RootRoute = {
   path: "/",
   name: "Root",
-  redirect: PageConstant.BASE_LOGIN,
+  redirect: PageConstants.BASE_LOGIN,
   meta: {
     title: "Root",
   },
 };
 
 export const LoginRoute = {
-  path: PageConstant.BASE_LOGIN,
+  path: PageConstants.BASE_LOGIN,
   name: "Login",
   component: () => import("~/views/login/index.vue"),
   meta: {
