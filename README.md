@@ -53,6 +53,7 @@ Get started with Celeris-admin today and streamline your front-end development p
    admin --> ca-components
    admin --> components
    admin --> types
+   admin --> request
    utils --> types
    components --> constants
    components --> utils
@@ -61,6 +62,9 @@ Get started with Celeris-admin today and streamline your front-end development p
    ca-components --> constants
    ca-components --> utils
    types --> constants
+   request --> constants
+   request --> types
+   request --> utils      
    
 ```
 
