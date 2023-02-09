@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@kirklin/logger": "0.0.1",
-    "@vue/runtime-core": "3.2.45",
+    "@vue/runtime-core": "3.2.47",
     "@vueuse/core": "^9.12.0",
     "@vueuse/shared": "^9.12.0",
     "lodash-es": "^4.17.21",
