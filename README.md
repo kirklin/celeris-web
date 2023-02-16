@@ -54,6 +54,7 @@ Get started with Celeris-admin today and streamline your front-end development p
    admin --> components
    admin --> types
    admin --> request
+   admin --> locale
    utils --> types
    components --> constants
    components --> utils
@@ -65,6 +66,10 @@ Get started with Celeris-admin today and streamline your front-end development p
    request --> constants
    request --> types
    request --> utils      
+   request --> locale      
+   locale --> constants      
+   locale --> types      
+   locale --> utils      
    
 ```
 

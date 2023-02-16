@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@celeris/constants": "workspace:*",
+    "@celeris/locale": "workspace:*",
     "@celeris/request": "workspace:*",
     "@celeris/styles": "workspace:*",
     "@celeris/utils": "workspace:*",
