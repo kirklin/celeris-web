@@ -3,7 +3,7 @@
  * 数据处理类，可以根据项目进行配置
  */
 import type { RequestOptions, RequestResult } from "@celeris/types/src/httpClient";
-import type { AxiosRequestConfig, AxiosResponse } from "axios";
+import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 
 /**
  * Options that can be passed to the `createAxios` function when creating a new Axios instance.
@@ -41,48 +41,41 @@ export abstract class AxiosTransform {
    * A function that is called before a request is sent. It can modify the request configuration as needed.
    * 在发送请求之前调用的函数。它可以根据需要修改请求配置。
    */
-  beforeRequest?(config: AxiosRequestConfig, options: RequestOptions): AxiosRequestConfig | Promise<AxiosRequestConfig>;
+  beforeRequest?(config: AxiosRequestConfig, options: RequestOptions): AxiosRequestConfig;
 
   /**
    * A function that is called after a response is received. It can transform the response data as needed.
    * 在接收到响应后调用的函数。它可以根据需要转换响应数据。
    */
-  afterResponse?(response: AxiosResponse | AxiosResponse<RequestResult>, options: RequestOptions):
-  AxiosResponse | Promise<AxiosResponse> | AxiosResponse<RequestResult> | Promise<AxiosResponse<RequestResult>>;
+  afterResponse?(response: AxiosResponse | AxiosResponse<RequestResult>, options: RequestOptions): any;
 
   /**
    * A function that is called when an error occurs during the request. It can handle the error as needed.
    * 在请求期间发生错误时调用的函数。它可以根据需要处理错误。
    */
-  onRequestError?(error: Error): any;
+  onRequestError?(error: Error, options: RequestOptions): any;
 
   /**
-   * A function that is called when an error occurs during the response. It can handle the error as needed.
-   * 在响应期间发生错误时调用的函数。它可以根据需要处理错误。
-   */
-  onResponseError?(error: Error): any;
-
-  /**
-   * A function that is called before a request interceptor is executed. It can modify the request configuration as needed.
+   * A function that is called before a request interceptors is executed. It can modify the request configuration as needed.
    * 在执行请求拦截器之前调用的函数，可以根据需要修改请求配置。
    */
-  requestInterceptor?(config: AxiosRequestConfig, options: RequestOptions): AxiosRequestConfig | Promise<AxiosRequestConfig>;
+  requestInterceptors?(config: InternalAxiosRequestConfig, options: CreateAxiosOptions): InternalAxiosRequestConfig | Promise<InternalAxiosRequestConfig>;
 
   /**
-   * A function that is called after a response interceptor is executed. It can transform the response data as needed.
+   * A function that is called after a response interceptors is executed. It can transform the response data as needed.
    * 在执行响应拦截器之后调用的函数，可以根据需要转换响应数据。
    */
-  responseInterceptor?(response: AxiosResponse): AxiosResponse | Promise<AxiosResponse>;
+  responseInterceptors?(response: AxiosResponse): AxiosResponse | Promise<AxiosResponse>;
 
   /**
    * A function that is called when an error occurs during the request interceptors. It can handle the error as needed.
    * 在执行请求拦截器时发生错误时调用的函数，可以根据需要处理错误。
    */
-  requestInterceptorError?(error: Error): any;
+  requestInterceptorsError?(error: Error): any;
 
   /**
    * A function that is called when an error occurs during the response interceptors. It can handle the error as needed.
    * 在执行响应拦截器时发生错误时调用的函数，可以根据需要处理错误。
    */
-  responseInterceptorError?(error: Error, axiosInstance: AxiosResponse): any;
+  responseInterceptorsError?(error: Error, axiosInstance: AxiosInstance): any;
 }
