@@ -3,7 +3,7 @@ import type { RequestOptions, RequestResult } from "@celeris/types/src/httpClien
 import { cloneDeep } from "@celeris/utils";
 import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import axios from "axios";
-import qs = require("qs");
+import qs from "qs";
 import type { CreateAxiosOptions } from "./axiosTransform";
 
 export class HttpClient {
@@ -148,7 +148,7 @@ export class HttpClient {
     options?: RequestOptions,
   ): Promise<T> {
     let conf: CreateAxiosOptions = cloneDeep(config);
-    const transform = this.getTransform();
+    const transform = this.getTransform() || {};
 
     const { requestOptions } = this.options;
 
