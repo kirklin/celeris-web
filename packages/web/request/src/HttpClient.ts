@@ -97,7 +97,7 @@ export class HttpClient {
   }
 
   // support form-data
-  supportFormData(config: AxiosRequestConfig) {
+  supportFormData(config: AxiosRequestConfig): AxiosRequestConfig {
     const headers = config.headers || this.options.headers;
     const contentType = headers?.["Content-Type"] || headers?.["content-type"];
 
