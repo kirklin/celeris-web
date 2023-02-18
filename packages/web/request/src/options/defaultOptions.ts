@@ -1,5 +1,6 @@
 import { ContentTypeConstants } from "@celeris/constants";
 import type { CreateAxiosOptions } from "../axiosTransform";
+import { defaultTransform } from "./transform/defaultTransform";
 export const defaultAxiosOptions: CreateAxiosOptions = {
   // See https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#authentication_schemes
   // authentication schemes，e.g: Bearer
@@ -13,7 +14,7 @@ export const defaultAxiosOptions: CreateAxiosOptions = {
   // 如果是form-data格式
   // headers: { "Content-Type": ContentTypeConstants.FORM_URLENCODED },
   // 数据处理方式
-  transform: {},
+  transform: defaultTransform,
   // 配置项，下面的选项都可以在独立的接口请求中覆盖
   requestOptions: {
     // 默认将prefix 添加到url
@@ -35,7 +36,7 @@ export const defaultAxiosOptions: CreateAxiosOptions = {
     //  是否加入时间戳
     shouldJoinTime: true,
     // 忽略重复请求
-    shouldIgnoreCancelToken: true,
+    shouldIgnoreAbortController: true,
     // 是否携带token
     shouldSendTokenInHeader: true,
     retryOptions: {

@@ -21,8 +21,8 @@ export interface RequestOptions {
   successMessageMode?: MessageMode;
   // Whether to add a timestamp to the URL
   shouldJoinTime?: boolean;
-  // Whether to ignore cancel token when sending the request
-  shouldIgnoreCancelToken?: boolean;
+  // Whether to ignore AbortController when sending the request
+  shouldIgnoreAbortController?: boolean;
   // Whether to send token in header
   shouldSendTokenInHeader?: boolean;
   // Request retry mechanism

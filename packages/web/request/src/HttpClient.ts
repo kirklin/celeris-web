@@ -3,8 +3,6 @@ import type { RequestOptions, RequestResult } from "@celeris/types/src/httpClien
 import { cloneDeep } from "@celeris/utils";
 import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import axios from "axios";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import qs from "qs";
 import { AxiosCanceler } from "./axiosCancel";
 import type { CreateAxiosOptions } from "./axiosTransform";
@@ -73,7 +71,7 @@ export class HttpClient {
     instance.interceptors.request.use(
       (config: InternalAxiosRequestConfig) => {
         // If cancel repeat request is turned on, then cancel repeat request is prohibited
-        const ignoreCancel = this.options.requestOptions.shouldIgnoreCancelToken ?? true;
+        const ignoreCancel = this.options.requestOptions.shouldIgnoreAbortController ?? true;
 
         !ignoreCancel && axiosCanceler.addPending(config);
 
