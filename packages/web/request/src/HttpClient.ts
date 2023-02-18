@@ -1,6 +1,6 @@
 import { ContentTypeConstants, RequestConstants } from "@celeris/constants";
 import type { RequestOptions, RequestResult } from "@celeris/types/src/httpClient";
-import { cloneDeep } from "@celeris/utils";
+import { cloneDeep, deepMerge } from "@celeris/utils";
 import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import axios from "axios";
 import qs from "qs";
@@ -71,7 +71,8 @@ export class HttpClient {
     instance.interceptors.request.use(
       (config: InternalAxiosRequestConfig) => {
         // If cancel repeat request is turned on, then cancel repeat request is prohibited
-        const ignoreCancel = this.options.requestOptions.shouldIgnoreAbortController ?? true;
+        const { requestOptions } = this.options;
+        const ignoreCancel = requestOptions?.shouldIgnoreAbortController ?? true;
 
         !ignoreCancel && axiosCanceler.addPending(config);
 
@@ -162,7 +163,7 @@ export class HttpClient {
 
     const { requestOptions } = this.options;
 
-    const opt: RequestOptions = Object.assign({}, requestOptions, options);
+    const opt: RequestOptions = deepMerge(requestOptions, options || {});
 
     if (transform.beforeRequest) {
       conf = transform.beforeRequest(conf, opt);
