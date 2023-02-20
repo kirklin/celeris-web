@@ -99,11 +99,11 @@ class NotModifiedCheckStrategy implements CheckStrategy {
 }
 
 // UseProxy = 305
-class UseProxyCheckStrategy implements CheckStrategy {
-  check(status: number, msg?: string): void {
-    throw new Error(msg ?? `状态码 ${status} 已被废弃，不再使用`);
-  }
-}
+// class UseProxyCheckStrategy implements CheckStrategy {
+//   check(status: number, msg?: string): void {
+//     throw new Error(msg ?? `状态码 ${status} 已被废弃，不再使用`);
+//   }
+// }
 
 // TemporaryRedirect = 307
 class TemporaryRedirectCheckStrategy implements CheckStrategy {
@@ -212,7 +212,7 @@ class CheckStatus {
       [HttpStatusConstants.Found, new FoundCheckStrategy()],
       [HttpStatusConstants.SeeOther, new SeeOtherCheckStrategy()],
       [HttpStatusConstants.NotModified, new NotModifiedCheckStrategy()],
-      [HttpStatusConstants.UseProxy, new UseProxyCheckStrategy()],
+      // [HttpStatusConstants.UseProxy, new UseProxyCheckStrategy()],
       [HttpStatusConstants.TemporaryRedirect, new TemporaryRedirectCheckStrategy()],
       [HttpStatusConstants.PermanentRedirect, new PermanentRedirectCheckStrategy()],
       [HttpStatusConstants.BadRequest, new BadRequestCheckStrategy()],

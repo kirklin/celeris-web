@@ -21,6 +21,7 @@ export enum ContentTypeConstants {
 }
 
 /**
+ * https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
  * An enumeration of HTTP status codes.
  * HTTP状态码的枚举类型。
  */
