@@ -11,12 +11,7 @@ export function configVitePlugins(
   isBuild: boolean,
 ) {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
-    vue({
-      // https://vuejs.org/guide/extras/reactivity-transform.html
-      // 开启响应性语法糖 （试验性特性）
-      // Reactivity Transform
-      reactivityTransform: true,
-    }),
+    vue(),
   ];
 
   // https://github.com/antfu/unplugin-auto-import
