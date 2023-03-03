@@ -1,7 +1,7 @@
 import type { PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
 
-import type { viteEnvVariables } from "../utils";
+import type { ViteEnvVariables } from "../utils";
 import { createUnoCSSPluginConfig } from "./unocss";
 import { createAutoImportPluginConfig } from "./unpluginAutoImport";
 import { createVueComponentsPluginConfig } from "./unpluginVueComponets";
@@ -15,13 +15,15 @@ import { createVueComponentsPluginConfig } from "./unpluginVueComponets";
  */
 export function configVitePlugins(
   rootDir: string,
-  viteEnv: viteEnvVariables,
+  viteEnv: ViteEnvVariables,
   isProductionBuild: boolean,
 ): Array<PluginOption | PluginOption[]> {
   const vitePlugins: Array<PluginOption | PluginOption[]> = [];
+
   // Add the Vue plugin.
   // 添加 Vue 插件
   vitePlugins.push(vue());
+
   // Add the unplugin-auto-import plugin.
   // 添加 unplugin-auto-import 插件
   // https://github.com/antfu/unplugin-auto-import
