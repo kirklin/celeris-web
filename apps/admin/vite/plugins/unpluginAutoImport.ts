@@ -1,5 +1,5 @@
 import AutoImport from "unplugin-auto-import/vite";
-export function configUNPluginAutoImportPlugin() {
+export function createAutoImportPluginConfig() {
   // https://github.com/antfu/unplugin-auto-import
   return AutoImport({
     imports: [

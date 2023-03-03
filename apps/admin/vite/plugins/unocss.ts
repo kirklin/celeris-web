@@ -1,7 +1,7 @@
 import { presetAttributify, presetIcons, presetUno, transformerDirectives, transformerVariantGroup } from "unocss";
 import UnoCSS from "unocss/vite";
 import presetChinese from "unocss-preset-chinese";
-export function configUnoCSSPlugin() {
+export function createUnoCSSPluginConfig() {
   return UnoCSS({
     exclude: ["node_modules", ".git", "dist"],
     presets: [

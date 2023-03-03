@@ -2,7 +2,7 @@ import { resolve } from "path";
 import type { UserConfig } from "vite";
 import { loadEnv } from "vite";
 import { configVitePlugins } from "./plugins";
-import { wrapperEnv } from "./utils";
+import { updateEnvVariables } from "./utils";
 
 export function createViteConfig(
   command: "build" | "serve",
@@ -13,7 +13,7 @@ export function createViteConfig(
   const env = loadEnv(mode, root);
 
   // The boolean type read by loadEnv is a string. This function can be converted to boolean type
-  const viteEnv = wrapperEnv(env);
+  const viteEnv = updateEnvVariables(env);
   const {
     VITE_PUBLIC_PATH,
     VITE_DROP_CONSOLE,
