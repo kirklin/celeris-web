@@ -15,6 +15,7 @@ export function createViteConfig(
   // The boolean type read by loadEnv is a string. This function can be converted to boolean type
   const viteEnv = updateEnvVariables(env);
   const {
+    VITE_PORT,
     VITE_PUBLIC_PATH,
     VITE_DROP_CONSOLE,
   } = viteEnv;
@@ -29,8 +30,9 @@ export function createViteConfig(
       },
     },
     server: {
-      host: "localhost",
-      port: 8888,
+      // Listening on all local IPs
+      host: true,
+      port: VITE_PORT,
       open: true,
       https: false,
       proxy: {},

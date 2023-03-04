@@ -1,6 +1,14 @@
 // App Environment Variables
+// 应用程序环境变量
 export interface ViteEnvVariables {
+
+  // Node environment type
+  // Node环境类型
   NODE_ENV: string;
+
+  // Vite configuration port number
+  // Vite配置端口号
+  VITE_PORT: number;
 
   // Whether to use mock data
   // 是否使用模拟数据
@@ -66,14 +74,34 @@ export function updateEnvVariables(envConf: Record<string, any>): ViteEnvVariabl
 
   for (const key of Object.keys(envConf)) {
     let realName = envConf[key].replace(/\\n/g, "\n");
-    realName
-      = realName === "true" ? true : realName === "false" ? false : realName;
 
-    viteEnv[key] = realName;
-    if (typeof realName === "string") {
-      process.env[key] = realName;
-    } else if (typeof realName === "object") {
-      process.env[key] = JSON.stringify(realName);
+    // Convert string "true" and "false" to boolean values
+    if (realName === "true") {
+      realName = true;
+    } else if (realName === "false") {
+      realName = false;
+    }
+    // Convert VITE_PORT to a number
+    if (key === "VITE_PORT") {
+      realName = Number(realName);
+    }
+
+    if (key === "VITE_PROXY" && realName) {
+      try {
+        realName = JSON.parse(realName.replace(/'/g, "\""));
+      } catch (error) {
+        realName = null;
+      }
+    }
+
+    // Set the value of the environment variable
+    if (realName !== null && typeof realName !== "undefined") {
+      viteEnv[key] = realName;
+      if (typeof realName === "string") {
+        process.env[key] = realName;
+      } else {
+        process.env[key] = JSON.stringify(realName);
+      }
     }
   }
   return viteEnv as ViteEnvVariables;
