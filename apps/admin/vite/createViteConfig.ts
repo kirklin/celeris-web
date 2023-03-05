@@ -10,7 +10,7 @@ export function createViteConfig(
   cwd: string,
 ): UserConfig {
   const root = cwd;
-  const env = loadEnv(mode, root);
+  const env: Record<string, string> = loadEnv(mode, root);
 
   // The boolean type read by loadEnv is a string. This function can be converted to boolean type
   const viteEnv = updateEnvVariables(env);
