@@ -17,6 +17,7 @@ export function createViteConfig(
   const {
     VITE_PORT,
     VITE_PROXY,
+    VITE_USE_MOCK,
     VITE_USE_HTTPS,
     VITE_PUBLIC_PATH,
     VITE_DROP_CONSOLE,
