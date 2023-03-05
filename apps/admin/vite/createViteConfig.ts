@@ -2,7 +2,7 @@ import { resolve } from "path";
 import type { UserConfig } from "vite";
 import { loadEnv } from "vite";
 import { configVitePlugins } from "./plugins";
-import { updateEnvVariables } from "./utils";
+import { configureProxy, updateEnvVariables } from "./utils";
 
 export function createViteConfig(
   command: "build" | "serve",
@@ -16,6 +16,8 @@ export function createViteConfig(
   const viteEnv = updateEnvVariables(env);
   const {
     VITE_PORT,
+    VITE_PROXY,
+    VITE_USE_HTTPS,
     VITE_PUBLIC_PATH,
     VITE_DROP_CONSOLE,
   } = viteEnv;
@@ -29,13 +31,16 @@ export function createViteConfig(
         "~/": `${resolve(root, "src")}/`,
       },
     },
+    define: {
+      __VITE_USE_MOCK__: VITE_USE_MOCK,
+    },
     server: {
       // Listening on all local IPs
-      host: true,
+      host: VITE_USE_HTTPS,
       port: VITE_PORT,
       open: true,
       https: false,
-      proxy: {},
+      proxy: !VITE_USE_HTTPS ? configureProxy(VITE_PROXY) : {},
     },
     esbuild: {
       pure: VITE_DROP_CONSOLE ? ["console.log", "debugger"] : [],
