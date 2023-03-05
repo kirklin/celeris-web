@@ -1,10 +1,18 @@
-declare global {
-  declare type DeepPartial<T> = {
+import type { PropType as VuePropType } from 'vue'
+
+export declare global {
+  // define global
+  const __VITE_USE_MOCK__: boolean;
+
+   type DeepPartial<T> = {
     [P in keyof T]?: DeepPartial<T[P]>;
   };
-  declare type Recordable<T = any> = Record<string, T>;
-  declare type Nullable<T> = T | null;
-  declare type ReadonlyRecordable<T = any> = {
+   type Recordable<T = any> = Record<string, T>;
+   type Nullable<T> = T | null;
+   type ReadonlyRecordable<T = any> = {
     readonly [key: string]: T;
   };
+  // vue
+  type PropType<T> = VuePropType<T>
+
 }
