@@ -12,13 +12,13 @@
   },
   "dependencies": {
     "@kirklin/reset-css": "^0.0.3",
-    "unocss-preset-chinese": "^0.0.5"
+    "unocss-preset-chinese": "^0.0.6"
   },
   "devDependencies": {
-    "@iconify-json/mdi": "^1.1.47",
-    "@iconify-json/tabler": "^1.1.63",
+    "@iconify-json/mdi": "^1.1.49",
+    "@iconify-json/tabler": "^1.1.65",
     "css-render": "^0.15.12",
-    "unocss": "^0.50.1",
+    "unocss": "^0.50.4",
     "vite": "^4.1.4"
   }
 }

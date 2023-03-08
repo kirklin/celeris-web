@@ -45,7 +45,7 @@
     "@commitlint/config-conventional": "^17.4.4",
     "@kirklin/eslint-config": "^0.2.7",
     "@types/fs-extra": "^11.0.1",
-    "@types/node": "^18.14.2",
+    "@types/node": "^18.14.6",
     "@types/nprogress": "^0.2.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.35.0",
@@ -53,11 +53,11 @@
     "fs-extra": "^11.1.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
-    "rimraf": "^4.1.2",
-    "taze": "^0.8.5",
+    "rimraf": "^4.3.1",
+    "taze": "^0.9.0",
     "typescript": "^4.9.5",
     "unbuild": "^1.1.2",
-    "vitest": "^0.29.1"
+    "vitest": "^0.29.2"
   },
   "lint-staged": {
     "**/*": "eslint --fix"
