@@ -49,6 +49,7 @@ importers:
       '@celeris/ca-components': workspace:*
       '@celeris/components': workspace:*
       '@celeris/constants': workspace:*
+      '@celeris/directives': workspace:*
       '@celeris/locale': workspace:*
       '@celeris/request': workspace:*
       '@celeris/styles': workspace:*
@@ -75,6 +76,7 @@ importers:
       vue-tsc: ^1.2.0
     dependencies:
       '@celeris/constants': link:../../packages/web/constants
+      '@celeris/directives': link:../../packages/web/directives
       '@celeris/locale': link:../../packages/web/locale
       '@celeris/request': link:../../packages/web/request
       '@celeris/styles': link:../../packages/web/styles
@@ -127,6 +129,7 @@ importers:
       '@celeris/ca-components': workspace:*
       '@celeris/constants': workspace:*
       '@celeris/styles': workspace:*
+      '@celeris/types': workspace:*
       '@celeris/utils': workspace:*
       vue: ^3.2.47
       vue-router: ^4.1.6
@@ -138,9 +141,18 @@ importers:
     devDependencies:
       '@celeris/ca-components': link:../CAComponents
       '@celeris/styles': link:../styles
+      '@celeris/types': link:../types
 
   packages/web/constants:
     specifiers: {}
+
+  packages/web/directives:
+    specifiers:
+      '@celeris/utils': workspace:*
+      vue: ^3.2.47
+    dependencies:
+      '@celeris/utils': link:../utils
+      vue: 3.2.47
 
   packages/web/locale:
     specifiers:
