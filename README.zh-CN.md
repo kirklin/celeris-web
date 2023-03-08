@@ -47,20 +47,70 @@ Celeris-admin是一个免费的开源中后台模板，使用了最新的技术�
 ```mermaid
  graph TD
    admin{admin}
-   admin --> constants
-   admin --> styles
-   admin --> utils
    admin --> ca-components
    admin --> components
+   admin --> constants
+   admin --> locale
+   admin --> request
+   admin --> styles
    admin --> types
-   utils --> types
-   components --> constants
-   components --> utils
+   admin --> utils
+   components
    components --> ca-components
+   components --> constants
    components --> styles
+   components --> types
+   components --> utils
+   ca-components
    ca-components --> constants
    ca-components --> utils
+   locale
+   locale --> constants
+   locale --> types
+   locale --> utils
+   request
+   request --> constants
+   request --> locale
+   request --> types
+   request --> utils
+   types
    types --> constants
+   utils
+   utils --> types  
+   
+``````mermaid
+ graph TD
+   admin{admin}
+   admin --> ca-components
+   admin --> components
+   admin --> constants
+   admin --> locale
+   admin --> request
+   admin --> styles
+   admin --> types
+   admin --> utils
+   components
+   components --> ca-components
+   components --> constants
+   components --> styles
+   components --> types
+   components --> utils
+   ca-components
+   ca-components --> constants
+   ca-components --> utils
+   locale
+   locale --> constants
+   locale --> types
+   locale --> utils
+   request
+   request --> constants
+   request --> locale
+   request --> types
+   request --> utils
+   types
+   types --> constants
+   utils
+   utils --> types  
    
 ```
 
