@@ -1,13 +1,14 @@
 import type { App } from "vue";
-
-const directives = {
+import copy from "./src/copy";
+export const AllDirectives = {
   // Custom directives
+  copy,
 };
 
 export default {
   install(app: App) {
-    Object.keys(directives).forEach((key) => {
-      app.directive(key, directives[key]);
+    Object.keys(AllDirectives).forEach((key) => {
+      app.directive(key, AllDirectives[key]);
     });
   },
 };
