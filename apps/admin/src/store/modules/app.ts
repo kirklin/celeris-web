@@ -6,7 +6,7 @@ import { deepMerge } from "@celeris/utils";
 
 interface AppState {
   // project config
-  projectConfig: ProjectConfig | null;
+  projectConfig: ProjectConfig;
 }
 
 export const useAppStore = defineStore({
