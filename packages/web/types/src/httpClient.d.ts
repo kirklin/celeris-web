@@ -52,7 +52,7 @@ export interface RequestResult<T = any> {
 // Parameters for multipart/form-data file uploads
 export interface UploadFileParams {
   // Other parameters to include in the request
-  data?: Record<string, any>;
+  data?: Recordable;
   // Field name for the file in the request
   fieldName?: string;
   // The file to upload

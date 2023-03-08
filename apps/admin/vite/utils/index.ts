@@ -126,7 +126,7 @@ export function updateEnvVariables(envConf: Recordable<string>): ViteEnvVariable
 export function configureProxy(proxyList: [string, string][] = []) {
   // 创建一个空的代理对象
   // Create an empty proxy object
-  const proxyConfig: Record<string, ProxyOptions> = {};
+  const proxyConfig: Recordable<ProxyOptions> = {};
   // 遍历代理列表中的每一对前缀和目标地址
   // Iterate over each pair of prefix and target address in the proxy list
   for (const [prefix, target] of proxyList) {
