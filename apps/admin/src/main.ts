@@ -1,5 +1,7 @@
 import { createApp } from "vue";
 
+import directives from "@celeris/directives";
+
 import { router } from "./router";
 
 import { setupStore } from "./store";
@@ -12,6 +14,7 @@ const app = createApp(App);
 setupStore(app);
 
 app.use(router);
+app.use(directives);
 app.mount("#app");
 // When Closing mock, Tree Shaking `mockjs` dep
 if (__VITE_USE_MOCK__) {
