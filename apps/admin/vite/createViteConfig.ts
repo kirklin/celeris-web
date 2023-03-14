@@ -1,4 +1,4 @@
-import { resolve } from "path";
+import { resolve } from "node:path";
 import type { UserConfig } from "vite";
 import { loadEnv } from "vite";
 import { configVitePlugins } from "./plugins";

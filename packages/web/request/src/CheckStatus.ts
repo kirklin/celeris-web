@@ -20,80 +20,70 @@ class ProcessingCheckStrategy implements CheckStrategy {
 
 // OK = 200
 class OKCheckStrategy implements CheckStrategy {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  check(status: number, msg?: string): void {
+  check(): void {
     // Do nothing, the response is successful.
   }
 }
 
 // Created = 201
 class CreatedCheckStrategy implements CheckStrategy {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  check(status: number, msg?: string): void {
+  check(): void {
     // Do nothing, the resource was successfully created.
   }
 }
 
 // Accepted = 202
 class AcceptedCheckStrategy implements CheckStrategy {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  check(status: number, msg?: string): void {
+  check(): void {
     // Do nothing, the request was accepted for processing, but the processing has not been completed yet.
   }
 }
 
 // NoContent = 204
 class NoContentCheckStrategy implements CheckStrategy {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  check(status: number, msg?: string): void {
+  check(): void {
     // Do nothing, the response is successful but there is no entity-body in the response.
   }
 }
 
 // ResetContent = 205
 class ResetContentCheckStrategy implements CheckStrategy {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  check(status: number, msg?: string): void {
+  check(): void {
     // Do nothing, the response is successful and tells the client to reset the document view.
   }
 }
 
 // PartialContent = 206
 class PartialContentCheckStrategy implements CheckStrategy {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  check(status: number, msg?: string): void {
+  check(): void {
     // Do nothing, the response is successful and contains partial content as requested by the client.
   }
 }
 
 // MovedPermanently = 301
 class MovedPermanentlyCheckStrategy implements CheckStrategy {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  check(status: number, msg?: string): void {
+  check(): void {
     // Do nothing, the requested resource has been assigned a new permanent URI and any future references to this resource should use one of the returned URIs.
   }
 }
 
 // Found = 302
 class FoundCheckStrategy implements CheckStrategy {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  check(status: number, msg?: string): void {
+  check(): void {
     // Do nothing, the requested resource has been temporarily moved to the URI specified in the Location header field.
   }
 }
 
 // SeeOther = 303
 class SeeOtherCheckStrategy implements CheckStrategy {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  check(status: number, msg?: string): void {
+  check(): void {
     // Do nothing, the response to the request can be found under a different URI and should be retrieved using a GET method on that resource.
   }
 }
 
 // NotModified = 304
 class NotModifiedCheckStrategy implements CheckStrategy {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  check(status: number, msg?: string): void {
+  check(): void {
     // Do nothing, the resource has not been modified since the last request, and there is no need to retransmit the resource to the client.
   }
 }
@@ -107,16 +97,14 @@ class NotModifiedCheckStrategy implements CheckStrategy {
 
 // TemporaryRedirect = 307
 class TemporaryRedirectCheckStrategy implements CheckStrategy {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  check(status: number, msg?: string): void {
+  check(): void {
     // Do nothing, the requested resource has been temporarily moved to the URI specified in the Location header field.
   }
 }
 
 // PermanentRedirect = 308
 class PermanentRedirectCheckStrategy implements CheckStrategy {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  check(status: number, msg?: string): void {
+  check(): void {
     // Do nothing, the requested resource has been permanently moved to the URI specified in the Location header field.
   }
 }

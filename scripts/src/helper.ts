@@ -10,7 +10,9 @@ import scriptPkg from "../package.json";
 import rootPkg from "../../package.json";
 
 interface WorkspacePackage {
-  name: string; version?: string; path: string;
+  name: string;
+  version?: string;
+  path: string;
 }
 
 async function getPackages() {
