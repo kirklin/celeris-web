@@ -50,7 +50,9 @@
     "unplugin-auto-import": "^0.15.1",
     "unplugin-vue-components": "^0.24.1",
     "vite": "^4.1.4",
+    "vite-plugin-inspect": "^0.7.16",
     "vite-plugin-mock": "^2.9.6",
+    "vite-plugin-vue-inspector": "^3.3.2",
     "vitest": "^0.29.2",
     "vue-tsc": "^1.2.0"
   }

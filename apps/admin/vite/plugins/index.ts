@@ -2,6 +2,8 @@ import type { PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
 
 import type { ViteEnvVariables } from "../utils";
+import { createInspectPluginConfig } from "./inspect";
+import { createInspectorPluginConfig } from "./inspector";
 import { createMockPluginConfig } from "./mock";
 import { createUnoCSSPluginConfig } from "./unocss";
 import { createAutoImportPluginConfig } from "./unpluginAutoImport";
@@ -41,6 +43,15 @@ export function configVitePlugins(
 
   // vite-plugin-mock
   viteEnv.VITE_USE_MOCK && vitePlugins.push(createMockPluginConfig(isProductionBuild));
+
+  // Add the vite-plugin-inspect
+  // https://github.com/antfu/vite-plugin-inspect
+  // Visit http://localhost:3333/__inspect/ to see the inspector
+  vitePlugins.push(createInspectPluginConfig());
+
+  // Add the vite-plugin-inspector
+  // https://github.com/webfansplz/vite-plugin-vue-inspector
+  vitePlugins.push(createInspectorPluginConfig());
 
   // The following plugins only work in the production environment
   // 生产环境才会添加的插件
