@@ -15,11 +15,13 @@
     "@vue/runtime-core": "3.2.47",
     "@vueuse/core": "^9.13.0",
     "@vueuse/shared": "^9.13.0",
+    "crypto-js": "^4.1.1",
     "lodash-es": "^4.17.21",
     "vue": "^3.2.47"
   },
   "devDependencies": {
     "@celeris/types": "workspace:*",
+    "@types/crypto-js": "^4.1.1",
     "@types/lodash-es": "^4.17.6"
   }
 }

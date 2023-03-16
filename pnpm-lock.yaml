@@ -228,10 +228,12 @@ importers:
     specifiers:
       '@celeris/types': workspace:*
       '@kirklin/logger': 0.0.2
+      '@types/crypto-js': ^4.1.1
       '@types/lodash-es': ^4.17.6
       '@vue/runtime-core': 3.2.47
       '@vueuse/core': ^9.13.0
       '@vueuse/shared': ^9.13.0
+      crypto-js: ^4.1.1
       lodash-es: ^4.17.21
       vue: ^3.2.47
     dependencies:
@@ -239,10 +241,12 @@ importers:
       '@vue/runtime-core': 3.2.47
       '@vueuse/core': 9.13.0_vue@3.2.47
       '@vueuse/shared': 9.13.0_vue@3.2.47
+      crypto-js: 4.1.1
       lodash-es: 4.17.21
       vue: 3.2.47
     devDependencies:
       '@celeris/types': link:../types
+      '@types/crypto-js': 4.1.1
       '@types/lodash-es': 4.17.6
 
   scripts:
@@ -1939,6 +1943,10 @@ packages:
     resolution: {integrity: sha512-KnRanxnpfpjUTqTCXslZSEdLfXExwgNxYPdiO2WGUj8+HDjFi8R3k5RVKPeSCzLjCcshCAtVO2QBbVuAV4kTnw==}
     dev: true
 
+  /@types/crypto-js/4.1.1:
+    resolution: {integrity: sha512-BG7fQKZ689HIoc5h+6D2Dgq1fABRa0RbBWKBd9SP/MVRVXROflpm5fhwyATX5duFmbStzyzyycPB8qUYKDH3NA==}
+    dev: true
+
   /@types/estree/0.0.39:
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: true
@@ -3246,6 +3254,10 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+
+  /crypto-js/4.1.1:
+    resolution: {integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==}
+    dev: false
 
   /css-render/0.15.12:
     resolution: {integrity: sha512-eWzS66patiGkTTik+ipO9qNGZ+uNuGyTmnz6/+EJIiFg8+3yZRpnMwgFo8YdXhQRsiePzehnusrxVvugNjXzbw==}
