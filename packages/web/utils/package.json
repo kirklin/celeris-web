@@ -22,6 +22,6 @@
   "devDependencies": {
     "@celeris/types": "workspace:*",
     "@types/crypto-js": "^4.1.1",
-    "@types/lodash-es": "^4.17.6"
+    "@types/lodash-es": "^4.17.7"
   }
 }

@@ -18,7 +18,7 @@
     "@iconify-json/mdi": "^1.1.50",
     "@iconify-json/tabler": "^1.1.67",
     "css-render": "^0.15.12",
-    "unocss": "^0.50.4",
-    "vite": "^4.1.4"
+    "unocss": "^0.50.6",
+    "vite": "^4.2.0"
   }
 }

@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@types/prompts": "^2.4.3",
-    "execa": "^7.1.0",
+    "execa": "^7.1.1",
     "prompts": "^2.4.2"
   }
 }
