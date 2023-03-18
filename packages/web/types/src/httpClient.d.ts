@@ -12,7 +12,7 @@ export interface RequestOptions {
   // Whether to join URL
   shouldJoinPrefix?: boolean;
   // Interface address (use the default apiUrl if this is not specified)
-  apiUrl?: string| (() => string);
+  apiUrl?: string | (() => string);
   // Request path to prefix to the URL
   urlPrefix?: string;
   // Type of error message prompt

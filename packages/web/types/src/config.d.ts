@@ -9,26 +9,26 @@ export interface ProjectConfig {
 
 export interface GlobConfig {
   // Site title
-  APP_TITLE: string
+  APP_TITLE: string;
   // Service interface url
-  API_URL: string
+  API_URL: string;
   // Project abbreviation
-  APP_SHORT_NAME: string
+  APP_SHORT_NAME: string;
 }
 
-export interface GlobEnvConfig extends ImportMetaEnv{
-  VITE_USER_NODE_ENV: string
+export interface GlobEnvConfig extends ImportMetaEnv {
+  VITE_USER_NODE_ENV: string;
   // Site title
-  VITE_GLOB_APP_TITLE: string
+  VITE_GLOB_APP_TITLE: string;
   // Service interface url
-  VITE_GLOB_API_URL: string
+  VITE_GLOB_API_URL: string;
   // Project abbreviation
-  VITE_GLOB_APP_SHORT_NAME: string
+  VITE_GLOB_APP_SHORT_NAME: string;
 }
 
 // App Environment Variables
 // 应用程序环境变量
-export interface ViteEnvVariables extends GlobEnvConfig{
+export interface ViteEnvVariables extends GlobEnvConfig {
 
   // Node environment type
   // Node环境类型
