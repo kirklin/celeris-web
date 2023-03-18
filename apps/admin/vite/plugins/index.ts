@@ -1,7 +1,7 @@
+import type { ViteEnvVariables } from "@celeris/types";
 import type { PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
 
-import type { ViteEnvVariables } from "../utils";
 import { createInspectPluginConfig } from "./inspect";
 import { createInspectorPluginConfig } from "./inspector";
 import { createMockPluginConfig } from "./mock";
@@ -18,7 +18,7 @@ import { createVueComponentsPluginConfig } from "./unpluginVueComponets";
  */
 export function configVitePlugins(
   rootDir: string,
-  viteEnv: ViteEnvVariables,
+  viteEnv: Partial<ViteEnvVariables>,
   isProductionBuild: boolean,
 ): Array<PluginOption | PluginOption[]> {
   const vitePlugins: Array<PluginOption | PluginOption[]> = [];
