@@ -17,6 +17,7 @@
     "src",
     "mock",
     "vite.config.ts",
-    "@celeris/types"
+    "@celeris/types",
+    "types"
   ]
 }
