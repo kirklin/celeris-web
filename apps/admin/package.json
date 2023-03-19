@@ -40,8 +40,8 @@
   "devDependencies": {
     "@celeris/ca-components": "workspace:*",
     "@celeris/components": "workspace:*",
-    "@celeris/vite": "workspace:*",
     "@celeris/types": "workspace:*",
+    "@celeris/vite": "workspace:*",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vue/compiler-dom": "^3.2.47",
     "@vue/test-utils": "^2.3.1",
