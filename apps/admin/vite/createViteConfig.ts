@@ -1,17 +1,18 @@
 import { resolve } from "node:path";
 import type { UserConfig } from "vite";
 import { loadEnv } from "vite";
+import { readPackageJSON } from "pkg-types";
 import { configVitePlugins } from "./plugins";
 import { configureProxy, updateEnvVariables } from "./utils";
 
-export function createViteConfig(
+export async function createViteConfig(
   command: "build" | "serve",
   mode: string,
   cwd: string,
-): UserConfig {
+): Promise<UserConfig> {
   const root = cwd;
   const env: Recordable<string> = loadEnv(mode, root);
-
+  const { dependencies, devDependencies, name, version } = await readPackageJSON(cwd);
   // The boolean type read by loadEnv is a string. This function can be converted to boolean type
   const viteEnv = updateEnvVariables(env);
   const {
@@ -34,6 +35,10 @@ export function createViteConfig(
     },
     define: {
       __VITE_USE_MOCK__: VITE_USE_MOCK,
+      __APP_INFO__: JSON.stringify({
+        pkg: { dependencies, devDependencies, name, version },
+        lastBuildTime: new Date(),
+      }),
     },
     server: {
       // Listening on all local IPs
