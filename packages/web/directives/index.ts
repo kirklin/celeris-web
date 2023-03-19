@@ -5,10 +5,8 @@ export const AllDirectives = {
   copy,
 };
 
-export default {
-  install(app: App) {
-    Object.keys(AllDirectives).forEach((key) => {
-      app.directive(key, AllDirectives[key]);
-    });
-  },
-};
+export function setupDirectives(app: App) {
+  Object.keys(AllDirectives).forEach((key) => {
+    app.directive(key, AllDirectives[key]);
+  });
+}
