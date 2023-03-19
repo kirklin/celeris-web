@@ -17,6 +17,12 @@ export interface GlobConfig {
 }
 
 export interface GlobEnvConfig extends ImportMetaEnv {
+  BASE_URL: string;
+  MODE: string;
+  DEV: boolean;
+  PROD: boolean;
+  SSR: boolean;
+
   VITE_USER_NODE_ENV: string;
   // Site title
   VITE_GLOB_APP_TITLE: string;
