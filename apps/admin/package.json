@@ -17,10 +17,11 @@
   "main": "src/main.ts",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "pnpm cross-env NODE_ENV=production vite build",
     "clean": "pnpm rimraf node_modules && pnpm rimraf dist",
     "typecheck": "vue-tsc --noEmit --skipLibCheck",
-    "preview": "vite preview"
+    "preview": "npm run build && vite preview",
+    "preview:dist": "vite preview"
   },
   "dependencies": {
     "@celeris/constants": "workspace:*",
