@@ -20,7 +20,7 @@ export function toggleCssClass(enableClass: boolean, className: string, element:
  * @param value - The value to set the CSS variable to. 要设置 CSS 变量的值
  * @param element - The HTML element on which to set the CSS variable. 要设置 CSS 变量的 HTML 元素。
  */
-export function setCssVariable(property: string, value: any, element: HTMLElement = document.documentElement) {
+export function setCssVariable(property: string, value: string | null, element: HTMLElement = document.documentElement) {
   element.style.setProperty(property, value); // Set the specified property with the specified value.
 }
 
