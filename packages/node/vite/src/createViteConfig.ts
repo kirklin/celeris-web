@@ -1,4 +1,5 @@
 import { resolve } from "node:path";
+import { formatToDateTime } from "@celeris/utils";
 import type { UserConfig } from "vite";
 import { loadEnv } from "vite";
 import { readPackageJSON } from "pkg-types";
@@ -37,7 +38,7 @@ export async function createViteConfig(
       __VITE_USE_MOCK__: VITE_USE_MOCK,
       __APP_INFO__: JSON.stringify({
         pkg: { dependencies, devDependencies, name, version },
-        lastBuildTime: new Date(),
+        lastBuildTime: formatToDateTime(new Date()),
       }),
     },
     server: {

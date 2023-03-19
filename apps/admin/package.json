@@ -29,7 +29,6 @@
     "@celeris/request": "workspace:*",
     "@celeris/styles": "workspace:*",
     "@celeris/utils": "workspace:*",
-    "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.33",
     "pinia-plugin-persistedstate": "^3.1.0",
@@ -41,6 +40,7 @@
   "devDependencies": {
     "@celeris/ca-components": "workspace:*",
     "@celeris/components": "workspace:*",
+    "@celeris/vite": "workspace:*",
     "@celeris/types": "workspace:*",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vue/compiler-dom": "^3.2.47",
@@ -49,12 +49,7 @@
     "pnpm": "^7.29.3",
     "typescript": "^5.0.2",
     "unocss": "^0.50.6",
-    "unplugin-auto-import": "^0.15.1",
-    "unplugin-vue-components": "^0.24.1",
     "vite": "^4.2.0",
-    "vite-plugin-inspect": "^0.7.17",
-    "vite-plugin-mock": "^2.9.6",
-    "vite-plugin-vue-inspector": "^3.4.0",
     "vitest": "^0.29.3",
     "vue-tsc": "^1.2.0"
   }

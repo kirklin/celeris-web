@@ -4,5 +4,28 @@
   "description": "vite for Celeris",
   "author": "Kirk Lin (https://github.com/kirklin)",
   "license": "MIT",
-  "homepage": "https://github.com/kirklin/celeris-admin"
+  "homepage": "https://github.com/kirklin/celeris-admin",
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "pnpm rimraf node_modules && pnpm rimraf dist",
+    "prepack": "pnpm unbuild --stub"
+  },
+  "dependencies": {
+    "@celeris/styles": "workspace:*",
+    "@celeris/utils": "workspace:*",
+    "mockjs": "^1.1.0",
+    "unplugin-auto-import": "^0.15.1",
+    "unplugin-vue-components": "^0.24.1",
+    "vite": "^4.2.0",
+    "vite-plugin-mock": "^2.9.6"
+  },
+  "devDependencies": {
+    "@celeris/types": "workspace:*",
+    "rollup": "^3.19.1",
+    "typescript": "^5.0.2",
+    "vite-plugin-inspect": "^0.7.17",
+    "vite-plugin-vue-inspector": "^3.4.0",
+    "vue": "^3.2.47"
+  }
 }
