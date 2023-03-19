@@ -6,7 +6,7 @@ import { version } from "../package.json";
  * @param env
  */
 export function getAppConfigFileName(env: GlobEnvConfig): string {
-  const shortName: string = env.VITE_GLOB_APP_SHORT_NAME || "__APP";
+  const shortName: string = env?.VITE_GLOB_APP_SHORT_NAME || "__APP";
   return `__PRODUCTION__${shortName}__CONF__`.toUpperCase().replace(/\s/g, "");
 }
 
@@ -29,8 +29,8 @@ export function getAppGlobalConfig(env: GlobEnvConfig): GlobConfig {
 
 function createStorageKeyPrefix(env: GlobEnvConfig): string {
   const AppConfig: GlobEnvConfig = getAppGlobalEnvConfig(env);
-  const mode = AppConfig.MODE || "";
-  return `${AppConfig.VITE_GLOB_APP_SHORT_NAME}_${mode}`.toUpperCase();
+  const mode = AppConfig?.MODE || "";
+  return `${AppConfig?.VITE_GLOB_APP_SHORT_NAME}_${mode}`.toUpperCase();
 }
 
 // Generate cache key according to version
@@ -40,6 +40,6 @@ export function createStorageName(env: GlobEnvConfig): string {
 
 function getAppGlobalEnvConfig(env: GlobEnvConfig): GlobEnvConfig {
   const envName = getAppConfigFileName(env);
-  const envValue = env.DEV ? env : window[envName];
+  const envValue = env?.DEV ? env : window[envName];
   return envValue as GlobEnvConfig;
 }
