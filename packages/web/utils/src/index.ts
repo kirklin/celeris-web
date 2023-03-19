@@ -6,3 +6,4 @@ export * from "./cipher";
 export * from "./domUtils";
 export * from "./dateUtil";
 export * from "./snowflake";
+export * from "./uuid";
