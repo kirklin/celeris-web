@@ -3,6 +3,7 @@ import type { DeepPartial } from "unocss";
 import type { MenuSetting, ProjectConfig } from "@celeris/types";
 import { PROJECT_CONFIG_KEY } from "@celeris/constants";
 import { deepMerge } from "@celeris/utils";
+import projectConfig from "~/config/projectConfig";
 
 interface AppState {
   // project config
@@ -15,12 +16,9 @@ export const useAppStore = defineStore({
     useLocalStorage(
       PROJECT_CONFIG_KEY,
       {
-        projectConfig: {
-          menuSetting: {
-            collapsed: false,
-          },
-        },
-      }).value,
+        projectConfig,
+      },
+    ).value,
   getters: {
     getProjectConfig(): ProjectConfig {
       return this.projectConfig || ({} as ProjectConfig);

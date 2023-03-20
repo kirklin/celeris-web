@@ -32,3 +32,19 @@ export enum RouterTransitionConstants {
    */
   FADE_SCALE = "fade-scale",
 }
+
+// 配置按钮显示位置的枚举类型
+// Enum type for configuration button display position
+export enum SettingButtonPositionConstants {
+  // 自动根据菜单类型调整
+  // Automatically adjust according to menu type
+  AUTO = "auto",
+
+  // 在顶部菜单栏显示
+  // Display in the top menu bar
+  HEADER = "header",
+
+  // 固定在右下角显示
+  // Fixed display in the lower right corner
+  FIXED = "fixed",
+}
