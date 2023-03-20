@@ -1,5 +1,5 @@
 import type { MenuSetting } from "@celeris/types";
-import { useAppStore } from "~/store/modules/app";
+import { useAppStore } from "~/store/modules/appConfig";
 
 export function useMenuSetting() {
   const appStore = useAppStore();

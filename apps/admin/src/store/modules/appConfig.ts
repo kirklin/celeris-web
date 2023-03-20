@@ -1,7 +1,6 @@
 import { defineStore } from "pinia";
 import type { DeepPartial } from "unocss";
 import type { MenuSetting, ProjectConfig, TransitionSetting } from "@celeris/types";
-import { PROJECT_CONFIG_KEY } from "@celeris/constants";
 import { deepMerge } from "@celeris/utils";
 import projectConfig from "~/config/projectConfig";
 
@@ -11,14 +10,13 @@ interface AppState {
 }
 
 export const useAppStore = defineStore({
-  id: "app",
-  state: (): AppState =>
-    useLocalStorage(
-      PROJECT_CONFIG_KEY,
-      {
-        projectConfig,
-      },
-    ).value,
+  id: "appConfig",
+  persist: {
+    paths: ["projectConfig"],
+  },
+  state: (): AppState => ({
+    projectConfig,
+  }),
   getters: {
     getProjectConfig(): ProjectConfig {
       return this.projectConfig || ({} as ProjectConfig);
@@ -36,7 +34,9 @@ export const useAppStore = defineStore({
   actions: {
     setProjectConfig(config: DeepPartial<ProjectConfig>): void {
       this.projectConfig = deepMerge(this.projectConfig || {}, config);
-      useLocalStorage(PROJECT_CONFIG_KEY, this.projectConfig);
+    },
+    resetProjectConfig() {
+      this.setProjectConfig(projectConfig);
     },
   },
 });

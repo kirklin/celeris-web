@@ -1,6 +1,6 @@
 import type { TransitionSetting } from "@celeris/types";
 import { computed } from "vue";
-import { useAppStore } from "~/store/modules/app";
+import { useAppStore } from "~/store/modules/appConfig";
 
 export function useTransitionSetting() {
   const appStore = useAppStore();

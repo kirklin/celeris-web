@@ -64,7 +64,7 @@ const setting: ProjectConfig = {
   // 菜单设置
   // The menu setting
   menuSetting: {
-    collapsed: true,
+    collapsed: false,
   },
 
   // 动画配置
