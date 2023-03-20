@@ -1,5 +1,7 @@
 import type { RouteLocationNormalized, Router } from "vue-router";
 import { AxiosCanceler } from "@celeris/request";
+import NProgress from "~/config/nprogress";
+import { useTransitionSetting } from "~/composables/setting/useTransitionSetting";
 import ProjectConfig from "~/config/projectConfig";
 import { notifyRouteChange } from "~/router/mitt/routeChange";
 
@@ -7,9 +9,10 @@ import { notifyRouteChange } from "~/router/mitt/routeChange";
 export function setupRouterGuard(router: Router) {
   createPageGuard(router);
   createHttpGuard(router);
+  createProgressGuard(router);
 }
 
-function createPageGuard(router: Router): void {
+export function createPageGuard(router: Router): void {
   const loadedPages = new Set<string>();
   function isPageAlreadyLoaded(to: RouteLocationNormalized): boolean {
     return loadedPages.has(to.path);
@@ -35,7 +38,7 @@ function createPageGuard(router: Router): void {
  * 创建一个HTTP守卫，当路由切换时取消所有未完成的请求。
  * @param router - 路由对象。
  */
-function createHttpGuard(router: Router) {
+export function createHttpGuard(router: Router) {
   // 定义一个闭包，用来缓存AxiosCanceler的实例
   let axiosCanceler: AxiosCanceler | null = null;
   // 定义一个函数，根据项目配置返回是否需要移除所有未完成的HTTP请求的标志，并创建或销毁AxiosCanceler实例
@@ -57,6 +60,31 @@ function createHttpGuard(router: Router) {
       axiosCanceler.removeAllPending();
     }
     // 返回true表示允许路由切换
+    return true;
+  });
+}
+
+/**
+ * 创建一个进度条守卫，当路由切换时显示或隐藏进度条
+ * @param router - 路由对象。
+ */
+export function createProgressGuard(router: Router) {
+  const { getShouldOpenNProgress } = useTransitionSetting();
+  router.beforeEach((to) => {
+    // 如果目标路由已经加载过，则直接放行
+    if (to.meta.loaded) {
+      return true;
+    }
+    if (unref(getShouldOpenNProgress) && !NProgress.isStarted()) {
+      NProgress.start();
+    }
+    return true;
+  });
+
+  router.afterEach(() => {
+    if (unref(getShouldOpenNProgress)) {
+      NProgress.done();
+    }
     return true;
   });
 }
