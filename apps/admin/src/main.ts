@@ -1,8 +1,9 @@
 import { createApp } from "vue";
 
 import { setupDirectives } from "@celeris/directives";
-import { setupRouter } from "./router";
+import { router, setupRouter } from "./router";
 import { setupStore } from "./store";
+import { setupRouterGuard } from "~/router/guard";
 
 import App from "~/App.vue";
 
@@ -17,6 +18,10 @@ setupStore(app);
 // Configure routing
 // 配置路由
 setupRouter(app);
+
+// Configure router guard
+// 配置路由守卫
+setupRouterGuard(router);
 
 // Register global directive
 // 注册全局指令
