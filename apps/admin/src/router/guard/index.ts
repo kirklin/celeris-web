@@ -1,4 +1,5 @@
 import type { RouteLocationNormalized, Router } from "vue-router";
+import { notifyRouteChange } from "~/router/mitt/routeChange";
 
 // Don't change the order of creation
 export function setupRouterGuard(router: Router) {
@@ -18,7 +19,7 @@ function createPageGuard(router: Router): void {
 
   router.beforeEach((to: RouteLocationNormalized) => {
     to.meta.loaded = isPageAlreadyLoaded(to);
-    // TODO notifyRouteChange(to);
+    notifyRouteChange(to);
     return true;
   });
 
