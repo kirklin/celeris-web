@@ -8,3 +8,4 @@ export * from "./dateUtil";
 export * from "./snowflake";
 export * from "./uuid";
 export * from "./router";
+export * from "./mitt";
