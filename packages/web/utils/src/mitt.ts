@@ -41,7 +41,7 @@ export interface Emitter<Events extends Record<EventType, unknown>> {
  * @name mitt
  * @returns {Mitt}
  */
-export default function mitt<Events extends Record<EventType, unknown>>(
+export function mitt<Events extends Record<EventType, unknown>>(
   all?: EventHandlerMap<Events>,
 ): Emitter<Events> {
   type GenericEventHandler =
