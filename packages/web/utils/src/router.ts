@@ -1,4 +1,4 @@
-import type { RouteRecordRaw } from "vue-router";
+import type { RouteLocationNormalized, RouteRecordNormalized, RouteRecordRaw } from "vue-router";
 
 /**
  * 从模块对象中加载路由配置并加入到路由集合中
@@ -20,4 +20,25 @@ export function loadRoutesFromModules(modules: Record<string, { default: any }>)
 
   // 返回路由配置数组 Return the route configuration array
   return routeModuleList;
+}
+
+/**
+ * Get the raw route
+ * 获取原始路由
+ * @param {RouteLocationNormalized} route - The route object
+ * @returns {RouteLocationNormalized} The raw route object 原始路由对象
+ */
+export function getRawRoute(route: RouteLocationNormalized): RouteLocationNormalized {
+  if (!route) {
+    return route;
+  }
+  // Destructure the route object, get the matched property and other properties
+  // 解构route对象，获取matched属性和其他属性
+  const { matched, ...otherProps } = route;
+  return {
+    ...otherProps,
+    // Map the matched array, keep only meta, name and path properties and convert to RouteRecordNormalized type
+    // 对matched数组进行映射，只保留meta、name、path三个属性，并转换为RouteRecordNormalized类型
+    matched: matched?.map(({ meta, name, path }) => ({ meta, name, path })) as RouteRecordNormalized[],
+  };
 }
