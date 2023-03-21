@@ -4,8 +4,9 @@
  *
  */
 import type { GlobEnvConfig } from "@celeris/types";
-import { createStorageName } from "@celeris/utils/src/config";
+import { createStorageName } from "@celeris/utils";
 import type { Pinia } from "pinia";
+import destr from "destr";
 import { createPersistedState } from "pinia-plugin-persistedstate";
 import type { PersistedStateFactoryOptions } from "pinia-plugin-persistedstate";
 
@@ -19,5 +20,9 @@ export function createPersistedStateOptions(
   return {
     storage: localStorage,
     key: id => `${keyPrefix}__${id}`,
+    serializer: {
+      deserialize: destr,
+      serialize: JSON.stringify,
+    },
   };
 }

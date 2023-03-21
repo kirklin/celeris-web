@@ -61,6 +61,7 @@ importers:
       '@vitejs/plugin-vue': ^4.1.0
       '@vue/compiler-dom': ^3.2.47
       '@vue/test-utils': ^2.3.1
+      destr: ^1.2.2
       jsdom: ^21.1.1
       nprogress: ^0.2.0
       pinia: ^2.0.33
@@ -82,6 +83,7 @@ importers:
       '@celeris/request': link:../../packages/web/request
       '@celeris/styles': link:../../packages/web/styles
       '@celeris/utils': link:../../packages/web/utils
+      destr: 1.2.2
       nprogress: 0.2.0
       pinia: 2.0.33_p4srtwdgezcoeovfcc2yxzvaue
       pinia-plugin-persistedstate: 3.1.0_pinia@2.0.33
