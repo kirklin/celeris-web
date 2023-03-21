@@ -9,3 +9,4 @@ export * from "./snowflake";
 export * from "./uuid";
 export * from "./router";
 export * from "./mitt";
+export * from "./config";
