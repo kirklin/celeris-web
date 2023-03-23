@@ -43,23 +43,3 @@ function getAppGlobalEnvConfig(env: GlobEnvConfig): GlobEnvConfig {
   const envValue = env?.DEV ? env : window[envName];
   return envValue as GlobEnvConfig;
 }
-
-/**
- * @description: Is it a development mode
- * @returns:
- * @example:
- */
-export function isDevMode(): boolean {
-  const { DEV } = import.meta.env;
-  return DEV;
-}
-
-/**
- * @description: Is it a production mode
- * @returns:
- * @example:
- */
-export function isProdMode(): boolean {
-  const { PROD } = import.meta.env;
-  return PROD;
-}
