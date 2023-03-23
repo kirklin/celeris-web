@@ -1,6 +1,7 @@
 import type { ComponentResolver } from "unplugin-vue-components";
 import Components from "unplugin-vue-components/vite";
-export function createVueComponentsPluginConfig() {
+import type { PluginOption } from "vite";
+export function createVueComponentsPluginConfig(): PluginOption {
   return Components({
     extensions: ["vue"],
     include: [/\.vue$/, /\.vue\?vue/],

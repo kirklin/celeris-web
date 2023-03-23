@@ -41,7 +41,8 @@ export function configVitePlugins(
   // 添加 UnoCSS 插件
   vitePlugins.push(createUnoCSSPluginConfig());
 
-  // vite-plugin-mock
+  // Add the mock plugin.
+  // 添加 mock 插件
   viteEnv.VITE_USE_MOCK && vitePlugins.push(createMockPluginConfig(isProductionBuild));
 
   // Add the vite-plugin-inspect
