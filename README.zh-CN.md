@@ -1,6 +1,6 @@
 <div align='center'>
-<h1>celeris-admin </h1>
-<img src='docs/README.assets/logo.webp' alt='celeris-admin - 一个免费的开源中后台模板' width='344'/>
+<h1>Celeris Admin</h1>
+<img src='docs/README.assets/logo.webp' alt='celeris-admin - free and open-source front-end development framework' width='344'/>
 </div>
 
 <div align='center'>
@@ -8,28 +8,30 @@
 </div>
 
 ## 简介
-Celeris-admin是一个免费的开源中后台模板，使用了最新的技术。它使用Vue3、Vite、TypeScript等尖端工具，为前端开发提供了全面的解决方案。此外，其monorepo方法可以轻松管理依赖关系和协作多个项目。
+Celeris Admin是一个免费开源的前端开发框架，采用最新的技术，包括Vue 3、Vite和TypeScript。其monorepo方法使得依赖管理和多个项目的协作变得轻松，为开发人员提供了构建现代Web应用程序的全面解决方案。
 
-这个模板不仅适用于生产使用，还可以作为开发人员熟悉最新技术栈的有价值学习资源。
+Celeris Admin的一个特色是它与OpenAI的ChatGPT API集成，提供了强大的自然语言处理功能。此集成使得开发人员可以轻松地将自然语言处理集成到其应用程序中，是需要此功能的项目的理想选择。
 
-开始使用Celeris-admin，简化您的前端开发流程。
+无论您是经验丰富的开发人员还是刚刚入门，Celeris Admin都提供了一个简化的前端开发流程，利用最新的工具和技术。
+
+立即开始使用Celeris Admin，并体验高度简化的前端开发流程，利用最新技术，包括尖端自然语言处理功能。
 
 
-## 特性
+## 特点
 
-- ⚡  [Vue 3](https://github.com/vuejs/vue-next), [Vite](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/) - 为速度而生
-- 💪 [Typescript](https://www.typescriptlang.org/) - 强大的类型检查
-- 📂 使用了 [monorepo](https://en.wikipedia.org/wiki/Monorepo) 方案
-- 🔥 使用 [新的 `<script setup>` 语法](https://github.com/vuejs/rfcs/pull/227)
-- 🤙🏻 默认开启 [响应性语法糖](https://vuejs.org/guide/extras/reactivity-transform.html)
-- 📦 [组件自动化加载](./src/components)
-- 📥 [API 自动加载](https://github.com/antfu/unplugin-auto-import) - 直接使用 Composition API 无需引入
-- 💡 [Vue Router v4](https://router.vuejs.org/zh/) - Vue 路由系统
-- 🎉 [NProgress](https://github.com/rstacruz/nprogress) - 页面加载进度反馈
-- 🍍 [使用 Pinia 的状态管理](https://pinia.esm.dev/)
-- 📜 [中文字体font-family常用预设]() 
-- 🌍 [I18n 国际化开箱即用](./src/locales)
-- ☁️ 零配置部署 Netlify
+- ⚡  [闪电般快速](https://github.com/kirklin/celeris-admin#readme)：使用Vue 3，Vite和pnpm构建 🔥
+- 💪 [强类型](https://www.typescriptlang.org/)：使用TypeScript 💻
+- 📂 [单库存储](https://en.wikipedia.org/wiki/Monorepo)：易于管理依赖项和协作多个项目 🤝
+- 🔥 [最新语法](https://github.com/vuejs/rfcs/pull/227)：使用新的< script setup >语法 🆕
+- 📦 [自动导入组件](https://github.com/kirklin/celeris-admin/blob/master/packages/node/vite/src/plugins/unpluginVueComponets.ts)：自动导入组件 🚚
+- 📥 [自动导入API](https://github.com/kirklin/celeris-admin/blob/master/packages/node/vite/src/plugins/unpluginAutoImport.ts)：使用unplugin-auto-import直接导入Composition API和其他API 📨
+- 💡 [官方路由器](https://router.vuejs.org/)：使用Vue Router v4 🛣️
+- 🎉 [加载反馈](https://github.com/rstacruz/nprogress)：使用NProgress提供页面加载进度反馈 🔄
+- 🍍 [状态管理](https://pinia.esm.dev/)：使用Pinia进行状态管理 🗃️
+- 📜 [中文字体预设](https://github.com/kirklin/unocss-preset-chinese)：包含中文字体预设 🇨🇳
+- 🌍 [国际化就绪](https://github.com/kirklin/celeris-admin/tree/master/packages/web/locale)：具备使用本地化的国际化功能 🌎
+- ☁️ [Netlify准备就绪](https://www.netlify.com/)：在Netlify上零配置部署 ☁️
+- 🤖 集成[OpenAI的ChatGPT API](https://openai.com/)：用于自然语言处理 🤖
 
 
 ### 编码风格
@@ -129,12 +131,12 @@ pnpm run build
 首先，在项目的根目录下打开终端，构建celeris-admin镜像。
 
 ```bash
-docker buildx build . -t CelerisAdmin:latest
+docker buildx build . -t celeris-admin:latest
 ```
 
 运行镜像，用 "-p" 指定端口映射。
 
 ```bash
-docker run --rm -it -p 8080:80 CelerisAdmin:latest
+docker run --rm -it -p 8080:80 celeris-admin:latest
 ```
 
