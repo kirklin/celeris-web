@@ -40,8 +40,9 @@ Get started with Celeris-admin today and experience a highly streamlined front-e
 
 ### Recommended IDE Setup
 
-- [VSCode](https://code.visualstudio.com/)
-- [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+- 🌪️ [WebStorm](https://www.jetbrains.com/webstorm/)
+- 💻 [VSCode](https://code.visualstudio.com/)
+- 💡 [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
 
 ### [packages](packages) dependency relationship

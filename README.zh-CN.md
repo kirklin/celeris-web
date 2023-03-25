@@ -40,9 +40,9 @@ Celeris Admin的一个特色是它与OpenAI的ChatGPT API集成，提供了强�
 
 ### 推荐的 IDE 设置
 
-- [VSCode](https://code.visualstudio.com/)
-- [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
-
+- 🌪️ [WebStorm](https://www.jetbrains.com/webstorm/)
+- 💻 [VSCode](https://code.visualstudio.com/)
+- 💡 [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
 ### [packages](packages)的依赖关系
 
