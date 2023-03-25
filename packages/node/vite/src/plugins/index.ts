@@ -1,8 +1,8 @@
 import type { ViteEnvVariables } from "@celeris/types";
 import type { PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
-import { createGenerateConfigPlugin } from "./generateConfig";
 
+import { createConfigPluginConfig } from "./generateConfig";
 import { createInspectPluginConfig } from "./inspect";
 import { createInspectorPluginConfig } from "./inspector";
 import { createMockPluginConfig } from "./mock";
@@ -44,7 +44,7 @@ export function configVitePlugins(
 
   // Add the GenerateConfig plugin.
   // 添加 GenerateConfig 插件
-  vitePlugins.push(createGenerateConfigPlugin());
+  vitePlugins.push(createConfigPluginConfig());
 
   // Add the mock plugin.
   // 添加 mock 插件
