@@ -6,6 +6,7 @@ import { createConfigPluginConfig } from "./generateConfig";
 import { createInspectPluginConfig } from "./inspect";
 import { createInspectorPluginConfig } from "./inspector";
 import { createMockPluginConfig } from "./mock";
+import { createPWAPluginConfig } from "./pwa";
 import { createUnoCSSPluginConfig } from "./unocss";
 import { createAutoImportPluginConfig } from "./unpluginAutoImport";
 import { createVueComponentsPluginConfig } from "./unpluginVueComponets";
@@ -43,7 +44,7 @@ export function configVitePlugins(
   vitePlugins.push(createUnoCSSPluginConfig());
 
   // Add the GenerateConfig plugin.
-  // 添加 GenerateConfig 插件
+  // 添加 生成配置 插件
   vitePlugins.push(createConfigPluginConfig());
 
   // Add the mock plugin.
@@ -62,7 +63,9 @@ export function configVitePlugins(
   // The following plugins only work in the production environment
   // 生产环境才会添加的插件
   if (isProductionBuild) {
-    //
+    // Add the vite-plugin-pwa
+    // 添加 PWA 插件
+    vitePlugins.push(createPWAPluginConfig(viteEnv));
   }
 
   return vitePlugins;
