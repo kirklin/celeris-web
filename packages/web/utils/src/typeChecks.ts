@@ -1,5 +1,6 @@
 export {
   isArguments,
+  isArray,
   isArrayBuffer,
   isArrayLike,
   isArrayLikeObject,
@@ -7,6 +8,7 @@ export {
   isDate,
   isElement,
   isEmpty,
+  isEqual,
   isEqualWith,
   isError,
   isLength,
