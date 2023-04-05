@@ -1,6 +1,5 @@
-import { isObject } from "@vueuse/core";
-import { cloneDeep, mergeWith, unionWith } from "lodash-es";
-import { isArray, isEqual } from "./typeChecks";
+import { cloneDeep, intersectionWith, mergeWith, unionWith } from "lodash-es";
+import { isArray, isEqual, isObject } from "./typeChecks";
 
 /**
  * Recursively merge two objects.
@@ -8,21 +7,41 @@ import { isArray, isEqual } from "./typeChecks";
  *
  * @param source The source object to merge from. 要合并的源对象。
  * @param target The target object to merge into. 目标对象，合并后结果存放于此。
- * @param shouldConcat A flag to indicate whether to concatenate arrays instead of union them. Default is false.
- *        一个标志用于指示是否在合并数组时使用concat()方法而不是并集操作。默认为false。
+ * @param mergeArrays How to merge arrays. Default is "replace".
+ *        如何合并数组。默认为replace。
+ *        - "union": Union the arrays. 对数组执行并集操作。
+ *        - "intersection": Intersect the arrays. 对数组执行交集操作。
+ *        - "concat": Concatenate the arrays. 连接数组。
+ *        - "replace": Replace the source array with the target array. 用目标数组替换源数组。
  * @returns The merged object. 合并后的对象。
  */
-export function deepMerge<T extends object | null | undefined, U extends object | null | undefined>(source: T, target: U, shouldConcat = false): T & U {
+export function deepMerge<T extends object | null | undefined, U extends object | null | undefined>(
+  source: T,
+  target: U,
+  mergeArrays: "union" | "intersection" | "concat" | "replace" = "replace",
+): T & U {
+  // Define a function for merging arrays.
+  const mergeArraysFn = (prevValue: any[], nextValue: any[]) => {
+    switch (mergeArrays) {
+      case "intersection":
+        return intersectionWith(prevValue, nextValue, isEqual);
+      case "concat":
+        return prevValue.concat(nextValue);
+      case "union":
+        return unionWith(prevValue, nextValue, isEqual);
+      case "replace":
+        return nextValue;
+      default:
+        return nextValue;
+    }
+  };
+
   return mergeWith(cloneDeep(source), target, (objValue, srcValue) => {
     if (isObject(objValue) && isObject(srcValue)) {
       return mergeWith(cloneDeep(objValue), srcValue, (prevValue, nextValue) => {
-        return isArray(prevValue)
-          ? (shouldConcat
-            // returns the concatenation result if isConcat is true, or the union with next value if shouldConcat is false.
-            // 若shouldConcat为true，则返回合并后的结果，否则返回与下一个值的并集。
-              ? prevValue.concat(nextValue)
-              : unionWith(prevValue, nextValue, isEqual))
-          : undefined;
+        // If both values are arrays, merge them using mergeArraysFn function.
+        // 如果两个值都是数组，用mergeArraysFn函数将它们合并。
+        return isArray(prevValue) ? mergeArraysFn(prevValue, nextValue) : undefined;
       });
     }
   });
