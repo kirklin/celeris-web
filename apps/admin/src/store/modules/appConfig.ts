@@ -8,9 +8,10 @@ interface AppState {
   // project config
   projectConfig: ProjectConfig;
 }
+const APP_STORE_ID = "appConfig";
 
 export const useAppStore = defineStore({
-  id: "appConfig",
+  id: APP_STORE_ID,
   persist: {
     paths: ["projectConfig"],
   },
