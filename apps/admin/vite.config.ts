@@ -1,3 +1,3 @@
-import { createApplicationViteConfig } from "@celeris/vite";
+import { createViteConfig } from "@celeris/vite";
 
-export default createApplicationViteConfig();
+export default createViteConfig();
