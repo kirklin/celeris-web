@@ -1,1 +1,1 @@
-export * from "./createViteConfig";
+export * from "./config";
