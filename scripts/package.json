@@ -11,7 +11,7 @@
     "build": "pnpm esno ./src/build.ts"
   },
   "devDependencies": {
-    "@types/prompts": "^2.4.3",
+    "@types/prompts": "^2.4.4",
     "execa": "^7.1.1",
     "prompts": "^2.4.2"
   }

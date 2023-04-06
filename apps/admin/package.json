@@ -1,7 +1,7 @@
 {
   "name": "@celeris/admin",
   "version": "0.0.1",
-  "packageManager": "pnpm@7.11.0",
+  "packageManager": "pnpm@8.1.1",
   "description": "Celeris Admin",
   "author": "Kirk Lin (https://github.com/kirklin)",
   "license": "MIT",
@@ -46,13 +46,13 @@
     "@celeris/vite": "workspace:*",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vue/compiler-dom": "^3.2.47",
-    "@vue/test-utils": "^2.3.1",
+    "@vue/test-utils": "^2.3.2",
     "jsdom": "^21.1.1",
-    "pnpm": "^7.29.3",
-    "typescript": "^5.0.2",
+    "pnpm": "^8.1.1",
+    "typescript": "^5.0.3",
     "unocss": "^0.50.6",
-    "vite": "^4.2.0",
-    "vitest": "^0.29.3",
+    "vite": "^4.2.1",
+    "vitest": "^0.29.8",
     "vue-tsc": "^1.2.0"
   }
 }
