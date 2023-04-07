@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { PageConstants } from "@celeris/constants";
 import { useRouter } from "vue-router";
-import logo from "./assets/logo.webp";
+import logo from "./assets/logo.png";
 defineProps({
   /**
    * Whether to show title
