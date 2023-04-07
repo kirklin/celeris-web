@@ -16,5 +16,10 @@ export function createMockPluginConfig(isProduction: boolean): PluginOption {
     mockPath: "mock",
     localEnabled: !isProduction,
     prodEnabled: isProduction,
+    injectCode: `
+      import { setupProdMockServer } from '../mock/_mock-server';
+
+      setupProdMockServer();
+      `,
   });
 }
