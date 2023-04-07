@@ -7,7 +7,7 @@
   "homepage": "https://github.com/kirklin/celeris-admin",
   "main": "./index.ts",
   "module": "./index.ts",
-  "types": "src",
+  "types": "./index.ts",
   "scripts": {
     "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
   },
