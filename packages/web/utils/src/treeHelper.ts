@@ -35,7 +35,7 @@ const getConfig = (config: Partial<TreeHelperConfig>): TreeHelperConfig => ({ ..
  * @param config Partial<TreeHelperConfig<T>> configuration options
  * @returns An array of type T[], where T extends TreeNode.
  */
-export function listToTree<T>(list: T[], config: Partial<TreeHelperConfig> = {}): T[] {
+export function flattenTreeToList<T>(list: T[], config: Partial<TreeHelperConfig> = {}): T[] {
   const { idKey, childrenKey, parentKey } = getConfig(config);
   const nodeMap = new Map<T[keyof T], any>();
   const tree: T[] = [];
@@ -57,4 +57,25 @@ export function listToTree<T>(list: T[], config: Partial<TreeHelperConfig> = {})
   }
 
   return tree;
+}
+
+/**
+ * Convert a tree structure to a flat list.
+ * 将树形结构转换为扁平列表。
+ * @param tree The tree structure to be converted to a flat list.
+ * @param config The configuration for TreeHelper.
+ * @returns An array of type T[] containing the flattened nodes, where T extends TreeNode.
+ */
+export function treeToFlatList<T>(tree: T[], config: Partial<TreeHelperConfig> = {}): T[] {
+  const { childrenKey } = getConfig(config);
+  const flattenedNodes: T[] = [...tree];
+  for (let i = 0; i < flattenedNodes.length; i++) {
+    const currentNode = flattenedNodes[i];
+    const childrenNodes = currentNode[childrenKey];
+    if (!childrenNodes) {
+      continue;
+    }
+    flattenedNodes.splice(i + 1, 0, ...childrenNodes);
+  }
+  return flattenedNodes;
 }
