@@ -68,14 +68,18 @@ export function flattenTreeToList<T>(list: T[], config: Partial<TreeHelperConfig
  */
 export function treeToFlatList<T>(tree: T[], config: Partial<TreeHelperConfig> = {}): T[] {
   const { childrenKey } = getConfig(config);
-  const flattenedNodes: T[] = [...tree];
-  for (let i = 0; i < flattenedNodes.length; i++) {
-    const currentNode = flattenedNodes[i];
-    const childrenNodes = currentNode[childrenKey];
-    if (!childrenNodes) {
-      continue;
+  const flattenedNodes: T[] = [];
+  function dfs(node: T) {
+    flattenedNodes.push(node);
+    const children = node[childrenKey];
+    if (children) {
+      for (const child of children) {
+        dfs(child);
+      }
     }
-    flattenedNodes.splice(i + 1, 0, ...childrenNodes);
+  }
+  for (const node of tree) {
+    dfs(node);
   }
   return flattenedNodes;
 }
