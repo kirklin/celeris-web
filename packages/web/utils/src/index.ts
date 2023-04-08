@@ -8,6 +8,7 @@ export * from "./mock";
 export * from "./router";
 export * from "./snowflake";
 export * from "./typeChecks";
+export * from "./treeHelper";
 export * from "./util";
 export * from "./uuid";
 export * from "./vue";
