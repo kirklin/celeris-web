@@ -14,7 +14,7 @@ interface TreeHelperConfig<T = any> {
 /**
  * 默认配置
  */
-const DEFAULT_CONFIG: TreeHelperConfig = {
+const DEFAULT_TREE_HELPER_CONFIG: TreeHelperConfig = {
   idKey: "id",
   childrenKey: "children",
   parentKey: "parentId",
@@ -26,7 +26,7 @@ const DEFAULT_CONFIG: TreeHelperConfig = {
  * @param config TreeHelperConfig configuration options 配置项
  * @returns TreeHelperConfig configuration
  */
-const getConfig = (config: Partial<TreeHelperConfig>): TreeHelperConfig => ({ ...DEFAULT_CONFIG, ...config });
+const getTreeHelperConfig = (config: Partial<TreeHelperConfig>): TreeHelperConfig => ({ ...DEFAULT_TREE_HELPER_CONFIG, ...config });
 
 /**
  * Convert a flat list to a tree structure.
@@ -35,8 +35,8 @@ const getConfig = (config: Partial<TreeHelperConfig>): TreeHelperConfig => ({ ..
  * @param config Partial<TreeHelperConfig<T>> configuration options
  * @returns An array of type T[], where T extends TreeNode.
  */
-export function flattenTreeToList<T>(list: T[], config: Partial<TreeHelperConfig> = {}): T[] {
-  const { idKey, childrenKey, parentKey } = getConfig(config);
+export function flattenToTree<T>(list: T[], config: Partial<TreeHelperConfig> = {}): T[] {
+  const { idKey, childrenKey, parentKey } = getTreeHelperConfig(config);
   const nodeMap = new Map<T[keyof T], any>();
   const tree: T[] = [];
 
@@ -66,8 +66,8 @@ export function flattenTreeToList<T>(list: T[], config: Partial<TreeHelperConfig
  * @param config The configuration for TreeHelper.
  * @returns An array of type T[] containing the flattened nodes, where T extends TreeNode.
  */
-export function treeToFlatList<T>(tree: T[], config: Partial<TreeHelperConfig> = {}): T[] {
-  const { childrenKey } = getConfig(config);
+export function flattenTree<T>(tree: T[], config: Partial<TreeHelperConfig> = {}): T[] {
+  const { childrenKey } = getTreeHelperConfig(config);
   const flattenedNodes: T[] = [];
   function dfs(node: T) {
     flattenedNodes.push(node);
