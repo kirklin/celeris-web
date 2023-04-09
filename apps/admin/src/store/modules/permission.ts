@@ -1,9 +1,9 @@
 import { defineStore } from "pinia";
 
-const APP_PERMISSION_ID = "APP_PERMISSION";
+const APP_PERMISSION_STORE_ID = "APP_PERMISSION";
 
 export const usePermissionStore = defineStore({
-  id: APP_PERMISSION_ID,
+  id: APP_PERMISSION_STORE_ID,
   state: () => ({
   }),
 });
