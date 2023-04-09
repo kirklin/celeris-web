@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { findTreeNode, findTreeNodes, flattenToTree, flattenTree } from "../treeHelper";
+import {
+  filterTree,
+  findTreeNode,
+  findTreeNodes,
+  flattenToTree,
+  flattenTree,
+  traverseTree,
+} from "../treeHelper";
 
 describe("Tree Helper", () => {
   interface TreeNode {
@@ -201,6 +208,51 @@ describe("Tree Helper", () => {
       const actualNodes = findTreeNodes(sampleTree, node => node.id === 999);
 
       expect(actualNodes).toEqual([]);
+    });
+  });
+
+  describe("filterTree", () => {
+    it("filters the tree to contain only nodes that satisfy the predicate", () => {
+      const expectedTree = [
+        {
+          id: 1,
+          parentId: null,
+          children: [
+            {
+              id: 5,
+              parentId: 1,
+              children: [
+                {
+                  id: 7,
+                  parentId: 5,
+                },
+              ],
+            },
+          ],
+        },
+      ];
+      const filteredTree = filterTree(sampleTree, node => node.id === 1 || node.id === 5 || node.id === 7);
+      expect(filteredTree).toEqual(expectedTree);
+      expect([{
+        id: 1,
+        parentId: null,
+        children: [],
+      }]).toEqual(filterTree(sampleTree, node => node.id === 1));
+    });
+
+    it("returns an empty array if no node satisfies the predicate", () => {
+      const filteredTree = filterTree(sampleTree, node => node.id === 100);
+      expect(filteredTree).toEqual([]);
+    });
+  });
+
+  describe("traverseTree", () => {
+    it("executes the callback function for each node in the tree", () => {
+      const nodes: unknown[] = [];
+      const callback = node => nodes.push(node.id);
+      traverseTree(sampleTree, callback);
+      const expectedNodes = [1, 2, 3, 4, 5, 6, 7];
+      expect(nodes).toEqual(expectedNodes);
     });
   });
 });

@@ -147,3 +147,56 @@ export function findTreeNodes<T>(
 
   return result;
 }
+
+/**
+ * Filter the tree and return a new tree that only contains nodes and their ancestors that satisfy the predicate.
+ * 过滤树形结构，只保留满足条件的节点及其祖先节点，并返回一个新的树形结构。
+ * @param treeNodes The root nodes of the tree. 树形结构的根节点列表。
+ * @param predicate The predicate function to test each node. 每个节点都会执行该回调函数。
+ * @param config The configuration for TreeHelper. 树形结构的配置项。
+ * @returns A new tree that only contains nodes and their ancestors that satisfy the predicate.
+ */
+export function filterTree<T>(
+  treeNodes: T[],
+  predicate: (node: T) => boolean,
+  config: Partial<TreeHelperConfig> = {},
+): T[] {
+  const { childrenKey } = getTreeHelperConfig(config);
+  function filterSubtree(nodes: T[]): T[] {
+    return nodes
+      .map(node => ({ ...node }))
+      .filter((node) => {
+        node[childrenKey] = node[childrenKey] && filterSubtree(node[childrenKey]);
+        return predicate(node) || (node[childrenKey] && node[childrenKey].length);
+      });
+  }
+
+  return filterSubtree(treeNodes);
+}
+
+/**
+ * Traverse all nodes in the tree and execute the callback function for each node.
+ * 遍历树形结构中的所有节点，并对每个节点执行回调函数。
+ * @param treeData The root nodes of the tree. 树形结构的根节点列表。
+ * @param callback The callback function to execute for each node. 每个节点都会执行该回调函数。
+ * @param config The configuration for TreeHelper. 树形结构的配置项。
+ */
+export function traverseTree<T>(
+  treeData: T[],
+  callback: (node: T) => void,
+  config: Partial<TreeHelperConfig> = {},
+) {
+  const { childrenKey } = getTreeHelperConfig(config);
+
+  function dfs(node: T) {
+    callback(node);
+    const children = node[childrenKey] || [];
+    for (const child of children) {
+      dfs(child);
+    }
+  }
+
+  for (const node of treeData) {
+    dfs(node);
+  }
+}
