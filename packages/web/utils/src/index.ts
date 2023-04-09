@@ -5,6 +5,7 @@ export * from "./dateUtil";
 export * from "./domUtils";
 export * from "./mitt";
 export * from "./mock";
+export * from "./moduleHelper";
 export * from "./router";
 export * from "./snowflake";
 export * from "./typeChecks";
