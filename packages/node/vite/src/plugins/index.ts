@@ -53,7 +53,7 @@ export function configVitePlugins(
 
   // Add the vite-plugin-inspect
   // https://github.com/antfu/vite-plugin-inspect
-  // Visit http://localhost:3333/__inspect/ to see the inspector
+  // Visit http://localhost:8888/__inspect/ to see the inspector
   vitePlugins.push(createInspectPluginConfig());
 
   // Add the vite-plugin-inspector
