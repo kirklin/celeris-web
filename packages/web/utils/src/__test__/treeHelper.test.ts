@@ -6,6 +6,7 @@ import {
   flattenToTree,
   flattenTree,
   traverseTreeIterative,
+  traverseTreeIterativeWithParent,
   traverseTreeRecursive,
 } from "../treeHelper";
 
@@ -265,6 +266,26 @@ describe("Tree Helper", () => {
       };
       traverseTreeIterative(sampleTree, callback);
       const expectedNodes = [1, 2, 3, 4, 5, 6, 7];
+      expect(nodes).toEqual(expectedNodes);
+    });
+  });
+
+  describe("traverseTreeIterativeWithParent", () => {
+    it("should execute callback for each node with parent node", () => {
+      const nodes: unknown[] = [];
+      const callback = (node, parent) => {
+        nodes.push({ id: node.id, parentId: parent?.id });
+      };
+      traverseTreeIterativeWithParent(sampleTree, callback);
+      const expectedNodes = [
+        { id: 1, parentId: undefined },
+        { id: 5, parentId: 1 },
+        { id: 7, parentId: 5 },
+        { id: 6, parentId: 5 },
+        { id: 2, parentId: 1 },
+        { id: 4, parentId: 2 },
+        { id: 3, parentId: 2 },
+      ];
       expect(nodes).toEqual(expectedNodes);
     });
   });

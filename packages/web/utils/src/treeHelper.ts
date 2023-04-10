@@ -227,3 +227,34 @@ export function traverseTreeIterative<T>(
     }
   }
 }
+
+/**
+ * Traverse all nodes in the tree iteratively and execute the callback function for each node, with both the node and its parent passed to the callback.
+ * 迭代遍历树形结构中的所有节点，并对每个节点执行回调函数。同时，每个节点及其父节点都会被传递给回调函数。
+ * @param treeData The root nodes of the tree. 树形结构的根节点列表。
+ * @param callback The callback function to execute for each node. 每个节点都会执行该回调函数，第一个参数为节点本身，第二个参数为其父节点（如果存在）。
+ * @param config The configuration for TreeHelper. 树形结构的配置项。
+ */
+export function traverseTreeIterativeWithParent<T>(
+  treeData: T[],
+  callback: (node: T, parent?: T) => void,
+  config: Partial<TreeHelperConfig> = {},
+): void {
+  const { childrenKey } = getTreeHelperConfig(config);
+
+  const stack: { node: T; parent?: T }[] = [];
+  for (const node of treeData) {
+    stack.push({ node, parent: undefined });
+  }
+
+  while (stack.length > 0) {
+    const { node, parent } = stack.pop() || {};
+    if (node) {
+      const children = node[childrenKey] || [];
+      callback(node, parent);
+      for (const child of children) {
+        stack.push({ node: child, parent: node });
+      }
+    }
+  }
+}
