@@ -175,13 +175,13 @@ export function filterTree<T>(
 }
 
 /**
- * Traverse all nodes in the tree and execute the callback function for each node.
- * 遍历树形结构中的所有节点，并对每个节点执行回调函数。
+ * Recursively traverse all nodes in the tree and execute the callback function for each node.
+ * 递归遍历树形结构中的所有节点，并对每个节点执行回调函数。
  * @param treeData The root nodes of the tree. 树形结构的根节点列表。
  * @param callback The callback function to execute for each node. 每个节点都会执行该回调函数。
  * @param config The configuration for TreeHelper. 树形结构的配置项。
  */
-export function traverseTree<T>(
+export function traverseTreeRecursive<T>(
   treeData: T[],
   callback: (node: T) => void,
   config: Partial<TreeHelperConfig> = {},
@@ -198,5 +198,32 @@ export function traverseTree<T>(
 
   for (const node of treeData) {
     dfs(node);
+  }
+}
+
+/**
+ * Iterative traverse all nodes in the tree and execute the callback function for each node.
+ * 迭代遍历树形结构中的所有节点，并对每个节点执行回调函数。
+ * @param treeData The root nodes of the tree. 树形结构的根节点列表。
+ * @param callback The callback function to execute for each node. 每个节点都会执行该回调函数。
+ * @param config The configuration for TreeHelper. 树形结构的配置项。
+ */
+export function traverseTreeIterative<T>(
+  treeData: T[],
+  callback: (node: T) => void,
+  config: Partial<TreeHelperConfig> = {},
+): void {
+  const { childrenKey } = getTreeHelperConfig(config);
+  const stack: T[] = [...treeData];
+
+  while (stack.length) {
+    const node = stack.pop();
+    if (node) {
+      callback(node);
+      const children = node[childrenKey] || [];
+      for (let i = children.length - 1; i >= 0; i--) {
+        stack.push(children[i]);
+      }
+    }
   }
 }

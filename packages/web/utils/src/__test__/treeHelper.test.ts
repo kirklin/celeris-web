@@ -5,7 +5,8 @@ import {
   findTreeNodes,
   flattenToTree,
   flattenTree,
-  traverseTree,
+  traverseTreeIterative,
+  traverseTreeRecursive,
 } from "../treeHelper";
 
 describe("Tree Helper", () => {
@@ -246,11 +247,23 @@ describe("Tree Helper", () => {
     });
   });
 
-  describe("traverseTree", () => {
+  describe("traverseTreeRecursive", () => {
     it("executes the callback function for each node in the tree", () => {
       const nodes: unknown[] = [];
       const callback = node => nodes.push(node.id);
-      traverseTree(sampleTree, callback);
+      traverseTreeRecursive(sampleTree, callback);
+      const expectedNodes = [1, 2, 3, 4, 5, 6, 7];
+      expect(nodes).toEqual(expectedNodes);
+    });
+  });
+
+  describe("traverseTreeIterative", () => {
+    it("executes the callback function for each node in the tree", () => {
+      const nodes: unknown[] = [];
+      const callback = (node) => {
+        nodes.push(node.id);
+      };
+      traverseTreeIterative(sampleTree, callback);
       const expectedNodes = [1, 2, 3, 4, 5, 6, 7];
       expect(nodes).toEqual(expectedNodes);
     });
