@@ -1,6 +1,7 @@
+import type { RouteRecordRaw } from "vue-router";
 import { IFRAME, LAYOUT } from "~/router/constant";
 
-const iframe = {
+const iframe: RouteRecordRaw = {
   path: "/frame",
   name: "Frame",
   component: LAYOUT,

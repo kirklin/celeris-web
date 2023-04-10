@@ -5,9 +5,10 @@ export {};
 // Declare the module "vue-router" to add custom properties
 // 声明模块 "vue-router" 以添加自定义属性
 declare module "vue-router" {
+
   // Route meta information.
   // 路由的元信息
-  interface RouteMeta {
+  export interface RouteMeta {
     // Order number for sorting the menu.
     // 用于对菜单进行排序的顺序号
     orderNumber?: number;

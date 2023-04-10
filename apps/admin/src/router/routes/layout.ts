@@ -8,7 +8,7 @@ const routeModuleList: RouteRecordRaw[] = loadRoutesFromModules(modules);
 
 export const layoutRoutes = [...routeModuleList];
 
-const layout = {
+const layout: RouteRecordRaw = {
   path: "/layout",
   name: "Layout",
   component: LAYOUT,
