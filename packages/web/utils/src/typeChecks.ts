@@ -42,9 +42,9 @@ export {
 // 定义一个常量 isServer，如果代码在服务器上运行，则为 true；否则为 false。
 export const isServer = typeof window === "undefined";
 
-// Define a function isUrl that takes a string argument path and returns true if it is a valid URL.
-// 定义一个函数 isUrl，它接受一个字符串参数 path，如果它是有效的 URL，则返回 true。
-export function isUrl(path: string): boolean {
+// Define a function isHttpUrl that takes a string argument path and returns true if it is a valid Http URL.
+// 定义一个函数 isHttpUrl，它接受一个字符串参数 path，如果它是有效的Http URL，则返回 true。
+export function isHttpUrl(path: string): boolean {
   const regex = /^https?:\/\/([\w-]+\.)+[\w-]+(\/[\w- ./?%&=]*)?$/i;
   return regex.test(path);
 }
