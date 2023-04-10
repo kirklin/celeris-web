@@ -1,3 +1,4 @@
+import { pathToRegexp } from "path-to-regexp";
 import type { RouteLocationNormalized, RouteRecordNormalized, RouteRecordRaw } from "vue-router";
 import { loadDataFromModules } from "./moduleHelper";
 
@@ -31,4 +32,14 @@ export function getRawRoute(route: RouteLocationNormalized): RouteLocationNormal
     // 对matched数组进行映射，只保留meta、name、path三个属性，并转换为RouteRecordNormalized类型
     matched: matched?.map(({ meta, name, path }) => ({ meta, name, path })) as RouteRecordNormalized[],
   };
+}
+
+/**
+ * Create a regular expression for matching a route path
+ * 创建用于匹配路径的正则表达式
+ * @param path The route path expression to match 匹配路径的表达式
+ * @returns A regular expression used for matching the route path 返回用于匹配路径的正则表达式
+ */
+export function createPathMatcher(path: string): RegExp {
+  return pathToRegexp(path);
 }

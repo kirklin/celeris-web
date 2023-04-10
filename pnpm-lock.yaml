@@ -368,6 +368,9 @@ importers:
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
+      path-to-regexp:
+        specifier: ^6.2.1
+        version: 6.2.1
       vue:
         specifier: ^3.2.47
         version: 3.2.47

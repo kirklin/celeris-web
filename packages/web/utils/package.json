@@ -20,6 +20,7 @@
     "crypto-js": "^4.1.1",
     "dayjs": "^1.11.7",
     "lodash-es": "^4.17.21",
+    "path-to-regexp": "^6.2.1",
     "vue": "^3.2.47"
   },
   "devDependencies": {
