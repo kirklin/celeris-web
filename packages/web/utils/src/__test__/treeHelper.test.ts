@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
-  filterTree,
+  filterTree, findAllNodePaths,
+  findFirstNodePath,
   findTreeNode,
   findTreeNodes,
   flattenToTree,
@@ -210,6 +211,92 @@ describe("Tree Helper", () => {
       const actualNodes = findTreeNodes(sampleTree, node => node.id === 999);
 
       expect(actualNodes).toEqual([]);
+    });
+  });
+
+  describe("findFirstNodePath", () => {
+    it("should return null if no node satisfies the predicate", () => {
+      const result = findFirstNodePath(sampleTree, node => node.id === 8);
+      expect(result).toBeNull();
+    });
+
+    it("should return the path to the first node that satisfies the predicate", () => {
+      const result = findFirstNodePath(sampleTree, node => node.id === 4);
+      expect(result).toEqual([
+        {
+          id: 1,
+          parentId: null,
+          children: [
+            {
+              id: 2,
+              parentId: 1,
+              children: [
+                {
+                  id: 3,
+                  parentId: 2,
+                },
+                {
+                  id: 4,
+                  parentId: 2,
+                },
+              ],
+            },
+            {
+              id: 5,
+              parentId: 1,
+              children: [
+                {
+                  id: 6,
+                  parentId: 5,
+                },
+                {
+                  id: 7,
+                  parentId: 5,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 2,
+          parentId: 1,
+          children: [
+            {
+              id: 3,
+              parentId: 2,
+            },
+            {
+              id: 4,
+              parentId: 2,
+            },
+          ],
+        },
+        {
+          id: 4,
+          parentId: 2,
+        },
+      ]);
+    });
+  });
+
+  describe("findAllNodePaths", () => {
+
+    it("should return an empty array if no nodes are found", () => {
+      const result = findAllNodePaths(sampleTree, node => node.id === 8);
+      expect(result).toEqual([]);
+    });
+
+    it("should return an array with one path if one node is found", () => {
+      const result = findAllNodePaths(sampleTree, node => node.id === 3);
+      expect(result).toEqual([[sampleTree[0], sampleTree[0].children![0], sampleTree[0].children![0].children![0]]]);
+    });
+
+    it("should return an array with multiple paths if multiple nodes are found", () => {
+      const result = findAllNodePaths(sampleTree, node => node.id === 4 || node.id === 7);
+      expect(result).toEqual([
+        [sampleTree[0], sampleTree[0].children![0], sampleTree[0].children![0].children![1]],
+        [sampleTree[0], sampleTree[0].children![1], sampleTree[0].children![1].children![1]],
+      ]);
     });
   });
 

@@ -149,6 +149,68 @@ export function findTreeNodes<T>(
 }
 
 /**
+ * Find the path of the first node in the tree that satisfies the predicate.
+ * 在树形结构中查找符合条件的第一个节点的路径。
+ * @param treeData The root nodes of the tree. 树形结构的根节点列表。
+ * @param predicate The predicate function to test each node. 每个节点都会执行该回调函数。
+ * @param config The configuration for TreeHelper. 树形结构的配置项。
+ * @returns The path to the first node in the tree that satisfies the predicate. 符合条件的第一个节点的路径。
+ */
+export function findFirstNodePath<T>(
+  treeData: T[],
+  predicate: (node: T) => boolean,
+  config: Partial<TreeHelperConfig> = {},
+): T[] | null {
+  const { childrenKey } = getTreeHelperConfig(config);
+  for (const node of treeData) {
+    if (predicate(node)) {
+      return [node];
+    }
+
+    const children = node[childrenKey];
+    if (children) {
+      const foundPath = findFirstNodePath(children, predicate, config);
+      if (foundPath) {
+        return [node, ...foundPath];
+      }
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Find the paths of all nodes in the tree that satisfy the predicate.
+ * 在树形结构中查找符合条件的所有节点的路径。
+ * @param treeData The root nodes of the tree. 树形结构的根节点列表。
+ * @param predicate The predicate function to test each node. 每个节点都会执行该回调函数。
+ * @param config The configuration for TreeHelper. 树形结构的配置项。
+ * @returns An array of paths to the nodes that satisfy the predicate. 符合条件的节点的路径组成的数组。
+ */
+export function findAllNodePaths<T>(
+  treeData: T[],
+  predicate: (node: T) => boolean,
+  config: Partial<TreeHelperConfig> = {},
+): T[][] {
+  const { childrenKey } = getTreeHelperConfig(config);
+  const result: T[][] = [];
+
+  for (const node of treeData) {
+    if (predicate(node)) {
+      result.push([node]);
+    }
+
+    const children = node[childrenKey];
+    if (children) {
+      const foundPaths = findAllNodePaths(children, predicate, config);
+      foundPaths.forEach(path => result.push([node, ...path]));
+    }
+  }
+
+  return result;
+}
+
+/**
  * Filter the tree and return a new tree that only contains nodes and their ancestors that satisfy the predicate.
  * 过滤树形结构，只保留满足条件的节点及其祖先节点，并返回一个新的树形结构。
  * @param treeNodes The root nodes of the tree. 树形结构的根节点列表。
