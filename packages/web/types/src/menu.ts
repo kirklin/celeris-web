@@ -32,11 +32,11 @@ export interface Menu {
 
   // Order of the menu item.
   // 菜单项顺序。
-  orderNo?: number;
+  orderNumber?: number;
 
   // Roles that can access the menu item.
   // 可访问该菜单项的角色。
-  roles?: RoleConstants[];
+  allowedRoles?: RoleConstants[];
 
   // Route metadata for the menu item.
   // 菜单项的路由元数据。
@@ -67,7 +67,7 @@ export interface MenuModule {
 
   // Order of the menu module.
   // 菜单模块顺序。
-  orderNo?: number;
+  orderNumber?: number;
 
   // Menu items of the menu module.
   // 菜单模块项。
