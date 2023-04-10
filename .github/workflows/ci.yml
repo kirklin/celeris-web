@@ -41,3 +41,6 @@ jobs:
 
       - name: Type check
         run: pnpm --filter "@celeris/admin" typecheck
+
+      - name: Test
+        run: pnpm run test
