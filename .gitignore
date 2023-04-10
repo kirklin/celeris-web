@@ -160,5 +160,5 @@ logs
 ######################
 # Code coverage
 ######################
-/coverage/
+coverage
 /.nyc_output/
