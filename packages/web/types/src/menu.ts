@@ -71,7 +71,7 @@ export interface MenuModule {
 
   // Menu items of the menu module.
   // 菜单模块项。
-  menu: Menu[];
+  menu: Menu;
 
   // Additional data for the menu module.
   // 菜单模块额外数据。
