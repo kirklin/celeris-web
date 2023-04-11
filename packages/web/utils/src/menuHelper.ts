@@ -1,5 +1,6 @@
 import type { Menu, MenuModule } from "@celeris/types";
 import { loadDataFromModules } from "./moduleHelper";
+import { findFirstNodePath } from "./treeHelper";
 import { isHttpUrl } from "./typeChecks";
 
 /**
@@ -60,4 +61,19 @@ export function transformMenuModule(menuModule: MenuModule): Menu {
   const menuList = [menuModule.menu];
   joinParentPath(menuList);
   return menuList[0];
+}
+
+/**
+ * Get all parent paths of the node in the tree that matches the given path.
+ * 获取树形结构中与给定路径匹配的节点的所有父路径。
+ * @param treeData The root nodes of the tree. 树形结构的根节点列表。
+ * @param path The path to match. 要匹配的路径。
+ * @returns An array of parent paths of the node in the tree that matches the given path. 与给定路径匹配的节点的所有父路径组成的数组。
+ */
+export function getAllParentPaths<T>(
+  treeData: T[],
+  path: string,
+): string[] {
+  const menuList = findFirstNodePath(treeData, n => n[path] === path) as Menu[];
+  return menuList?.map(m => m.path);
 }
