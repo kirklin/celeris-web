@@ -151,6 +151,10 @@ export interface GlobEnvConfig extends ImportMetaEnv {
   VITE_GLOB_API_URL: string;
   // Project abbreviation
   VITE_GLOB_APP_SHORT_NAME: string;
+
+  // Whether to generate a configuration file
+  // 是否生成配置文件
+  VITE_GLOB_BUILD_GENERATE_CONFIG: boolean;
 }
 
 // App Environment Variables
@@ -216,4 +220,8 @@ export interface ViteEnvVariables extends GlobEnvConfig {
   // Whether to enable image compression
   // 是否启用图片压缩
   VITE_USE_IMAGEMIN: boolean;
+
+  // Whether to generate a configuration file
+  // 是否生成配置文件
+  VITE_GLOB_BUILD_GENERATE_CONFIG: boolean;
 }

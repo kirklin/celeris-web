@@ -45,7 +45,7 @@ export function configVitePlugins(
 
   // Add the GenerateConfig plugin.
   // 添加 生成配置 插件
-  vitePlugins.push(createConfigPluginConfig());
+  vitePlugins.push(createConfigPluginConfig(viteEnv.VITE_GLOB_BUILD_GENERATE_CONFIG === false));
 
   // Add the mock plugin.
   // 添加 mock 插件

@@ -39,7 +39,9 @@ export function createStorageName(env: GlobEnvConfig): string {
 }
 
 function getAppGlobalEnvConfig(env: GlobEnvConfig): GlobEnvConfig {
-  const envName = getAppConfigFileName(env);
-  const envValue = env?.DEV ? env : window[envName];
-  return envValue as GlobEnvConfig;
+  if (JSON.parse(String(env.VITE_GLOB_BUILD_GENERATE_CONFIG))) {
+    const envName = getAppConfigFileName(env);
+    return env?.DEV ? env : window[envName];
+  }
+  return env;
 }
