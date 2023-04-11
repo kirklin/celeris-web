@@ -2,7 +2,7 @@
   "name": "celeris-admin-monorepo",
   "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@8.1.1",
+  "packageManager": "pnpm@8.2.0",
   "author": "Kirk Lin (https://github.com/kirklin)",
   "license": "MIT",
   "homepage": "https://github.com/kirklin/celeris-admin",
@@ -49,18 +49,18 @@
     "@vitest/coverage-c8": "^0.30.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
-    "eslint": "^8.37.0",
+    "eslint": "^8.38.0",
     "esno": "^0.16.3",
     "fs-extra": "^11.1.1",
     "husky": "^8.0.3",
     "jsdom": "^21.1.1",
-    "lint-staged": "^13.2.0",
-    "rimraf": "^4.4.1",
+    "lint-staged": "^13.2.1",
+    "rimraf": "^5.0.0",
     "taze": "^0.9.1",
-    "typescript": "^5.0.3",
+    "typescript": "^5.0.4",
     "unbuild": "^1.2.0",
     "vite": "^4.2.1",
-    "vitest": "^0.29.8"
+    "vitest": "^0.30.0"
   },
   "lint-staged": {
     "**/*": "eslint --fix"

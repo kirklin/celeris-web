@@ -23,9 +23,9 @@
   "devDependencies": {
     "@celeris/types": "workspace:*",
     "rollup": "^3.20.2",
-    "typescript": "^5.0.3",
+    "typescript": "^5.0.4",
     "unplugin-config": "^0.0.3",
-    "vite-plugin-inspect": "^0.7.18",
+    "vite-plugin-inspect": "^0.7.19",
     "vite-plugin-pwa": "^0.14.7",
     "vite-plugin-vue-inspector": "^3.4.0"
   }
