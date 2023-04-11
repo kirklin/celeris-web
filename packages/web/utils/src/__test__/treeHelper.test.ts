@@ -280,7 +280,6 @@ describe("Tree Helper", () => {
   });
 
   describe("findAllNodePaths", () => {
-
     it("should return an empty array if no nodes are found", () => {
       const result = findAllNodePaths(sampleTree, node => node.id === 8);
       expect(result).toEqual([]);
