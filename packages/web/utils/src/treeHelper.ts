@@ -1,3 +1,5 @@
+import { isArray } from "./typeChecks";
+
 /**
  * TreeHelperConfig interface defines the configuration for tree structure.
  * TreeHelperConfig 接口定义了树形结构的配置项。
@@ -318,5 +320,49 @@ export function traverseTreeIterativeWithParent<T>(
         stack.push({ node: child, parent: node });
       }
     }
+  }
+}
+
+/**
+ * @description: Maps a tree structure into a new tree structure with a specified structure.
+ * @description: 将树形结构映射为具有指定结构的新树形结构。
+ * @param {Array} treeData - The tree structure to map.
+ * @param {Function} convertNodeToStructure - The function that converts a node in the original tree to a node in the new tree.
+ * @param {Partial<TreeHelperConfig>} config - The configuration options for the tree helper.
+ * @returns {Array} - The new tree structure.
+ */
+export function mapTreeStructure<T = any, R = any>(
+  treeData: T[],
+  convertNodeToStructure: (node: T) => Partial<R> & { [key: TreeHelperConfig["childrenKey"]]: any },
+  config: Partial<TreeHelperConfig> = {},
+) {
+  return treeData.map(node => mapTreeNodeStructure(node, convertNodeToStructure, getTreeHelperConfig(config)));
+}
+
+/**
+ * @description: Maps a single node in a tree structure into a new node with a specified structure.
+ * @description: 将树形结构中的单个节点映射为具有指定结构的新节点。
+ * @param {Object} node - The node to map.
+ * @param {Function} convertNodeToStructure - The function that converts the node to a new node.
+ * @param {TreeHelperConfig} config - The configuration options for the tree helper.
+ * @returns {Object} - The new node.
+ */
+export function mapTreeNodeStructure<T = any, R = any>(
+  node: T,
+  convertNodeToStructure: (node: T) => Partial<R> & { [key: TreeHelperConfig["childrenKey"]]: any },
+  config: Partial<TreeHelperConfig> = {},
+) {
+  const { childrenKey } = getTreeHelperConfig(config);
+  const hasChildren = isArray(node[childrenKey]) && node[childrenKey].length > 0;
+  const convertedNode = convertNodeToStructure(node) || {};
+  if (hasChildren) {
+    return {
+      ...convertedNode,
+      [childrenKey]: node[childrenKey].map(childNode => mapTreeNodeStructure(childNode, convertNodeToStructure, config)),
+    };
+  } else {
+    return {
+      ...convertedNode,
+    };
   }
 }
