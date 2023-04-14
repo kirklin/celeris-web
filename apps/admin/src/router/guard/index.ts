@@ -3,6 +3,7 @@ import { AxiosCanceler } from "@celeris/request";
 import NProgress from "~/config/nprogress";
 import { useTransitionSetting } from "~/composables/setting/useTransitionSetting";
 import ProjectConfig from "~/config/projectConfig";
+import { createStateGuard } from "~/router/guard/stateGuard";
 import { notifyRouteChange } from "~/router/mitt/routeChange";
 
 // Don't change the order of creation
@@ -11,6 +12,7 @@ export function setupRouterGuard(router: Router) {
   createPageGuard(router);
   createHttpGuard(router);
   createProgressGuard(router);
+  createStateGuard(router);
 }
 
 /**

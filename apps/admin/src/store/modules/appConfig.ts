@@ -36,7 +36,7 @@ export const useAppStore = defineStore({
     setProjectConfig(config: DeepPartial<ProjectConfig>): void {
       this.projectConfig = deepMerge(this.projectConfig || {}, config);
     },
-    resetProjectConfig() {
+    resetAPPState() {
       this.setProjectConfig(projectConfig);
     },
   },
