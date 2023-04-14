@@ -81,6 +81,7 @@ export const usePermissionStore = defineStore({
     // Set the menu list controlled by backend
     setBackendMenuList(menuList: Menu[]) {
       this.backendMenuList = menuList;
+      menuList.length > 0 && this.setLastMenuBuildTime();
     },
     // 设置前端控制的菜单列表
     // Set the menu list controlled by frontend

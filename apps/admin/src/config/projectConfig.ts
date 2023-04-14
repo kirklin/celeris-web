@@ -21,7 +21,7 @@ const setting: ProjectConfig = {
 
   // 权限模式
   // The permission mode
-  permissionMode: PermissionModeConstants.ROUTE_MAPPING,
+  permissionMode: PermissionModeConstants.ROLE,
 
   // 会话超时处理方式
   // The session timeout processing method

@@ -50,13 +50,13 @@ export interface Menu {
   // 菜单项描述。
   description?: string;
 
-  // Note for the menu item.
-  // 菜单项备注。
-  note?: string;
-
   // Additional data for the menu item.
   // 菜单项额外数据。
   data?: Record<string, any>;
+
+  // Whether to show the menu item.
+  // 是否显示该菜单项。
+  shouldShow?: boolean;
 }
 
 /**
