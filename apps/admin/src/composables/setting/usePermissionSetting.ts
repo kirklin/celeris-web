@@ -1,5 +1,5 @@
 import { PermissionModeConstants } from "@celeris/constants";
-import { useAppStoreWithOut } from "~/store/modules/appConfig";
+import { useAppStoreWithOut } from "~/store/modules/app";
 export const getPermissionMode = () => {
   const appStore = useAppStoreWithOut();
   return appStore.getProjectConfig.permissionMode;

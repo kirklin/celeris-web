@@ -1,7 +1,7 @@
 import type { Menu } from "@celeris/types";
 import { defineStore } from "pinia";
 
-const APP_PERMISSION_STORE_ID = "APP_PERMISSION";
+const APP_PERMISSION_STORE_ID = "APP_PERMISSION_STORE";
 
 // 定义权限状态接口
 // Define the interface for permission state
@@ -100,7 +100,7 @@ export const usePermissionStore = defineStore({
     },
     // 清空权限状态
     // Clear permission state
-    clearPermissionState() {
+    resetPermissionState() {
       this.permissionCodes = [];
       this.backendMenuList = [];
       this.frontendMenuList = [];

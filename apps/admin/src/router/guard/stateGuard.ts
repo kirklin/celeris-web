@@ -1,7 +1,7 @@
 import type { Router } from "vue-router";
 import { PageConstants } from "@celeris/constants";
 import { removeRouteChangeListener } from "~/router/mitt/routeChange";
-import { useAppStore } from "~/store/modules/appConfig";
+import { useAppStore } from "~/store/modules/app";
 import { usePermissionStore } from "~/store/modules/permission";
 import { useUserStore } from "~/store/modules/user";
 
@@ -13,7 +13,7 @@ export function createStateGuard(router: Router) {
       const appStore = useAppStore();
       const permissionStore = usePermissionStore();
       appStore.resetAPPState();
-      permissionStore.clearPermissionState();
+      permissionStore.resetPermissionState();
       userStore.resetUserState();
       removeRouteChangeListener();
     }
