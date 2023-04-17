@@ -1,5 +1,6 @@
 import type { ProjectConfig } from "@celeris/types";
 import {
+  PermissionCacheTypeConstants,
   PermissionModeConstants,
   RouterTransitionConstants,
   SessionTimeoutProcessingConstants,
@@ -22,6 +23,10 @@ const setting: ProjectConfig = {
   // 权限模式
   // The permission mode
   permissionMode: PermissionModeConstants.ROLE,
+
+  // 权限缓存类型
+  // The permission cache type
+  permissionCacheType: PermissionCacheTypeConstants.LOCAL_STORAGE,
 
   // 会话超时处理方式
   // The session timeout processing method

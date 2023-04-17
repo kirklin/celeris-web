@@ -1,6 +1,7 @@
 import type { RoleInfo, UserInfo } from "@celeris/types/src/user";
 import { defineStore } from "pinia";
-
+import { PermissionCacheTypeConstants } from "@celeris/constants";
+import ProjectConfig from "~/config/projectConfig";
 const APP_USER_STORE_ID = "APP_USER_STORE";
 
 interface UserState {
@@ -35,6 +36,10 @@ interface UserState {
 
 export const useUserStore = defineStore({
   id: APP_USER_STORE_ID,
+  persist: {
+    paths: ["userInfo", "token", "refreshToken", "roleList", "updatedAt"],
+    storage: ProjectConfig.permissionCacheType === PermissionCacheTypeConstants.LOCAL_STORAGE ? localStorage : sessionStorage,
+  },
   state: (): UserState => ({
     // Whether the user should be logged in
     // 用户是否应该已登录

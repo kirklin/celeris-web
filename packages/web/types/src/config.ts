@@ -1,4 +1,5 @@
 import type {
+  PermissionCacheTypeConstants,
   PermissionModeConstants,
   RouterTransitionConstants,
   SessionTimeoutProcessingConstants,
@@ -50,6 +51,10 @@ export interface ProjectConfig {
   // 权限模式
   // The permission mode
   permissionMode: PermissionModeConstants;
+
+  // 权限缓存类型
+  // The permission cache type
+  permissionCacheType: PermissionCacheTypeConstants;
 
   // 会话超时处理方式
   // The session timeout processing method
