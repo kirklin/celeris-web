@@ -2,15 +2,19 @@ import type { RoleConstants } from "@celeris/constants";
 export interface UserInfo {
   // User's unique identifier
   // 用户的唯一标识符
-  id: number;
+  id: string | number;
 
   // User's username
   // 用户名
   username: string;
 
+  // User's phone number
+  // 手机号
+  phone?: string;
+
   // User's email address
   // 邮箱地址
-  email: string;
+  email?: string;
 
   // User's full name, optional
   // 用户的全名，可选
@@ -22,7 +26,7 @@ export interface UserInfo {
 
   // User's role, optional
   // 用户的角色，可选
-  role?: RoleInfo;
+  roles?: RoleInfo[];
 
   // User's home page URL after logging in, optional
   // 用户登录后跳转的首页路径，可选
