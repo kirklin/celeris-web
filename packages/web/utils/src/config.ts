@@ -11,7 +11,7 @@ export function getAppConfigFileName(env: GlobEnvConfig): string {
 }
 
 export function getAppGlobalConfig(env: GlobEnvConfig): GlobConfig {
-  const { VITE_GLOB_APP_TITLE, VITE_GLOB_API_URL, VITE_GLOB_APP_SHORT_NAME }
+  const { VITE_GLOB_APP_TITLE, VITE_GLOB_API_URL, VITE_GLOB_APP_SHORT_NAME, VITE_GLOB_API_URL_SSR, VITE_GLOB_API_URL_PREFIX }
     = getAppGlobalEnvConfig(env);
 
   if (!/^[a-zA-Z\_]*$/.test(VITE_GLOB_APP_SHORT_NAME)) {
@@ -24,6 +24,8 @@ export function getAppGlobalConfig(env: GlobEnvConfig): GlobConfig {
     APP_TITLE: VITE_GLOB_APP_TITLE || "",
     API_URL: VITE_GLOB_API_URL || "",
     APP_SHORT_NAME: VITE_GLOB_APP_SHORT_NAME || "",
+    API_URL_SSR: VITE_GLOB_API_URL_SSR || "",
+    API_URL_PREFIX: VITE_GLOB_API_URL_PREFIX || "",
   };
 }
 
