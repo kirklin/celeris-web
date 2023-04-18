@@ -9,7 +9,7 @@ const route = useRoute();
 const activeMenu = computed((): string => route.path);
 const isCollapse = useMenuSetting().getCollapsed;
 
-const menuList = ref([]);
+const menuList = ref<any[]>([]);
 const transformProjectMenuToNaiveUIMenu = (menu: Menu) => {
   const { path, meta, icon, children } = menu;
   const renderIcon = (icon?: string) => {
@@ -31,7 +31,7 @@ const transformProjectMenuToNaiveUIMenu = (menu: Menu) => {
       );
     },
     key: path,
-    icon: renderIcon(icon || meta?.icon),
+    icon: renderIcon(icon || meta?.icon as string),
     collapseTitle: meta?.title,
   };
 };
