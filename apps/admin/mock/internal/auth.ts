@@ -1,9 +1,11 @@
 import { RoleConstants } from "@celeris/constants";
 import type { UserInfo } from "@celeris/types";
-import { createErrorResponse, createSuccessResponse } from "@celeris/utils";
+import type { RequestParams } from "@celeris/utils";
+import { createErrorResponse, createSuccessResponse, extractAuthorizationToken } from "@celeris/utils";
 import type { MockMethod } from "vite-plugin-mock";
 
-interface FakeUserInfo extends UserInfo {
+export interface FakeUserInfo extends UserInfo {
+  token: string;
   extraInfo: {
     password: string;
   };
@@ -12,7 +14,7 @@ interface FakeUserInfo extends UserInfo {
 const fakeUserList: FakeUserInfo[] = [
   {
     id: "1",
-    username: "lkk",
+    username: "kirklin",
     fullName: "Kirk Lin",
     phone: "15912345678",
     avatarUrl: "https://avatars.githubusercontent.com/u/17453452",
@@ -22,6 +24,7 @@ const fakeUserList: FakeUserInfo[] = [
         description: "Admin",
       },
     ],
+    token: "adminFakeToken",
     extraInfo: {
       password: "123456",
     },
@@ -38,6 +41,7 @@ const fakeUserList: FakeUserInfo[] = [
         description: "User",
       },
     ],
+    token: "userFakeToken",
     extraInfo: {
       password: "123456",
     },
@@ -52,16 +56,39 @@ const fakeUserList: FakeUserInfo[] = [
         description: "Guest",
       },
     ],
+    token: "guestFakeToken",
     extraInfo: {
       password: "123456",
     },
   },
 ];
 
+interface FakeCodeList {
+  [id: string]: string[];
+}
+
+const fakeCodeList: FakeCodeList = {
+  1: ["1000", "3000", "5000"],
+  2: ["2000", "4000", "6000"],
+};
+
+const getFakeUserByToken = (authorizationToken?: string) => {
+  if (!authorizationToken) {
+    throw new Error("Token is required.");
+  }
+  const checkUser = fakeUserList.find(
+    item => item.token === authorizationToken,
+  );
+  if (!checkUser) {
+    throw new Error("Invalid token.");
+  }
+  return checkUser;
+};
+
 const mockMethods: MockMethod[] = [
   {
     // Mock the API endpoint for user login
-    url: "/api/login",
+    url: "/api/auth/login",
     timeout: 200,
     method: "post",
     // Define the response function for the login endpoint
@@ -70,7 +97,8 @@ const mockMethods: MockMethod[] = [
       const { username, password } = body;
       // Find a user in the fake user list that matches the username and password
       const matchedUser = fakeUserList.find(
-        user => user.username === username && password === user.extraInfo?.password,
+        user =>
+          user.username === username && password === user.extraInfo?.password,
       );
       // If no user is found, return an error response
       if (!matchedUser) {
@@ -80,6 +108,50 @@ const mockMethods: MockMethod[] = [
       const { extraInfo: _extraInfo, ...user } = matchedUser;
       // Return a success response with the user object
       return createSuccessResponse(user);
+    },
+  },
+  {
+    url: "/api/user/info",
+    method: "get",
+    response: (request: RequestParams) => {
+      try {
+        const authorizationToken = extractAuthorizationToken(request);
+        const checkUser = getFakeUserByToken(authorizationToken);
+        const { extraInfo: _extraInfo, token: _token, ...user } = checkUser;
+        return createSuccessResponse({ ...user, extraInfo: undefined });
+      } catch (error) {
+        return createErrorResponse(error instanceof Error ? error.message : String(error));
+      }
+    },
+  },
+  {
+    url: "/api/user/permission-code",
+    timeout: 200,
+    method: "get",
+    response: (request: RequestParams) => {
+      try {
+        const authorizationToken = extractAuthorizationToken(request);
+        const checkUser = getFakeUserByToken(authorizationToken);
+        const codeList = fakeCodeList[checkUser.id];
+
+        return createSuccessResponse(codeList);
+      } catch (error) {
+        return createErrorResponse(error instanceof Error ? error.message : String(error));
+      }
+    },
+  },
+  {
+    url: "/api/auth/logout",
+    timeout: 200,
+    method: "get",
+    response: (request: RequestParams) => {
+      try {
+        const authorizationToken = extractAuthorizationToken(request);
+        getFakeUserByToken(authorizationToken);
+        return createSuccessResponse(undefined, "Token has been destroyed");
+      } catch (error) {
+        return createErrorResponse(error instanceof Error ? error.message : String(error));
+      }
     },
   },
 ];
