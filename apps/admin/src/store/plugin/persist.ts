@@ -19,6 +19,8 @@ import {
 
 const persistEncryption: Encryption = EncryptionFactory.createAesEncryption({ key: STORAGE_CIPHER_KEY, iv: STORAGE_CIPHER_IV });
 
+export const PERSIST_KEY_PREFIX = createStorageName(<GlobEnvConfig>import.meta.env);
+
 /**
  * Custom serializer for serialization and deserialization of storage data
  * 自定义序列化器，用于序列化和反序列化存储数据
@@ -57,7 +59,7 @@ const customSerializer = (shouldEnableEncryption: boolean): Serializer => {
  * @param pinia Pinia instance Pinia 实例
  */
 export function registerPiniaPersistPlugin(pinia: Pinia) {
-  pinia.use(createPersistedState(createPersistedStateOptions(createStorageName(<GlobEnvConfig>import.meta.env))));
+  pinia.use(createPersistedState(createPersistedStateOptions(PERSIST_KEY_PREFIX)));
 }
 
 /**

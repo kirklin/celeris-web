@@ -1,7 +1,6 @@
 import type { Menu } from "@celeris/types";
+import { APP_PERMISSION_STORE_ID } from "@celeris/constants";
 import { defineStore } from "pinia";
-
-const APP_PERMISSION_STORE_ID = "APP_PERMISSION_STORE";
 
 // 定义权限状态接口
 // Define the interface for permission state
