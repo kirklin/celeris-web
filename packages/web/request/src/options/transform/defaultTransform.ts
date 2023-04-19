@@ -1,6 +1,6 @@
-import { RequestConstants } from "@celeris/constants";
+import { RequestConstants, ResultConstants } from "@celeris/constants";
 import type { RequestOptions, RequestResult } from "@celeris/types/src/httpClient";
-import { isString } from "@celeris/utils";
+import { isEmpty, isString } from "@celeris/utils";
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import type { AxiosTransform, CreateAxiosOptions } from "../../axiosTransform";
 import { formatRequestDate, joinTimestamp, setObjToUrlParams } from "../../utils";
@@ -22,12 +22,16 @@ export const defaultTransform: AxiosTransform = {
     }
     const params = config.params || {};
     const data = config.data || false;
+    // Format date in request data if shouldFormatDate is true
     shouldFormatDate && data && !isString(data) && formatRequestDate(data);
+
     if (config.method?.toUpperCase() === RequestConstants.GET) {
       if (!isString(params)) {
+        // Add timestamp parameter to GET requests to avoid caching
         // 给 get 请求加上时间戳参数，避免从缓存中拿数据。
         config.params = { ...params, ...joinTimestamp(shouldJoinTime, false) };
       } else {
+        // Support REST style
         // 兼容restful风格
         config.url = `${config.url ?? ""}${params}${joinTimestamp(shouldJoinTime, true)}`;
         config.params = undefined;
@@ -35,6 +39,7 @@ export const defaultTransform: AxiosTransform = {
     } else {
       if (!isString(params)) {
         shouldFormatDate && formatRequestDate(params);
+        // Append params and data to request configuration if they exist
         if (
           Reflect.has(config, "data")
           && config.data
@@ -43,10 +48,13 @@ export const defaultTransform: AxiosTransform = {
           config.data = data;
           config.params = params;
         } else {
+          // If data is not provided for non-GET requests, treat params as data
           // 非GET请求如果没有提供data，则将params视为data
           config.data = params;
           config.params = undefined;
         }
+
+        // Append params and data to url query parameters if shouldJoinParamsToUrl is true
         if (shouldJoinParamsToUrl) {
           config.url = setObjToUrlParams(
             config.url as string,
@@ -54,6 +62,7 @@ export const defaultTransform: AxiosTransform = {
           );
         }
       } else {
+        // Support REST style
         // 兼容restful风格
         config.url = `${config.url ?? ""}${params}`;
         config.params = undefined;
@@ -73,22 +82,28 @@ export const defaultTransform: AxiosTransform = {
     if (!options.shouldTransformResponse) {
       return response.data;
     }
-    const { data } = response;
-    if (!data) {
-      // return '[HTTP] Request has no return value';
+    const responseData = response.data;
+
+    if (!responseData) {
       throw new Error("The interface request failed, please try again later!");
     }
-    // 这里逻辑可以根据项目进行修改
-    // const { code, result, message } = data;
-    // const hasSuccess =
-    //   data && Reflect.has(data, 'code') && code === ResultConstants.SUCCESS
-    //
-    // if (hasSuccess) {
-    //   if (message) {
-    //   //
-    //   }
 
-    return data;
+    // Depending on the project, you may need to adjust the logic here
+    // 根据项目的不同，您可能需要调整这里的逻辑
+    const { code, data: _data, message } = responseData;
+    const isSuccessful = responseData && Reflect.has(responseData, "code") && code === ResultConstants.SUCCESS;
+
+    if (isSuccessful) {
+      let successMessage = message;
+
+      if (isEmpty(successMessage)) {
+        successMessage = "Operation success";
+      }
+
+      // TODO: handle the success message
+    }
+
+    return _data;
   },
 
   /**
