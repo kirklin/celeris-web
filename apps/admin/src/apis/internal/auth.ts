@@ -1,6 +1,6 @@
 import type { MessageMode, UserInfo } from "@celeris/types";
+import { request } from "@celeris/request";
 import type { FakeUserInfo } from "../../../mock/internal/auth";
-import { request } from "../request";
 
 // Define the API endpoint URLs as an enum
 enum API {

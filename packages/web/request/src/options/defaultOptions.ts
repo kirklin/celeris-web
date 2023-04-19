@@ -1,6 +1,9 @@
 import { ContentTypeConstants } from "@celeris/constants";
+import type { GlobEnvConfig } from "@celeris/types";
+import { getAppGlobalConfig } from "@celeris/utils";
 import type { CreateAxiosOptions } from "../axiosTransform";
 import { defaultTransform } from "./transform/defaultTransform";
+const globalConfig = getAppGlobalConfig(<GlobEnvConfig>import.meta.env);
 export const defaultAxiosOptions: CreateAxiosOptions = {
   // See https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#authentication_schemes
   // authentication schemes，e.g: Bearer
@@ -30,9 +33,9 @@ export const defaultAxiosOptions: CreateAxiosOptions = {
     // 消息提示类型
     errorMessageMode: "message",
     // 接口地址
-    apiUrl: "",
+    apiUrl: globalConfig.API_URL,
     // 接口拼接地址
-    urlPrefix: "",
+    urlPrefix: globalConfig.API_URL_PREFIX,
     //  是否加入时间戳
     shouldJoinTime: true,
     // 忽略重复请求
