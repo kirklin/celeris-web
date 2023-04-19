@@ -9,6 +9,15 @@ export enum RequestConstants {
 }
 
 /**
+ * @description: Request result set
+ */
+export enum ResultConstants {
+  SUCCESS = 0,
+  ERROR = -1,
+  TIMEOUT = 408,
+}
+
+/**
  * @description: contentType
  */
 export enum ContentTypeConstants {

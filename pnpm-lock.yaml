@@ -375,6 +375,9 @@ importers:
         specifier: ^3.2.47
         version: 3.2.47
     devDependencies:
+      '@celeris/constants':
+        specifier: workspace:*
+        version: link:../constants
       '@celeris/types':
         specifier: workspace:*
         version: link:../types

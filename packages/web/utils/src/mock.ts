@@ -1,3 +1,4 @@
+import { ResultConstants } from "@celeris/constants";
 /**
  * Request data format for API calls.
  */
@@ -55,7 +56,7 @@ export const createSuccessResponse = <T = any>(
   data: T,
   message = "ok",
 ): SuccessResponse<T> => ({
-    code: 0,
+    code: ResultConstants.SUCCESS,
     data,
     message,
     type: "success",
@@ -94,7 +95,7 @@ export const createPaginatedSuccessResponse = <T = any>(
  */
 export const createErrorResponse = <T = any>(
   message = "Request failed.",
-  code = -1,
+  code = ResultConstants.ERROR,
   data: T | null = null,
 ): ErrorResponse<T> => ({
     code,
