@@ -2,6 +2,7 @@ import { RequestConstants, ResultConstants } from "@celeris/constants";
 import type { RequestOptions, RequestResult } from "@celeris/types/src/httpClient";
 import { isEmpty, isString } from "@celeris/utils";
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
+import { HttpRequestConfiguration } from "../../../requestConfiguration";
 import type { AxiosTransform, CreateAxiosOptions } from "../../axiosTransform";
 import { formatRequestDate, joinTimestamp, setObjToUrlParams } from "../../utils";
 
@@ -121,9 +122,9 @@ export const defaultTransform: AxiosTransform = {
    * 在执行请求拦截器之前调用的函数，可以根据需要修改请求配置。
    */
   requestInterceptors(config: InternalAxiosRequestConfig, options: CreateAxiosOptions): InternalAxiosRequestConfig | Promise<InternalAxiosRequestConfig> {
-    // 请求之前处理config
-    if (options.requestOptions) {
-    //
+    const token = HttpRequestConfiguration.getToken();
+    if (token && options.requestOptions?.shouldSendTokenInHeader) {
+      config.headers.Authorization = options.authenticationScheme ? `${options.authenticationScheme} ${<string>token}` : <string>token;
     }
     return config;
   },
