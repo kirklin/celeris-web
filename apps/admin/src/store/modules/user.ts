@@ -1,8 +1,12 @@
+import type { MessageMode } from "@celeris/types";
 import type { RoleInfo, UserInfo } from "@celeris/types/src/user";
 import { defineStore } from "pinia";
-import { PermissionCacheTypeConstants } from "@celeris/constants";
+import { field, logger } from "@celeris/utils";
+import { APP_USER_STORE_ID, PageConstants, PermissionCacheTypeConstants } from "@celeris/constants";
+import { loginApi, logoutApi, userInfoApi } from "~/apis/internal/auth";
+import type { LoginParams } from "~/apis/internal/auth";
 import ProjectConfig from "~/config/projectConfig";
-const APP_USER_STORE_ID = "APP_USER_STORE";
+import { router } from "~/router";
 
 interface UserState {
   // Whether the user should be logged in
@@ -154,6 +158,75 @@ export const useUserStore = defineStore({
       this.roleList = [];
       this.shouldPasswordExpired = undefined;
       this.updatedAt = undefined;
+    },
+
+    /**
+     * Logs the user in and retrieves their information.
+     * 登录用户并获取其信息。
+     * @param {Object} payload - Login parameters and options.
+     * @param {string} payload.username - The username of the user.
+     * @param {string} payload.password - The password of the user.
+     * @param {boolean} payload.remember - Whether to remember the user. 是否记住用户
+     * @param {boolean} [payload.redirectToHome=true] - Whether to redirect to the home page after login. 登录后是否重定向到首页
+     * @param {MessageMode} [payload.errorMessageMode] - The error message display mode.
+     * @returns {Promise<UserInfo|null>} The user's information or null if there was an error.
+     */
+    async login(payload: LoginParams & {
+      remember: boolean;
+      redirectToHome?: boolean;
+      errorMessageMode?: MessageMode;
+    }) {
+      try {
+        const { errorMessageMode, redirectToHome = true, ...loginParams } = payload;
+        const { token } = await loginApi(loginParams, errorMessageMode);
+        this.setToken(token);
+        if (!this.getToken) {
+          return null;
+        }
+        const userInfo = await this.getUserInfoAction();
+        this.setShouldLoggedIn(true);
+        if (redirectToHome) {
+          await router.replace(PageConstants.BASE_HOME);
+        }
+        return userInfo;
+      } catch (error) {
+        return Promise.reject(error);
+      }
+    },
+
+    /**
+     * Retrieves the user's information.
+     * 获取用户信息。
+     * @returns {Promise<UserInfo|null>} The user's information or null if there was an error.
+     */
+    async getUserInfoAction(): Promise<UserInfo | null> {
+      if (!this.getToken) {
+        return null;
+      }
+      const userInfo = await userInfoApi();
+      const { roles = [] } = userInfo;
+      this.setRoleList(roles);
+      this.setUserInfo(userInfo);
+      return userInfo;
+    },
+
+    /**
+     * Logs the user out and resets the user's state.
+     * 登出用户并重置用户状态。
+     * @param {boolean} [redirectToLogin=true] - Whether to redirect to the login page after logout.
+     */
+    async logout(redirectToLogin = true) {
+      if (this.getToken) {
+        try {
+          await logoutApi();
+        } catch (error) {
+          logger.error("logout error", field("error", error instanceof Error ? error.message : String(error)));
+        }
+      }
+      this.resetUserState();
+      if (redirectToLogin) {
+        await router.push(PageConstants.BASE_LOGIN);
+      }
     },
   },
 });
