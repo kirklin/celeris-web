@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { PageConstants } from "@celeris/constants";
 import type { FormInst, FormRules } from "naive-ui";
+import { useUserStore } from "~/store/modules/user";
 
 // 登录表单数据
 import type { LoginFromType } from "~/views/login/types";
@@ -8,7 +8,7 @@ const message = useMessage();
 
 const loginFormModel: LoginFromType = reactive<LoginFromType>({
   username: "kirklin",
-  password: "kirklin",
+  password: "123456",
 });
 const loginRules: FormRules = reactive({
   username: [{ required: true, message: "please input your username", trigger: "blur" }],
@@ -17,22 +17,34 @@ const loginRules: FormRules = reactive({
 
 const loading = ref<boolean>(false);
 const loginFormRef = ref<HTMLElement & FormInst>();
-const router = useRouter();
-// login
+
+/**
+ * This function handles the login process
+ */
 const login = async () => {
-  await loginFormRef.value?.validate((errors) => {
-    if (!errors) {
-      loading.value = true;
-      setTimeout(() => {
-        loading.value = false;
-        message.success("Login Success");
-        router.push(PageConstants.BASE_HOME);
-      }, 800);
-    } else {
-      message.error("Login Error");
-      return false;
+  try {
+    // Validate the login form
+    const errors = await loginFormRef.value?.validate();
+    if (errors) {
+      return;
     }
-  });
+
+    loading.value = true;
+
+    // Login the user
+    const userInfo = await useUserStore().login({
+      ...unref(loginFormModel),
+      errorMessageMode: "none",
+    });
+
+    if (userInfo) {
+      message.success("Login Success");
+    }
+  } catch (error) {
+    message.error("Login Error");
+  } finally {
+    loading.value = false;
+  }
 };
 </script>
 
