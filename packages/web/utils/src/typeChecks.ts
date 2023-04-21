@@ -5,23 +5,29 @@ export {
   isArrayLike,
   isArrayLikeObject,
   isBuffer,
+  isBoolean,
   isDate,
   isElement,
   isEmpty,
   isEqual,
   isEqualWith,
   isError,
+  isFunction,
+  isFinite,
   isLength,
   isMap,
   isMatch,
   isMatchWith,
   isNative,
   isNil,
+  isNumber,
   isNull,
   isObjectLike,
   isPlainObject,
   isRegExp,
+  isSafeInteger,
   isSet,
+  isString,
   isSymbol,
   isTypedArray,
   isUndefined,
@@ -30,12 +36,8 @@ export {
 } from "lodash-es";
 
 export {
-  isBoolean,
   isClient,
-  isFunction,
-  isNumber,
   isObject,
-  isString,
 } from "@vueuse/core";
 
 // Define a constant isServer that is true if the code is running on the server, and false otherwise.

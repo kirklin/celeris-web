@@ -15,8 +15,8 @@
   "dependencies": {
     "@kirklin/logger": "0.0.2",
     "@vue/runtime-core": "3.2.47",
-    "@vueuse/core": "^9.13.0",
-    "@vueuse/shared": "^9.13.0",
+    "@vueuse/core": "^10.0.2",
+    "@vueuse/shared": "^10.0.2",
     "crypto-js": "^4.1.1",
     "dayjs": "^1.11.7",
     "lodash-es": "^4.17.21",

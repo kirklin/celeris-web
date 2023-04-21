@@ -34,6 +34,7 @@ const login = async () => {
     // Login the user
     const userInfo = await useUserStore().login({
       ...unref(loginFormModel),
+      remember: true,
       errorMessageMode: "dialog",
     });
 

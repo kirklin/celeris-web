@@ -41,7 +41,7 @@ function initializeHttpRequest() {
     } else if (mode === "notification") {
       notification.success({ title: "Error", content: message });
     } else if (mode === undefined || mode === "none") {
-      logger.error(`HttpRequestEngine SuccessHandler: ${message}`);
+      logger.info(`HttpRequestEngine SuccessHandler: ${message}`);
     }
   });
   HttpRequestEngine.setErrorMessageHandler((message, mode) => {
