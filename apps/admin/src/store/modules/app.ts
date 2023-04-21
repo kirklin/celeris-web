@@ -19,8 +19,8 @@ export const useAppStore = defineStore({
     projectConfig,
   }),
   getters: {
-    getProjectConfig(): ProjectConfig {
-      return this.projectConfig || ({} as ProjectConfig);
+    getProjectConfig(state): ProjectConfig {
+      return state.projectConfig || ({} as ProjectConfig);
     },
 
     getMenuSetting(): MenuSetting {

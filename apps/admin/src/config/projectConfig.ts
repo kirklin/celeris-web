@@ -22,7 +22,7 @@ const setting: ProjectConfig = {
 
   // 权限模式
   // The permission mode
-  permissionMode: PermissionModeConstants.ROLE,
+  permissionMode: PermissionModeConstants.ROUTE_MAPPING,
 
   // 权限缓存类型
   // The permission cache type

@@ -1,6 +1,8 @@
 import type { Menu, MenuModule } from "@celeris/types";
+import { cloneDeep } from "lodash-es";
+import type { RouteRecordRaw } from "vue-router";
 import { loadDataFromModules } from "./moduleHelper";
-import { findFirstNodePath } from "./treeHelper";
+import { findFirstNodePath, mapTreeStructure } from "./treeHelper";
 import { isHttpUrl } from "./typeChecks";
 
 /**
@@ -61,6 +63,54 @@ export function transformMenuModule(menuModule: MenuModule): Menu {
   const menuList = [menuModule.menu];
   joinParentPath(menuList);
   return menuList[0];
+}
+
+// This function transforms routes to menus
+export function transformRouteToMenu(routeModList: RouteRecordRaw[], routerMapping = false): Menu[] {
+  // Deep copy the route module list using Lodash
+  const cloneRouteModList = cloneDeep(routeModList);
+  const routeList: RouteRecordRaw[] = [];
+
+  // Modify the route items
+  cloneRouteModList.forEach((item) => {
+    if (routerMapping && item.meta?.shouldHideSubMenuInMenu && typeof item.redirect === "string") {
+      item.path = item.redirect;
+    }
+
+    if (item.meta?.shouldShallowMenu) {
+      const realItem = item?.children?.[0];
+      if (realItem) {
+        routeList.push(realItem);
+      }
+    } else {
+      routeList.push(item);
+    }
+  });
+  routeList.forEach((r) => {
+    if (r.meta?.shouldHideSubMenuInMenu) {
+      delete r.children;
+    }
+  });
+  // Extract a specific structure from the tree
+  const list: Menu[] = <Menu[]>mapTreeStructure(routeList, (node: RouteRecordRaw) => {
+    const { meta: { title, shouldHideInMenu = false } = {} } = node;
+
+    return {
+      ...(node.meta || {}),
+      meta: node.meta,
+      name: title,
+      shouldHideMenu: shouldHideInMenu,
+      path: node.path,
+      ...(node.redirect ? { redirect: node.redirect } : {}),
+    };
+  },
+  );
+
+  // Handle the paths
+  joinParentPath(list);
+
+  // Return a deep copy of the list
+  return cloneDeep(list);
 }
 
 /**

@@ -18,6 +18,7 @@ const fakeUserList: FakeUserInfo[] = [
     fullName: "Kirk Lin",
     phone: "15912345678",
     avatarUrl: "https://avatars.githubusercontent.com/u/17453452",
+    homePageUrl: "/dashboard/index",
     roles: [
       {
         name: RoleConstants.ADMIN,

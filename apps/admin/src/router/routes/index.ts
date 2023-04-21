@@ -1,13 +1,18 @@
 import { PageConstants } from "@celeris/constants";
+import { loadRoutesFromModules } from "@celeris/utils";
 import type { RouteRecordRaw } from "vue-router";
-import { PAGE_NOT_FOUND_ROUTE } from "~/router/routes/basic";
-import layout from "~/router/routes/layout";
+import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE } from "~/router/routes/basic";
+
+const modules = import.meta.glob<{ default: any }>("./modules/**/*.ts", { eager: true });
+const routeModuleList: RouteRecordRaw[] = loadRoutesFromModules(modules);
+
+export const asyncRoutes = [PAGE_NOT_FOUND_ROUTE, ...routeModuleList];
 
 // 根路由
 export const RootRoute: RouteRecordRaw = {
   path: "/",
   name: "Root",
-  redirect: PageConstants.BASE_LOGIN,
+  redirect: PageConstants.BASE_HOME,
   meta: {
     title: "Root",
   },
@@ -27,6 +32,6 @@ export const LoginRoute: RouteRecordRaw = {
 export const basicRoutes: RouteRecordRaw[] = [
   RootRoute,
   LoginRoute,
-  layout,
+  REDIRECT_ROUTE,
   PAGE_NOT_FOUND_ROUTE,
 ];

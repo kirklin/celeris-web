@@ -7,6 +7,8 @@ import { loginApi, logoutApi, userInfoApi } from "~/apis/internal/auth";
 import type { LoginParams } from "~/apis/internal/auth";
 import ProjectConfig from "~/config/projectConfig";
 import { router } from "~/router";
+import { PAGE_NOT_FOUND_ROUTE } from "~/router/routes/basic";
+import { usePermissionStore } from "~/store/modules/permission";
 
 interface UserState {
   // Whether the user should be logged in
@@ -180,20 +182,36 @@ export const useUserStore = defineStore({
         const { errorMessageMode, redirectToHome = true, ...loginParams } = payload;
         const { token } = await loginApi(loginParams, errorMessageMode);
         this.setToken(token);
-        if (!this.getToken) {
-          return null;
-        }
-        const userInfo = await this.getUserInfoAction();
-        this.setShouldLoggedIn(true);
-        if (redirectToHome) {
-          await router.replace(PageConstants.BASE_HOME);
-        }
-        return userInfo;
+        return this.performAfterLoginAction(redirectToHome);
       } catch (error) {
         return Promise.reject(error);
       }
     },
-
+    async performAfterLoginAction(redirectToHome = true) {
+      if (!this.getToken) {
+        return null;
+      }
+      this.setShouldLoggedIn(true);
+      const userInfo = await this.getUserInfoAction();
+      const shouldPasswordExpired = this.shouldPasswordExpired;
+      if (shouldPasswordExpired) {
+        this.setShouldPasswordExpired(false);
+      } else {
+        const permissionStore = usePermissionStore();
+        if (!permissionStore.shouldAddRouteDynamically) {
+          const routes = permissionStore.buildRoutesAction();
+          routes.forEach((route) => {
+            router.addRoute(route);
+          });
+          router.addRoute(PAGE_NOT_FOUND_ROUTE);
+          permissionStore.setShouldAddRouteDynamically(true);
+        }
+        if (redirectToHome) {
+          await router.replace(userInfo?.homePageUrl || PageConstants.BASE_HOME);
+        }
+      }
+      return userInfo;
+    },
     /**
      * Retrieves the user's information.
      * 获取用户信息。

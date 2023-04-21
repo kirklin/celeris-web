@@ -1,4 +1,5 @@
-import type { RoleConstants, RouterTransitionConstants } from "@celeris/constants";
+import type { RouterTransitionConstants } from "@celeris/constants";
+import type { RoleInfo } from "./user";
 
 export {};
 
@@ -31,7 +32,7 @@ declare module "vue-router" {
 
     // The roles that can access the page.
     // 可以访问页面的角色
-    allowedRoles?: RoleConstants[];
+    allowedRoles?: RoleInfo[];
 
     // Whether to keep the page alive after leaving.
     // 离开页面后是否保持页面存活

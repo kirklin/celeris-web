@@ -1,6 +1,12 @@
-import type { Menu } from "@celeris/types";
-import { APP_PERMISSION_STORE_ID } from "@celeris/constants";
+import type { Menu, RoleInfo } from "@celeris/types";
+import { APP_PERMISSION_STORE_ID, PermissionModeConstants } from "@celeris/constants";
+import { filterTree, flattenMultiLevelRoutes, transformRouteToMenu } from "@celeris/utils";
 import { defineStore } from "pinia";
+import type { RouteRecordRaw } from "vue-router";
+import { permissionCodeApi } from "~/apis/internal/auth";
+import { asyncRoutes } from "~/router/routes";
+import { useAppStore } from "~/store/modules/app";
+import { useUserStore } from "~/store/modules/user";
 
 // 定义权限状态接口
 // Define the interface for permission state
@@ -105,6 +111,95 @@ export const usePermissionStore = defineStore({
       this.frontendMenuList = [];
       this.lastMenuBuildTime = 0;
       this.shouldAddRouteDynamically = false;
+    },
+
+    async changePermissionCode() {
+      const permissionCodes = await permissionCodeApi();
+      this.setPermissionCodes(permissionCodes);
+    },
+
+    buildRoutesAction(): RouteRecordRaw[] {
+      const userStore = useUserStore();
+      const appStore = useAppStore();
+      let routes: RouteRecordRaw[] = [];
+
+      // Get user's roles and permission mode from app store
+      const roleList: RoleInfo[] = toRaw(userStore.getRoleList) || [];
+      const permissionMode = appStore.getProjectConfig.permissionMode || PermissionModeConstants.ROUTE_MAPPING;
+      // Filter routes by allowed roles
+      const routeFilterByRole = (route: RouteRecordRaw) => {
+        const { meta }: { meta?: { allowedRoles?: RoleInfo[] } } = route;
+        const { allowedRoles } = meta || {};
+        if (!allowedRoles) {
+          return true;
+        }
+        return roleList.some(role => allowedRoles.includes(role));
+      };
+
+      // Filter out routes with meta.shouldIgnoreRoute = true
+      const routeFilterIgnore = (route: RouteRecordRaw) => {
+        const { meta } = route;
+        const { shouldIgnoreRoute } = meta || {};
+        return !shouldIgnoreRoute;
+      };
+
+      switch (permissionMode) {
+        case PermissionModeConstants.ROLE: {
+          // Filter non-top-level routes by allowed roles
+          routes = filterTree(asyncRoutes, routeFilterByRole);
+          // Filter top-level routes by allowed roles
+          routes = routes.filter(routeFilterByRole);
+          // Convert multi-level routing to level 2 routing
+          routes = flattenMultiLevelRoutes(routes);
+          break;
+        }
+        case PermissionModeConstants.ROUTE_MAPPING: {
+          // Filter non-top-level routes by allowed roles
+          routes = filterTree(asyncRoutes, routeFilterByRole);
+          // Filter top-level routes by allowed roles
+          routes = routes.filter(routeFilterByRole);
+          // Convert routes to menu
+          const menuList = transformRouteToMenu(routes, true);
+          // Remove routes with meta.shouldIgnoreRoute = true
+          routes = filterTree(routes, routeFilterIgnore);
+          routes = routes.filter(routeFilterIgnore);
+          // Sort menu items by meta.orderNo
+          menuList.sort((a, b) => {
+            return (Number(a.meta?.orderNumber) || 0) - (Number(b.meta?.orderNumber) || 0);
+          });
+          // Set frontend menu list
+          this.setFrontendMenuList(menuList);
+          // Convert multi-level routing to level 2 routing
+          routes = flattenMultiLevelRoutes(routes);
+          break;
+        }
+        // case PermissionModeConstants.BACKEND: {
+        //   // TODO: Show loading message while fetching permission codes
+        //   let routeList: RouteRecordRaw[] = [];
+        //   try {
+        //     await this.changePermissionCode();
+        //     // Fetch routes from backend
+        //     routeList = (await getMenuList()) as RouteRecordRaw[];
+        //   } catch (error) {
+        //     console.error(error);
+        //   }
+        //   // Dynamically import route components
+        //   routeList = transformObjToRoute(routeList);
+        //   // Convert routes to menu
+        //   const backMenuList = transformRouteToMenu(routeList);
+        //   // Set backend menu list
+        //   this.setBackendMenuList(backMenuList);
+        //   // Remove routes with meta.shouldIgnoreRoute = true
+        //   routeList = filterTree(routeList, routeFilterIgnore);
+        //   routeList = routeList.filter(routeFilterIgnore);
+        //   // Convert multi-level routing to level 2 routing
+        //   routeList = flattenMultiLevelRoutes(routeList);
+        //   // Add 404 route to start of array
+        //   routes = [PAGE_NOT_FOUND_ROUTE, ...routeList];
+        //   break;
+        // }
+      }
+      return routes;
     },
   },
 });

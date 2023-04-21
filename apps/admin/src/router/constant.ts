@@ -2,6 +2,10 @@
 // 声明页面未找到的名称常量，值为字符串"PageNotFound"
 export const PAGE_NOT_FOUND_NAME = "PageNotFound";
 
+export const REDIRECT_NAME = "Redirect";
+
+export const PARENT_LAYOUT_NAME = "ParentLayout";
+
 /**
  * @description: Default page layout component 默认页面布局组件
  */
