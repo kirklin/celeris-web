@@ -2,14 +2,31 @@
 import type { Menu } from "@celeris/types";
 import { CAUnoCSSIcon } from "@celeris/components";
 import { mapTreeStructure } from "@celeris/utils";
+import type { RouteLocationNormalizedLoaded } from "vue-router";
 import { RouterLink } from "vue-router";
 import { useMenuSetting } from "~/composables/setting/useMenuSetting";
+import { REDIRECT_NAME } from "~/router/constant";
 import { getMenus } from "~/router/menus";
-const route = useRoute();
-const activeMenu = computed((): string => route.path);
+import { listenToRouteChange } from "~/router/mitt/routeChange";
+const activeMenu = ref();
 const isCollapse = useMenuSetting().getCollapsed;
-
+const { currentRoute } = useRouter();
 const menuList = ref<any[]>([]);
+
+listenToRouteChange((route) => {
+  if (route.name === REDIRECT_NAME) {
+    return;
+  }
+  const currentActiveMenu = route.meta?.currentActiveMenu;
+  handleMenuChange(route as RouteLocationNormalizedLoaded);
+  if (currentActiveMenu) {
+    activeMenu.value = currentActiveMenu;
+  }
+});
+async function handleMenuChange(route?: RouteLocationNormalizedLoaded) {
+  const menu = route || unref(currentRoute);
+  activeMenu.value = menu.path;
+}
 const transformProjectMenuToNaiveUIMenu = (menu: Menu) => {
   const { path, meta, icon, children } = menu;
   const renderIcon = (icon?: string) => {
@@ -48,7 +65,7 @@ onMounted(() => {
       <CAAppLogo :show-title="!isCollapse" />
     </div>
     <NScrollbar class="overflow-hidden">
-      <NMenu :collapsed="isCollapse" :default-value="activeMenu" :options="menuList" />
+      <NMenu v-model:value="activeMenu" :collapsed="isCollapse" :options="menuList" />
     </NScrollbar>
   </div>
 </template>

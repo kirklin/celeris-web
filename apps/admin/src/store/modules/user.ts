@@ -199,7 +199,7 @@ export const useUserStore = defineStore({
       } else {
         const permissionStore = usePermissionStore();
         if (!permissionStore.shouldAddRouteDynamically) {
-          const routes = permissionStore.buildRoutesAction();
+          const routes = await permissionStore.buildRoutesAction();
           routes.forEach((route) => {
             router.addRoute(route);
           });

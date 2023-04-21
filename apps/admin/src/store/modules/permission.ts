@@ -4,7 +4,10 @@ import { filterTree, flattenMultiLevelRoutes, transformRouteToMenu } from "@cele
 import { defineStore } from "pinia";
 import type { RouteRecordRaw } from "vue-router";
 import { permissionCodeApi } from "~/apis/internal/auth";
+import { menusApi } from "~/apis/internal/menu";
 import { asyncRoutes } from "~/router/routes";
+import { PAGE_NOT_FOUND_ROUTE } from "~/router/routes/basic";
+import { transformBackendDataToRoute } from "~/router/routes/utils";
 import { useAppStore } from "~/store/modules/app";
 import { useUserStore } from "~/store/modules/user";
 
@@ -118,7 +121,7 @@ export const usePermissionStore = defineStore({
       this.setPermissionCodes(permissionCodes);
     },
 
-    buildRoutesAction(): RouteRecordRaw[] {
+    async buildRoutesAction(): Promise<RouteRecordRaw[]> {
       const userStore = useUserStore();
       const appStore = useAppStore();
       let routes: RouteRecordRaw[] = [];
@@ -173,31 +176,31 @@ export const usePermissionStore = defineStore({
           routes = flattenMultiLevelRoutes(routes);
           break;
         }
-        // case PermissionModeConstants.BACKEND: {
-        //   // TODO: Show loading message while fetching permission codes
-        //   let routeList: RouteRecordRaw[] = [];
-        //   try {
-        //     await this.changePermissionCode();
-        //     // Fetch routes from backend
-        //     routeList = (await getMenuList()) as RouteRecordRaw[];
-        //   } catch (error) {
-        //     console.error(error);
-        //   }
-        //   // Dynamically import route components
-        //   routeList = transformObjToRoute(routeList);
-        //   // Convert routes to menu
-        //   const backMenuList = transformRouteToMenu(routeList);
-        //   // Set backend menu list
-        //   this.setBackendMenuList(backMenuList);
-        //   // Remove routes with meta.shouldIgnoreRoute = true
-        //   routeList = filterTree(routeList, routeFilterIgnore);
-        //   routeList = routeList.filter(routeFilterIgnore);
-        //   // Convert multi-level routing to level 2 routing
-        //   routeList = flattenMultiLevelRoutes(routeList);
-        //   // Add 404 route to start of array
-        //   routes = [PAGE_NOT_FOUND_ROUTE, ...routeList];
-        //   break;
-        // }
+        case PermissionModeConstants.BACKEND: {
+          // TODO: Show loading message while fetching permission codes
+          let routeList: RouteRecordRaw[] = [];
+          try {
+            await this.changePermissionCode();
+            // Fetch routes from backend
+            routeList = (await menusApi()) as RouteRecordRaw[];
+          } catch (error) {
+            console.error(error);
+          }
+          // Dynamically import route components
+          routeList = transformBackendDataToRoute(routeList);
+          // Convert routes to menu
+          const backMenuList = transformRouteToMenu(routeList);
+          // Set backend menu list
+          this.setBackendMenuList(backMenuList);
+          // Remove routes with meta.shouldIgnoreRoute = true
+          routeList = filterTree(routeList, routeFilterIgnore);
+          routeList = routeList.filter(routeFilterIgnore);
+          // Convert multi-level routing to level 2 routing
+          routeList = flattenMultiLevelRoutes(routeList);
+          // Add 404 route to start of array
+          routes = [PAGE_NOT_FOUND_ROUTE, ...routeList];
+          break;
+        }
       }
       return routes;
     },

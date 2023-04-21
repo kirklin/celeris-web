@@ -68,12 +68,12 @@ interface FakeCodeList {
   [id: string]: string[];
 }
 
-const fakeCodeList: FakeCodeList = {
+export const fakeCodeList: FakeCodeList = {
   1: ["1000", "3000", "5000"],
   2: ["2000", "4000", "6000"],
 };
 
-const getFakeUserByToken = (authorizationToken?: string) => {
+export const getFakeUserByToken = (authorizationToken?: string) => {
   if (!authorizationToken) {
     throw new Error("Token is required.");
   }

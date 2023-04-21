@@ -17,3 +17,12 @@ export const LAYOUT = () => import("~/layouts/index.vue");
  */
 // The constant IFrame is a function that returns a Vue component imported from a specified path
 export const IFRAME = () => import("~/views/internal/iframe/IframeContainer.vue");
+
+export const getParentLayout = (_name?: string) => {
+  return () =>
+    new Promise((resolve) => {
+      resolve({
+        name: _name || PARENT_LAYOUT_NAME,
+      });
+    });
+};
