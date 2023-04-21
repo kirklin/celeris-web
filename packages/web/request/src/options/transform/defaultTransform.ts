@@ -100,11 +100,10 @@ export const defaultTransform: AxiosTransform = {
       if (isEmpty(successMessage)) {
         successMessage = "Operation success";
       }
-
-      // TODO: handle the success message
+      HttpRequestConfiguration.successMessageHandler(successMessage, options.successMessageMode);
+      return _data;
     }
-
-    return _data;
+    HttpRequestConfiguration.errorMessageHandler(message, options.errorMessageMode);
   },
 
   /**

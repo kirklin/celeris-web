@@ -1,7 +1,8 @@
 import type { MessageMode } from "@celeris/types";
 
 export interface HttpRequestOptions {
-  errorHandler: (message: string, mode?: MessageMode) => void;
+  errorMessageHandler: (message: string, mode?: MessageMode) => void;
+  successMessageHandler: (message: string, mode?: MessageMode) => void;
   messageHandler: (message: string, mode?: MessageMode) => void;
   unauthorizedHandler: () => void;
   timeoutHandler: () => void;
@@ -10,7 +11,8 @@ export interface HttpRequestOptions {
 
 export class HttpRequestConfiguration {
   private static options: HttpRequestOptions = {
-    errorHandler: () => {},
+    errorMessageHandler: () => {},
+    successMessageHandler: () => {},
     messageHandler: () => {},
     unauthorizedHandler: () => {},
     timeoutHandler: () => {},
@@ -21,8 +23,12 @@ export class HttpRequestConfiguration {
     this.options = { ...this.options, ...options };
   }
 
-  static get errorHandler(): (message: string, mode?: MessageMode) => void {
-    return this.options.errorHandler;
+  static get successMessageHandler(): (message: string, mode?: MessageMode) => void {
+    return this.options.successMessageHandler;
+  }
+
+  static get errorMessageHandler(): (message: string, mode?: MessageMode) => void {
+    return this.options.errorMessageHandler;
   }
 
   static get messageHandler(): (message: string, mode?: MessageMode) => void {
@@ -51,8 +57,12 @@ export class HttpRequestEngine {
     HttpRequestConfiguration.configure({ messageHandler });
   }
 
-  static setErrorHandler(errorHandler: (message: string, mode?: MessageMode) => void): void {
-    HttpRequestConfiguration.configure({ errorHandler });
+  static setSuccessMessageHandler(successMessageHandler: (message: string, mode?: MessageMode) => void): void {
+    HttpRequestConfiguration.configure({ successMessageHandler });
+  }
+
+  static setErrorMessageHandler(errorMessageHandler: (message: string, mode?: MessageMode) => void): void {
+    HttpRequestConfiguration.configure({ errorMessageHandler });
   }
 
   static setUnauthorizedHandler(unauthorizedHandler: () => void): void {

@@ -34,14 +34,12 @@ const login = async () => {
     // Login the user
     const userInfo = await useUserStore().login({
       ...unref(loginFormModel),
-      errorMessageMode: "none",
+      errorMessageMode: "dialog",
     });
 
     if (userInfo) {
       message.success("Login Success");
     }
-  } catch (error) {
-    message.error("Login Error");
   } finally {
     loading.value = false;
   }

@@ -19,7 +19,7 @@ export interface LoginParams {
 // Define a function to call the login API
 export function loginApi(
   params: LoginParams,
-  errorMessageMode: MessageMode = "modal",
+  errorMessageMode: MessageMode = "dialog",
 ) {
   // Make a POST request to the login API endpoint with the given parameters
   return request.post<Omit<FakeUserInfo, "extraInfo">>(
@@ -36,7 +36,7 @@ export function loginApi(
 
 // Define a function to call the logout API
 export function logoutApi(
-  errorMessageMode: MessageMode = "modal",
+  errorMessageMode: MessageMode = "dialog",
 ) {
   // Make a GET request to the logout API endpoint
   return request.get<void>(
@@ -68,7 +68,7 @@ export function userInfoApi(
 
 // Define a function to call the permission code API
 export function permissionCodeApi(
-  errorMessageMode: MessageMode = "modal",
+  errorMessageMode: MessageMode = "dialog",
 ) {
   // Make a GET request to the permission code API endpoint
   return request.get<string[]>(
