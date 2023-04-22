@@ -2,20 +2,28 @@
 // 声明页面未找到的名称常量，值为字符串"PageNotFound"
 export const PAGE_NOT_FOUND_NAME = "PageNotFound";
 
+// Declares a constant variable to store the name of a redirect, with the value "Redirect"
+// 声明重定向的名称常量，值为字符串"Redirect"
 export const REDIRECT_NAME = "Redirect";
 
+// Declares a constant variable to store the name of a parent layout, with the value "ParentLayout"
+// 声明父级布局的名称常量，值为字符串"ParentLayout"
 export const PARENT_LAYOUT_NAME = "ParentLayout";
+
+/**
+ * @description: Exception component 异常组件
+ * @constructor
+ */
+export const EXCEPTION_COMPONENT = () => import("~/views/internal/exception/Exception.vue");
 
 /**
  * @description: Default page layout component 默认页面布局组件
  */
-// The constant LAYOUT is a function that returns a Vue component imported from a specified path
 export const LAYOUT = () => import("~/layouts/index.vue");
 
 /**
  * @description: IFrame container component for embedding iframes 内嵌 iframe 容器组件
  */
-// The constant IFrame is a function that returns a Vue component imported from a specified path
 export const IFRAME = () => import("~/views/internal/iframe/IframeContainer.vue");
 
 /**

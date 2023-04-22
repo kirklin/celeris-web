@@ -1,7 +1,6 @@
 import type { RouteRecordRaw } from "vue-router";
 import { cloneDeep, field, isString, logger } from "@celeris/utils";
-import { IFRAME, LAYOUT, getParentLayout } from "~/router/constant";
-import { PAGE_NOT_FOUND_ROUTE } from "~/router/routes/basic";
+import { EXCEPTION_COMPONENT, IFRAME, LAYOUT, getParentLayout } from "~/router/constant";
 
 type DynamicViewsModules = Record<string, () => Promise<Recordable>>;
 
@@ -77,7 +76,7 @@ function dynamicImport(dynamicViewsModules: DynamicViewsModules, component: stri
   } else {
     logger.warn(`Could not find \`${component}.vue\` or \`${component}.tsx\` in src/views/, please create it yourself!`
       , field(`在src/views/中找不到\`${component}.vue\`或\`${component}.tsx\`，请自行创建！`, ""));
-    return PAGE_NOT_FOUND_ROUTE;
+    return EXCEPTION_COMPONENT;
   }
 }
 

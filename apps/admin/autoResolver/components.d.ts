@@ -21,7 +21,9 @@ declare module '@vue/runtime-core' {
     NMenu: typeof import('@celeris/ca-components')['NMenu']
     NMessageProvider: typeof import('@celeris/ca-components')['NMessageProvider']
     NNotificationProvider: typeof import('@celeris/ca-components')['NNotificationProvider']
+    NResult: typeof import('@celeris/ca-components')['NResult']
     NScrollbar: typeof import('@celeris/ca-components')['NScrollbar']
+    NSpace: typeof import('@celeris/ca-components')['NSpace']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

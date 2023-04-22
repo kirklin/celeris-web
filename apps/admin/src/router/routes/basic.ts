@@ -1,5 +1,6 @@
 import type { RouteRecordRaw } from "vue-router";
 import {
+  EXCEPTION_COMPONENT,
   LAYOUT,
   PAGE_NOT_FOUND_NAME, REDIRECT_NAME,
 } from "~/router/constant";
@@ -14,6 +15,18 @@ export const PAGE_NOT_FOUND_ROUTE: RouteRecordRaw = {
     shouldHideInMenu: true,
     shouldHideBreadcrumb: true,
   },
+  children: [
+    {
+      path: "/:path(.*)*",
+      name: PAGE_NOT_FOUND_NAME,
+      component: EXCEPTION_COMPONENT,
+      meta: {
+        title: "ErrorPage",
+        shouldHideInMenu: true,
+        shouldHideBreadcrumb: true,
+      },
+    },
+  ],
 };
 export const REDIRECT_ROUTE: RouteRecordRaw = {
   path: "/redirect",
