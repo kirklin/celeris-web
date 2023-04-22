@@ -1,7 +1,7 @@
 import { RoleConstants } from "@celeris/constants";
 import type { UserInfo } from "@celeris/types";
 import type { RequestParams } from "@celeris/utils";
-import { createErrorResponse, createSuccessResponse, extractAuthorizationToken } from "@celeris/utils";
+import { createErrorResponse, createSuccessResponse, extractAuthorizationToken, getErrorMessage } from "@celeris/utils";
 import type { MockMethod } from "vite-plugin-mock";
 
 export interface FakeUserInfo extends UserInfo {
@@ -121,7 +121,7 @@ const mockMethods: MockMethod[] = [
         const { extraInfo: _extraInfo, token: _token, ...user } = checkUser;
         return createSuccessResponse({ ...user, extraInfo: undefined });
       } catch (error) {
-        return createErrorResponse(error instanceof Error ? error.message : String(error));
+        return createErrorResponse(getErrorMessage(error));
       }
     },
   },
@@ -137,7 +137,7 @@ const mockMethods: MockMethod[] = [
 
         return createSuccessResponse(codeList);
       } catch (error) {
-        return createErrorResponse(error instanceof Error ? error.message : String(error));
+        return createErrorResponse(getErrorMessage(error));
       }
     },
   },
@@ -151,7 +151,7 @@ const mockMethods: MockMethod[] = [
         getFakeUserByToken(authorizationToken);
         return createSuccessResponse(undefined, "Token has been destroyed");
       } catch (error) {
-        return createErrorResponse(error instanceof Error ? error.message : String(error));
+        return createErrorResponse(getErrorMessage(error));
       }
     },
   },

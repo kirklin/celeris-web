@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { HttpStatusConstants, PageConstants } from "@celeris/constants";
 import { checkStatus } from "@celeris/request";
+import { getErrorMessage } from "@celeris/utils";
 
 const props = withDefaults(defineProps<exceptionProps>(), {
   status: HttpStatusConstants.NotFound,
@@ -40,7 +41,7 @@ onMounted(() => {
     statusType.value = getStatusType(props.status);
     checkStatus(props.status);
   } catch (error) {
-    title.value = `${props.status} ${error instanceof Error ? error.message : String(error)}`;
+    title.value = `${props.status} ${getErrorMessage(error)}`;
   }
 });
 </script>

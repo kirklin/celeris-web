@@ -1,7 +1,7 @@
 import type { MessageMode } from "@celeris/types";
 import type { RoleInfo, UserInfo } from "@celeris/types/src/user";
 import { defineStore } from "pinia";
-import { field, logger } from "@celeris/utils";
+import { field, getErrorMessage, logger } from "@celeris/utils";
 import { APP_USER_STORE_ID, PageConstants, PermissionCacheTypeConstants } from "@celeris/constants";
 import { loginApi, logoutApi, userInfoApi } from "~/apis/internal/auth";
 import type { LoginParams } from "~/apis/internal/auth";
@@ -238,7 +238,7 @@ export const useUserStore = defineStore({
         try {
           await logoutApi();
         } catch (error) {
-          logger.error("logout error", field("error", error instanceof Error ? error.message : String(error)));
+          logger.error("logout error", field("error", getErrorMessage(error)));
         }
       }
       this.resetUserState();

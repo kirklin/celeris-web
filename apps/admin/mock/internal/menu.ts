@@ -1,5 +1,5 @@
 import type { RequestParams } from "@celeris/utils";
-import { createErrorResponse, createSuccessResponse, extractAuthorizationToken } from "@celeris/utils";
+import { createErrorResponse, createSuccessResponse, extractAuthorizationToken, getErrorMessage } from "@celeris/utils";
 import type { MockMethod } from "vite-plugin-mock";
 import type { RouteMeta } from "vue-router";
 import { getFakeUserByToken } from "./auth";
@@ -61,7 +61,7 @@ const mockMethods: MockMethod[] = [
         }
         return createSuccessResponse(menus);
       } catch (error) {
-        return createErrorResponse(error instanceof Error ? error.message : String(error));
+        return createErrorResponse(getErrorMessage(error));
       }
     },
   },
