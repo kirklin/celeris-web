@@ -1,66 +1,61 @@
 import type { RouteRecordRaw } from "vue-router";
-import { cloneDeep, logger } from "@celeris/utils";
+import { cloneDeep, field, isString, logger } from "@celeris/utils";
 import { IFRAME, LAYOUT, getParentLayout } from "~/router/constant";
 import { PAGE_NOT_FOUND_ROUTE } from "~/router/routes/basic";
+
+type DynamicViewsModules = Record<string, () => Promise<Recordable>>;
 
 const layoutMap = new Map<string, () => Promise<typeof import("*.vue")>>();
 layoutMap.set("LAYOUT", LAYOUT);
 layoutMap.set("IFRAME", IFRAME);
 
-// 动态路由模块
-let dynamicViewsModules: Record<string, () => Promise<Recordable>>;
+interface BackendRouteRecordRaw extends Omit<RouteRecordRaw, "component"> {
+  component?: string | (() => Promise<Recordable>) | RouteRecordRaw | undefined;
+}
 
 /**
- * 异步导入路由组件
- * @param routes 路由配置项
- */
-function asyncImportRoute(routes: RouteRecordRaw[] | undefined) {
-  // 动态引入views目录下的所有.vue和.tsx文件
-  dynamicViewsModules = dynamicViewsModules || import.meta.glob<{ default: any }>("../../views/**/*.{vue,tsx}");
+* Asynchronously imports the route component
+* 异步导入路由组件
+* @param routes 路由配置项
+* @param dynamicViewsModules 动态路由模块
+*/
+function asyncImportRoute(routes: BackendRouteRecordRaw[] | RouteRecordRaw[], dynamicViewsModules: DynamicViewsModules = import.meta.glob<{ default: any }>("../../views/**/*.{vue,tsx}")) {
   if (!routes) {
     return;
   }
 
-  // 遍历路由配置项
   routes.forEach((item) => {
     if (!item.component && item.meta?.frameSrc) {
-      // 对于需要应用iframe的路由，设置component为FrameBlank组件
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
-      item.component = "IFRAME";
+      item.component = "IFRAME" as const;
     }
 
     const { component, name } = item;
     const { children } = item;
-    if (component) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
+
+    if (component && isString(component)) {
       const layoutFound = layoutMap.get(component.toUpperCase());
       if (layoutFound) {
-        // 对于已存在的布局组件，直接使用
         item.component = layoutFound;
       } else {
-        // 对于动态路由组件，进行动态导入
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
-        item.component = dynamicImport(dynamicViewsModules, component as string);
+        if (dynamicViewsModules) {
+          item.component = dynamicImport(dynamicViewsModules, component);
+        }
       }
     } else if (name) {
-      // 对于没有设置component的路由，使用默认布局组件
       item.component = getParentLayout();
     }
 
-    // 递归处理子路由
-    children && asyncImportRoute(children);
+    children && asyncImportRoute(children, dynamicViewsModules);
   });
 }
 
 /**
+ * Dynamically imports the route component
  * 动态导入路由组件
  * @param dynamicViewsModules 动态路由模块
  * @param component 组件名称
  */
-function dynamicImport(dynamicViewsModules: Record<string, () => Promise<Recordable>>, component: string) {
+function dynamicImport(dynamicViewsModules: DynamicViewsModules, component: string) {
   const keys = Object.keys(dynamicViewsModules);
   const matchKeys = keys.filter((key) => {
     const k = key.replace("../../views", "");
@@ -70,52 +65,50 @@ function dynamicImport(dynamicViewsModules: Record<string, () => Promise<Recorda
     const lastIndex = endFlag ? k.length : k.lastIndexOf(".");
     return k.substring(startIndex, lastIndex) === component;
   });
+
   if (matchKeys?.length === 1) {
     const matchKey = matchKeys[0];
     return dynamicViewsModules[matchKey];
   } else if (matchKeys?.length > 1) {
-    console.warn(
-      "请不要在views目录下的同一层级目录中创建同名的.vue和.tsx文件，否则会导致动态引入失败",
+    logger.warn(
+      "Please do not create .vue and .tsx files with the same name in the same directory under the views folder, otherwise dynamic importing will fail.",
+      field("请不要在views目录下的同一层级目录中创建同名的.vue和.tsx文件，否则会导致动态引入失败", ""),
     );
   } else {
-    console.warn(
-      `在src/views/下找不到\`${component}.vue\` 或 \`${component}.tsx\`, 请自行创建!`,
-    );
-    // TODO: 异常页面
+    logger.warn(`Could not find \`${component}.vue\` or \`${component}.tsx\` in src/views/, please create it yourself!`
+      , field(`在src/views/中找不到\`${component}.vue\`或\`${component}.tsx\`，请自行创建！`, ""));
     return PAGE_NOT_FOUND_ROUTE;
   }
 }
 
 /**
+ * Converts backend objects to route objects
  * 将后端对象转换为路由对象
  * @param routeList 路由配置项列表
  * @returns 转换后的路由配置项列表
  */
-export function transformBackendDataToRoute<T = RouteRecordRaw>(routeList: RouteRecordRaw[]): T[] {
+export function transformBackendDataToRoutes(routeList: RouteRecordRaw[]): RouteRecordRaw[] {
   routeList.forEach((route) => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    const component = route.component as string;
+    const component = route.component as string | undefined;
     if (component) {
       if (component.toUpperCase() === "LAYOUT") {
-        // 对于已存在的布局组件，直接使用
         route.component = layoutMap.get(component.toUpperCase());
       } else {
-        // 对于动态路由组件，使用默认布局组件，并将原配置项作为子路由添加
         route.children = [cloneDeep(route)];
         route.component = LAYOUT;
         route.name = `${String(route.name)}Parent`;
-        const meta = route.meta || {};
+        const meta = route.meta ?? {};
         meta.shouldShallowMenu = true;
         meta.shouldAffixToNavBar = false;
         route.meta = meta;
       }
     } else {
-      logger.warn(`请正确配置路由：${String(route.name)}的component属性`);
+      logger.warn(`Please configure the component property of the ${String(route.name)} route correctly.`
+        , field(`请正确配置${String(route.name)}路由的component属性。`, ""));
     }
 
-    // 递归处理子路由
-    route.children && asyncImportRoute(route.children);
+    route.children && asyncImportRoute(route.children, undefined);
   });
-  return routeList as unknown as T[];
+
+  return routeList;
 }

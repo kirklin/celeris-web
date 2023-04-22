@@ -7,7 +7,7 @@ import { permissionCodeApi } from "~/apis/internal/auth";
 import { menusApi } from "~/apis/internal/menu";
 import { asyncRoutes } from "~/router/routes";
 import { PAGE_NOT_FOUND_ROUTE } from "~/router/routes/basic";
-import { transformBackendDataToRoute } from "~/router/routes/utils";
+import { transformBackendDataToRoutes } from "~/router/routes/utils";
 import { useAppStore } from "~/store/modules/app";
 import { useUserStore } from "~/store/modules/user";
 
@@ -187,7 +187,7 @@ export const usePermissionStore = defineStore({
             console.error(error);
           }
           // Dynamically import route components
-          routeList = transformBackendDataToRoute(routeList);
+          routeList = transformBackendDataToRoutes(routeList);
           // Convert routes to menu
           const backMenuList = transformRouteToMenu(routeList);
           // Set backend menu list
