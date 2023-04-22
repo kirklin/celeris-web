@@ -18,11 +18,13 @@ export const LAYOUT = () => import("~/layouts/index.vue");
 // The constant IFrame is a function that returns a Vue component imported from a specified path
 export const IFRAME = () => import("~/views/internal/iframe/IframeContainer.vue");
 
-export const getParentLayout = (_name?: string) => {
-  return () =>
-    new Promise((resolve) => {
-      resolve({
-        name: _name || PARENT_LAYOUT_NAME,
-      });
-    });
-};
+/**
+ * @description: Get the parent layout component based on the _name parameter 获取基于 _name 参数的父级布局组件
+ * @param _name Optional, the name of the parent layout component, default is PARENT_LAYOUT_NAME 可选参数，父级布局组件的名称，默认为 PARENT_LAYOUT_NAME
+ * @return A function that returns a Promise with an object that contains the name property 返回一个函数，该函数返回一个 Promise，其中包含 name 属性的对象
+ */
+export function getParentLayout(_name = PARENT_LAYOUT_NAME) {
+  // Return a function that returns a Promise that resolves with an object containing the layout name
+  // 返回一个返回 Promise 的函数，该 Promise 解析为包含布局名称的对象
+  return () => Promise.resolve({ name: _name });
+}
