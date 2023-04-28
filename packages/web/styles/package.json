@@ -16,9 +16,9 @@
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.50",
-    "@iconify-json/tabler": "^1.1.73",
+    "@iconify-json/tabler": "^1.1.74",
     "css-render": "^0.15.12",
-    "unocss": "^0.51.5",
-    "vite": "^4.3.1"
+    "unocss": "^0.51.8",
+    "vite": "^4.3.3"
   }
 }
