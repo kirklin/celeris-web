@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { Snowflake } from "../snowflake";
+
 describe("Snowflake", () => {
   it("generates unique IDs", () => {
     const snowflake1 = new Snowflake(1, 2);

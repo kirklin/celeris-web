@@ -1,5 +1,6 @@
 import { NOOP } from "@vue/shared";
 import type { App, AppContext, Directive, Plugin } from "vue";
+
 export type SFCWithInstall<T> = T & Plugin;
 
 export type SFCInstallWithContext<T> = SFCWithInstall<T> & {

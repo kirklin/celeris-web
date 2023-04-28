@@ -12,7 +12,7 @@ import { viteMockServe } from "vite-plugin-mock";
  */
 export function createMockPluginConfig(isProduction: boolean): PluginOption {
   return viteMockServe({
-    ignore: /^\_/,
+    ignore: /^_/,
     mockPath: "mock",
     localEnabled: !isProduction,
     prodEnabled: isProduction,

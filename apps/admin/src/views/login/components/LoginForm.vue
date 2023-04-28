@@ -4,6 +4,7 @@ import { useUserStore } from "~/store/modules/user";
 
 // 登录表单数据
 import type { LoginFromType } from "~/views/login/types";
+
 const message = useMessage();
 
 const loginFormModel: LoginFromType = reactive<LoginFromType>({

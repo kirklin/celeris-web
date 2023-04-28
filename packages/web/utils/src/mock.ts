@@ -1,4 +1,5 @@
 import { ResultConstants } from "@celeris/constants";
+
 /**
  * Request data format for API calls.
  */

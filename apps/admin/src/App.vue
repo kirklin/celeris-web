@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { logger } from "@celeris/utils";
 import { designNamespace, designPrefixCls } from "~/config/designConfig";
+
 logger.info("I'm ready!  ⸜(๑'ᵕ'๑)⸝⋆*");
 </script>
 

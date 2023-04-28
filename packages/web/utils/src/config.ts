@@ -14,7 +14,7 @@ export function getAppGlobalConfig(env: GlobEnvConfig): GlobConfig {
   const { VITE_GLOB_APP_TITLE, VITE_GLOB_API_URL, VITE_GLOB_APP_SHORT_NAME, VITE_GLOB_API_URL_SSR, VITE_GLOB_API_URL_PREFIX }
     = getAppGlobalEnvConfig(env);
 
-  if (!/^[a-zA-Z\_]*$/.test(VITE_GLOB_APP_SHORT_NAME)) {
+  if (!/^[a-zA-Z_]*$/.test(VITE_GLOB_APP_SHORT_NAME)) {
     console.warn(
       "VITE_GLOB_APP_SHORT_NAME Variables can only be characters/underscores, please modify in the environment variables and re-running.",
     );

@@ -1,4 +1,5 @@
 import type { RoleConstants } from "@celeris/constants";
+
 export interface UserInfo {
   // User's unique identifier
   // 用户的唯一标识符

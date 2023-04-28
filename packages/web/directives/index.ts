@@ -1,5 +1,6 @@
 import type { App } from "vue";
 import copy from "./src/copy";
+
 export const AllDirectives = {
   // Custom directives
   copy,

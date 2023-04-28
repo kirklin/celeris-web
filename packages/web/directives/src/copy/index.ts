@@ -1,5 +1,6 @@
 import type { Directive, DirectiveBinding } from "vue";
 import { copyToClipboard, logger } from "@celeris/utils";
+
 interface CopyDirectiveElement extends HTMLElement {
   copyData: string;
   __handleClick__: any;

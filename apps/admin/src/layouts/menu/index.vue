@@ -8,6 +8,7 @@ import { useMenuSetting } from "~/composables/setting/useMenuSetting";
 import { REDIRECT_NAME } from "~/router/constant";
 import { getMenus } from "~/router/menus";
 import { listenToRouteChange } from "~/router/mitt/routeChange";
+
 const activeMenu = ref();
 const isCollapse = useMenuSetting().getCollapsed;
 const { currentRoute } = useRouter();

@@ -3,6 +3,7 @@ import type { GlobEnvConfig } from "@celeris/types";
 import { getAppGlobalConfig } from "@celeris/utils";
 import type { CreateAxiosOptions } from "../axiosTransform";
 import { defaultTransform } from "./transform/defaultTransform";
+
 const globalConfig = getAppGlobalConfig(<GlobEnvConfig>import.meta.env);
 export const defaultAxiosOptions: CreateAxiosOptions = {
   // See https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#authentication_schemes
