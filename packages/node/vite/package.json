@@ -17,15 +17,15 @@
     "mockjs": "^1.1.0",
     "unplugin-auto-import": "^0.15.3",
     "unplugin-vue-components": "^0.24.1",
-    "vite": "^4.3.3",
-    "vite-plugin-mock": "^2.9.6"
+    "vite": "^4.3.4",
+    "vite-plugin-mock": "2.9.6"
   },
   "devDependencies": {
     "@celeris/types": "workspace:*",
-    "rollup": "^3.21.0",
+    "rollup": "^3.21.5",
     "typescript": "^5.0.4",
     "unplugin-config": "^0.0.3",
-    "vite-plugin-inspect": "^0.7.24",
+    "vite-plugin-inspect": "^0.7.25",
     "vite-plugin-pwa": "^0.14.7",
     "vite-plugin-vue-inspector": "^3.4.1"
   }

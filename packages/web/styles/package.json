@@ -19,6 +19,6 @@
     "@iconify-json/tabler": "^1.1.74",
     "css-render": "^0.15.12",
     "unocss": "^0.51.8",
-    "vite": "^4.3.3"
+    "vite": "^4.3.4"
   }
 }
