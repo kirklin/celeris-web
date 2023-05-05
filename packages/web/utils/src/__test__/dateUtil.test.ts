@@ -27,8 +27,8 @@ describe("formatToDate function", () => {
 
 describe("formatToDateTime function", () => {
   test("should return formatted date and time when given a valid date object", () => {
-    const validDate = new Date("2023-01-01T00:00:00.000Z");
-    const expectedOutput = "2023-01-01 08:00:00"; // assuming timezone offset is +08:00
+    const validDate = new Date("2023-01-01T00:00:00.000");
+    const expectedOutput = "2023-01-01 00:00:00"; // assuming timezone offset is +08:00
     const actualOutput = formatToDateTime(validDate);
     expect(actualOutput).toBe(expectedOutput);
   });
