@@ -51,6 +51,7 @@ export async function createApplicationViteConfig(command, mode, cwd) {
           manualChunks: {
             vue: ["vue", "pinia", "vue-router"],
             echarts: ["echarts", "vue-echarts"],
+            celerisComponents: ["@celeris/components", "@celeris/ca-components"],
           },
         },
       },
