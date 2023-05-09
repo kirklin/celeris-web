@@ -54,6 +54,7 @@ Get started with Celeris-admin today and experience a highly streamlined front-e
    admin --> components
    admin --> constants
    admin --> directives
+   admin --> hooks
    admin --> locale
    admin --> request
    admin --> styles
@@ -70,6 +71,8 @@ Get started with Celeris-admin today and experience a highly streamlined front-e
    ca-components --> utils
    directives
    directives --> utils
+   hooks
+   hooks --> types
    locale
    locale --> constants
    locale --> types

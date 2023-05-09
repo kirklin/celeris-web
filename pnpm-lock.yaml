@@ -125,6 +125,9 @@ importers:
       '@celeris/components':
         specifier: workspace:*
         version: link:../../packages/web/components
+      '@celeris/hooks':
+        specifier: workspace:*
+        version: link:../../packages/web/hooks
       '@celeris/types':
         specifier: workspace:*
         version: link:../../packages/web/types
@@ -261,6 +264,18 @@ importers:
       vue:
         specifier: ^3.2.47
         version: 3.2.47
+
+  packages/web/hooks:
+    dependencies:
+      '@celeris/types':
+        specifier: workspace:*
+        version: link:../types
+      '@vueuse/core':
+        specifier: ^10.1.2
+        version: 10.1.2(vue@3.2.47)
+      '@vueuse/integrations':
+        specifier: ^10.1.2
+        version: 10.1.2(vue@3.2.47)
 
   packages/web/locale:
     dependencies:
@@ -3614,6 +3629,55 @@ packages:
     dependencies:
       '@types/web-bluetooth': 0.0.17
       '@vueuse/metadata': 10.1.2
+      '@vueuse/shared': 10.1.2(vue@3.2.47)
+      vue-demi: 0.14.0(vue@3.2.47)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
+  /@vueuse/integrations@10.1.2(vue@3.2.47):
+    resolution: {integrity: sha512-wUpG3Wv6LiWerOwCzOAM0iGhNQ4vfFUTkhj/xQy7TLXduh2M3D8N08aS0KqlxsejY6R8NLxydDIM+68QfHZZ8Q==}
+    peerDependencies:
+      async-validator: '*'
+      axios: '*'
+      change-case: '*'
+      drauu: '*'
+      focus-trap: '*'
+      fuse.js: '*'
+      idb-keyval: '*'
+      jwt-decode: '*'
+      nprogress: '*'
+      qrcode: '*'
+      sortablejs: '*'
+      universal-cookie: '*'
+    peerDependenciesMeta:
+      async-validator:
+        optional: true
+      axios:
+        optional: true
+      change-case:
+        optional: true
+      drauu:
+        optional: true
+      focus-trap:
+        optional: true
+      fuse.js:
+        optional: true
+      idb-keyval:
+        optional: true
+      jwt-decode:
+        optional: true
+      nprogress:
+        optional: true
+      qrcode:
+        optional: true
+      sortablejs:
+        optional: true
+      universal-cookie:
+        optional: true
+    dependencies:
+      '@vueuse/core': 10.1.2(vue@3.2.47)
       '@vueuse/shared': 10.1.2(vue@3.2.47)
       vue-demi: 0.14.0(vue@3.2.47)
     transitivePeerDependencies:

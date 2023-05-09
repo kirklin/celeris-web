@@ -53,6 +53,7 @@ Celeris Admin的一个特色是它与OpenAI的ChatGPT API集成，提供了强�
    admin --> components
    admin --> constants
    admin --> directives
+   admin --> hooks
    admin --> locale
    admin --> request
    admin --> styles
@@ -69,6 +70,8 @@ Celeris Admin的一个特色是它与OpenAI的ChatGPT API集成，提供了强�
    ca-components --> utils
    directives
    directives --> utils
+   hooks
+   hooks --> types
    locale
    locale --> constants
    locale --> types

@@ -42,6 +42,7 @@
   "devDependencies": {
     "@celeris/ca-components": "workspace:*",
     "@celeris/components": "workspace:*",
+    "@celeris/hooks": "workspace:*",
     "@celeris/types": "workspace:*",
     "@celeris/vite": "workspace:*",
     "@vitejs/plugin-vue": "^4.2.1",
