@@ -50,6 +50,7 @@ export async function createApplicationViteConfig(command, mode, cwd) {
         output: {
           manualChunks: {
             vue: ["vue", "pinia", "vue-router"],
+            echarts: ["echarts", "vue-echarts"],
           },
         },
       },
