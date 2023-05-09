@@ -374,12 +374,6 @@ importers:
       '@vue/runtime-core':
         specifier: 3.2.47
         version: 3.2.47
-      '@vueuse/core':
-        specifier: ^10.1.2
-        version: 10.1.2(vue@3.2.47)
-      '@vueuse/shared':
-        specifier: ^10.1.2
-        version: 10.1.2(vue@3.2.47)
       crypto-js:
         specifier: ^4.1.1
         version: 4.1.1
