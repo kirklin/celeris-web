@@ -45,6 +45,7 @@ export async function createApplicationViteConfig(command, mode, cwd) {
     define: defineData,
     build: {
       target: "es2015",
+      minify: "terser",
       cssTarget: "chrome80",
       rollupOptions: {
         output: {
