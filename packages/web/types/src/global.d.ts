@@ -5,6 +5,9 @@ export declare global {
   const __VITE_USE_MOCK__: boolean;
 
   type AnyFn = (...args: any[]) => any;
+  export interface AnyObject {
+    [key: string]: unknown;
+  }
   type Awaitable<T> = Promise<T> | T;
   type ArgumentsType<T> = T extends (...args: infer U) => any ? U : never;
   type PromisifyFn<T extends AnyFn> = (
