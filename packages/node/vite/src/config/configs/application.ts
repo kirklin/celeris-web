@@ -49,6 +49,9 @@ export async function createApplicationViteConfig(command, mode, cwd) {
       cssTarget: "chrome80",
       rollupOptions: {
         output: {
+          chunkFileNames: "assets/js/[name]-[hash].js",
+          entryFileNames: "assets/js/[name]-[hash].js",
+          assetFileNames: "assets/[ext]/[name]-[hash].[ext]",
           manualChunks: {
             vue: ["vue", "pinia", "vue-router"],
             echarts: ["echarts", "vue-echarts"],
