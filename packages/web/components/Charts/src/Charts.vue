@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { nextTick, ref } from "vue";
-import VCharts from "vue-echarts";
+import VCharts from "./vueEchartsChunk";
 
 defineProps({
   options: {
