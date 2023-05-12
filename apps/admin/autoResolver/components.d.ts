@@ -11,7 +11,6 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     CAAppLogo: typeof import('@celeris/components')['CAAppLogo']
     CAAppNaiveUIProvider: typeof import('@celeris/components')['CAAppNaiveUIProvider']
-    CACharts: typeof import('@celeris/components')['CACharts']
     NButton: typeof import('@celeris/ca-components')['NButton']
     NConfigProvider: typeof import('@celeris/ca-components')['NConfigProvider']
     NDialogProvider: typeof import('@celeris/ca-components')['NDialogProvider']
