@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { PageConstants } from "@celeris/constants";
 import { useRouter } from "vue-router";
-import logo from "./assets/logo.png";
+import { logoImage } from "@celeris/assets";
 
 defineProps({
   /**
@@ -23,7 +23,7 @@ function goHome() {
 
 <template>
   <div :class="`text-${titleSize}`" class="flex items-center justify-center font-semibold dark:text-white" @click="goHome">
-    <img :src="logo" class="m-4 h-11" alt="Logo">
+    <img width="44" height="44" :src="logoImage" class="m-4 h-11" alt="Logo">
     <span v-show="showTitle">{{ AppName }}</span>
   </div>
 </template>

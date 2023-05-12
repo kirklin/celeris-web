@@ -15,7 +15,6 @@ interface UseChartOptionReturn {
 // 根据源选项生成图表选项
 // Generate chart options based on source options
 export function useChartOption(generateSourceOptions: ChartOptionsGenerator): UseChartOptionReturn {
-
   // 生成图表选项
   // Generate chart options
   const generateChartOptions = (): EChartsOption => {

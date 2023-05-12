@@ -50,6 +50,7 @@ Get started with Celeris-admin today and experience a highly streamlined front-e
 ```mermaid
  graph TD
    admin{admin}
+   admin --> assets
    admin --> ca-components
    admin --> components
    admin --> constants
@@ -60,7 +61,9 @@ Get started with Celeris-admin today and experience a highly streamlined front-e
    admin --> styles
    admin --> types
    admin --> utils
+   assets
    components
+   components --> assets
    components --> ca-components
    components --> constants
    components --> styles

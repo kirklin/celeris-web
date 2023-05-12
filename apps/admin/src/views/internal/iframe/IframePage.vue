@@ -4,7 +4,7 @@
 *  @createdTime: 2023-04-07 13:45
  -->
 <script setup lang="ts">
-const props = withDefaults(defineProps<{
+withDefaults(defineProps<{
   frameSrc: string;
 }>(), {
   frameSrc: "",

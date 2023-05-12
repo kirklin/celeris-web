@@ -119,6 +119,9 @@ importers:
         specifier: ^4.1.6
         version: 4.1.6(vue@3.2.47)
     devDependencies:
+      '@celeris/assets':
+        specifier: workspace:*
+        version: link:../../packages/web/assets
       '@celeris/ca-components':
         specifier: workspace:*
         version: link:../../packages/web/CAComponents
@@ -229,6 +232,8 @@ importers:
         specifier: 2.34.3
         version: 2.34.3(vue@3.2.47)
 
+  packages/web/assets: {}
+
   packages/web/components:
     dependencies:
       '@celeris/constants':
@@ -250,6 +255,9 @@ importers:
         specifier: ^4.1.6
         version: 4.1.6(vue@3.2.47)
     devDependencies:
+      '@celeris/assets':
+        specifier: workspace:*
+        version: link:../assets
       '@celeris/ca-components':
         specifier: workspace:*
         version: link:../CAComponents

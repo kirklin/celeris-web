@@ -49,6 +49,7 @@ Celeris Admin的一个特色是它与OpenAI的ChatGPT API集成，提供了强�
 ```mermaid
  graph TD
    admin{admin}
+   admin --> assets
    admin --> ca-components
    admin --> components
    admin --> constants
@@ -59,7 +60,9 @@ Celeris Admin的一个特色是它与OpenAI的ChatGPT API集成，提供了强�
    admin --> styles
    admin --> types
    admin --> utils
+   assets
    components
+   components --> assets
    components --> ca-components
    components --> constants
    components --> styles
