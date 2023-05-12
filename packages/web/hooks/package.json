@@ -15,6 +15,5 @@
     "@vueuse/core": "^10.1.2",
     "@vueuse/integrations": "^10.1.2"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

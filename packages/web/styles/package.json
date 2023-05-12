@@ -15,10 +15,10 @@
     "unocss-preset-chinese": "^0.0.6"
   },
   "devDependencies": {
-    "@iconify-json/mdi": "^1.1.50",
-    "@iconify-json/tabler": "^1.1.74",
+    "@iconify-json/mdi": "^1.1.51",
+    "@iconify-json/tabler": "^1.1.75",
     "css-render": "^0.15.12",
-    "unocss": "^0.51.8",
-    "vite": "^4.3.4"
+    "unocss": "^0.51.12",
+    "vite": "^4.3.5"
   }
 }
