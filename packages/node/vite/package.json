@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@celeris/types": "workspace:*",
-    "rollup": "^3.21.6",
+    "rollup": "^3.21.7",
     "typescript": "^5.0.4",
     "unplugin-config": "^0.0.3",
     "vite-plugin-inspect": "^0.7.26",

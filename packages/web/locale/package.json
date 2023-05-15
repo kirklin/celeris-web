@@ -14,7 +14,7 @@
     "@celeris/constants": "workspace:*",
     "@celeris/types": "workspace:*",
     "@celeris/utils": "workspace:*",
-    "vue": "^3.3.1",
+    "vue": "^3.3.2",
     "vue-i18n": "^9.2.2"
   }
 }

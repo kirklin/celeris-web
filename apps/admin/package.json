@@ -1,7 +1,7 @@
 {
   "name": "@celeris/admin",
   "version": "0.0.1",
-  "packageManager": "pnpm@8.5.0",
+  "packageManager": "pnpm@8.5.1",
   "description": "Celeris Admin",
   "author": "Kirk Lin (https://github.com/kirklin)",
   "license": "MIT",
@@ -30,12 +30,15 @@
     "@celeris/request": "workspace:*",
     "@celeris/styles": "workspace:*",
     "@celeris/utils": "workspace:*",
+    "@formily/core": "^2.2.23",
+    "@formily/vue": "^2.2.23",
     "destr": "^1.2.2",
+    "formily-naiveui": "^0.0.1",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.36",
     "pinia-plugin-persistedstate": "^3.1.0",
     "pkg-types": "^1.0.3",
-    "vue": "^3.3.1",
+    "vue": "^3.3.2",
     "vue-i18n": "^9.2.2",
     "vue-router": "^4.2.0"
   },
@@ -46,15 +49,15 @@
     "@celeris/hooks": "workspace:*",
     "@celeris/types": "workspace:*",
     "@celeris/vite": "workspace:*",
-    "@vitejs/plugin-vue": "^4.2.2",
-    "@vue/compiler-dom": "^3.3.1",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/compiler-dom": "^3.3.2",
     "@vue/test-utils": "^2.3.2",
     "jsdom": "^22.0.0",
-    "pnpm": "^8.5.0",
+    "pnpm": "^8.5.1",
     "typescript": "^5.0.4",
     "unocss": "^0.51.12",
     "vite": "^4.3.5",
     "vitest": "^0.31.0",
-    "vue-tsc": "^1.6.4"
+    "vue-tsc": "^1.6.5"
   }
 }

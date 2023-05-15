@@ -27,7 +27,11 @@ export function configVitePlugins(
 
   // Add the Vue plugin.
   // 添加 Vue 插件
-  vitePlugins.push(vue());
+  vitePlugins.push(vue({
+    script: {
+      defineModel: true,
+    },
+  }));
 
   // Add the unplugin-auto-import plugin.
   // 添加 unplugin-auto-import 插件
