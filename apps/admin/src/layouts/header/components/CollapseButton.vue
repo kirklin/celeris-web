@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useMenuSetting } from "~/composables/setting/useMenuSetting";
-import UnoCSSIconButton from "~/layouts/header/components/UnoCSSIconButton.vue";
+import IconButtonWithToolTip from "~/layouts/header/components/IconButtonWithToolTip.vue";
 </script>
 
 <template>
-  <UnoCSSIconButton sr-only="Toggle Collapsed" icon="i-mdi-menu" color="gray" size="5" @click="useMenuSetting().toggleCollapsed()" />
+  <IconButtonWithToolTip tooltip-text="Toggle Collapsed" icon="i-mdi-menu" color="gray" size="5" @click="useMenuSetting().toggleCollapsed()" />
 </template>
