@@ -9,6 +9,9 @@ import { REDIRECT_NAME } from "~/router/constant";
 import { getMenus } from "~/router/menus";
 import { listenToRouteChange } from "~/router/mitt/routeChange";
 
+defineOptions({
+  name: "Menu",
+});
 const activeMenu = ref();
 const isCollapse = useMenuSetting().getCollapsed;
 const { currentRoute } = useRouter();

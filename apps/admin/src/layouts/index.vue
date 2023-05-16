@@ -2,6 +2,10 @@
 import Menu from "./menu/index.vue";
 import Footer from "./footer/index.vue";
 import Header from "./header/index.vue";
+
+defineOptions({
+  name: "Layout",
+});
 </script>
 
 <template>

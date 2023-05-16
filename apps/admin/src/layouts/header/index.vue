@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import CollapseButton from "~/layouts/header/components/CollapseButton.vue";
+
+defineOptions({
+  name: "Header",
+});
 </script>
 
 <template>

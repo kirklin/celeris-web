@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import LoginForm from "~/views/login/components/LoginForm.vue";
+
+defineOptions({
+  name: "Login",
+});
 </script>
 
 <template>
