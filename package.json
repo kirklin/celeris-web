@@ -48,6 +48,7 @@
     "cs:version": "changeset version",
     "cs:tag": "changeset tag",
     "up": "taze major -r -w -I",
+    "release": "bumpp -r && pnpm -r publish --access public",
     "prepare": "husky install",
     "preinstall": "npx only-allow pnpm"
   },
@@ -58,9 +59,10 @@
     "@commitlint/config-conventional": "^17.6.3",
     "@kirklin/eslint-config": "^0.3.6",
     "@types/fs-extra": "^11.0.1",
-    "@types/node": "^20.1.4",
+    "@types/node": "^20.1.7",
     "@types/nprogress": "^0.2.0",
     "@vitest/coverage-c8": "^0.31.0",
+    "bumpp": "^9.1.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "eslint": "^8.40.0",
@@ -73,7 +75,7 @@
     "taze": "^0.10.1",
     "typescript": "^5.0.4",
     "unbuild": "^1.2.1",
-    "vite": "^4.3.5",
+    "vite": "^4.3.7",
     "vitest": "^0.31.0"
   },
   "lint-staged": {
