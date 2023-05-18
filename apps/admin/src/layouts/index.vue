@@ -2,10 +2,13 @@
 import Menu from "./menu/index.vue";
 import Footer from "./footer/index.vue";
 import Header from "./header/index.vue";
+import { getTransitionName } from "./transition";
+import { useTransitionSetting } from "~/composables";
 
 defineOptions({
   name: "Layout",
 });
+const { getShouldEnableTransition } = useTransitionSetting();
 </script>
 
 <template>
@@ -20,7 +23,12 @@ defineOptions({
       <div class="block flex-1  overflow-x-hidden rounded-2xl pl-0 pr-5 pt-0 pb-6">
         <div class="min-h-full w-full rounded-2xl bg-gray-100 p-4 dark:bg-gray-900">
           <RouterView v-slot="{ Component, route }">
-            <Transition appear name="fade-transform" mode="out-in">
+            <Transition
+              appear :name="getTransitionName({ Component, route },
+                                              {
+                                                enableTransition: getShouldEnableTransition,
+                                              })" mode="out-in"
+            >
               <Component :is="Component" :key="route.path" />
             </Transition>
           </RouterView>

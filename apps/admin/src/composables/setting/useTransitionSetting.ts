@@ -1,19 +1,16 @@
 import type { TransitionSetting } from "@celeris/types";
-import { computed } from "vue";
 import { useAppStore } from "~/store/modules/app";
 
 export function useTransitionSetting() {
   const appStore = useAppStore();
 
-  const getShouldEnableTransition = computed(() => appStore.getTransitionSetting?.shouldEnable);
+  const getShouldEnableTransition = toRef(() => appStore.getTransitionSetting.shouldEnable);
 
-  const getShouldOpenNProgress = computed(() => appStore.getTransitionSetting?.shouldOpenNProgress);
+  const getShouldOpenNProgress = toRef(() => appStore.getTransitionSetting.shouldOpenNProgress);
 
-  const getShouldOpenPageLoading = computed((): boolean => {
-    return !!appStore.getTransitionSetting?.shouldOpenPageLoading;
-  });
+  const getShouldOpenPageLoading = toRef(() => appStore.getTransitionSetting.shouldOpenPageLoading);
 
-  const getBasicTransition = computed(() => appStore.getTransitionSetting?.basicTransition);
+  const getBasicTransition = toRef(() => appStore.getTransitionSetting.basicTransition);
 
   function setTransitionSetting(transitionSetting: Partial<TransitionSetting>) {
     appStore.setProjectConfig({ transitionSetting });

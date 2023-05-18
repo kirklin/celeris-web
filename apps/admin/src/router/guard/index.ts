@@ -1,3 +1,4 @@
+import { toValue } from "vue";
 import type { RouteLocationNormalized, Router } from "vue-router";
 import { AxiosCanceler } from "@celeris/request";
 import NProgress from "~/config/nprogress";
@@ -97,14 +98,14 @@ export function createProgressGuard(router: Router) {
     if (to.meta.loaded) {
       return true;
     }
-    if (unref(getShouldOpenNProgress) && !NProgress.isStarted()) {
+    if (toValue(getShouldOpenNProgress) && !NProgress.isStarted()) {
       NProgress.start();
     }
     return true;
   });
 
   router.afterEach(() => {
-    if (unref(getShouldOpenNProgress)) {
+    if (toValue(getShouldOpenNProgress)) {
       NProgress.done();
     }
     return true;
