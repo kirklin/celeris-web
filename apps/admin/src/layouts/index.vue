@@ -24,7 +24,7 @@ const { getShouldEnableTransition } = useTransitionSetting();
         <div class="min-h-full w-full rounded-2xl bg-gray-100 p-4 dark:bg-gray-900">
           <RouterView v-slot="{ Component, route }">
             <Transition
-              appear :name="getTransitionName({ Component, route },
+              appear :name="getTransitionName({ route },
                                               {
                                                 enableTransition: getShouldEnableTransition,
                                               })" mode="out-in"

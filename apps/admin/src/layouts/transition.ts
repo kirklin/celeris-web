@@ -1,10 +1,8 @@
 import { toValue } from "vue";
-import type { FunctionalComponent } from "vue";
 import type { RouteLocationNormalizedLoaded } from "vue-router";
 import { useTransitionSetting } from "~/composables";
 
 interface Context {
-  Component: FunctionalComponent & { type: Recordable };
   route: RouteLocationNormalizedLoaded;
 }
 
