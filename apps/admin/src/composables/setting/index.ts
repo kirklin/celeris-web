@@ -1,3 +1,4 @@
+export * from "./useAppSetting";
 export * from "./useGlobSetting";
 export * from "./useMenuSetting";
 export * from "./usePermissionSetting";

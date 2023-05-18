@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@celeris/constants": "workspace:*",
-    "pinia": "2.0.36",
-    "vue": "^3.3.2",
+    "pinia": "2.1.2",
+    "vue": "^3.3.4",
     "vue-router": "^4.2.0"
   }
 }
