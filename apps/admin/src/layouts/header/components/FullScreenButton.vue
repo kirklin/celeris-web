@@ -5,7 +5,7 @@ const { toggle: toggleFullScreen } = useFullscreen();
 </script>
 
 <template>
-  <IconButtonWithToolTip tooltip-text="Toggle FullScreen" icon="i-mdi-fullscreen" color="gray" size="5" @click="toggleFullScreen" />
+  <IconButtonWithToolTip tooltip-text="Toggle FullScreen" icon="i-mdi-fullscreen" color="gray" @click="toggleFullScreen" />
 </template>
 
 <style scoped>
