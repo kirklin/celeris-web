@@ -10,18 +10,21 @@
   "scripts": {
     "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
   },
+  "peerDependencies": {
+    "vue": ">3.3.4"
+  },
   "dependencies": {
+    "@celeris/ca-components": "workspace:*",
     "@celeris/constants": "workspace:*",
+    "@celeris/styles": "workspace:*",
     "@celeris/utils": "workspace:*",
     "echarts": "^5.4.2",
-    "vue": "^3.3.4",
-    "vue-echarts": "^6.5.5",
-    "vue-router": "^4.2.0"
+    "vue-echarts": "^6.5.5"
   },
   "devDependencies": {
     "@celeris/assets": "workspace:*",
-    "@celeris/ca-components": "workspace:*",
-    "@celeris/styles": "workspace:*",
-    "@celeris/types": "workspace:*"
+    "@celeris/types": "workspace:*",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.1"
   }
 }

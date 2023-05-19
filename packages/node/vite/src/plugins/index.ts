@@ -10,6 +10,7 @@ import { createPWAPluginConfig } from "./pwa";
 import { createUnoCSSPluginConfig } from "./unocss";
 import { createAutoImportPluginConfig } from "./unpluginAutoImport";
 import { createVueComponentsPluginConfig } from "./unpluginVueComponets";
+import { createVisualizerPluginConfig } from "./visualizer";
 
 /**
  * Configure the Vite plugins.
@@ -54,6 +55,11 @@ export function configVitePlugins(
   // Add the mock plugin.
   // 添加 mock 插件
   viteEnv.VITE_USE_MOCK && vitePlugins.push(createMockPluginConfig(isProductionBuild));
+
+  // Add the rollup-plugin-visualizer
+  // 添加 打包分析 插件
+  // https://github.com/btd/rollup-plugin-visualizer
+  viteEnv.VITE_USE_BUILD_ANALYZER && vitePlugins.push(createVisualizerPluginConfig());
 
   // Add the vite-plugin-inspect
   // https://github.com/antfu/vite-plugin-inspect

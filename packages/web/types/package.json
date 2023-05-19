@@ -12,9 +12,11 @@
     "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
   },
   "dependencies": {
-    "@celeris/constants": "workspace:*",
-    "pinia": "2.1.2",
+    "@celeris/constants": "workspace:*"
+  },
+  "devDependencies": {
+    "pinia": "2.1.3",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.0"
+    "vue-router": "^4.2.1"
   }
 }

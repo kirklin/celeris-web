@@ -10,6 +10,9 @@
   "scripts": {
     "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
   },
+  "peerDependencies": {
+    "unocss": "^0.51.13"
+  },
   "dependencies": {
     "@kirklin/reset-css": "^0.0.3",
     "unocss-preset-chinese": "^0.0.6"

@@ -13,8 +13,13 @@
   "scripts": {
     "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
   },
+  "peerDependencies": {
+    "vue": ">3.0.0"
+  },
   "dependencies": {
-    "@celeris/utils": "workspace:*",
+    "@celeris/utils": "workspace:*"
+  },
+  "devDependencies": {
     "vue": "^3.3.4"
   }
 }

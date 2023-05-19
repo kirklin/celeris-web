@@ -186,6 +186,10 @@ export interface ViteEnvVariables extends GlobEnvConfig {
   // 是否使用模拟数据
   VITE_USE_MOCK: boolean;
 
+  // Whether to analyze build
+  // 是否分析构建
+  VITE_USE_BUILD_ANALYZER: boolean;
+
   // Whether to enable PWA
   // 是否开启 PWA
   VITE_USE_PWA: boolean;
