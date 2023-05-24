@@ -1,4 +1,3 @@
-import { toValue } from "vue";
 import type { RouteLocationNormalizedLoaded } from "vue-router";
 import { useTransitionSetting } from "~/composables";
 

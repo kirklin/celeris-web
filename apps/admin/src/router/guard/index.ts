@@ -1,4 +1,3 @@
-import { toValue } from "vue";
 import type { RouteLocationNormalized, Router } from "vue-router";
 import { AxiosCanceler } from "@celeris/request";
 import NProgress from "~/config/nprogress";

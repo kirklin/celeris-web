@@ -4,7 +4,7 @@ import vue from "@vitejs/plugin-vue";
 
 import { createConfigPluginConfig } from "./generateConfig";
 import { createInspectPluginConfig } from "./inspect";
-import { createInspectorPluginConfig } from "./inspector";
+import { createVueDevToolsPluginConfig } from "./devTools";
 import { createMockPluginConfig } from "./mock";
 import { createPWAPluginConfig } from "./pwa";
 import { createUnoCSSPluginConfig } from "./unocss";
@@ -66,9 +66,10 @@ export function configVitePlugins(
   // Visit http://localhost:8888/__inspect/ to see the inspector
   vitePlugins.push(createInspectPluginConfig());
 
-  // Add the vite-plugin-inspector
-  // https://github.com/webfansplz/vite-plugin-vue-inspector
-  vitePlugins.push(createInspectorPluginConfig());
+  // Add the vue dev tools plugin
+  // 添加 vue 开发者工具 插件
+  // https://github.com/webfansplz/vite-plugin-vue-devtools
+  vitePlugins.push(createVueDevToolsPluginConfig());
 
   // The following plugins only work in the production environment
   // 生产环境才会添加的插件
