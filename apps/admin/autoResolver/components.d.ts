@@ -14,6 +14,8 @@ declare module '@vue/runtime-core' {
     NButton: typeof import('@celeris/ca-components')['NButton']
     NConfigProvider: typeof import('@celeris/ca-components')['NConfigProvider']
     NDialogProvider: typeof import('@celeris/ca-components')['NDialogProvider']
+    NDrawer: typeof import('@celeris/ca-components')['NDrawer']
+    NDrawerContent: typeof import('@celeris/ca-components')['NDrawerContent']
     NForm: typeof import('@celeris/ca-components')['NForm']
     NFormItem: typeof import('@celeris/ca-components')['NFormItem']
     NInput: typeof import('@celeris/ca-components')['NInput']

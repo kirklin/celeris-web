@@ -24,6 +24,14 @@ export function useHeaderSetting() {
   // Get whether to show the setting drawer
   const getShouldShowSettingDrawer = computed(() => appStore.getHeaderSetting.shouldShowSettingDrawer);
 
+  const setShouldShowSettingDrawer = (shouldShowSettingDrawer: boolean) => {
+    appStore.setHeaderSetting({ shouldShowSettingDrawer });
+  };
+
+  const toggleShouldShowSettingDrawer = () => {
+    setShouldShowSettingDrawer(!getShouldShowSettingDrawer.value);
+  };
+
   function getHeaderSetting() {
     return appStore.getHeaderSetting;
   }
@@ -39,5 +47,7 @@ export function useHeaderSetting() {
     getShouldShowSearch,
     getShouldShowNotice,
     getShouldShowSettingDrawer,
+    setShouldShowSettingDrawer,
+    toggleShouldShowSettingDrawer,
   };
 }

@@ -41,15 +41,15 @@ export const useAppStore = defineStore({
       this.projectConfig = deepMerge(this.projectConfig || {}, config);
     },
 
-    setMenuSetting(menuSetting: DeepPartial<MenuSetting>): void {
+    setMenuSetting(menuSetting: Partial<MenuSetting>): void {
       this.setProjectConfig({ menuSetting });
     },
 
-    setHeaderSetting(headerSetting: DeepPartial<HeaderSetting>): void {
+    setHeaderSetting(headerSetting: Partial<HeaderSetting>): void {
       this.setProjectConfig({ headerSetting });
     },
 
-    setTransitionSetting(transitionSetting: DeepPartial<TransitionSetting>): void {
+    setTransitionSetting(transitionSetting: Partial<TransitionSetting>): void {
       this.setProjectConfig({ transitionSetting });
     },
 
