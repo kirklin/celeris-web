@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CollapseButton from "~/layouts/header/components/CollapseButton.vue";
 import FullScreenButton from "~/layouts/header/components/FullScreenButton.vue";
+import SettingButton from "~/layouts/setting/index.vue";
 
 defineOptions({
   name: "Header",
@@ -20,7 +21,9 @@ defineOptions({
         </div>
       </div>
     </div>
-    <div class="hidden md:block px-4" />
+    <div class="hidden md:block px-4">
+      <SettingButton />
+    </div>
   </div>
 </template>
 

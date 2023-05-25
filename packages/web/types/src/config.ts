@@ -11,11 +11,21 @@ export interface MenuSetting {
 }
 
 export interface HeaderSetting {
+  // 是否显示网站头部
+  // Whether to display the website header
   shouldShow: boolean;
-
+  // 是否显示全屏按钮
+  // Whether to display the full screen button
   shouldShowFullScreen: boolean;
-
+  // 是否显示搜索
+  // Whether to display the search
   shouldShowSearch: boolean;
+  // 是否显示通知
+  // Whether to display the notice
+  shouldShowNotice: boolean;
+  // 是否显示设置抽屉
+  // Whether to display the setting drawer
+  shouldShowSettingDrawer: boolean;
 }
 
 export interface TransitionSetting {

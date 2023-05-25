@@ -59,11 +59,26 @@ const setting: ProjectConfig = {
   // 头部设置
   // The header setting
   headerSetting: {
+
+    // 是否显示网站头部
+    // Whether to display the website header
     shouldShow: true,
 
+    // 是否显示全屏按钮
+    // Whether to display the full screen button
     shouldShowFullScreen: true,
 
+    // 是否显示搜索
+    // Whether to display the search
     shouldShowSearch: true,
+
+    // 是否显示通知
+    // Whether to display the notice
+    shouldShowNotice: true,
+
+    // 是否显示设置抽屉
+    // Whether to display the setting drawer
+    shouldShowSettingDrawer: true,
   },
 
   // 菜单设置
