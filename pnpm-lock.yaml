@@ -352,12 +352,9 @@ importers:
         specifier: ^0.0.6
         version: 0.0.6(unocss@0.51.13)
     devDependencies:
-      '@iconify-json/mdi':
-        specifier: ^1.1.52
-        version: 1.1.52
-      '@iconify-json/tabler':
-        specifier: ^1.1.77
-        version: 1.1.77
+      '@iconify/json':
+        specifier: ^2.2.69
+        version: 2.2.69
       css-render:
         specifier: ^0.15.12
         version: 0.15.12
@@ -2398,16 +2395,11 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify-json/mdi@1.1.52:
-    resolution: {integrity: sha512-tLzpFcmoGw1/jHcl+BshUd4bqvP4755OUluaARsuKskTp2aIPIAkRQOhzJGpry9CZ0i82z0alq4HrKrp9uvj4A==}
+  /@iconify/json@2.2.69:
+    resolution: {integrity: sha512-4Xe8qxWW28Ibw438+BBmOgQH6hBgPZB1utql/R7bbYkSqauW8cFDjNL0Qf4q5VxW2jkQaBpHFAr8NhUuB/LyNg==}
     dependencies:
       '@iconify/types': 2.0.0
-    dev: true
-
-  /@iconify-json/tabler@1.1.77:
-    resolution: {integrity: sha512-FC/X5ScOvx07bVqTj2pqMbQhdSv63ZWYk2wbYHzPrxOKjQPZCt9cqSc2wh+rex0GR3HsI/T10FNG/cHPhNZy5A==}
-    dependencies:
-      '@iconify/types': 2.0.0
+      pathe: 1.1.0
     dev: true
 
   /@iconify/types@2.0.0:
