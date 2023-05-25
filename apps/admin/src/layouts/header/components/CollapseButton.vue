@@ -4,5 +4,5 @@ import IconButtonWithToolTip from "~/layouts/header/components/IconButtonWithToo
 </script>
 
 <template>
-  <IconButtonWithToolTip tooltip-text="Toggle Collapsed" icon="i-mdi-menu" color="gray" @click="useMenuSetting().toggleCollapsed()" />
+  <IconButtonWithToolTip tooltip-text="Toggle Collapsed" icon="i-tabler-menu-2" color="gray" @click="useMenuSetting().toggleCollapsed()" />
 </template>
