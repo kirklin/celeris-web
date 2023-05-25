@@ -1,3 +1,4 @@
+import type { ProjectConfig } from "@celeris/types";
 import { useAppStore } from "~/store/modules/app";
 
 export function useAppSetting() {
@@ -90,11 +91,13 @@ export function useAppSetting() {
   function getProjectConfig() {
     return appStore.getProjectConfig;
   }
-  function setProjectConfig(config) {
+  function setProjectConfig(config: DeepPartial<ProjectConfig>) {
     appStore.setProjectConfig(config);
   }
 
   return {
+    getProjectConfig,
+    setProjectConfig,
     getShouldShowSettingButton,
     getShouldShowDarkModeToggle,
     getSettingButtonPosition,
@@ -116,7 +119,5 @@ export function useAppSetting() {
     getCanEmbedIFramePage,
     getShouldCloseMessageOnSwitch,
     getShouldRemoveAllHttpPending,
-    getProjectConfig,
-    setProjectConfig,
   };
 }

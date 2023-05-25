@@ -6,6 +6,10 @@ export function useMenuSetting() {
 
   const getCollapsed = computed(() => appStore.getMenuSetting.collapsed);
 
+  function getMenuSetting() {
+    return appStore.getMenuSetting;
+  }
+
   // Set menu configuration
   function setMenuSetting(menuSetting: Partial<MenuSetting>): void {
     appStore.setProjectConfig({ menuSetting });
@@ -17,6 +21,7 @@ export function useMenuSetting() {
     });
   }
   return {
+    getMenuSetting,
     setMenuSetting,
     getCollapsed,
     toggleCollapsed,

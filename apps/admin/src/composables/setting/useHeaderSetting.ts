@@ -1,3 +1,4 @@
+import type { HeaderSetting } from "@celeris/types";
 import { useAppStore } from "~/store/modules/app";
 
 export function useHeaderSetting() {
@@ -23,7 +24,16 @@ export function useHeaderSetting() {
   // Get whether to show the setting drawer
   const getShouldShowSettingDrawer = computed(() => appStore.getHeaderSetting.shouldShowSettingDrawer);
 
+  function getHeaderSetting() {
+    return appStore.getHeaderSetting;
+  }
+  function setHeaderSetting(headerSetting: Partial<HeaderSetting>) {
+    appStore.setHeaderSetting(headerSetting);
+  }
+
   return {
+    getHeaderSetting,
+    setHeaderSetting,
     getShouldShowHeader,
     getShouldShowFullScreen,
     getShouldShowSearch,

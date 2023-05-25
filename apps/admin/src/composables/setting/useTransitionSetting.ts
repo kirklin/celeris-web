@@ -12,10 +12,14 @@ export function useTransitionSetting() {
 
   const getBasicTransition = toRef(() => appStore.getTransitionSetting.basicTransition);
 
+  function getTransitionSetting() {
+    return appStore.getTransitionSetting;
+  }
   function setTransitionSetting(transitionSetting: Partial<TransitionSetting>) {
     appStore.setProjectConfig({ transitionSetting });
   }
   return {
+    getTransitionSetting,
     setTransitionSetting,
 
     getShouldEnableTransition,

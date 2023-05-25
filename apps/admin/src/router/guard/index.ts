@@ -2,7 +2,7 @@ import type { RouteLocationNormalized, Router } from "vue-router";
 import { AxiosCanceler } from "@celeris/request";
 import NProgress from "~/config/nprogress";
 import { useTransitionSetting } from "~/composables/setting/useTransitionSetting";
-import ProjectConfig from "~/config/projectConfig";
+import { DEFAULT_PROJECT_CONFIG } from "~/config/projectConfig";
 import { createPermissionGuard } from "~/router/guard/permissionGuard";
 import { createStateGuard } from "~/router/guard/stateGuard";
 import { notifyRouteChange } from "~/router/mitt/routeChange";
@@ -62,7 +62,7 @@ export function createHttpGuard(router: Router) {
   // 定义一个函数，根据项目配置返回是否需要移除所有未完成的HTTP请求的标志，并创建或销毁AxiosCanceler实例
   // Define a function that returns whether all pending HTTP requests need to be removed according to the project configuration, and creates or destroys the AxiosCanceler instance
   function shouldCancelAllRequests() {
-    const shouldCancelAllRequests = ProjectConfig.shouldRemoveAllHttpPending;
+    const shouldCancelAllRequests = DEFAULT_PROJECT_CONFIG.shouldRemoveAllHttpPending;
     if (shouldCancelAllRequests && !axiosCanceler) {
       // 如果需要移除，并且没有AxiosCanceler实例，则创建一个
       axiosCanceler = new AxiosCanceler();

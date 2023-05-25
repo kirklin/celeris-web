@@ -7,7 +7,7 @@ import {
   SettingButtonPositionConstants,
 } from "@celeris/constants";
 
-const setting: ProjectConfig = {
+export const DEFAULT_PROJECT_CONFIG: ProjectConfig = {
   // 是否显示配置按钮
   // Whether to display the setting button
   shouldShowSettingButton: true,
@@ -140,5 +140,3 @@ const setting: ProjectConfig = {
   // Whether to cancel sent but unresponsive http requests when switching pages
   shouldRemoveAllHttpPending: false,
 };
-
-export default setting;

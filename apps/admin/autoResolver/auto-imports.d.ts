@@ -181,6 +181,7 @@ declare global {
   const useGamepad: typeof import('@vueuse/core')['useGamepad']
   const useGeolocation: typeof import('@vueuse/core')['useGeolocation']
   const useGlobSetting: typeof import('../src/composables/setting/useGlobSetting')['useGlobSetting']
+  const useHeaderSetting: typeof import('../src/composables/setting/useHeaderSetting')['useHeaderSetting']
   const useI18n: typeof import('vue-i18n')['useI18n']
   const useIdle: typeof import('@vueuse/core')['useIdle']
   const useImage: typeof import('@vueuse/core')['useImage']
@@ -484,6 +485,7 @@ declare module 'vue' {
     readonly useGamepad: UnwrapRef<typeof import('@vueuse/core')['useGamepad']>
     readonly useGeolocation: UnwrapRef<typeof import('@vueuse/core')['useGeolocation']>
     readonly useGlobSetting: UnwrapRef<typeof import('../src/composables/setting/useGlobSetting')['useGlobSetting']>
+    readonly useHeaderSetting: UnwrapRef<typeof import('../src/composables/setting/useHeaderSetting')['useHeaderSetting']>
     readonly useI18n: UnwrapRef<typeof import('vue-i18n')['useI18n']>
     readonly useIdle: UnwrapRef<typeof import('@vueuse/core')['useIdle']>
     readonly useImage: UnwrapRef<typeof import('@vueuse/core')['useImage']>
@@ -781,6 +783,7 @@ declare module '@vue/runtime-core' {
     readonly useGamepad: UnwrapRef<typeof import('@vueuse/core')['useGamepad']>
     readonly useGeolocation: UnwrapRef<typeof import('@vueuse/core')['useGeolocation']>
     readonly useGlobSetting: UnwrapRef<typeof import('../src/composables/setting/useGlobSetting')['useGlobSetting']>
+    readonly useHeaderSetting: UnwrapRef<typeof import('../src/composables/setting/useHeaderSetting')['useHeaderSetting']>
     readonly useI18n: UnwrapRef<typeof import('vue-i18n')['useI18n']>
     readonly useIdle: UnwrapRef<typeof import('@vueuse/core')['useIdle']>
     readonly useImage: UnwrapRef<typeof import('@vueuse/core')['useImage']>

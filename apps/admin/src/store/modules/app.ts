@@ -3,7 +3,7 @@ import type { DeepPartial } from "unocss";
 import { APP_STORE_ID } from "@celeris/constants";
 import type { HeaderSetting, MenuSetting, ProjectConfig, TransitionSetting } from "@celeris/types";
 import { deepMerge } from "@celeris/utils";
-import projectConfig from "~/config/projectConfig";
+import { DEFAULT_PROJECT_CONFIG } from "~/config/projectConfig";
 
 interface AppState {
   // project config
@@ -16,7 +16,7 @@ export const useAppStore = defineStore({
     paths: ["projectConfig"],
   },
   state: (): AppState => ({
-    projectConfig,
+    projectConfig: DEFAULT_PROJECT_CONFIG,
   }),
   getters: {
     getProjectConfig(state): ProjectConfig {
@@ -40,8 +40,21 @@ export const useAppStore = defineStore({
     setProjectConfig(config: DeepPartial<ProjectConfig>): void {
       this.projectConfig = deepMerge(this.projectConfig || {}, config);
     },
+
+    setMenuSetting(menuSetting: DeepPartial<MenuSetting>): void {
+      this.setProjectConfig({ menuSetting });
+    },
+
+    setHeaderSetting(headerSetting: DeepPartial<HeaderSetting>): void {
+      this.setProjectConfig({ headerSetting });
+    },
+
+    setTransitionSetting(transitionSetting: DeepPartial<TransitionSetting>): void {
+      this.setProjectConfig({ transitionSetting });
+    },
+
     resetAPPState() {
-      this.setProjectConfig(projectConfig);
+      this.setProjectConfig(DEFAULT_PROJECT_CONFIG);
     },
   },
 });
