@@ -7,7 +7,4 @@ export default defineNitroConfig({
       target: "esnext",
     },
   },
-  prerender: {
-    crawlLinks: true,
-  },
 });

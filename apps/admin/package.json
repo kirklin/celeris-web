@@ -42,8 +42,8 @@
     "vue-router": "^4.2.1"
   },
   "devDependencies": {
-    "@celeris/assets": "workspace:*",
     "@celeris/admin-api": "workspace:*",
+    "@celeris/assets": "workspace:*",
     "@celeris/ca-components": "workspace:*",
     "@celeris/components": "workspace:*",
     "@celeris/hooks": "workspace:*",
