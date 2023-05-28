@@ -4,6 +4,8 @@
 dist
 dist-ssr
 *.local
+.nitro/
+.output/
 
 ######################
 # Node

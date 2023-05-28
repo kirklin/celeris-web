@@ -1,0 +1,14 @@
+{
+  "name": "@celeris/admin-api",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env PORT=8899 nitro dev",
+    "build": "nitro build",
+    "preview": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "nitropack": "latest"
+  }
+}
