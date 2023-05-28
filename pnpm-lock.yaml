@@ -444,6 +444,12 @@ importers:
 
   services/admin:
     devDependencies:
+      '@celeris/constants':
+        specifier: workspace:*
+        version: link:../../packages/web/constants
+      '@celeris/types':
+        specifier: workspace:*
+        version: link:../../packages/web/types
       nitropack:
         specifier: latest
         version: 2.4.1
