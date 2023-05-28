@@ -1,6 +1,6 @@
+import type { RouteItem } from "@celeris/admin-api/models/menu/RouteItem";
 import type { MessageMode } from "@celeris/types";
 import { request } from "@celeris/request";
-import type { RouteItem } from "../../../mock/internal/menu";
 
 // Define the API endpoint URLs as an enum
 enum API {

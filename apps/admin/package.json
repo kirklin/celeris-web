@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@celeris/assets": "workspace:*",
+    "@celeris/admin-api": "workspace:*",
     "@celeris/ca-components": "workspace:*",
     "@celeris/components": "workspace:*",
     "@celeris/hooks": "workspace:*",
