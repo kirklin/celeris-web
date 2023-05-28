@@ -1,3 +1,3 @@
-interface FakeCodeList {
+export interface FakeCodeList {
   [id: string]: string[];
 }

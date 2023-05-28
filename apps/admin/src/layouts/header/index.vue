@@ -4,7 +4,7 @@ import FullScreenButton from "~/layouts/header/components/FullScreenButton.vue";
 import SettingButton from "~/layouts/setting/index.vue";
 
 defineOptions({
-  name: "Header",
+  name: "HeaderLayout",
 });
 </script>
 

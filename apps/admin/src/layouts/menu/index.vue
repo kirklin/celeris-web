@@ -10,7 +10,7 @@ import { getMenus } from "~/router/menus";
 import { listenToRouteChange } from "~/router/mitt/routeChange";
 
 defineOptions({
-  name: "Menu",
+  name: "MenuLayout",
 });
 const activeMenu = ref();
 const isCollapse = useMenuSetting().getCollapsed;
