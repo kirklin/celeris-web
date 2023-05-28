@@ -56,7 +56,6 @@ export async function createApplicationViteConfig(command, mode, cwd) {
             vue: ["vue", "pinia", "vue-router"],
             echarts: ["echarts", "vue-echarts"],
             celerisComponents: ["@celeris/components", "@celeris/ca-components"],
-            mock: ["mockjs"],
           },
         },
       },

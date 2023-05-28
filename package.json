@@ -37,7 +37,7 @@
     "dev": "pnpm run dev:admin & pnpm run dev:mock",
     "dev:admin": "pnpm --filter @celeris/admin dev",
     "dev:mock": "pnpm --filter @celeris/admin-api dev",
-    "build": "pnpm --filter scripts build",
+    "build": "pnpm --filter @celeris/admin build",
     "generate-tree": "pnpm --filter scripts generate-tree",
     "clean": "rimraf node_modules **/*/node_modules **/**/*/node_modules **/*/dist **/**/*/dist",
     "clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules",
