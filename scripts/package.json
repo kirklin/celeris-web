@@ -8,7 +8,8 @@
   "scripts": {
     "clean": "pnpm rimraf node_modules && pnpm rimraf dist",
     "dev": "pnpm esno ./src/dev.ts",
-    "build": "pnpm esno ./src/build.ts"
+    "build": "pnpm esno ./src/build.ts",
+    "generate-tree": "pnpm esno ./src/directoryTreeOrganizer.ts"
   },
   "devDependencies": {
     "@types/prompts": "^2.4.4",
