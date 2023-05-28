@@ -6,8 +6,7 @@
     "build": "nitro build",
     "preview": "node .output/server/index.mjs"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@celeris/constants": "workspace:*",
     "@celeris/types": "workspace:*",

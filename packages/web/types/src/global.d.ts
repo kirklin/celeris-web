@@ -1,8 +1,7 @@
 import type { PropType as VuePropType } from "vue";
 
 export declare global {
-  // define global
-  const __VITE_USE_MOCK__: boolean;
+  // define global types
 
   type AnyFn = (...args: any[]) => any;
   export interface AnyObject {

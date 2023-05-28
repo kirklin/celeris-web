@@ -5,7 +5,6 @@ import vue from "@vitejs/plugin-vue";
 import { createConfigPluginConfig } from "./generateConfig";
 import { createInspectPluginConfig } from "./inspect";
 import { createVueDevToolsPluginConfig } from "./devTools";
-import { createMockPluginConfig } from "./mock";
 import { createPWAPluginConfig } from "./pwa";
 import { createUnoCSSPluginConfig } from "./unocss";
 import { createAutoImportPluginConfig } from "./unpluginAutoImport";
@@ -51,10 +50,6 @@ export function configVitePlugins(
   // Add the GenerateConfig plugin.
   // 添加 生成配置 插件
   vitePlugins.push(createConfigPluginConfig(viteEnv.VITE_GLOB_BUILD_GENERATE_CONFIG === false));
-
-  // Add the mock plugin.
-  // 添加 mock 插件
-  viteEnv.VITE_USE_MOCK && vitePlugins.push(createMockPluginConfig(isProductionBuild));
 
   // Add the rollup-plugin-visualizer
   // 添加 打包分析 插件
