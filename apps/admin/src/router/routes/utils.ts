@@ -2,7 +2,7 @@ import type { RouteRecordRaw } from "vue-router";
 import { cloneDeep, field, isString, logger } from "@celeris/utils";
 import { EXCEPTION_COMPONENT, IFRAME, LAYOUT, getParentLayout } from "~/router/constant";
 
-type DynamicViewsModules = Record<string, () => Promise<Recordable>>;
+type DynamicPagesModules = Record<string, () => Promise<Recordable>>;
 
 const layoutMap = new Map<string, () => Promise<typeof import("*.vue")>>();
 layoutMap.set("LAYOUT", LAYOUT);
@@ -16,9 +16,9 @@ interface BackendRouteRecordRaw extends Omit<RouteRecordRaw, "component"> {
 * Asynchronously imports the route component
 * 异步导入路由组件
 * @param routes 路由配置项
-* @param dynamicViewsModules 动态路由模块
+* @param dynamicPagesModules 动态路由模块
 */
-function asyncImportRoute(routes: BackendRouteRecordRaw[] | RouteRecordRaw[], dynamicViewsModules: DynamicViewsModules = import.meta.glob<{ default: any }>("../../views/**/*.{vue,tsx}")) {
+function asyncImportRoute(routes: BackendRouteRecordRaw[] | RouteRecordRaw[], dynamicPagesModules: DynamicPagesModules = import.meta.glob<{ default: any }>("../../pages/**/*.{vue,tsx}")) {
   if (!routes) {
     return;
   }
@@ -36,28 +36,28 @@ function asyncImportRoute(routes: BackendRouteRecordRaw[] | RouteRecordRaw[], dy
       if (layoutFound) {
         item.component = layoutFound;
       } else {
-        if (dynamicViewsModules) {
-          item.component = dynamicImport(dynamicViewsModules, component);
+        if (dynamicPagesModules) {
+          item.component = dynamicImport(dynamicPagesModules, component);
         }
       }
     } else if (name) {
       item.component = getParentLayout();
     }
 
-    children && asyncImportRoute(children, dynamicViewsModules);
+    children && asyncImportRoute(children, dynamicPagesModules);
   });
 }
 
 /**
  * Dynamically imports the route component
  * 动态导入路由组件
- * @param dynamicViewsModules 动态路由模块
+ * @param dynamicPagesModules 动态路由模块
  * @param component 组件名称
  */
-function dynamicImport(dynamicViewsModules: DynamicViewsModules, component: string) {
-  const keys = Object.keys(dynamicViewsModules);
+function dynamicImport(dynamicPagesModules: DynamicPagesModules, component: string) {
+  const keys = Object.keys(dynamicPagesModules);
   const matchKeys = keys.filter((key) => {
-    const k = key.replace("../../views", "");
+    const k = key.replace("../../pages", "");
     const startFlag = component.startsWith("/");
     const endFlag = component.endsWith(".vue") || component.endsWith(".tsx");
     const startIndex = startFlag ? 0 : 1;
@@ -67,15 +67,15 @@ function dynamicImport(dynamicViewsModules: DynamicViewsModules, component: stri
 
   if (matchKeys?.length === 1) {
     const matchKey = matchKeys[0];
-    return dynamicViewsModules[matchKey];
+    return dynamicPagesModules[matchKey];
   } else if (matchKeys?.length > 1) {
     logger.warn(
-      "Please do not create .vue and .tsx files with the same name in the same directory under the views folder, otherwise dynamic importing will fail.",
-      field("请不要在views目录下的同一层级目录中创建同名的.vue和.tsx文件，否则会导致动态引入失败", ""),
+      "Please do not create .vue and .tsx files with the same name in the same directory under the pages folder, otherwise dynamic importing will fail.",
+      field("请不要在pages目录下的同一层级目录中创建同名的.vue和.tsx文件，否则会导致动态引入失败", ""),
     );
   } else {
-    logger.warn(`Could not find \`${component}.vue\` or \`${component}.tsx\` in src/views/, please create it yourself!`
-      , field(`在src/views/中找不到\`${component}.vue\`或\`${component}.tsx\`，请自行创建！`, ""));
+    logger.warn(`Could not find \`${component}.vue\` or \`${component}.tsx\` in src/pages/, please create it yourself!`
+      , field(`在src/pages/中找不到\`${component}.vue\`或\`${component}.tsx\`，请自行创建！`, ""));
     return EXCEPTION_COMPONENT;
   }
 }

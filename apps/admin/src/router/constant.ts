@@ -14,7 +14,7 @@ export const PARENT_LAYOUT_NAME = "ParentLayout";
  * @description: Exception component 异常组件
  * @constructor
  */
-export const EXCEPTION_COMPONENT = () => import("~/views/internal/exception/Exception.vue");
+export const EXCEPTION_COMPONENT = () => import("~/pages/internal/exception/Exception.vue");
 
 /**
  * @description: Default page layout component 默认页面布局组件
@@ -24,7 +24,7 @@ export const LAYOUT = () => import("~/layouts/index.vue");
 /**
  * @description: IFrame container component for embedding iframes 内嵌 iframe 容器组件
  */
-export const IFRAME = () => import("~/views/internal/iframe/IframeContainer.vue");
+export const IFRAME = () => import("~/pages/internal/iframe/IframeContainer.vue");
 
 /**
  * @description: Get the parent layout component based on the _name parameter 获取基于 _name 参数的父级布局组件

@@ -3,7 +3,7 @@ import type { FormInst, FormRules } from "naive-ui";
 import { useUserStore } from "~/store/modules/user";
 
 // 登录表单数据
-import type { LoginFromType } from "~/views/login/types";
+import type { LoginFromType } from "~/pages/login/types";
 
 const message = useMessage();
 
