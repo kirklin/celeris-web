@@ -32,18 +32,6 @@ export const DEFAULT_PROJECT_CONFIG: ProjectConfig = {
   // The session timeout processing method
   sessionTimeoutProcessing: SessionTimeoutProcessingConstants.ROUTE_JUMP,
 
-  // 网站灰色模式，开启可能是因为某些悲伤的日子
-  // Whether to enable the gray mode of the website, which may be enabled due to some sad days
-  shouldEnableGrayMode: false,
-
-  // 是否开启色弱模式
-  // Whether to enable the color weak mode
-  shouldEnableColorWeak: false,
-
-  // 主题颜色
-  // The theme color
-  themeColor: "#66CCFF",
-
   // 主界面全屏显示，不显示菜单和顶部
   // Whether to display the main interface in full screen, without menu and top bar
   shouldShowFullContent: false,
@@ -78,7 +66,7 @@ export const DEFAULT_PROJECT_CONFIG: ProjectConfig = {
 
     // 是否显示设置抽屉
     // Whether to display the setting drawer
-    shouldShowSettingDrawer: true,
+    shouldShowSettingDrawer: false,
   },
 
   // 菜单设置

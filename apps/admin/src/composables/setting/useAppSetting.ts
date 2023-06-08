@@ -28,18 +28,6 @@ export function useAppSetting() {
   // Get the session timeout processing method
   const getSessionTimeoutProcessing = toRef(() => appStore.getProjectConfig.sessionTimeoutProcessing);
 
-  // 获取网站灰色模式，开启可能是因为某些悲伤的日子
-  // Get whether to enable the gray mode of the website, which may be enabled due to some sad days
-  const getShouldEnableGrayMode = toRef(() => appStore.getProjectConfig.shouldEnableGrayMode);
-
-  // 获取是否开启色弱模式
-  // Get whether to enable the color weak mode
-  const getShouldEnableColorWeak = toRef(() => appStore.getProjectConfig.shouldEnableColorWeak);
-
-  // 获取主题颜色
-  // Get the theme color
-  const getThemeColor = toRef(() => appStore.getProjectConfig.themeColor);
-
   // 获取主界面全屏显示，不显示菜单和顶部
   // Get whether to display the main interface in full screen, without menu and top bar
   const getShouldShowFullContent = toRef(() => appStore.getProjectConfig.shouldShowFullContent);
@@ -104,9 +92,6 @@ export function useAppSetting() {
     getPermissionMode,
     getPermissionCacheType,
     getSessionTimeoutProcessing,
-    getShouldEnableGrayMode,
-    getShouldEnableColorWeak,
-    getThemeColor,
     getShouldShowFullContent,
     getShouldShowLogo,
     getShouldShowFooter,

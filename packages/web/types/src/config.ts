@@ -42,6 +42,29 @@ export interface TransitionSetting {
   // Whether to open the top progress bar
   shouldOpenNProgress: boolean;
 }
+
+export interface ThemeSetting {
+  // 是否开启色弱模式
+  // Whether to enable the color weak mode
+  shouldEnableColorWeak: boolean;
+
+  // 网站灰色模式，开启可能是因为某些悲伤的日子
+  // Whether to enable the gray mode of the website, which may be enabled due to some sad days
+  shouldEnableGrayMode: boolean;
+
+  // 是否开启黑暗模式
+  // Whether to enable the dark mode
+  shouldEnableDarkMode: boolean;
+
+  // 是否开启跟随系统颜色
+  // Whether to follow the system theme
+  shouldFollowSystemTheme: boolean;
+
+  // 主题颜色
+  // The theme color
+  themeColor: string;
+}
+
 /**
 * 项目配置接口
 */
@@ -69,18 +92,6 @@ export interface ProjectConfig {
   // 会话超时处理方式
   // The session timeout processing method
   sessionTimeoutProcessing: SessionTimeoutProcessingConstants;
-
-  // 网站灰色模式，开启可能是因为某些悲伤的日子
-  // Whether to enable the gray mode of the website, which may be enabled due to some sad days
-  shouldEnableGrayMode: boolean;
-
-  // 是否开启色弱模式
-  // Whether to enable the color weak mode
-  shouldEnableColorWeak: boolean;
-
-  // 主题颜色
-  // The theme color
-  themeColor: string;
 
   // 主界面全屏显示，不显示菜单和顶部
   // Whether to display the main interface in full screen, without menu and top bar
