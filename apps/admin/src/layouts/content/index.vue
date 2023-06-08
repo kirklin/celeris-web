@@ -2,10 +2,10 @@
 import { getTransitionName } from "~/layouts/transition";
 import { useTransitionSetting } from "~/composables";
 
-const { getShouldEnableTransition } = useTransitionSetting();
 defineOptions({
   name: "ContentLayout",
 });
+const { getShouldEnableTransition } = useTransitionSetting();
 </script>
 
 <template>

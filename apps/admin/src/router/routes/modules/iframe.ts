@@ -16,12 +16,12 @@ const iframe: RouteRecordRaw = {
       name: "GitHub",
       component: IFRAME,
       meta: {
-        frameSrc: "https://github.com/kirklin/celeris-admin",
+        frameSrc: "https://github.com/kirklin/celeris-web",
         title: "GitHub仓库（内链）",
       },
     },
     {
-      path: "https://github.com/kirklin/celeris-admin",
+      path: "https://github.com/kirklin/celeris-web",
       name: "GitHubExternal",
       component: IFRAME,
       meta: {

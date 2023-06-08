@@ -2,15 +2,15 @@
   "rewrites": [
     {
       "source": "/api",
-      "destination": "https://celeris-admin-api.vercel.app"
+      "destination": "https://celeris-web-api.vercel.app"
     },
     {
       "source": "/api/",
-      "destination": "https://celeris-admin-api.vercel.app/"
+      "destination": "https://celeris-web-api.vercel.app/"
     },
     {
       "source": "/api/:match*",
-      "destination": "https://celeris-admin-api.vercel.app/:match*"
+      "destination": "https://celeris-web-api.vercel.app/:match*"
     },
     {
       "source": "/:path*",

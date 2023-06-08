@@ -1,13 +1,14 @@
 {
   "name": "@celeris/admin",
   "version": "0.0.1",
-  "packageManager": "pnpm@8.5.1",
-  "description": "Celeris Admin",
+  "packageManager": "pnpm@8.6.1",
+  "description": "Celeris Web",
   "author": "Kirk Lin (https://github.com/kirklin)",
   "license": "MIT",
-  "homepage": "https://github.com/kirklin/celeris-admin",
+  "homepage": "https://github.com/kirklin/celeris-web",
   "keywords": [
-    "celeris-admin",
+    "celeris-web-admin",
+    "celeris-web",
     "celeris",
     "vite",
     "unocss",
@@ -39,7 +40,7 @@
     "pkg-types": "^1.0.3",
     "vue": "^3.3.4",
     "vue-i18n": "^9.2.2",
-    "vue-router": "^4.2.1"
+    "vue-router": "^4.2.2"
   },
   "devDependencies": {
     "@celeris/admin-api": "workspace:*",
@@ -53,11 +54,11 @@
     "@vue/compiler-dom": "^3.3.4",
     "@vue/test-utils": "^2.3.2",
     "jsdom": "^22.1.0",
-    "pnpm": "^8.5.1",
-    "typescript": "^5.0.4",
-    "unocss": "^0.52.4",
+    "pnpm": "^8.6.1",
+    "typescript": "^5.1.3",
+    "unocss": "^0.53.1",
     "vite": "^4.3.9",
-    "vitest": "^0.31.1",
+    "vitest": "^0.32.0",
     "vue-tsc": "^1.6.5"
   }
 }

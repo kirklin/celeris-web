@@ -5,7 +5,11 @@ import type { PluginOption } from "vite";
 
 export function createUnoCSSPluginConfig(): PluginOption {
   return UnoCSS({
-    exclude: ["node_modules", ".git", "dist"],
+    content: {
+      pipeline: {
+        exclude: ["node_modules", ".git", "dist"],
+      },
+    },
     presets: [
       presetUno(),
       presetAttributify(),

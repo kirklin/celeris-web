@@ -5,4 +5,4 @@ export const GLOB_CONFIG_FILE_NAME = "_app.config.js";
 export const OUTPUT_DIR = "dist";
 
 // This constant sets the name of the application
-export const APP_NAME = "Celeris Admin";
+export const APP_NAME = "Celeris Web";

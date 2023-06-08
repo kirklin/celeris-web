@@ -1,6 +1,6 @@
 <div align='center'>
-<h1>Celeris Admin</h1>
-<img src='docs/README.assets/logo.webp' alt='celeris-admin - free and open-source front-end development framework' width='344'/>
+<h1>Celeris Web</h1>
+<img src='docs/README.assets/logo.webp' alt='celeris-web - free and open-source front-end development framework' width='344'/>
 </div>
 
 <div align='center'>
@@ -19,17 +19,17 @@ Celeris Admin的一个特色是它与OpenAI的ChatGPT API集成，提供了强�
 
 ## 特点
 
-- ⚡  [闪电般快速](https://github.com/kirklin/celeris-admin#readme)：使用Vue 3，Vite和pnpm构建 🔥
+- ⚡  [闪电般快速](https://github.com/kirklin/celeris-web#readme)：使用Vue 3，Vite和pnpm构建 🔥
 - 💪 [强类型](https://www.typescriptlang.org/)：使用TypeScript 💻
 - 📂 [单库存储](https://en.wikipedia.org/wiki/Monorepo)：易于管理依赖项和协作多个项目 🤝
 - 🔥 [最新语法](https://github.com/vuejs/rfcs/pull/227)：使用新的< script setup >语法 🆕
-- 📦 [自动导入组件](https://github.com/kirklin/celeris-admin/blob/master/packages/node/vite/src/plugins/unpluginVueComponets.ts)：自动导入组件 🚚
-- 📥 [自动导入API](https://github.com/kirklin/celeris-admin/blob/master/packages/node/vite/src/plugins/unpluginAutoImport.ts)：使用unplugin-auto-import直接导入Composition API和其他API 📨
+- 📦 [自动导入组件](https://github.com/kirklin/celeris-web/blob/master/packages/node/vite/src/plugins/unpluginVueComponets.ts)：自动导入组件 🚚
+- 📥 [自动导入API](https://github.com/kirklin/celeris-web/blob/master/packages/node/vite/src/plugins/unpluginAutoImport.ts)：使用unplugin-auto-import直接导入Composition API和其他API 📨
 - 💡 [官方路由器](https://router.vuejs.org/)：使用Vue Router v4 🛣️
 - 🎉 [加载反馈](https://github.com/rstacruz/nprogress)：使用NProgress提供页面加载进度反馈 🔄
 - 🍍 [状态管理](https://pinia.esm.dev/)：使用Pinia进行状态管理 🗃️
 - 📜 [中文字体预设](https://github.com/kirklin/unocss-preset-chinese)：包含中文字体预设 🇨🇳
-- 🌍 [国际化就绪](https://github.com/kirklin/celeris-admin/tree/master/packages/web/locale)：具备使用本地化的国际化功能 🌎
+- 🌍 [国际化就绪](https://github.com/kirklin/celeris-web/tree/master/packages/web/locale)：具备使用本地化的国际化功能 🌎
 - ☁️ [Netlify准备就绪](https://www.netlify.com/)：在Netlify上零配置部署 ☁️
 - 🤖 集成[OpenAI的ChatGPT API](https://openai.com/)：用于自然语言处理 🤖
 
@@ -97,12 +97,12 @@ Celeris Admin的一个特色是它与OpenAI的ChatGPT API集成，提供了强�
 
 ### GitHub 模板
 
-[使用这个模板创建仓库](https://github.com/kirklin/celeris-admin/generate).
+[使用这个模板创建仓库](https://github.com/kirklin/celeris-web/generate).
 
 ### 克隆到本地
 
 ```bash
-npx degit kirklin/celeris-admin my-vite-app
+npx degit kirklin/celeris-web my-vite-app
 cd my-vite-app
 pnpm i
 ```
@@ -134,15 +134,15 @@ pnpm run build
 
 ### Docker Production Build
 
-首先，在项目的根目录下打开终端，构建celeris-admin镜像。
+首先，在项目的根目录下打开终端，构建celeris-web镜像。
 
 ```bash
-docker buildx build . -t celeris-admin:latest
+docker buildx build . -t celeris-web:latest
 ```
 
 运行镜像，用 "-p" 指定端口映射。
 
 ```bash
-docker run --rm -it -p 8080:80 celeris-admin:latest
+docker run --rm -it -p 8080:80 celeris-web:latest
 ```
 
