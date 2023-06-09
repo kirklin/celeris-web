@@ -1,4 +1,4 @@
-import type { ProjectConfig } from "@celeris/types";
+import type { ProjectSetting } from "@celeris/types";
 import { useAppStore } from "~/store/modules/app";
 
 export function useAppSetting() {
@@ -79,7 +79,7 @@ export function useAppSetting() {
   function getProjectConfig() {
     return appStore.getProjectConfig;
   }
-  function setProjectConfig(config: DeepPartial<ProjectConfig>) {
+  function setProjectConfig(config: DeepPartial<ProjectSetting>) {
     appStore.setProjectConfig(config);
   }
 

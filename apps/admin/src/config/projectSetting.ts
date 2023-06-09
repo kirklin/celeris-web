@@ -1,4 +1,4 @@
-import type { ProjectConfig } from "@celeris/types";
+import type { ProjectSetting } from "@celeris/types";
 import {
   PermissionCacheTypeConstants,
   PermissionModeConstants,
@@ -7,7 +7,7 @@ import {
   SettingButtonPositionConstants,
 } from "@celeris/constants";
 
-export const DEFAULT_PROJECT_CONFIG: ProjectConfig = {
+export const DEFAULT_PROJECT_SETTING: ProjectSetting = {
   // 是否显示配置按钮
   // Whether to display the setting button
   shouldShowSettingButton: true,

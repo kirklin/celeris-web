@@ -2,7 +2,7 @@ import type { ThemeSetting } from "@celeris/types";
 import { deepMerge } from "@celeris/utils";
 import { defineStore } from "pinia";
 import { APP_DESIGN_STORE_ID } from "@celeris/constants";
-import { DEFAULT_THEME_CONFIG } from "~/config/themeConfig";
+import { DEFAULT_THEME_SETTING } from "~/config/themeSetting";
 
 interface DesignState {
   themeSetting: ThemeSetting;
@@ -14,7 +14,7 @@ export const useDesignStore = defineStore({
     paths: ["themeSetting"],
   },
   state: (): DesignState => ({
-    themeSetting: DEFAULT_THEME_CONFIG,
+    themeSetting: DEFAULT_THEME_SETTING,
   }),
   getters: {
     getThemeSetting(state): ThemeSetting {
@@ -26,8 +26,8 @@ export const useDesignStore = defineStore({
       this.themeSetting = deepMerge(this.themeSetting, themeSetting);
     },
 
-    resetThemeState() {
-      this.setThemeSetting(DEFAULT_THEME_CONFIG);
+    resetDesignState() {
+      this.setThemeSetting(DEFAULT_THEME_SETTING);
     },
   },
 });

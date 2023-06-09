@@ -1,13 +1,13 @@
 import { defineStore } from "pinia";
 import type { DeepPartial } from "unocss";
 import { APP_STORE_ID } from "@celeris/constants";
-import type { HeaderSetting, MenuSetting, ProjectConfig, TransitionSetting } from "@celeris/types";
+import type { HeaderSetting, MenuSetting, ProjectSetting, TransitionSetting } from "@celeris/types";
 import { deepMerge } from "@celeris/utils";
-import { DEFAULT_PROJECT_CONFIG } from "~/config/projectConfig";
+import { DEFAULT_PROJECT_SETTING } from "~/config/projectSetting";
 
 interface AppState {
   // project config
-  projectConfig: ProjectConfig;
+  projectConfig: ProjectSetting;
 }
 
 export const useAppStore = defineStore({
@@ -16,11 +16,11 @@ export const useAppStore = defineStore({
     paths: ["projectConfig"],
   },
   state: (): AppState => ({
-    projectConfig: DEFAULT_PROJECT_CONFIG,
+    projectConfig: DEFAULT_PROJECT_SETTING,
   }),
   getters: {
-    getProjectConfig(state): ProjectConfig {
-      return state.projectConfig || ({} as ProjectConfig);
+    getProjectConfig(state): ProjectSetting {
+      return state.projectConfig || ({} as ProjectSetting);
     },
 
     getMenuSetting(): MenuSetting {
@@ -37,7 +37,7 @@ export const useAppStore = defineStore({
 
   },
   actions: {
-    setProjectConfig(config: DeepPartial<ProjectConfig>): void {
+    setProjectConfig(config: DeepPartial<ProjectSetting>): void {
       this.projectConfig = deepMerge(this.projectConfig || {}, config);
     },
 
@@ -54,7 +54,7 @@ export const useAppStore = defineStore({
     },
 
     resetAPPState() {
-      this.setProjectConfig(DEFAULT_PROJECT_CONFIG);
+      this.setProjectConfig(DEFAULT_PROJECT_SETTING);
     },
   },
 });

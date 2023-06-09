@@ -5,7 +5,7 @@ import { field, getErrorMessage, logger } from "@celeris/utils";
 import { APP_USER_STORE_ID, PageConstants, PermissionCacheTypeConstants } from "@celeris/constants";
 import { loginApi, logoutApi, userInfoApi } from "~/apis/internal/auth";
 import type { LoginParams } from "~/apis/internal/auth";
-import { DEFAULT_PROJECT_CONFIG } from "~/config/projectConfig";
+import { DEFAULT_PROJECT_SETTING } from "~/config/projectSetting";
 import { router } from "~/router";
 import { PAGE_NOT_FOUND_ROUTE } from "~/router/routes/basic";
 import { usePermissionStore } from "~/store/modules/permission";
@@ -44,7 +44,7 @@ export const useUserStore = defineStore({
   id: APP_USER_STORE_ID,
   persist: {
     paths: ["userInfo", "token", "refreshToken", "roleList", "updatedAt"],
-    storage: DEFAULT_PROJECT_CONFIG.permissionCacheType === PermissionCacheTypeConstants.LOCAL_STORAGE ? localStorage : sessionStorage,
+    storage: DEFAULT_PROJECT_SETTING.permissionCacheType === PermissionCacheTypeConstants.LOCAL_STORAGE ? localStorage : sessionStorage,
   },
   state: (): UserState => ({
     // Whether the user should be logged in
