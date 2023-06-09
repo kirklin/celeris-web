@@ -1,4 +1,4 @@
-import { cloneDeep, intersectionWith, mergeWith, unionWith } from "lodash-es";
+import { intersectionWith, mergeWith, unionWith } from "lodash-es";
 import { isArray, isEqual, isObject } from "./typeChecks";
 
 /**
@@ -20,31 +20,32 @@ export function deepMerge<T extends object | null | undefined, U extends object 
   target: U,
   mergeArrays: "union" | "intersection" | "concat" | "replace" = "replace",
 ): T & U {
-  // Define a function for merging arrays.
-  const mergeArraysFn = (prevValue: any[], nextValue: any[]) => {
+  if (!target) {
+    return source as T & U;
+  }
+  if (!source) {
+    return target as T & U;
+  }
+  if (isArray(target) && isArray(source)) {
     switch (mergeArrays) {
-      case "intersection":
-        return intersectionWith(prevValue, nextValue, isEqual);
-      case "concat":
-        return prevValue.concat(nextValue);
       case "union":
-        return unionWith(prevValue, nextValue, isEqual);
+        return unionWith(target, source, isEqual) as T & U;
+      case "intersection":
+        return intersectionWith(target, source, isEqual) as T & U;
+      case "concat":
+        return target.concat(source) as T & U;
       case "replace":
-        return nextValue;
+        return source as T & U;
       default:
-        return nextValue;
+        throw new Error(`Unknown merge array strategy: ${mergeArrays as string}`);
     }
-  };
-
-  return mergeWith(cloneDeep(source), target, (objValue, srcValue) => {
-    if (isObject(objValue) && isObject(srcValue)) {
-      return mergeWith(cloneDeep(objValue), srcValue, (prevValue, nextValue) => {
-        // If both values are arrays, merge them using mergeArraysFn function.
-        // 如果两个值都是数组，用mergeArraysFn函数将它们合并。
-        return isArray(prevValue) ? mergeArraysFn(prevValue, nextValue) : undefined;
-      });
-    }
-  });
+  }
+  if (isObject(target) && isObject(source)) {
+    return mergeWith({}, target, source, (targetValue, sourceValue) => {
+      return deepMerge(targetValue, sourceValue, mergeArrays);
+    }) as T & U;
+  }
+  return source as T & U;
 }
 
 /**
