@@ -11,7 +11,6 @@ export const DEFAULT_THEME_SETTING: ThemeSetting = {
 
   // 是否开启黑暗模式
   // Whether to enable the dark mode
-
   shouldEnableDarkMode: false,
 
   // 是否开启跟随系统颜色
