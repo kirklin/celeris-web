@@ -128,7 +128,7 @@ export const usePermissionStore = defineStore({
 
       // Get user's roles and permission mode from app store
       const roleList: RoleInfo[] = toRaw(userStore.getRoleList) || [];
-      const permissionMode = appStore.getProjectConfig.permissionMode || PermissionModeConstants.ROUTE_MAPPING;
+      const permissionMode = appStore.getProjectSetting.permissionMode || PermissionModeConstants.ROUTE_MAPPING;
       // Filter routes by allowed roles
       const routeFilterByRole = (route: RouteRecordRaw) => {
         const { meta }: { meta?: { allowedRoles?: RoleInfo[] } } = route;

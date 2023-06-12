@@ -3,11 +3,11 @@ import type { DeepPartial } from "unocss";
 import { APP_STORE_ID } from "@celeris/constants";
 import type { HeaderSetting, MenuSetting, ProjectSetting, TransitionSetting } from "@celeris/types";
 import { deepMerge } from "@celeris/utils";
-import { DEFAULT_PROJECT_SETTING } from "~/config/projectSetting";
+import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";
 
 interface AppState {
   // project config
-  projectConfig: ProjectSetting;
+  projectSetting: ProjectSetting;
 }
 
 export const useAppStore = defineStore({
@@ -16,45 +16,45 @@ export const useAppStore = defineStore({
     paths: ["projectConfig"],
   },
   state: (): AppState => ({
-    projectConfig: DEFAULT_PROJECT_SETTING,
+    projectSetting: DEFAULT_PROJECT_SETTING,
   }),
   getters: {
-    getProjectConfig(state): ProjectSetting {
-      return state.projectConfig || ({} as ProjectSetting);
+    getProjectSetting(state): ProjectSetting {
+      return state.projectSetting || ({} as ProjectSetting);
     },
 
     getMenuSetting(): MenuSetting {
-      return this.getProjectConfig.menuSetting;
+      return this.getProjectSetting.menuSetting;
     },
 
     getHeaderSetting(): HeaderSetting {
-      return this.getProjectConfig.headerSetting;
+      return this.getProjectSetting.headerSetting;
     },
 
     getTransitionSetting(): TransitionSetting {
-      return this.getProjectConfig.transitionSetting;
+      return this.getProjectSetting.transitionSetting;
     },
 
   },
   actions: {
-    setProjectConfig(config: DeepPartial<ProjectSetting>): void {
-      this.projectConfig = deepMerge(this.projectConfig || {}, config);
+    setProjectSetting(config: DeepPartial<ProjectSetting>): void {
+      this.projectSetting = deepMerge(this.projectSetting || {}, config);
     },
 
     setMenuSetting(menuSetting: Partial<MenuSetting>): void {
-      this.setProjectConfig({ menuSetting });
+      this.setProjectSetting({ menuSetting });
     },
 
     setHeaderSetting(headerSetting: Partial<HeaderSetting>): void {
-      this.setProjectConfig({ headerSetting });
+      this.setProjectSetting({ headerSetting });
     },
 
     setTransitionSetting(transitionSetting: Partial<TransitionSetting>): void {
-      this.setProjectConfig({ transitionSetting });
+      this.setProjectSetting({ transitionSetting });
     },
 
     resetAPPState() {
-      this.setProjectConfig(DEFAULT_PROJECT_SETTING);
+      this.setProjectSetting(DEFAULT_PROJECT_SETTING);
     },
   },
 });

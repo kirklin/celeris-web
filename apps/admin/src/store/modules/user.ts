@@ -5,7 +5,7 @@ import { field, getErrorMessage, logger } from "@celeris/utils";
 import { APP_USER_STORE_ID, PageConstants, PermissionCacheTypeConstants } from "@celeris/constants";
 import { loginApi, logoutApi, userInfoApi } from "~/apis/internal/auth";
 import type { LoginParams } from "~/apis/internal/auth";
-import { DEFAULT_PROJECT_SETTING } from "~/config/projectSetting";
+import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";
 import { router } from "~/router";
 import { PAGE_NOT_FOUND_ROUTE } from "~/router/routes/basic";
 import { usePermissionStore } from "~/store/modules/permission";

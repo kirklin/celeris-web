@@ -15,7 +15,7 @@ import {
   SHOULD_ENABLE_STORAGE_ENCRYPTION,
   STORAGE_CIPHER_IV,
   STORAGE_CIPHER_KEY,
-} from "~/config/encryptionSetting";
+} from "~/setting/encryptionSetting";
 
 const persistEncryption: Encryption = EncryptionFactory.createAesEncryption({ key: STORAGE_CIPHER_KEY, iv: STORAGE_CIPHER_IV });
 

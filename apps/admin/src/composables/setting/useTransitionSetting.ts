@@ -16,7 +16,7 @@ export function useTransitionSetting() {
     return appStore.getTransitionSetting;
   }
   function setTransitionSetting(transitionSetting: Partial<TransitionSetting>) {
-    appStore.setProjectConfig({ transitionSetting });
+    appStore.setProjectSetting({ transitionSetting });
   }
   return {
     getTransitionSetting,

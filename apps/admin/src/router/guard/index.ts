@@ -1,8 +1,8 @@
 import type { RouteLocationNormalized, Router } from "vue-router";
 import { AxiosCanceler } from "@celeris/request";
-import NProgress from "~/config/nprogress";
+import NProgress from "~/setting/nprogress";
 import { useTransitionSetting } from "~/composables/setting/useTransitionSetting";
-import { DEFAULT_PROJECT_SETTING } from "~/config/projectSetting";
+import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";
 import { createPermissionGuard } from "~/router/guard/permissionGuard";
 import { createStateGuard } from "~/router/guard/stateGuard";
 import { notifyRouteChange } from "~/router/mitt/routeChange";

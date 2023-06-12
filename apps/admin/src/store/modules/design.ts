@@ -2,7 +2,7 @@ import type { ThemeSetting } from "@celeris/types";
 import { deepMerge } from "@celeris/utils";
 import { defineStore } from "pinia";
 import { APP_DESIGN_STORE_ID } from "@celeris/constants";
-import { DEFAULT_THEME_SETTING } from "~/config/themeSetting";
+import { DEFAULT_THEME_SETTING } from "~/setting/themeSetting";
 
 interface DesignState {
   themeSetting: ThemeSetting;
