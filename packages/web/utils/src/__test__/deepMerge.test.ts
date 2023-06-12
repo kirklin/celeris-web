@@ -2,6 +2,30 @@ import { describe, expect, test } from "vitest";
 import { deepMerge } from "../util";
 
 describe("deepMerge function", () => {
+  test("should correctly merge basic data types", () => {
+    const source = { a: 1, b: 2, c: null };
+    const target = {
+      a: 2,
+      b: undefined,
+      c: 3,
+    };
+    const expected = {
+      a: 2,
+      b: 2,
+      c: 3,
+    };
+    expect(deepMerge(source, target)).toStrictEqual(expected);
+  });
+
+  test("should return the same date if only 1 is passed", () => {
+    const foo = new Date();
+    const merged = deepMerge(foo, null);
+    const merged2 = deepMerge(undefined, foo);
+    expect(merged).toStrictEqual(foo);
+    expect(merged2).toStrictEqual(foo);
+    expect(merged).toStrictEqual(merged2);
+  });
+
   test("should merge two objects recursively", () => {
     const source = {
       a: { b: { c: 1 }, d: [1, 2] },
@@ -11,6 +35,7 @@ describe("deepMerge function", () => {
         does: "work",
         too: [1, 2, 3],
       }],
+      r: { a: 1 },
     };
     const target = {
       a: { b: { d: [3] } },
@@ -23,6 +48,7 @@ describe("deepMerge function", () => {
       }, {
         really: "yes",
       }],
+      r: { a: 2 },
     };
     const expected = {
       a: { b: { c: 1, d: [3] }, d: [1, 2] },
@@ -38,6 +64,7 @@ describe("deepMerge function", () => {
         really: "yes",
       }],
       qu: 5,
+      r: { a: 2 },
     };
     expect(deepMerge(source, target)).toStrictEqual(expected);
   });
