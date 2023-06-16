@@ -7,6 +7,7 @@
       <NNotificationProvider>
         <NMessageProvider>
           <slot />
+          <NGlobalStyle />
         </NMessageProvider>
       </NNotificationProvider>
     </NDialogProvider>
