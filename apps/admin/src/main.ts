@@ -3,6 +3,7 @@ import { createApp } from "vue";
 import { setupDirectives } from "@celeris/directives";
 import { router, setupRouter } from "./router";
 import { setupStore } from "./store";
+import { setupVueQuery } from "~/apis";
 import { initializeConfiguration } from "~/AppConfiguration";
 import { setupRouterGuard } from "~/router/guard";
 
@@ -11,6 +12,10 @@ import App from "~/App.vue";
 import "@celeris/styles";
 
 const app = createApp(App);
+
+// Configure vue-query
+// 配置 vue-query
+setupVueQuery(app);
 
 // Configure store
 // 配置 store
