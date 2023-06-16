@@ -18,7 +18,7 @@
     "unocss-preset-chinese": "^0.0.6"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.75",
+    "@iconify/json": "^2.2.79",
     "css-render": "^0.15.12",
     "unocss": "^0.53.1",
     "vite": "^4.3.9"

@@ -19,7 +19,7 @@
     "@celeris/styles": "workspace:*",
     "@celeris/utils": "workspace:*",
     "echarts": "^5.4.2",
-    "vue-echarts": "^6.5.5"
+    "vue-echarts": "^6.6.0"
   },
   "devDependencies": {
     "@celeris/assets": "workspace:*",
