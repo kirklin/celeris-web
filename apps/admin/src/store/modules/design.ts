@@ -9,7 +9,9 @@ import { DEFAULT_THEME_SETTING } from "~/setting/themeSetting";
 interface DesignState {
   themeSetting: ThemeSetting;
 }
-
+const colorMode = useColorMode({
+  initialValue: DEFAULT_THEME_SETTING.shouldFollowSystemTheme ? "auto" : (DEFAULT_THEME_SETTING.shouldEnableDarkMode ? "dark" : "light"),
+});
 export const useDesignStore = defineStore({
   id: APP_DESIGN_STORE_ID,
   persist: {
@@ -28,10 +30,13 @@ export const useDesignStore = defineStore({
       if (state.themeSetting.shouldFollowSystemTheme) {
         return useOsTheme().value === "dark" ? darkTheme : null;
       }
-      return state.themeSetting.shouldEnableDarkMode ? darkTheme : null;
+      return colorMode.value === "dark" ? darkTheme : null;
     },
     //  获取暗黑模式
     getDarkMode(state): boolean {
+      if (state.themeSetting.shouldFollowSystemTheme) {
+        return useOsTheme().value === "dark";
+      }
       return state.themeSetting.shouldEnableDarkMode;
     },
     //  获取色弱模式
@@ -58,7 +63,13 @@ export const useDesignStore = defineStore({
     },
     // 设置暗黑模式
     setDarkMode(darkMode: boolean): void {
-      this.setThemeSetting({ shouldEnableDarkMode: darkMode });
+      if (this.themeSetting.shouldFollowSystemTheme) {
+        colorMode.value = "auto";
+        this.setThemeSetting({ shouldEnableDarkMode: useOsTheme().value === "dark" });
+      } else {
+        colorMode.value = darkMode ? "dark" : "light";
+        this.setThemeSetting({ shouldEnableDarkMode: darkMode });
+      }
     },
     // 设置色弱模式
     setColorWeakMode(colorWeakMode: boolean): void {
@@ -70,6 +81,7 @@ export const useDesignStore = defineStore({
     },
     // 设置跟随系统主题
     setFollowSystemTheme(followSystemTheme: boolean): void {
+      colorMode.value = followSystemTheme ? "auto" : this.getThemeSetting.shouldEnableDarkMode ? "dark" : "light";
       this.setThemeSetting({ shouldFollowSystemTheme: followSystemTheme });
     },
     // 设置主题颜色

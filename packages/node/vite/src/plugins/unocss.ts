@@ -11,7 +11,7 @@ export function createUnoCSSPluginConfig(): PluginOption {
       },
     },
     presets: [
-      presetUno(),
+      presetUno({ dark: "class" }),
       presetAttributify(),
       presetChinese(),
       presetIcons({
