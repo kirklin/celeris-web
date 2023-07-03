@@ -3,6 +3,7 @@ import type { DeepPartial } from "unocss";
 import { APP_STORE_ID } from "@celeris/constants";
 import type { HeaderSetting, MenuSetting, ProjectSetting, TransitionSetting } from "@celeris/types";
 import { deepMerge } from "@celeris/utils";
+import { resetRouter } from "~/router";
 import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";
 
 interface AppState {
@@ -54,6 +55,7 @@ export const useAppStore = defineStore({
     },
 
     resetAPPState() {
+      resetRouter();
       this.setProjectSetting(DEFAULT_PROJECT_SETTING);
     },
   },
