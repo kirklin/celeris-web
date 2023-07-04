@@ -10,10 +10,7 @@ export const fakeUserList: FakeUserInfo[] = [
     avatarUrl: "https://avatars.githubusercontent.com/u/17453452",
     homePageUrl: "/dashboard/index",
     roles: [
-      {
-        name: RoleConstants.ADMIN,
-        description: "Admin",
-      },
+      RoleConstants.ADMIN,
     ],
     token: "adminFakeToken",
     extraInfo: {
@@ -27,10 +24,7 @@ export const fakeUserList: FakeUserInfo[] = [
     phone: "13887654321",
     avatarUrl: "https://avatars.githubusercontent.com/u/17453452",
     roles: [
-      {
-        name: RoleConstants.USER,
-        description: "User",
-      },
+      RoleConstants.USER,
     ],
     token: "userFakeToken",
     extraInfo: {
@@ -42,10 +36,7 @@ export const fakeUserList: FakeUserInfo[] = [
     username: "guest",
     fullName: "Guest",
     roles: [
-      {
-        name: RoleConstants.GUEST,
-        description: "Guest",
-      },
+      RoleConstants.GUEST,
     ],
     token: "guestFakeToken",
     extraInfo: {

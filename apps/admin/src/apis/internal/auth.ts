@@ -7,7 +7,7 @@ enum API {
   Login = "/auth/login",
   Logout = "/auth/logout",
   UserInfo = "/user/info",
-  PermissionCode = "/user/permission-code",
+  PermissionCode = "/auth/permission-code",
 }
 
 // Define the parameters for the login API

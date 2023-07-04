@@ -27,7 +27,7 @@ export interface UserInfo {
 
   // User's role, optional
   // 用户的角色，可选
-  roles?: RoleInfo[];
+  roles?: RoleConstants[];
 
   // User's home page URL after logging in, optional
   // 用户登录后跳转的首页路径，可选
@@ -36,14 +36,4 @@ export interface UserInfo {
   // Additional user information, optional
   // 其他用户信息，可选
   extraInfo?: Record<string, any>;
-}
-
-export interface RoleInfo {
-  // Role's name
-  // 角色名称
-  name: RoleConstants;
-
-  // Role's description, optional
-  // 角色描述，可选
-  description?: string;
 }

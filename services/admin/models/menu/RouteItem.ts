@@ -2,7 +2,7 @@ import type { RouteMeta } from "vue-router";
 
 export interface RouteItem {
   path: string;
-  component: any;
+  component?: any;
   meta: RouteMeta;
   name?: string;
   alias?: string | string[];

@@ -1,4 +1,5 @@
 import { dashboardRoute } from "../../data/menu/dashboardRoute";
+import { permissionRoute } from "../../data/menu/permissionRoute";
 import { getFakeUserByToken } from "../../utils/user";
 
 export default eventHandler((event) => {
@@ -9,10 +10,10 @@ export default eventHandler((event) => {
     let menus;
     switch (id) {
       case "1":
-        menus = [dashboardRoute];
+        menus = [dashboardRoute, permissionRoute];
         break;
       case "2":
-        menus = [dashboardRoute];
+        menus = [permissionRoute];
         break;
       default:
         menus = [];

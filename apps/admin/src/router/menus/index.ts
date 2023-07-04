@@ -8,9 +8,10 @@ import {
   transformMenuModule,
 } from "@celeris/utils";
 import type { RouteRecordNormalized } from "vue-router";
-import { isBackendMode, isRoleMode, isRouteMappingMode } from "~/composables/setting/usePermissionSetting";
 import { router } from "~/router";
 import { usePermissionStore } from "~/store/modules/permission";
+
+const { isBackendPermissionMode, isRolePermissionMode, isRouteMappingPermissionMode } = useAppPermission();
 
 // Load all menu modules and transform them into menus
 const menuModuleList: MenuModule[] = loadMenusFromModules(import.meta.glob<{ default: any }>("./modules/**/*.ts", { eager: true }));
@@ -29,9 +30,9 @@ function filterMenusByPermissionMode(menus: Menu[]): Menu[] {
     return show;
   };
 
-  if (isBackendMode()) {
+  if (toValue(isBackendPermissionMode)) {
     return permissionStore.getBackendMenuList.filter(filterMenu);
-  } else if (isRouteMappingMode()) {
+  } else if (toValue(isRouteMappingPermissionMode)) {
     return permissionStore.getFrontendMenuList.filter(filterMenu);
   } else {
     return menus.filter(filterMenu);
@@ -41,7 +42,7 @@ function filterMenusByPermissionMode(menus: Menu[]): Menu[] {
 // Get all menus, filtered by permission mode and role
 export const getMenus = (): Menu[] => {
   const menus = filterMenusByPermissionMode(staticMenus);
-  if (isRoleMode()) {
+  if (toValue(isRolePermissionMode)) {
     const routes = router.getRoutes();
     return filterTree(menus, basicFilter(routes));
   }
@@ -59,7 +60,7 @@ export function getCurrentParentPath(currentPath: string) {
 export function getShallowMenus(): Menu[] {
   const menus = filterMenusByPermissionMode(staticMenus);
   const shallowMenus = menus.map(menu => ({ ...menu, children: undefined }));
-  if (isRoleMode()) {
+  if (toValue(isRolePermissionMode)) {
     const routes = router.getRoutes();
     return shallowMenus.filter(basicFilter(routes));
   }
@@ -73,7 +74,7 @@ export function getChildrenMenus(parentPath: string) {
   if (!parent || !parent.children || !!parent?.meta?.shouldHideSubMenuInMenu) {
     return [] as Menu[];
   }
-  if (isRoleMode()) {
+  if (toValue(isRolePermissionMode)) {
     const routes = router.getRoutes();
     return filterTree(parent.children, basicFilter(routes));
   }

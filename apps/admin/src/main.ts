@@ -3,6 +3,7 @@ import { createApp } from "vue";
 import { setupDirectives } from "@celeris/directives";
 import { router, setupRouter } from "./router";
 import { setupStore } from "./store";
+import { setupPermissionDirective } from "~/directives/permission";
 import { setupVueQuery } from "~/apis";
 import { initializeConfiguration } from "~/AppConfiguration";
 import { setupRouterGuard } from "~/router/guard";
@@ -32,6 +33,7 @@ setupRouterGuard(router);
 // Register global directive
 // 注册全局指令
 setupDirectives(app);
+setupPermissionDirective(app);
 
 initializeConfiguration();
 app.mount("#app");

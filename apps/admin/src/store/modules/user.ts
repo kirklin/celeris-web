@@ -1,7 +1,8 @@
 import type { MessageMode } from "@celeris/types";
-import type { RoleInfo, UserInfo } from "@celeris/types/src/user";
+import type { UserInfo } from "@celeris/types/src/user";
 import { defineStore } from "pinia";
 import { field, getErrorMessage, logger } from "@celeris/utils";
+import type { RoleConstants } from "@celeris/constants";
 import { APP_USER_STORE_ID, PageConstants, PermissionCacheTypeConstants } from "@celeris/constants";
 import { loginApi, logoutApi, userInfoApi } from "~/apis/internal/auth";
 import type { LoginParams } from "~/apis/internal/auth";
@@ -29,7 +30,7 @@ interface UserState {
 
   // List of roles for the user
   // 用户的角色列表
-  roleList: RoleInfo[];
+  roleList: RoleConstants[];
 
   // Whether the password has expired, optional
   // 密码是否已过期，可选
@@ -98,7 +99,7 @@ export const useUserStore = defineStore({
     },
     // Get user role list
     // 获取用户角色列表
-    getRoleList(state): RoleInfo[] {
+    getRoleList(state): RoleConstants[] {
       return state.roleList;
     },
     // Get whether the password has expired
@@ -136,7 +137,7 @@ export const useUserStore = defineStore({
     },
     // Set user role list
     // 设置用户角色列表
-    setRoleList(roleList: RoleInfo[]) {
+    setRoleList(roleList: RoleConstants[]) {
       this.roleList = roleList;
     },
     // Set whether the password has expired

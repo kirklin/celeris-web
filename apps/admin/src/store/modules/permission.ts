@@ -1,4 +1,5 @@
-import type { Menu, RoleInfo } from "@celeris/types";
+import type { Menu } from "@celeris/types";
+import type { RoleConstants } from "@celeris/constants";
 import { APP_PERMISSION_STORE_ID, PermissionModeConstants } from "@celeris/constants";
 import { filterTree, flattenMultiLevelRoutes, transformRouteToMenu } from "@celeris/utils";
 import { defineStore } from "pinia";
@@ -127,11 +128,11 @@ export const usePermissionStore = defineStore({
       let routes: RouteRecordRaw[] = [];
 
       // Get user's roles and permission mode from app store
-      const roleList: RoleInfo[] = toRaw(userStore.getRoleList) || [];
+      const roleList: RoleConstants[] = toRaw(userStore.getRoleList) || [];
       const permissionMode = appStore.getProjectSetting.permissionMode || PermissionModeConstants.ROUTE_MAPPING;
       // Filter routes by allowed roles
       const routeFilterByRole = (route: RouteRecordRaw) => {
-        const { meta }: { meta?: { allowedRoles?: RoleInfo[] } } = route;
+        const { meta }: { meta?: { allowedRoles?: RoleConstants[] } } = route;
         const { allowedRoles } = meta || {};
         if (!allowedRoles) {
           return true;
@@ -202,6 +203,7 @@ export const usePermissionStore = defineStore({
           break;
         }
       }
+
       return routes;
     },
   },

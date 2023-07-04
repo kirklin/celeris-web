@@ -8,11 +8,13 @@ import { useMenuSetting } from "~/composables/setting/useMenuSetting";
 import { REDIRECT_NAME } from "~/router/constant";
 import { getMenus } from "~/router/menus";
 import { listenToRouteChange } from "~/router/mitt/routeChange";
+import { usePermissionStore } from "~/store/modules/permission";
 
 defineOptions({
   name: "MenuLayout",
 });
 const activeMenu = ref();
+const permissionStore = usePermissionStore();
 const isCollapse = useMenuSetting().getCollapsed;
 const { currentRoute } = useRouter();
 const menuList = ref<any[]>([]);
@@ -34,6 +36,9 @@ async function handleMenuChange(route?: RouteLocationNormalizedLoaded) {
 const transformProjectMenuToNaiveUIMenu = (menu: Menu) => {
   const { path, meta, icon, children } = menu;
   const renderIcon = (icon?: string) => {
+    if (!icon) {
+      return;
+    }
     return () => h(CAUnoCSSIcon, { icon });
   };
   return {
@@ -56,11 +61,21 @@ const transformProjectMenuToNaiveUIMenu = (menu: Menu) => {
     collapseTitle: meta?.title,
   };
 };
-
-onMounted(() => {
+// Generate menu
+const generateMenu = () => {
   const menus = getMenus();
   menuList.value = mapTreeStructure(menus, menu => transformProjectMenuToNaiveUIMenu(menu));
-});
+};
+// Menu changes
+watch(
+  [() => permissionStore.getLastMenuBuildTime, () => permissionStore.getBackendMenuList],
+  () => {
+    generateMenu();
+  },
+  {
+    immediate: true,
+  },
+);
 </script>
 
 <template>
