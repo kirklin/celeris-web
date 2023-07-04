@@ -9,8 +9,11 @@ import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";
 interface AppState {
   // project config
   projectSetting: ProjectSetting;
+  // Page loading status
+  pageLoading: boolean;
 }
 
+let pageLoadingTimeout: ReturnType<typeof setTimeout>;
 export const useAppStore = defineStore({
   id: APP_STORE_ID,
   persist: {
@@ -18,8 +21,13 @@ export const useAppStore = defineStore({
   },
   state: (): AppState => ({
     projectSetting: DEFAULT_PROJECT_SETTING,
+    pageLoading: false,
   }),
   getters: {
+    getPageLoading(state): boolean {
+      return state.pageLoading;
+    },
+
     getProjectSetting(state): ProjectSetting {
       return state.projectSetting || ({} as ProjectSetting);
     },
@@ -38,6 +46,10 @@ export const useAppStore = defineStore({
 
   },
   actions: {
+    setPageLoading(loading: boolean): void {
+      this.pageLoading = loading;
+    },
+
     setProjectSetting(config: DeepPartial<ProjectSetting>): void {
       this.projectSetting = deepMerge(this.projectSetting || {}, config);
     },
@@ -52,6 +64,18 @@ export const useAppStore = defineStore({
 
     setTransitionSetting(transitionSetting: Partial<TransitionSetting>): void {
       this.setProjectSetting({ transitionSetting });
+    },
+
+    setPageLoadingAction(loading: boolean) {
+      clearTimeout(pageLoadingTimeout);
+      if (loading) {
+        // Prevent flicker by delaying the setPageLoading call
+        pageLoadingTimeout = setTimeout(() => {
+          this.setPageLoading(loading);
+        }, 50);
+      } else {
+        this.setPageLoading(loading);
+      }
     },
 
     resetAPPState() {

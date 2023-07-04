@@ -1,5 +1,6 @@
 import type { RouteLocationNormalized, Router } from "vue-router";
 import { AxiosCanceler } from "@celeris/request";
+import { createPageLoadingGuard } from "~/router/guard/pageLoadingGuard";
 import NProgress from "~/setting/nprogress";
 import { useTransitionSetting } from "~/composables/setting/useTransitionSetting";
 import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";
@@ -11,6 +12,7 @@ import { notifyRouteChange } from "~/router/mitt/routeChange";
 // 不要改变创建的顺序
 export function setupRouterGuard(router: Router) {
   createPageGuard(router);
+  createPageLoadingGuard(router);
   createHttpGuard(router);
   createProgressGuard(router);
   createPermissionGuard(router);
