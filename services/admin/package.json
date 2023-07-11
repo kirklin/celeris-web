@@ -10,6 +10,6 @@
   "devDependencies": {
     "@celeris/constants": "workspace:*",
     "@celeris/types": "workspace:*",
-    "nitropack": "^2.4.1"
+    "nitropack": "^2.5.2"
   }
 }
