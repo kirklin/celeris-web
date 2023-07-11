@@ -21,11 +21,11 @@ async function switchToken(role: RoleConstants) {
 </script>
 
 <template>
-  <div class="p-4">
+  <NCard title="按钮权限控制">
     <CurrentPermissionMode />
-    <p>
-      当前拥有的code列表: <a> {{ permissionStore.getPermissionCodes }} </a>
-    </p>
+    <NCard class="my-4" title="当前拥有的code列表" embedded :bordered="false">
+      {{ permissionStore.getPermissionCodes }}
+    </NCard>
     <NDivider />
     <NAlert
       class="mt-4"
@@ -90,7 +90,7 @@ async function switchToken(role: RoleConstants) {
         拥有code ['1000','2000']角色权限可见
       </NButton>
     </template>
-  </div>
+  </NCard>
 </template>
 
 <style scoped>

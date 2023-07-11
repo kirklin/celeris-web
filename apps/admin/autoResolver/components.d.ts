@@ -12,6 +12,7 @@ declare module 'vue' {
     NAlert: typeof import('@celeris/ca-components')['NAlert']
     NAvatar: typeof import('@celeris/ca-components')['NAvatar']
     NButton: typeof import('@celeris/ca-components')['NButton']
+    NCard: typeof import('@celeris/ca-components')['NCard']
     NConfigProvider: typeof import('@celeris/ca-components')['NConfigProvider']
     NDialogProvider: typeof import('@celeris/ca-components')['NDialogProvider']
     NDivider: typeof import('@celeris/ca-components')['NDivider']

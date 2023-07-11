@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import { RoleConstants } from "@celeris/constants";
 </script>
 
 <template>
-  <div class="p-4">
-    User 角色可见
-  </div>
+  <NCard :title="`${RoleConstants.USER} 角色可见`" />
 </template>
 
 <style scoped>
+
 </style>

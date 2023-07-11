@@ -17,13 +17,12 @@ async function switchToken(role: RoleConstants) {
 </script>
 
 <template>
-  <div class="p-4">
+  <NCard title="后端权限示例">
     <CurrentPermissionMode />
 
-    <NAlert class="mt-4" type="info" title="点击后请查看左侧菜单变化" show-icon />
+    <NAlert class="my-4" type="info" title="点击后请查看左侧菜单变化" show-icon />
 
-    <div class="mt-4">
-      权限切换(请先切换权限模式为后台权限模式):
+    <NCard class="mt-4" title="权限切换(请先切换权限模式为后台权限模式)" embedded :bordered="false">
       <NSpace>
         <NButton :disabled="!isBackendPermissionMode" @click="switchToken(RoleConstants.ADMIN)">
           获取ADMIN用户的菜单
@@ -32,8 +31,8 @@ async function switchToken(role: RoleConstants) {
           获取USER用户的菜单
         </NButton>
       </NSpace>
-    </div>
-  </div>
+    </NCard>
+  </NCard>
 </template>
 
 <style scoped>

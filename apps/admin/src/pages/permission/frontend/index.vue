@@ -10,16 +10,16 @@ const isUser = computed(() => userStore.getRoleList.includes(RoleConstants.USER)
 </script>
 
 <template>
-  <div class="p-4">
+  <NCard title="前端权限示例">
     <CurrentPermissionMode />
 
-    <p>
-      当前角色: <a> {{ userStore.getRoleList }} </a>
-    </p>
-    <NAlert class="mt-4" type="info" title="点击后请查看左侧菜单变化" show-icon />
+    <NCard class="my-4" title="当前角色" embedded :bordered="false">
+      {{ userStore.getRoleList }}
+    </NCard>
 
-    <div class="mt-4">
-      权限切换(请先切换权限模式为前端角色权限模式):
+    <NAlert class="my-4" type="info" title="点击后请查看左侧菜单变化" show-icon />
+
+    <NCard class="mt-4" title="权限切换(请先切换权限模式为前端角色权限模式)" embedded :bordered="false">
       <NSpace>
         <NButton :type="isAdmin ? 'primary' : 'default'" @click="changeRole(RoleConstants.ADMIN)">
           {{ RoleConstants.ADMIN }}
@@ -28,8 +28,8 @@ const isUser = computed(() => userStore.getRoleList.includes(RoleConstants.USER)
           {{ RoleConstants.USER }}
         </NButton>
       </NSpace>
-    </div>
-  </div>
+    </NCard>
+  </NCard>
 </template>
 
 <style scoped>

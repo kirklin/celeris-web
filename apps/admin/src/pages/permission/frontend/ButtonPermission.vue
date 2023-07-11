@@ -12,16 +12,16 @@ const isUser = computed(() => userStore.getRoleList.includes(RoleConstants.USER)
 </script>
 
 <template>
-  <div class="p-4">
+  <NCard title="按钮权限控制">
     <CurrentPermissionMode />
 
-    <p>
-      当前角色: <a> {{ userStore.getRoleList }} </a>
-    </p>
-    <NAlert class="mt-4" type="info" title="点击后请查看按钮变化" show-icon />
+    <NCard class="my-4" title="当前角色" embedded :bordered="false">
+      {{ userStore.getRoleList }}
+    </NCard>
 
-    <div class="mt-4">
-      权限切换(请先切换权限模式为前端角色权限模式):
+    <NAlert class="my-4" type="info" title="点击后请查看按钮变化" show-icon />
+
+    <NCard class="mt-4" title="权限切换(请先切换权限模式为前端角色权限模式)" embedded :bordered="false">
       <NSpace>
         <NButton :type="isAdmin ? 'primary' : 'default'" @click="changeRole(RoleConstants.ADMIN)">
           {{ RoleConstants.ADMIN }}
@@ -30,7 +30,7 @@ const isUser = computed(() => userStore.getRoleList.includes(RoleConstants.USER)
           {{ RoleConstants.USER }}
         </NButton>
       </NSpace>
-    </div>
+    </NCard>
     <NDivider>组件方式判断权限(有需要可以自行全局注册)</NDivider>
     <Authority :value="RoleConstants.ADMIN">
       <NButton type="primary" class="mx-4">
@@ -75,7 +75,7 @@ const isUser = computed(() => userStore.getRoleList.includes(RoleConstants.USER)
     <NButton v-auth="[RoleConstants.USER, RoleConstants.ADMIN]" strong secondary type="success" class="mx-4">
       拥有[USER,ADMIN]角色权限可见
     </NButton>
-  </div>
+  </NCard>
 </template>
 
 <style scoped>
