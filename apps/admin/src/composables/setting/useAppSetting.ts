@@ -1,8 +1,8 @@
 import type { ProjectSetting } from "@celeris/types";
-import { useAppStore } from "~/store/modules/app";
+import { useAppStoreWithOut } from "~/store/modules/app";
 
 export function useAppSetting() {
-  const appStore = useAppStore();
+  const appStore = useAppStoreWithOut();
 
   // 获取是否显示配置按钮
   // Get whether to display the setting button

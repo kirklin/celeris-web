@@ -1,9 +1,9 @@
 import type { ComputedRef, Ref } from "vue";
 import { computed, toRefs, watch } from "vue";
 import { isUndefined } from "@celeris/utils";
-import useState from "./useState";
+import { useState } from "./useState";
 
-export default function useMergeState<T, E = T | undefined>(
+export function useMergeState<T, E = T | undefined>(
   defaultValue: T,
   props: { value: E },
 ): [ComputedRef<T>, (val: E) => void, Ref<T>] {

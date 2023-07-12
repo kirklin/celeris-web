@@ -1,8 +1,8 @@
 import type { HeaderSetting } from "@celeris/types";
-import { useAppStore } from "~/store/modules/app";
+import { useAppStoreWithOut } from "~/store/modules/app";
 
 export function useHeaderSetting() {
-  const appStore = useAppStore();
+  const appStore = useAppStoreWithOut();
 
   // 获取是否显示网站头部
   // Get whether to show the website header

@@ -204,7 +204,7 @@ declare global {
   const useMemoize: typeof import('@vueuse/core')['useMemoize']
   const useMemory: typeof import('@vueuse/core')['useMemory']
   const useMenuSetting: typeof import('../src/composables/setting/useMenuSetting')['useMenuSetting']
-  const useMergeState: typeof import('../src/composables/useMergeState')['default']
+  const useMergeState: typeof import('../src/composables/useMergeState')['useMergeState']
   const useMessage: typeof import('@celeris/ca-components')['useMessage']
   const useMounted: typeof import('@vueuse/core')['useMounted']
   const useMouse: typeof import('@vueuse/core')['useMouse']
@@ -249,7 +249,7 @@ declare global {
   const useSorted: typeof import('@vueuse/core')['useSorted']
   const useSpeechRecognition: typeof import('@vueuse/core')['useSpeechRecognition']
   const useSpeechSynthesis: typeof import('@vueuse/core')['useSpeechSynthesis']
-  const useState: typeof import('../src/composables/useState')['default']
+  const useState: typeof import('../src/composables/useState')['useState']
   const useStepper: typeof import('@vueuse/core')['useStepper']
   const useStorage: typeof import('@vueuse/core')['useStorage']
   const useStorageAsync: typeof import('@vueuse/core')['useStorageAsync']
@@ -508,7 +508,7 @@ declare module 'vue' {
     readonly useMemoize: UnwrapRef<typeof import('@vueuse/core')['useMemoize']>
     readonly useMemory: UnwrapRef<typeof import('@vueuse/core')['useMemory']>
     readonly useMenuSetting: UnwrapRef<typeof import('../src/composables/setting/useMenuSetting')['useMenuSetting']>
-    readonly useMergeState: UnwrapRef<typeof import('../src/composables/useMergeState')['default']>
+    readonly useMergeState: UnwrapRef<typeof import('../src/composables/useMergeState')['useMergeState']>
     readonly useMessage: UnwrapRef<typeof import('@celeris/ca-components')['useMessage']>
     readonly useMounted: UnwrapRef<typeof import('@vueuse/core')['useMounted']>
     readonly useMouse: UnwrapRef<typeof import('@vueuse/core')['useMouse']>
@@ -553,7 +553,7 @@ declare module 'vue' {
     readonly useSorted: UnwrapRef<typeof import('@vueuse/core')['useSorted']>
     readonly useSpeechRecognition: UnwrapRef<typeof import('@vueuse/core')['useSpeechRecognition']>
     readonly useSpeechSynthesis: UnwrapRef<typeof import('@vueuse/core')['useSpeechSynthesis']>
-    readonly useState: UnwrapRef<typeof import('../src/composables/useState')['default']>
+    readonly useState: UnwrapRef<typeof import('../src/composables/useState')['useState']>
     readonly useStepper: UnwrapRef<typeof import('@vueuse/core')['useStepper']>
     readonly useStorage: UnwrapRef<typeof import('@vueuse/core')['useStorage']>
     readonly useStorageAsync: UnwrapRef<typeof import('@vueuse/core')['useStorageAsync']>
@@ -806,7 +806,7 @@ declare module '@vue/runtime-core' {
     readonly useMemoize: UnwrapRef<typeof import('@vueuse/core')['useMemoize']>
     readonly useMemory: UnwrapRef<typeof import('@vueuse/core')['useMemory']>
     readonly useMenuSetting: UnwrapRef<typeof import('../src/composables/setting/useMenuSetting')['useMenuSetting']>
-    readonly useMergeState: UnwrapRef<typeof import('../src/composables/useMergeState')['default']>
+    readonly useMergeState: UnwrapRef<typeof import('../src/composables/useMergeState')['useMergeState']>
     readonly useMessage: UnwrapRef<typeof import('@celeris/ca-components')['useMessage']>
     readonly useMounted: UnwrapRef<typeof import('@vueuse/core')['useMounted']>
     readonly useMouse: UnwrapRef<typeof import('@vueuse/core')['useMouse']>
@@ -851,7 +851,7 @@ declare module '@vue/runtime-core' {
     readonly useSorted: UnwrapRef<typeof import('@vueuse/core')['useSorted']>
     readonly useSpeechRecognition: UnwrapRef<typeof import('@vueuse/core')['useSpeechRecognition']>
     readonly useSpeechSynthesis: UnwrapRef<typeof import('@vueuse/core')['useSpeechSynthesis']>
-    readonly useState: UnwrapRef<typeof import('../src/composables/useState')['default']>
+    readonly useState: UnwrapRef<typeof import('../src/composables/useState')['useState']>
     readonly useStepper: UnwrapRef<typeof import('@vueuse/core')['useStepper']>
     readonly useStorage: UnwrapRef<typeof import('@vueuse/core')['useStorage']>
     readonly useStorageAsync: UnwrapRef<typeof import('@vueuse/core')['useStorageAsync']>

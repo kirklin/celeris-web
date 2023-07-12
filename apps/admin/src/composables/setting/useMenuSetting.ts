@@ -1,8 +1,8 @@
 import type { MenuSetting } from "@celeris/types";
-import { useAppStore } from "~/store/modules/app";
+import { useAppStoreWithOut } from "~/store/modules/app";
 
 export function useMenuSetting() {
-  const appStore = useAppStore();
+  const appStore = useAppStoreWithOut();
 
   const getCollapsed = computed(() => appStore.getMenuSetting.collapsed);
 

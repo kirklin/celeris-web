@@ -4,14 +4,14 @@ import { intersection, isArray } from "@celeris/utils";
 import type { RouteRecordRaw } from "vue-router";
 import { resetRouter, router } from "~/router";
 import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";
-import { useAppStore } from "~/store/modules/app";
-import { usePermissionStore } from "~/store/modules/permission";
-import { useUserStore } from "~/store/modules/user";
+import { useAppStoreWithOut } from "~/store/modules/app";
+import { usePermissionStoreWithOut } from "~/store/modules/permission";
+import { useUserStoreWithOut } from "~/store/modules/user";
 
 export function useAppPermission() {
-  const userStore = useUserStore();
-  const appStore = useAppStore();
-  const permissionStore = usePermissionStore();
+  const userStore = useUserStoreWithOut();
+  const appStore = useAppStoreWithOut();
+  const permissionStore = usePermissionStoreWithOut();
 
   const getPermissionMode = toRef(() => appStore.getProjectSetting.permissionMode);
 

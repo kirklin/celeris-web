@@ -1,8 +1,8 @@
 import type { TransitionSetting } from "@celeris/types";
-import { useAppStore } from "~/store/modules/app";
+import { useAppStoreWithOut } from "~/store/modules/app";
 
 export function useTransitionSetting() {
-  const appStore = useAppStore();
+  const appStore = useAppStoreWithOut();
 
   const getShouldEnableTransition = toRef(() => appStore.getTransitionSetting.shouldEnable);
 
