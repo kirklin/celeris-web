@@ -1,7 +1,7 @@
-import { useDesignStore } from "~/store/modules/design";
+import { useDesignStoreWithOut } from "~/store/modules/design";
 
 export function useThemeSetting() {
-  const designStore = useDesignStore();
+  const designStore = useDesignStoreWithOut();
 
   // 获取主题配置
   // get theme setting

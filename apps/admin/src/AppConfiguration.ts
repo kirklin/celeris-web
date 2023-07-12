@@ -2,10 +2,17 @@ import { HttpRequestEngine } from "@celeris/request";
 import { createDiscreteApi } from "@celeris/ca-components";
 import { field, logger } from "@celeris/utils";
 import { useUserStoreWithOut } from "~/store/modules/user";
+import { useNaiveUIConfigProvider } from "~/composables";
+
+const { configProviderProps } = useNaiveUIConfigProvider();
 
 const { message: _message, notification, dialog } = createDiscreteApi(
   ["message", "dialog", "notification", "loadingBar"],
+  {
+    configProviderProps,
+  },
 );
+
 function initializeHttpRequest() {
   HttpRequestEngine.initRequest(() => ({
     getToken: () => {

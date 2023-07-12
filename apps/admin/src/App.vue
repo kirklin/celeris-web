@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { logger } from "@celeris/utils";
-import { useThemeSetting } from "~/composables";
-import { designNamespace, designPrefixCls } from "~/setting/designSetting";
+import { useNaiveUIConfigProvider } from "~/composables";
 
 logger.info("I'm ready!  ⸜(๑'ᵕ'๑)⸝⋆*");
-const { getNaivePresetTheme } = useThemeSetting();
+const { configProviderProps } = useNaiveUIConfigProvider();
 </script>
 
 <template>
-  <NConfigProvider :theme="getNaivePresetTheme" :cls-prefix="designPrefixCls" :namespace="designNamespace" class="w-full h-full">
+  <NConfigProvider v-bind="configProviderProps" class="w-full h-full">
     <CAAppNaiveUIProvider>
       <RouterView />
     </CAAppNaiveUIProvider>
