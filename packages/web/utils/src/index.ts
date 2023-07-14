@@ -1,5 +1,6 @@
 export * from "./browserHelper";
 export * from "./cipher";
+export * from "./color";
 export * from "./config";
 export * from "./dateUtil";
 export * from "./domUtils";
