@@ -1,4 +1,5 @@
 import type { ThemeSetting } from "@celeris/types";
+import { presetPrimaryColors } from "@celeris/utils";
 
 export const DEFAULT_THEME_SETTING: ThemeSetting = {
   // 网站灰色模式，开启可能是因为某些悲伤的日子
@@ -19,5 +20,11 @@ export const DEFAULT_THEME_SETTING: ThemeSetting = {
 
   // 主题颜色
   // The theme color
-  themeColor: "#4b6bfb",
+  themeColor: presetPrimaryColors.celerisBlue,
+
+  otherColor: {
+    info: presetPrimaryColors.blue,
+    success: presetPrimaryColors.green,
+    warning: presetPrimaryColors.orange,
+  },
 };

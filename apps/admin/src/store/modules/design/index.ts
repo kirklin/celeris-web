@@ -2,8 +2,9 @@ import type { ThemeSetting } from "@celeris/types";
 import { deepMerge } from "@celeris/utils";
 import { defineStore } from "pinia";
 import { APP_DESIGN_STORE_ID } from "@celeris/constants";
-import type { GlobalTheme } from "naive-ui";
+import type { GlobalTheme, GlobalThemeOverrides } from "naive-ui";
 import { darkTheme, useOsTheme } from "naive-ui";
+import { getNaiveUICustomTheme } from "./themeUtils";
 import { DEFAULT_THEME_SETTING } from "~/setting/themeSetting";
 
 interface DesignState {
@@ -26,11 +27,18 @@ export const useDesignStore = defineStore({
       return state.themeSetting;
     },
     //   获取Naive UI 预设主题
-    getNaivePresetTheme(state): GlobalTheme | null {
+    getNaiveUIPresetTheme(state): GlobalTheme | null {
       if (state.themeSetting.shouldFollowSystemTheme) {
         return useOsTheme().value === "dark" ? darkTheme : null;
       }
       return colorMode.value === "dark" ? darkTheme : null;
+    },
+    // 获取Naive UI 自定义主题
+    getNaiveUICustomTheme(state): GlobalThemeOverrides | null {
+      return getNaiveUICustomTheme({
+        ...state.themeSetting.otherColor,
+        primary: state.themeSetting.themeColor,
+      }, this.getDarkMode);
     },
     //  获取暗黑模式
     getDarkMode(state): boolean {

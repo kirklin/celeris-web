@@ -13,7 +13,11 @@ export function useThemeSetting() {
 
   // 获取Naive UI 预设主题
   // get Naive UI preset theme
-  const getNaivePresetTheme = toRef(() => designStore.getNaivePresetTheme);
+  const getNaiveUIPresetTheme = toRef(() => designStore.getNaiveUIPresetTheme);
+
+  // 获取Naive UI 自定义主题
+  // get Naive UI custom theme
+  const getNaiveUICustomTheme = toRef(() => designStore.getNaiveUICustomTheme);
 
   // 获取暗黑模式
   // get dark mode
@@ -49,7 +53,8 @@ export function useThemeSetting() {
   return {
     getThemeSetting,
     setThemeSetting,
-    getNaivePresetTheme,
+    getNaiveUIPresetTheme,
+    getNaiveUICustomTheme,
     getDarkMode,
     getColorWeakMode,
     getGrayMode,

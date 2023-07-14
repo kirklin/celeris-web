@@ -3,11 +3,12 @@ import { designNamespace, designPrefixCls } from "~/setting/designSetting";
 
 // Naive UI Config Provider
 export function useNaiveUIConfigProvider() {
-  const { getNaivePresetTheme } = useThemeSetting();
+  const { getNaiveUIPresetTheme, getNaiveUICustomTheme } = useThemeSetting();
 
   const configProviderProps = toRef({
     "cls-prefix": designPrefixCls,
-    "theme": getNaivePresetTheme,
+    "theme": getNaiveUIPresetTheme,
+    "theme-overrides": getNaiveUICustomTheme,
     "namespace": designNamespace,
   });
 
