@@ -24,7 +24,7 @@ function asyncImportRoute(routes: BackendRouteRecordRaw[] | RouteRecordRaw[], dy
   }
 
   routes.forEach((item) => {
-    if (!item.component && item.meta?.frameSrc) {
+    if (!item.component && item.meta?.iframeLink) {
       item.component = "IFRAME" as const;
     }
 

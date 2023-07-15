@@ -1,3 +1,4 @@
+import { openWindow } from "@celeris/utils";
 import type { RouteLocationNormalized, Router } from "vue-router";
 import { AxiosCanceler } from "@celeris/request";
 import { createPageLoadingGuard } from "~/router/guard/pageLoadingGuard";
@@ -13,6 +14,7 @@ import { notifyRouteChange } from "~/router/mitt/routeChange";
 export function setupRouterGuard(router: Router) {
   createPageGuard(router);
   createPageLoadingGuard(router);
+  createExternalLinkGuard(router);
   createHttpGuard(router);
   createProgressGuard(router);
   createPermissionGuard(router);
@@ -108,6 +110,22 @@ export function createProgressGuard(router: Router) {
   router.afterEach(() => {
     if (toValue(getShouldOpenNProgress)) {
       NProgress.done();
+    }
+    return true;
+  });
+}
+
+/**
+ * 创建一个外部链接守卫，当路由切换时打开外部链接，而不是切换路由
+ * Creates an external link guard that opens an external link when the route is switched
+ * @param router - 路由对象。
+ */
+export function createExternalLinkGuard(router: Router) {
+  router.beforeEach((to) => {
+    const { meta } = to;
+    if (meta && Reflect.has(meta, "externalLink")) {
+      openWindow(<string>meta.externalLink);
+      return false;
     }
     return true;
   });

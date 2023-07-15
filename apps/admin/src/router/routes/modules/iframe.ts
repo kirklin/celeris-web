@@ -1,4 +1,6 @@
+// @unocss-include
 import type { RouteRecordRaw } from "vue-router";
+import { CELERIS_WEB_GITHUB_URL } from "@celeris/constants";
 import { IFRAME, LAYOUT } from "~/router/constant";
 
 const iframe: RouteRecordRaw = {
@@ -7,7 +9,7 @@ const iframe: RouteRecordRaw = {
   component: LAYOUT,
   redirect: "/frame/github",
   meta: {
-    icon: "ion:tv-outline",
+    icon: "i-line-md-external-link",
     title: "外部页面",
   },
   children: [
@@ -16,15 +18,18 @@ const iframe: RouteRecordRaw = {
       name: "GitHub",
       component: IFRAME,
       meta: {
-        frameSrc: "https://github.com/kirklin/celeris-web",
+        iframeLink: CELERIS_WEB_GITHUB_URL,
+        icon: "i-line-md-github-loop",
         title: "GitHub仓库（内链）",
       },
     },
     {
-      path: "https://github.com/kirklin/celeris-web",
+      path: "github-external",
       name: "GitHubExternal",
       component: IFRAME,
       meta: {
+        externalLink: CELERIS_WEB_GITHUB_URL,
+        icon: "i-line-md-github-loop",
         title: "GitHub仓库（外链）",
       },
     },

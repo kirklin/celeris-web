@@ -1,22 +1,31 @@
-<!--
-*  @description: IframePage
-*  @Author: Kirk lin
-*  @createdTime: 2023-04-07 13:45
- -->
 <script setup lang="ts">
 withDefaults(defineProps<{
-  frameSrc: string;
+  iframeLink?: string;
+  width?: number;
+  height?: number;
 }>(), {
-  frameSrc: "",
+  iframeLink: "",
+  width: 0,
+  height: 0,
 });
+const frameRef = ref<HTMLIFrameElement | null>();
+const [loading, setLoading] = useState(true);
+function finishLoading() {
+  setLoading(false);
+}
 </script>
 
 <template>
-  <div>
-    <iframe
-      :src="frameSrc"
-      style="width: 100%; height: 100%;"
-    />
+  <div class="w-full h-full">
+    <NSpin :show="loading">
+      <iframe
+        ref="frameRef"
+        :src="iframeLink"
+        :style="{ width: `${width}px`, height: `${height}px` }"
+        class="rounded-2xl"
+        @load="finishLoading"
+      />
+    </NSpin>
   </div>
 </template>
 

@@ -47,7 +47,11 @@ declare module "vue-router" {
 
     // The URL of the page to show in an iframe.
     // 在 iframe 中显示页面的 URL
-    frameSrc?: string;
+    iframeLink?: string;
+
+    // The URL of the page to show in a new tab.
+    // 在新标签页中显示页面的 URL
+    externalLink?: string;
 
     // The name of the transition to use when navigating to this page.
     // 导航到该页面时使用的过渡动画名称
@@ -80,10 +84,6 @@ declare module "vue-router" {
     // Whether to hide the page in the menu.
     // 是否在菜单中隐藏页面
     shouldHideInMenu?: boolean;
-
-    // Whether to use a link instead of a route.
-    // 是否使用链接而非路由
-    shouldLink?: boolean;
 
     // Whether to ignore the route when building the menu.
     // 构建菜单时是否忽略该路由

@@ -35,6 +35,7 @@ declare module 'vue' {
     NResult: typeof import('@celeris/ca-components')['NResult']
     NScrollbar: typeof import('@celeris/ca-components')['NScrollbar']
     NSpace: typeof import('@celeris/ca-components')['NSpace']
+    NSpin: typeof import('@celeris/ca-components')['NSpin']
     NSwitch: typeof import('@celeris/ca-components')['NSwitch']
     NTabPane: typeof import('@celeris/ca-components')['NTabPane']
     NTabs: typeof import('@celeris/ca-components')['NTabs']
