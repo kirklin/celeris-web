@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useHeaderSetting } from "~/composables";
-import { DarkMode, ThemeBackup } from "~/layouts/setting/components/SettingDrawer/components";
+import { DarkMode, ThemeBackup, ThemeColor } from "~/layouts/setting/components/SettingDrawer/components";
 
 defineOptions({
   name: "SettingDrawer",
@@ -15,6 +15,7 @@ const { getShouldShowSettingDrawer, setShouldShowSettingDrawer } = useHeaderSett
   >
     <NDrawerContent title="Project Setting" :native-scrollbar="false">
       <DarkMode />
+      <ThemeColor />
       <ThemeBackup />
     </NDrawerContent>
   </NDrawer>

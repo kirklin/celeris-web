@@ -1,5 +1,7 @@
 import { generateColorPalette, generateColorPalettes } from "./colorPalette";
 
+export * from "./utils";
+
 const presetPrimaryColors: Record<string, string> = {
   red: "#F53F3F",
   orangered: "#F77234",
