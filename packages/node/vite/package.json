@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@celeris/utils": "workspace:*",
-    "vite": "^4.4.2"
+    "vite": "^4.4.4"
   },
   "devDependencies": {
     "@celeris/styles": "workspace:*",
@@ -23,8 +23,8 @@
     "unplugin-auto-import": "^0.16.6",
     "unplugin-config": "^0.0.3",
     "unplugin-vue-components": "^0.25.1",
-    "vite-plugin-inspect": "^0.7.32",
+    "vite-plugin-inspect": "^0.7.33",
     "vite-plugin-pwa": "^0.16.4",
-    "vite-plugin-vue-devtools": "^0.5.0"
+    "vite-plugin-vue-devtools": "^1.0.0-alpha.2"
   }
 }
