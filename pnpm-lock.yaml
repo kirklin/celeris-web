@@ -128,6 +128,9 @@ importers:
       '@tanstack/vue-query':
         specifier: ^4.29.20
         version: 4.29.20(vue@3.3.4)
+      '@tanstack/vue-table':
+        specifier: ^8.9.3
+        version: 8.9.3(vue@3.3.4)
       destr:
         specifier: ^2.0.0
         version: 2.0.0
@@ -3695,6 +3698,11 @@ packages:
       '@tanstack/query-persist-client-core': 4.29.19
     dev: false
 
+  /@tanstack/table-core@8.9.3:
+    resolution: {integrity: sha512-NpHZBoHTfqyJk0m/s/+CSuAiwtebhYK90mDuf5eylTvgViNOujiaOaxNDxJkQQAsVvHWZftUGAx1EfO1rkKtLg==}
+    engines: {node: '>=12'}
+    dev: false
+
   /@tanstack/vue-query@4.29.20(vue@3.3.4):
     resolution: {integrity: sha512-v5I/R1kk9Wse1NVrzYMn/BA+7kDZHPcYVH3UQEIFLeFdK1Oowe2JjQ8Z8+a70fucXU7tKulMoIdkIKTcr0tO/A==}
     peerDependencies:
@@ -3709,6 +3717,16 @@ packages:
       '@vue/devtools-api': 6.5.0
       vue: 3.3.4
       vue-demi: 0.13.11(vue@3.3.4)
+    dev: false
+
+  /@tanstack/vue-table@8.9.3(vue@3.3.4):
+    resolution: {integrity: sha512-Ca9+XZogYOi99rBqIoEJKKIfS0hNWcHnIh8pDUy2xbBk396AtJaO/tvP6B9qsxZF6j4szHzx8TeRveHPpZ+bBw==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      vue: ^3.2.33
+    dependencies:
+      '@tanstack/table-core': 8.9.3
+      vue: 3.3.4
     dev: false
 
   /@tootallnate/once@2.0.0:
