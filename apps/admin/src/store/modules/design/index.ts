@@ -3,7 +3,7 @@ import { deepMerge } from "@celeris/utils";
 import { defineStore } from "pinia";
 import { APP_DESIGN_STORE_ID } from "@celeris/constants";
 import type { GlobalTheme, GlobalThemeOverrides } from "naive-ui";
-import { darkTheme, useOsTheme } from "naive-ui";
+import { darkTheme } from "naive-ui";
 import { getNaiveUICustomTheme } from "./themeUtils";
 import { DEFAULT_THEME_SETTING } from "~/setting/themeSetting";
 
@@ -13,6 +13,7 @@ interface DesignState {
 const colorMode = useColorMode({
   initialValue: DEFAULT_THEME_SETTING.shouldFollowSystemTheme ? "auto" : (DEFAULT_THEME_SETTING.shouldEnableDarkMode ? "dark" : "light"),
 });
+const isOsDarkTheme = usePreferredDark();
 export const useDesignStore = defineStore({
   id: APP_DESIGN_STORE_ID,
   persist: {
@@ -28,10 +29,7 @@ export const useDesignStore = defineStore({
     },
     //   获取Naive UI 预设主题
     getNaiveUIPresetTheme(state): GlobalTheme | null {
-      if (state.themeSetting.shouldFollowSystemTheme) {
-        return useOsTheme().value === "dark" ? darkTheme : null;
-      }
-      return colorMode.value === "dark" ? darkTheme : null;
+      return this.getDarkMode ? darkTheme : null;
     },
     // 获取Naive UI 自定义主题
     getNaiveUICustomTheme(state): GlobalThemeOverrides | null {
@@ -42,8 +40,8 @@ export const useDesignStore = defineStore({
     },
     //  获取暗黑模式
     getDarkMode(state): boolean {
-      if (state.themeSetting.shouldFollowSystemTheme) {
-        return useOsTheme().value === "dark";
+      if (this.getFollowSystemTheme) {
+        return isOsDarkTheme.value;
       }
       return state.themeSetting.shouldEnableDarkMode;
     },
@@ -73,7 +71,7 @@ export const useDesignStore = defineStore({
     setDarkMode(darkMode: boolean): void {
       if (this.themeSetting.shouldFollowSystemTheme) {
         colorMode.value = "auto";
-        this.setThemeSetting({ shouldEnableDarkMode: useOsTheme().value === "dark" });
+        this.setThemeSetting({ shouldEnableDarkMode: isOsDarkTheme.value });
       } else {
         colorMode.value = darkMode ? "dark" : "light";
         this.setThemeSetting({ shouldEnableDarkMode: darkMode });

@@ -16,7 +16,7 @@ export const DEFAULT_THEME_SETTING: ThemeSetting = {
 
   // 是否开启跟随系统颜色
   // Whether to follow the system theme
-  shouldFollowSystemTheme: false,
+  shouldFollowSystemTheme: true,
 
   // 主题颜色
   // The theme color
