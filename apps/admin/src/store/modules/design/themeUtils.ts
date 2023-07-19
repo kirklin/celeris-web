@@ -1,5 +1,5 @@
 import type { ButtonColorScene, ColorAction, ColorType, ColorTypeCase, ThemeColor, ThemeConfig } from "@celeris/types";
-import { generateColorPalettes } from "@celeris/utils";
+import { deepMerge, generateColorPalettes } from "@celeris/utils";
 import { type GlobalThemeOverrides, commonDark, commonLight } from "naive-ui";
 
 /**
@@ -116,7 +116,16 @@ export function getThemeColors(
 function getTextColor(darkMode: boolean): string {
   return darkMode ? commonDark.textColor2 : commonLight.baseColor;
 }
-
+function getOtherTheme(darkMode: boolean): GlobalThemeOverrides {
+  return {
+    common: {
+      borderRadius: "0.5rem",
+    },
+    Card: {
+      borderRadius: "1rem",
+    },
+  };
+}
 /**
  * 获取Naive UI自定义主题配置
  *
@@ -129,10 +138,10 @@ export function getNaiveUICustomTheme(
   darkMode: boolean,
 ): GlobalThemeOverrides {
   const themeColors = getThemeColors(config, darkMode);
-  return {
+  return deepMerge({
     common: {
       ...themeColors,
     },
     ...getOtherColor(config, darkMode),
-  };
+  }, getOtherTheme(darkMode));
 }
