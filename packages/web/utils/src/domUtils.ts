@@ -25,6 +25,19 @@ export function setCssVariable(property: string, value: string | null, element: 
 }
 
 /**
+ * Set CSS variables on the specified element.
+ * 在指定的元素上设置 CSS 变量。
+ *
+ * @param variables - An object containing the CSS variables to set and their values. 包含要设置的 CSS 变量及其值的对象。
+ * @param element - The HTML element on which to set the CSS variables. 要设置 CSS 变量的 HTML 元素。
+ */
+export function setCssVariables(variables: Record<string, string | null>, element: HTMLElement = document.documentElement) {
+  for (const [property, value] of Object.entries(variables)) {
+    element.style.setProperty(property, value);
+  }
+}
+
+/**
  * Parses a CSS string and returns an object with key-value pairs of CSS properties and their values.
  * 解析 CSS 字符串并返回一个包含 CSS 属性及其值的键值对对象。
  *

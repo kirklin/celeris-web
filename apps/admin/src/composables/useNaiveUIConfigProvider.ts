@@ -10,6 +10,7 @@ export function useNaiveUIConfigProvider() {
     "theme": getNaiveUIPresetTheme,
     "theme-overrides": getNaiveUICustomTheme,
     "namespace": designNamespace,
+    "inline-theme-disabled": true,
   });
 
   return {

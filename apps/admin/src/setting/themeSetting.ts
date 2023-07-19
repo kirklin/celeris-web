@@ -26,5 +26,6 @@ export const DEFAULT_THEME_SETTING: ThemeSetting = {
     info: presetPrimaryColors.blue,
     success: presetPrimaryColors.green,
     warning: presetPrimaryColors.orange,
+    error: presetPrimaryColors.red,
   },
 };
