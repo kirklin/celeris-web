@@ -26,6 +26,7 @@ declare module 'vue' {
     NGrid: typeof import('@celeris/ca-components')['NGrid']
     NGridItem: typeof import('@celeris/ca-components')['NGridItem']
     NInput: typeof import('@celeris/ca-components')['NInput']
+    NInputGroup: typeof import('@celeris/ca-components')['NInputGroup']
     NLoadingBarProvider: typeof import('@celeris/ca-components')['NLoadingBarProvider']
     NMenu: typeof import('@celeris/ca-components')['NMenu']
     NMessageProvider: typeof import('@celeris/ca-components')['NMessageProvider']
