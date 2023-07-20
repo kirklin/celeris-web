@@ -9,5 +9,8 @@
   "module": "index.ts",
   "scripts": {
     "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
+  },
+  "dependencies": {
+    "lodash.pick": "4.4.0"
   }
 }

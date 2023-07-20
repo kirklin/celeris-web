@@ -5,4 +5,5 @@ export {
   clone,
   intersection,
   uniqBy,
+  pick,
 } from "lodash-es";
