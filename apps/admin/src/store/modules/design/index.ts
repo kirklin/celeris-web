@@ -12,6 +12,7 @@ interface DesignState {
 }
 const colorMode = useColorMode({
   initialValue: DEFAULT_THEME_SETTING.shouldFollowSystemTheme ? "auto" : (DEFAULT_THEME_SETTING.shouldEnableDarkMode ? "dark" : "light"),
+  storageKey: null,
 });
 const isOsDarkTheme = usePreferredDark();
 export const useDesignStore = defineStore({
