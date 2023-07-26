@@ -5,16 +5,15 @@ import { field, logger } from "@celeris/utils";
 import { useUserStoreWithOut } from "~/store/modules/user";
 import { useAppSetting, useNaiveUIConfigProvider } from "~/composables";
 
-const { configProviderProps } = useNaiveUIConfigProvider();
-
-const { message: _message, notification, dialog } = createDiscreteApi(
-  ["message", "dialog", "notification", "loadingBar"],
-  {
-    configProviderProps,
-  },
-);
-
 function initializeHttpRequest() {
+  const { configProviderProps } = useNaiveUIConfigProvider();
+
+  const { message: _message, notification, dialog } = createDiscreteApi(
+    ["message", "dialog", "notification", "loadingBar"],
+    {
+      configProviderProps,
+    },
+  );
   HttpRequestEngine.initRequest(() => ({
     getToken: () => {
       const userStore = useUserStoreWithOut();
