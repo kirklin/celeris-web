@@ -12,7 +12,6 @@ interface DesignState {
 }
 const colorMode = useColorMode({
   initialValue: DEFAULT_THEME_SETTING.shouldFollowSystemTheme ? "auto" : (DEFAULT_THEME_SETTING.shouldEnableDarkMode ? "dark" : "light"),
-  storageKey: null,
 });
 const isOsDarkTheme = usePreferredDark();
 export const useDesignStore = defineStore({
@@ -29,7 +28,7 @@ export const useDesignStore = defineStore({
       return state.themeSetting;
     },
     //   获取Naive UI 预设主题
-    getNaiveUIPresetTheme(state): GlobalTheme | null {
+    getNaiveUIPresetTheme(): GlobalTheme | null {
       return this.getDarkMode ? darkTheme : null;
     },
     // 获取Naive UI 自定义主题
