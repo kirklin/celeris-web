@@ -3,7 +3,7 @@ import { LocalesEngine } from "@celeris/locale";
 import { createDiscreteApi } from "@celeris/ca-components";
 import { field, logger } from "@celeris/utils";
 import { useUserStoreWithOut } from "~/store/modules/user";
-import { useNaiveUIConfigProvider } from "~/composables";
+import { useAppSetting, useNaiveUIConfigProvider } from "~/composables";
 
 const { configProviderProps } = useNaiveUIConfigProvider();
 
@@ -67,6 +67,7 @@ function initializeHttpRequest() {
 }
 
 function initializeI18n() {
+  const { getLocale } = useAppSetting();
   const messages = Object.fromEntries(
     Object.entries(
       import.meta.glob<{ default: any }>("./locales/*.json", { eager: true }),
@@ -75,7 +76,7 @@ function initializeI18n() {
     }),
   );
   LocalesEngine.initLocales(() => ({
-    locale: "zh",
+    locale: getLocale.value,
     fallbackLocale: "zh",
     messagesHandler: () => {
       return messages;

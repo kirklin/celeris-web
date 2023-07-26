@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CollapseButton from "~/layouts/header/components/CollapseButton.vue";
 import FullScreenButton from "~/layouts/header/components/FullScreenButton.vue";
+import LocaleSwitcher from "~/layouts/header/components/LocaleSwitcher.vue";
 import UserInfoButton from "~/layouts/header/components/UserInfoButton.vue";
 import SettingButton from "~/layouts/setting/index.vue";
 
@@ -19,6 +20,9 @@ defineOptions({
       <div class="flex items-center justify-center">
         <div class="px-2">
           <FullScreenButton />
+        </div>
+        <div class="px-2">
+          <LocaleSwitcher />
         </div>
       </div>
     </div>
