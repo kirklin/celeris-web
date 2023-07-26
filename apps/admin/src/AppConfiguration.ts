@@ -1,4 +1,5 @@
 import { HttpRequestEngine } from "@celeris/request";
+import { LocalesEngine } from "@celeris/locale";
 import { createDiscreteApi } from "@celeris/ca-components";
 import { field, logger } from "@celeris/utils";
 import { useUserStoreWithOut } from "~/store/modules/user";
@@ -65,6 +66,31 @@ function initializeHttpRequest() {
   });
 }
 
+function initializeI18n() {
+  const messages = Object.fromEntries(
+    Object.entries(
+      import.meta.glob<{ default: any }>("./locales/*.json", { eager: true }),
+    ).map(([key, value]) => {
+      return [key.slice(10, -5), value.default];
+    }),
+  );
+  LocalesEngine.initLocales(() => ({
+    locale: "zh",
+    fallbackLocale: "zh",
+    messagesHandler: () => {
+      return messages;
+    },
+    otherOptions: {
+      sync: true,
+      availableLocales: Object.keys(messages),
+      silentTranslationWarn: true,
+      missingWarn: false,
+      silentFallbackWarn: true,
+    },
+  }));
+}
+
 export function initializeConfiguration() {
   initializeHttpRequest();
+  initializeI18n();
 }

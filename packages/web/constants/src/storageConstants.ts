@@ -1,6 +1,8 @@
 // project config key
 export const PROJECT_CONFIG_KEY = "PROJECT__CONFIG__KEY";
 
+export const LOCALES_STORE_KEY = "LOCALES__STORE__KEY";
+
 export const APP_STORE_ID = "APP_STORE";
 
 export const APP_PERMISSION_STORE_ID = "APP_PERMISSION_STORE";

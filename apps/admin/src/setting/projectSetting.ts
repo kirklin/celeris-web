@@ -12,6 +12,10 @@ export const DEFAULT_PROJECT_SETTING: ProjectSetting = {
   // Whether to display the setting button
   shouldShowSettingButton: true,
 
+  // 国际化语言
+  // The locale
+  locale: "zh",
+
   // 是否显示主题切换按钮
   // Whether to display the dark mode toggle button
   shouldShowDarkModeToggle: true,

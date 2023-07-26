@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 
 import { setupDirectives } from "@celeris/directives";
+import { setupI18n } from "@celeris/locale";
 import { router, setupRouter } from "./router";
 import { setupStore } from "./store";
 import { setupPermissionDirective } from "~/directives/permission";
@@ -35,5 +36,13 @@ setupRouterGuard(router);
 setupDirectives(app);
 setupPermissionDirective(app);
 
-initializeConfiguration();
-app.mount("#app");
+void Promise.all([
+  // Initialize internal system configuration
+  // 初始化内部系统配置
+  initializeConfiguration(),
+  // Configure i18n
+  // 配置国际化
+  setupI18n(app),
+]).finally(() => {
+  app.mount("#app");
+});

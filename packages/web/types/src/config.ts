@@ -78,6 +78,10 @@ export interface ProjectSetting {
   // Whether to display the setting button
   shouldShowSettingButton: boolean;
 
+  // 国际化语言
+  // The locale
+  locale: string;
+
   // 是否显示主题切换按钮
   // Whether to display the dark mode toggle button
   shouldShowDarkModeToggle: boolean;

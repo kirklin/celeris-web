@@ -8,6 +8,10 @@ export function useAppSetting() {
   // Get whether to display the setting button
   const getShouldShowSettingButton = toRef(() => appStore.getProjectSetting.shouldShowSettingButton);
 
+  // 获取国际化语言
+  // Get the locale
+  const getLocale = toRef(() => appStore.getProjectSetting.locale);
+
   // 获取是否显示主题切换按钮
   // Get whether to display the dark mode toggle button
   const getShouldShowDarkModeToggle = toRef(() => appStore.getProjectSetting.shouldShowDarkModeToggle);
@@ -87,6 +91,7 @@ export function useAppSetting() {
     getProjectSetting,
     setProjectSetting,
     getShouldShowSettingButton,
+    getLocale,
     getShouldShowDarkModeToggle,
     getSettingButtonPosition,
     getPermissionMode,

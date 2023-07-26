@@ -12,8 +12,10 @@
   },
   "dependencies": {
     "@celeris/constants": "workspace:*",
+    "@celeris/hooks": "workspace:*",
     "@celeris/types": "workspace:*",
     "@celeris/utils": "workspace:*",
+    "iso-639-1": "^2.1.15",
     "vue": "^3.3.4",
     "vue-i18n": "^9.2.2"
   }

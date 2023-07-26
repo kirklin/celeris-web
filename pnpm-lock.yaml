@@ -334,12 +334,18 @@ importers:
       '@celeris/constants':
         specifier: workspace:*
         version: link:../constants
+      '@celeris/hooks':
+        specifier: workspace:*
+        version: link:../hooks
       '@celeris/types':
         specifier: workspace:*
         version: link:../types
       '@celeris/utils':
         specifier: workspace:*
         version: link:../utils
+      iso-639-1:
+        specifier: ^2.1.15
+        version: 2.1.15
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -4319,7 +4325,7 @@ packages:
       '@vue/compiler-core': 3.3.4
       '@vue/shared': 3.3.4
       estree-walker: 2.0.2
-      magic-string: 0.30.0
+      magic-string: 0.30.1
 
   /@vue/reactivity@3.3.4:
     resolution: {integrity: sha512-kLTDLwd0B1jG08NBF3R5rqULtv/f8x3rOFByTDz4J53ttIQEDmALqKqXY0J+XQeN0aV2FBxY8nJDf88yvOPAqQ==}
@@ -7742,6 +7748,11 @@ packages:
 
   /isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
+
+  /iso-639-1@2.1.15:
+    resolution: {integrity: sha512-7c7mBznZu2ktfvyT582E2msM+Udc1EjOyhVRE/0ZsjD9LBtWSm23h3PtiRh2a35XoUsTQQjJXaJzuLjXsOdFDg==}
+    engines: {node: '>=6.0'}
+    dev: false
 
   /istanbul-lib-coverage@3.2.0:
     resolution: {integrity: sha512-eOeJ5BHCmHYvQK7xt9GkdHuzuCGS1Y6g9Gvnx3Ym33fz/HpLRYxiS0wHNr+m/MBC8B647Xt608vCDEvhl9c6Mw==}
