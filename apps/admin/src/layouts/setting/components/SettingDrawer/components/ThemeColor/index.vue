@@ -3,11 +3,12 @@ import { presetPrimaryColors } from "@celeris/utils";
 import { ColorCheckbox } from "./components";
 
 const { getThemeColor, setThemeColor } = useThemeSetting();
+const { t } = useI18n();
 </script>
 
 <template>
   <NDivider title-placement="center">
-    系统主题
+    {{ t('layouts.header.systemTheme') }}
   </NDivider>
   <NGrid :cols="8" :x-gap="8" :y-gap="12">
     <NGridItem v-for="color in presetPrimaryColors" :key="color" class="flex-x-center">

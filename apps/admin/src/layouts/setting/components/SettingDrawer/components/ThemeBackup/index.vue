@@ -4,6 +4,7 @@ import { useDesignStore } from "~/store/modules/design";
 defineOptions({
   name: "ThemeBackup",
 });
+const { t } = useI18n();
 const message = useMessage();
 const designStore = useDesignStore();
 
@@ -15,25 +16,25 @@ function getSettingJson() {
 
 function handleResetSetting() {
   designStore.resetDesignState();
-  message.success("已重置配置，请重新拷贝！");
+  message.success(t("layouts.header.themeConfig.message.resetConfigSuccess"));
 }
 function handleCopySetting() {
-  message.success("复制成功！");
+  message.success(t("layouts.header.themeConfig.message.copyConfigSuccess"));
 }
 </script>
 
 <template>
   <NDivider title-placement="center">
-    主题配置
+    {{ t('layouts.header.themeConfig.title') }}
   </NDivider>
   <NSpace vertical>
     <div v-copy="dataClipboardText">
       <NButton type="primary" :block="true" @click="handleCopySetting">
-        拷贝当前配置
+        {{ t('layouts.header.themeConfig.copyConfigButton') }}
       </NButton>
     </div>
     <NButton type="warning" :block="true" @click="handleResetSetting">
-      重置当前配置
+      {{ t('layouts.header.themeConfig.resetConfigButton') }}
     </NButton>
   </NSpace>
 </template>

@@ -1,4 +1,44 @@
 {
+  "layouts": {
+    "header": {
+      "toggleCollapsed": "Toggle Menu",
+      "toggleFullScreen": "Toggle Fullscreen",
+      "switchLocale": "Switch Language",
+      "settingDrawer": "Settings Drawer",
+      "openSettingDrawer": "Open Settings Drawer",
+      "projectSetting": "Project Settings",
+      "darkMode": "Dark Mode",
+      "followSystem": "Follow System",
+      "systemDefault": "System Default",
+      "systemTheme": "System Theme",
+      "themeMode": "Theme Mode",
+      "lightMode": "Light Mode",
+      "colorWeak": "Color Weak Mode",
+      "themeConfig": {
+        "title": "Theme Configuration",
+        "copyConfigButton": "Copy Current Configuration",
+        "resetConfigButton": "Reset Current Configuration",
+        "message": {
+          "copyConfigSuccess": "Configuration copied successfully!",
+          "resetConfigSuccess": "Configuration reset successfully!"
+        }
+      }
+    },
+    "userInfo": {
+      "userInformation": "User Information",
+      "greeting": "Hello",
+      "rolesList": "Role List: {roles}",
+      "logoutButton": "Logout"
+    },
+    "logoutConfirmation": {
+      "title": "Warning",
+      "content": "Are you sure you want to log out?",
+      "positiveText": "Logout",
+      "negativeText": "Cancel",
+      "onNegativeClickMessage": "Logout canceled",
+      "onPositiveClickMessage": "Logout successful"
+    }
+  },
   "page": {
     "login": {
       "title": "Login",

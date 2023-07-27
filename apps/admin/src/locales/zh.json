@@ -1,4 +1,44 @@
 {
+  "layouts": {
+    "header": {
+      "toggleCollapsed": "折叠菜单",
+      "toggleFullScreen": "切换全屏",
+      "switchLocale": "切换语言",
+      "settingDrawer": "设置抽屉",
+      "openSettingDrawer": "打开设置抽屉",
+      "projectSetting": "项目设置",
+      "darkMode": "深色主题",
+      "followSystem": "跟随系统",
+      "systemDefault": "系统默认",
+      "systemTheme": "系统主题",
+      "themeMode": "主题模式",
+      "lightMode": "浅色主题",
+      "colorWeak": "色弱模式",
+      "themeConfig": {
+        "title": "主题配置",
+        "copyConfigButton": "拷贝当前配置",
+        "resetConfigButton": "重置当前配置",
+        "message": {
+          "copyConfigSuccess": "拷贝配置成功！",
+          "resetConfigSuccess": "重置配置成功！"
+        }
+      }
+    },
+    "userInfo": {
+      "userInformation": "用户信息",
+      "greeting": "你好",
+      "rolesList": "角色列表：{roles}",
+      "logoutButton": "退出登录"
+    },
+    "logoutConfirmation": {
+      "title": "警告",
+      "content": "您确定要退出登录吗？",
+      "positiveText": "退出登录",
+      "negativeText": "取消",
+      "onNegativeClickMessage": "取消退出登录",
+      "onPositiveClickMessage": "退出登录成功"
+    }
+  },
   "page": {
     "login": {
       "title": "登录",

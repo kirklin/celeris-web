@@ -6,6 +6,7 @@ defineOptions({
   name: "SettingDrawer",
 });
 const { getShouldShowSettingDrawer, setShouldShowSettingDrawer } = useHeaderSetting();
+const { t } = useI18n();
 </script>
 
 <template>
@@ -13,7 +14,7 @@ const { getShouldShowSettingDrawer, setShouldShowSettingDrawer } = useHeaderSett
     :show="getShouldShowSettingDrawer" display-directive="show" width="25%"
     @mask-click="setShouldShowSettingDrawer(false)"
   >
-    <NDrawerContent title="Project Setting" :native-scrollbar="false">
+    <NDrawerContent :title="t('layouts.header.projectSetting')" :native-scrollbar="false">
       <DarkMode />
       <ThemeColor />
       <ThemeBackup />

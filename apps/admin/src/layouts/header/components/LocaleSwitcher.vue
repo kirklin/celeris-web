@@ -22,7 +22,7 @@ const handleSelect = (key: string) => {
 
 <template>
   <NDropdown :options="options" trigger="click" :value="getLocale" @select="handleSelect">
-    <IconButtonWithToolTip tooltip-text="Switch Locale" icon="i-tabler-language" color="gray" />
+    <IconButtonWithToolTip :tooltip-text="t('layouts.header.switchLocale')" icon="i-tabler-language" color="gray" />
   </NDropdown>
 </template>
 
