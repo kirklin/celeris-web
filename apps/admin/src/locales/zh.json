@@ -1,4 +1,28 @@
 {
-  "Themes": "主题",
-  "": ""
+  "page": {
+    "login": {
+      "title": "登录",
+      "form": {
+        "username": {
+          "label": "用户名",
+          "placeholder": "请输入用户名",
+          "error": "用户名不能为空"
+        },
+        "password": {
+          "label": "密码",
+          "placeholder": "请输入密码",
+          "error": "密码不能为空"
+        },
+        "remember": "记住我",
+        "loginButton": "登录",
+        "registerButton": "注册",
+        "forgetPassword": "忘记密码",
+        "incorrectAccountOrPassword": "账号或密码不正确！"
+      },
+      "notification": {
+        "loginSuccessMessage": "登录成功",
+        "welcomeBackMessage": "欢迎回来，{username}！"
+      }
+    }
+  }
 }

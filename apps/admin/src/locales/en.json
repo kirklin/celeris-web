@@ -1,4 +1,28 @@
 {
-  "Themes": "Themes",
-  "": ""
+  "page": {
+    "login": {
+      "title": "Login",
+      "form": {
+        "username": {
+          "label": "Username",
+          "placeholder": "Enter your username",
+          "error": "Username cannot be empty"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter your password",
+          "error": "Password cannot be empty"
+        },
+        "remember": "Remember me",
+        "loginButton": "Login",
+        "registerButton": "Register",
+        "forgetPassword": "Forgot password",
+        "incorrectAccountOrPassword": "Incorrect account or password!"
+      },
+      "notification": {
+        "loginSuccessMessage": "Login successful",
+        "welcomeBackMessage": "Welcome back, {username}!"
+      }
+    }
+  }
 }
