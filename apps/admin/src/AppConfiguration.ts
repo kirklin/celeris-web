@@ -76,7 +76,7 @@ function initializeI18n() {
   );
   LocalesEngine.initLocales(() => ({
     locale: getLocale.value,
-    fallbackLocale: "zh",
+    fallbackLocale: "en",
     messagesHandler: () => {
       return messages;
     },

@@ -1,4 +1,30 @@
 {
+  "routes": {
+    "dashboard": {
+      "dashboard": "Dashboard"
+    },
+    "directives": {
+      "directives": "Directive Examples",
+      "permission": "Permission Directive",
+      "copy": "Copy Directive"
+    },
+    "iframe": {
+      "iframe": "Embedded Webpage",
+      "githubInternal": "GitHub (Internal)",
+      "GitHubExternal": "GitHub (External)"
+    },
+    "permission": {
+      "permission": "Permission Test",
+      "authPageA": "Test Page A",
+      "authPageB": "Test Page B",
+      "frontend": "Frontend-based",
+      "backend": "Backend-based",
+      "pageAuth": "Page Permissions",
+      "buttonAuth": "Button Permissions",
+      "role": "Role Permissions",
+      "directive": "Directive Permissions"
+    }
+  },
   "layouts": {
     "header": {
       "toggleCollapsed": "Toggle Menu",

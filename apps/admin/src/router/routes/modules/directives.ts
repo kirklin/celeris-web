@@ -8,8 +8,8 @@ const directive: RouteRecordRaw = {
   component: LAYOUT,
   redirect: "/directive/copy",
   meta: {
+    title: "routes.directives.directives",
     icon: "i-mingcute-plugin-2-line",
-    title: "指令示例",
   },
   children: [
     {
@@ -17,7 +17,7 @@ const directive: RouteRecordRaw = {
       name: "Copy",
       component: () => import("~/pages/directives/copy/index.vue"),
       meta: {
-        title: "Copy",
+        title: "routes.directives.copy",
         icon: "i-material-symbols-content-copy-outline",
       },
     },

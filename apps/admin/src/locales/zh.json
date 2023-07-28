@@ -1,4 +1,30 @@
 {
+  "routes": {
+    "dashboard": {
+      "dashboard": "仪表盘"
+    },
+    "directives": {
+      "directives": "指令示例",
+      "permission": "权限指令",
+      "copy": "复制指令"
+    },
+    "iframe": {
+      "iframe": "内嵌网页",
+      "githubInternal": "GitHub仓库（内链）",
+      "GitHubExternal": "GitHub仓库（外链）"
+    },
+    "permission": {
+      "permission": "权限测试页",
+      "authPageA": "权限测试页A",
+      "authPageB": "权限测试页B",
+      "frontend": "基于前端权限",
+      "backend": "基于后台权限",
+      "pageAuth": "页面权限",
+      "buttonAuth": "按钮权限",
+      "role": "角色权限",
+      "directive": "指令权限"
+    }
+  },
   "layouts": {
     "header": {
       "toggleCollapsed": "折叠菜单",

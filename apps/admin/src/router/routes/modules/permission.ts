@@ -9,9 +9,9 @@ const permission: RouteRecordRaw = {
   component: LAYOUT,
   redirect: "/permission/frontend/page",
   meta: {
-    orderNo: 15,
+    title: "routes.permission.permission",
     icon: "i-mdi-security",
-    title: "权限管理",
+    orderNo: 15,
   },
 
   children: [
@@ -20,7 +20,7 @@ const permission: RouteRecordRaw = {
       name: "PermissionFrontDemo",
       component: getParentLayout("PermissionFrontDemo"),
       meta: {
-        title: "基于前端权限",
+        title: "routes.permission.frontend",
       },
       children: [
         {
@@ -28,7 +28,7 @@ const permission: RouteRecordRaw = {
           name: "FrontPageAuth",
           component: () => import("~/pages/permission/frontend/index.vue"),
           meta: {
-            title: "页面权限",
+            title: "routes.permission.pageAuth",
           },
         },
         {
@@ -36,7 +36,7 @@ const permission: RouteRecordRaw = {
           name: "FrontButtonAuth",
           component: () => import("~/pages/permission/frontend/ButtonPermission.vue"),
           meta: {
-            title: "按钮权限",
+            title: "routes.permission.buttonAuth",
           },
         },
         {
@@ -44,7 +44,7 @@ const permission: RouteRecordRaw = {
           name: "FrontAuthPageA",
           component: () => import("~/pages/permission/frontend/AuthPageA.vue"),
           meta: {
-            title: "权限测试页A",
+            title: "routes.permission.authPageA",
             allowedRoles: [RoleConstants.ADMIN],
           },
         },
@@ -53,7 +53,7 @@ const permission: RouteRecordRaw = {
           name: "FrontAuthPageB",
           component: () => import("~/pages/permission/frontend/AuthPageB.vue"),
           meta: {
-            title: "权限测试页B",
+            title: "routes.permission.authPageB",
             allowedRoles: [RoleConstants.USER],
           },
         },
@@ -64,7 +64,7 @@ const permission: RouteRecordRaw = {
       name: "PermissionBackDemo",
       component: getParentLayout("PermissionBackDemo"),
       meta: {
-        title: "基于后台权限",
+        title: "routes.permission.backend",
       },
       children: [
         {
@@ -72,7 +72,7 @@ const permission: RouteRecordRaw = {
           name: "BackAuthPage",
           component: () => import("~/pages/permission/backend/index.vue"),
           meta: {
-            title: "页面权限",
+            title: "routes.permission.pageAuth",
           },
         },
         {
@@ -80,7 +80,7 @@ const permission: RouteRecordRaw = {
           name: "BackButtonAuth",
           component: () => import("~/pages/permission/backend/ButtonPermission.vue"),
           meta: {
-            title: "按钮权限",
+            title: "routes.permission.buttonAuth",
           },
         },
       ],

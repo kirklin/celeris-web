@@ -9,8 +9,8 @@ const iframe: RouteRecordRaw = {
   component: LAYOUT,
   redirect: "/frame/github",
   meta: {
+    title: "routes.iframe.iframe",
     icon: "i-line-md-external-link",
-    title: "外部页面",
   },
   children: [
     {
@@ -18,9 +18,9 @@ const iframe: RouteRecordRaw = {
       name: "GitHub",
       component: IFRAME,
       meta: {
-        iframeLink: CELERIS_WEB_GITHUB_URL,
+        title: "routes.iframe.githubInternal",
         icon: "i-line-md-github-loop",
-        title: "GitHub仓库（内链）",
+        iframeLink: CELERIS_WEB_GITHUB_URL,
       },
     },
     {
@@ -28,9 +28,9 @@ const iframe: RouteRecordRaw = {
       name: "GitHubExternal",
       component: IFRAME,
       meta: {
-        externalLink: CELERIS_WEB_GITHUB_URL,
+        title: "routes.iframe.GitHubExternal",
         icon: "i-line-md-github-loop",
-        title: "GitHub仓库（外链）",
+        externalLink: CELERIS_WEB_GITHUB_URL,
       },
     },
   ],

@@ -7,9 +7,9 @@ const dashboard: RouteRecordRaw = {
   component: LAYOUT,
   redirect: "/dashboard/index",
   meta: {
-    shouldHideSubMenuInMenu: true,
+    title: "routes.dashboard.dashboard",
     icon: "i-mdi-monitor-dashboard",
-    title: "Dashboard",
+    shouldHideSubMenuInMenu: true,
   },
   children: [
     {
@@ -17,7 +17,7 @@ const dashboard: RouteRecordRaw = {
       name: "Dashboard",
       component: () => import("~/pages/dashboard/index.vue"),
       meta: {
-        title: "Dashboard",
+        title: "routes.dashboard.dashboard",
         icon: "i-mdi-monitor-dashboard",
         shouldHideInMenu: true,
       },

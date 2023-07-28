@@ -10,7 +10,7 @@ export interface LocalesOptions {
 export class LocalesConfiguration {
   private static options: LocalesOptions = {
     messagesHandler: () => {},
-    locale: "zh",
+    locale: "en",
     fallbackLocale: "en",
   };
 

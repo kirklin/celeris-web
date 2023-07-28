@@ -4,6 +4,7 @@ import { CAUnoCSSIcon } from "@celeris/components";
 import { mapTreeStructure } from "@celeris/utils";
 import type { RouteLocationNormalizedLoaded } from "vue-router";
 import { RouterLink } from "vue-router";
+import { useI18n } from "vue-i18n";
 import { useMenuSetting } from "~/composables/setting/useMenuSetting";
 import { REDIRECT_NAME } from "~/router/constant";
 import { getMenus } from "~/router/menus";
@@ -13,6 +14,7 @@ import { usePermissionStore } from "~/store/modules/permission";
 defineOptions({
   name: "MenuLayout",
 });
+const { te, t } = useI18n();
 const activeMenu = ref();
 const permissionStore = usePermissionStore();
 const isCollapse = useMenuSetting().getCollapsed;
@@ -33,6 +35,10 @@ async function handleMenuChange(route?: RouteLocationNormalizedLoaded) {
   const menu = route || unref(currentRoute);
   activeMenu.value = menu.path;
 }
+const i18nRender = (key: string) => {
+  return te(key) ? t(key) : key;
+};
+
 const transformProjectMenuToNaiveUIMenu = (menu: Menu) => {
   const { path, meta, icon, children } = menu;
   const renderIcon = (icon?: string) => {
@@ -44,7 +50,7 @@ const transformProjectMenuToNaiveUIMenu = (menu: Menu) => {
   return {
     label: () => {
       if (children) {
-        return meta?.title;
+        return i18nRender(meta?.title as string);
       }
       return h(
         RouterLink,
@@ -53,12 +59,12 @@ const transformProjectMenuToNaiveUIMenu = (menu: Menu) => {
             path,
           },
         },
-        { default: () => meta?.title },
+        { default: () => i18nRender(meta?.title as string) },
       );
     },
     key: path,
     icon: renderIcon(icon || meta?.icon as string),
-    collapseTitle: meta?.title,
+    collapseTitle: i18nRender(meta?.title as string),
   };
 };
 // Generate menu
