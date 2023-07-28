@@ -2,20 +2,21 @@
 defineOptions({
   name: "Copy",
 });
+const { t } = useI18n();
 const message = useMessage();
 const source = ref("");
 function handleCopy() {
-  message.success("复制成功！");
+  message.success(t("page.copyDirective.copySuccess"));
 }
 </script>
 
 <template>
   <div class="h-full">
-    <NCard title="文本复制">
+    <NCard :title="t('page.copyDirective.copyDirective')">
       <NInputGroup>
-        <NInput v-model:value="source" placeholder="请输入要复制的内容" />
+        <NInput v-model:value="source" :placeholder="t('page.copyDirective.copyPlaceholder')" />
         <NButton v-copy="source" type="primary" @click="handleCopy">
-          复制
+          {{ t("page.copyDirective.copy") }}
         </NButton>
       </NInputGroup>
     </NCard>

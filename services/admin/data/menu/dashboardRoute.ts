@@ -8,7 +8,7 @@ export const dashboardRoute: RouteItem = {
   meta: {
     shouldHideSubMenuInMenu: true,
     icon: "i-mdi-monitor-dashboard",
-    title: "Dashboard",
+    title: "routes.dashboard.dashboard",
   },
   children: [
     {
@@ -16,7 +16,7 @@ export const dashboardRoute: RouteItem = {
       name: "Dashboard",
       component: "/dashboard/index",
       meta: {
-        title: "Dashboard",
+        title: "routes.dashboard.dashboard",
         icon: "i-mdi-monitor-dashboard",
         currentActiveMenu: "/dashboard",
         shouldHideInMenu: true,

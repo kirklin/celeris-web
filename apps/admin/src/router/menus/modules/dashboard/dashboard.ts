@@ -8,7 +8,7 @@ const dashboard: MenuModule = {
     name: "Dashboard",
     icon: "i-mdi-monitor-dashboard",
     meta: {
-      title: "Dashboard",
+      title: "routes.dashboard.dashboard",
       icon: "i-mdi-monitor-dashboard",
     },
   },

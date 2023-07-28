@@ -6,22 +6,23 @@ import Authority from "~/component/Authority/src/Authority.vue";
 import { useUserStore } from "~/store/modules/user";
 
 const { changeRole, hasPermission } = useAppPermission();
+const { t } = useI18n();
 const userStore = useUserStore();
 const isAdmin = computed(() => userStore.getRoleList.includes(RoleConstants.ADMIN));
 const isUser = computed(() => userStore.getRoleList.includes(RoleConstants.USER));
 </script>
 
 <template>
-  <NCard title="按钮权限控制">
+  <NCard :title="t('page.permission.pageTitles.button')">
     <CurrentPermissionMode />
 
-    <NCard class="my-4" title="当前角色" embedded :bordered="false">
+    <NCard class="my-4" :title="t('page.permission.currentRole')" embedded :bordered="false">
       {{ userStore.getRoleList }}
     </NCard>
 
-    <NAlert class="my-4" type="info" title="点击后请查看按钮变化" show-icon />
+    <NAlert class="my-4" type="info" :title="t('page.permission.clickToSeeButtonChange')" show-icon />
 
-    <NCard class="mt-4" title="权限切换(请先切换权限模式为前端角色权限模式)" embedded :bordered="false">
+    <NCard class="mt-4" :title="t('page.permission.frontendPermissionSwitchTitle')" embedded :bordered="false">
       <NSpace>
         <NButton :type="isAdmin ? 'primary' : 'default'" @click="changeRole(RoleConstants.ADMIN)">
           {{ RoleConstants.ADMIN }}
@@ -31,49 +32,49 @@ const isUser = computed(() => userStore.getRoleList.includes(RoleConstants.USER)
         </NButton>
       </NSpace>
     </NCard>
-    <NDivider>组件方式判断权限(有需要可以自行全局注册)</NDivider>
+    <NDivider>{{ t('page.permission.componentWayTitle') }}</NDivider>
     <Authority :value="RoleConstants.ADMIN">
       <NButton type="primary" class="mx-4">
-        拥有ADMIN角色权限可见
+        {{ t('page.permission.roleButtonText', { role: RoleConstants.ADMIN }) }}
       </NButton>
     </Authority>
 
     <Authority :value="RoleConstants.USER">
       <NButton strong secondary type="info" class="mx-4">
-        拥有USER角色权限可见
+        {{ t('page.permission.roleButtonText', { role: RoleConstants.USER }) }}
       </NButton>
     </Authority>
 
     <Authority :value="[RoleConstants.USER, RoleConstants.ADMIN]">
       <NButton strong secondary type="success" class="mx-4">
-        拥有[USER,ADMIN]角色权限可见
+        {{ t('page.permission.roleButtonText', { role: [RoleConstants.USER, RoleConstants.ADMIN] }) }}
       </NButton>
     </Authority>
 
-    <NDivider>函数方式方式判断权限(适用于函数内部过滤)</NDivider>
+    <NDivider>{{ t('page.permission.functionWayTitle') }}</NDivider>
     <NButton v-if="hasPermission(RoleConstants.ADMIN)" type="primary" class="mx-4">
-      拥有ADMIN角色权限可见
+      {{ t('page.permission.roleButtonText', { role: RoleConstants.ADMIN }) }}
     </NButton>
 
     <NButton v-if="hasPermission(RoleConstants.USER)" strong secondary type="info" class="mx-4">
-      拥有USER角色权限可见
+      {{ t('page.permission.roleButtonText', { role: RoleConstants.USER }) }}
     </NButton>
 
     <NButton v-if="hasPermission([RoleConstants.USER, RoleConstants.ADMIN])" strong secondary type="success" class="mx-4">
-      拥有[USER,ADMIN]角色权限可见
+      {{ t('page.permission.roleButtonText', { role: [RoleConstants.USER, RoleConstants.ADMIN] }) }}
     </NButton>
 
-    <NDivider>指令方式方式判断权限(该方式不能动态修改权限.)</NDivider>
+    <NDivider>{{ t('page.permission.directiveWayTitle') }}</NDivider>
     <NButton v-auth="RoleConstants.ADMIN" type="primary" class="mx-4">
-      拥有ADMIN角色权限可见
+      {{ t('page.permission.roleButtonText', { role: RoleConstants.ADMIN }) }}
     </NButton>
 
     <NButton v-auth="RoleConstants.USER" strong secondary type="info" class="mx-4">
-      拥有USER角色权限可见
+      {{ t('page.permission.roleButtonText', { role: RoleConstants.USER }) }}
     </NButton>
 
     <NButton v-auth="[RoleConstants.USER, RoleConstants.ADMIN]" strong secondary type="success" class="mx-4">
-      拥有[USER,ADMIN]角色权限可见
+      {{ t('page.permission.roleButtonText', { role: [RoleConstants.USER, RoleConstants.ADMIN] }) }}
     </NButton>
   </NCard>
 </template>

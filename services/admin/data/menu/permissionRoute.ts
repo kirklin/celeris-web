@@ -6,16 +6,16 @@ export const permissionRoute: RouteItem = {
   component: "LAYOUT",
   redirect: "/permission/frontend/page",
   meta: {
-    orderNo: 15,
+    title: "routes.permission.permission",
     icon: "i-mdi-security",
-    title: "权限管理",
+    orderNo: 15,
   },
   children: [
     {
       path: "back",
       name: "PermissionBackDemo",
       meta: {
-        title: "基于后台权限",
+        title: "routes.permission.backend",
       },
       children: [
         {
@@ -23,7 +23,7 @@ export const permissionRoute: RouteItem = {
           name: "BackAuthPage",
           component: "/permission/backend/index.vue",
           meta: {
-            title: "页面权限",
+            title: "routes.permission.pageAuth",
           },
         },
         {
@@ -31,7 +31,7 @@ export const permissionRoute: RouteItem = {
           name: "BackButtonAuth",
           component: "/permission/backend/ButtonPermission.vue",
           meta: {
-            title: "按钮权限",
+            title: "routes.permission.buttonAuth",
           },
         },
       ],

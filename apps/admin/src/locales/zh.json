@@ -89,6 +89,40 @@
         "loginSuccessMessage": "登录成功",
         "welcomeBackMessage": "欢迎回来，{username}！"
       }
+    },
+    "copyDirective": {
+      "copy": "复制",
+      "copyDirective": "复制指令示例",
+      "copyPlaceholder": "请输入要复制的内容",
+      "copySuccess": "复制成功",
+      "copyError": "复制失败"
+    },
+    "permission": {
+      "permissionMode": {
+        "currentMode": "当前权限模式",
+        "backendMode": "后台权限模式",
+        "frontendMode": "前端角色权限模式",
+        "toggleMode": "切换权限模式"
+      },
+      "pageTitles": {
+        "frontend": "前端权限示例",
+        "backend": "后端权限示例",
+        "button": "按钮权限控制"
+      },
+      "roleButtonText": "拥有 { role } 角色权限可见",
+      "codeButtonText": "拥有code { code } 权限可见",
+      "currentPermissionMode": "当前权限模式",
+      "currentRole": "当前角色",
+      "currentCode": "当前code",
+      "clickToSeeButtonChange": "点击后请查看按钮变化",
+      "clickToSeeLeftMenuChange": "点击后请查看左侧菜单变化",
+      "frontendPermissionSwitchTitle": "权限切换(请先切换权限模式为前端角色权限模式)",
+      "backendPermissionSwitchTitle": "权限切换(请先切换权限模式为后端角色权限模式)",
+      "componentWayTitle": "组件方式判断权限(有需要可以自行全局注册)",
+      "functionWayTitle": "函数方式方式判断权限(适用于函数内部过滤)",
+      "functionWayButtonBoth": "拥有[USER,ADMIN]角色权限可见",
+      "directiveWayTitle": "指令方式方式判断权限(该方式不能动态修改权限.)",
+      "backendLeftMenuChangeTitle": "点击后请查看左侧菜单变化(必须处于后台权限模式才可测试此页面所展示的功能)"
     }
   }
 }

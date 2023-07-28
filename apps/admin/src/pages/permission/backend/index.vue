@@ -5,6 +5,7 @@ import { useUserStore } from "~/store/modules/user";
 
 const userStore = useUserStore();
 const { isBackendPermissionMode, refreshMenu } = useAppPermission();
+const { t } = useI18n();
 async function switchToken(role: RoleConstants) {
   // 本函数切换用户登录Token的部分仅用于演示，实际生产时切换身份应当重新登录
   const token = `${role}FakeToken`;
@@ -14,21 +15,23 @@ async function switchToken(role: RoleConstants) {
   await userStore.getUserInfoAction();
   await refreshMenu();
 }
+const isAdmin = computed(() => userStore.getRoleList.includes(RoleConstants.ADMIN));
+const isUser = computed(() => userStore.getRoleList.includes(RoleConstants.USER));
 </script>
 
 <template>
-  <NCard title="后端权限示例">
+  <NCard :title="t('page.permission.pageTitles.backend')">
     <CurrentPermissionMode />
 
-    <NAlert class="my-4" type="info" title="点击后请查看左侧菜单变化" show-icon />
+    <NAlert class="my-4" type="info" :title="t('page.permission.clickToSeeLeftMenuChange')" show-icon />
 
-    <NCard class="mt-4" title="权限切换(请先切换权限模式为后台权限模式)" embedded :bordered="false">
+    <NCard class="mt-4" :title="t('page.permission.backendPermissionSwitchTitle')" embedded :bordered="false">
       <NSpace>
-        <NButton :disabled="!isBackendPermissionMode" @click="switchToken(RoleConstants.ADMIN)">
-          获取ADMIN用户的菜单
+        <NButton :type="isAdmin ? 'primary' : 'default'" :disabled="!isBackendPermissionMode" @click="switchToken(RoleConstants.ADMIN)">
+          {{ RoleConstants.ADMIN }}
         </NButton>
-        <NButton :disabled="!isBackendPermissionMode" @click="switchToken(RoleConstants.USER)">
-          获取USER用户的菜单
+        <NButton :type="isUser ? 'primary' : 'default'" :disabled="!isBackendPermissionMode" @click="switchToken(RoleConstants.USER)">
+          {{ RoleConstants.USER }}
         </NButton>
       </NSpace>
     </NCard>

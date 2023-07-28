@@ -89,6 +89,39 @@
         "loginSuccessMessage": "Login successful",
         "welcomeBackMessage": "Welcome back, {username}!"
       }
+    },
+    "copyDirective": {
+      "copy": "Copy",
+      "copyDirective": "Copy Directive Example",
+      "copyPlaceholder": "Please enter the content to copy",
+      "copySuccess": "Copy successful",
+      "copyError": "Copy failed"
+    },
+    "permission": {
+      "permissionMode": {
+        "currentMode": "Current Permission Mode",
+        "backendMode": "Backend Permission Mode",
+        "frontendMode": "Frontend Role Permission Mode",
+        "toggleMode": "Toggle Permission Mode"
+      },
+      "pageTitles": {
+        "frontend": "Frontend Permission Example",
+        "backend": "Backend Permission Example",
+        "button": "Button Permission Control"
+      },
+      "roleButtonText": "Visible with {role} Role",
+      "codeButtonText": "Visible with [{code}] Code",
+      "currentPermissionMode": "Current Permission Mode",
+      "currentRole": "Current Role",
+      "currentCode": "Current Code",
+      "clickToSeeButtonChange": "Click to see button changes",
+      "clickToSeeLeftMenuChange": "Click to see left menu changes",
+      "frontendPermissionSwitchTitle": "Permission Switching (Please switch permission mode to Frontend Role mode first)",
+      "backendPermissionSwitchTitle": "Permission Switching (Please switch permission mode to Backend Role mode first)",
+      "componentWayTitle": "Component-based Permission Check (You can register it globally if needed)",
+      "functionWayTitle": "Function-based Permission Check (Suitable for filtering within functions)",
+      "directiveWayTitle": "Directive-based Permission Check (This method cannot dynamically modify permissions)",
+      "backendLeftMenuChangeTitle": "Click to see left menu changes (Must be in Backend Role mode to test the functionality displayed on this page)"
     }
   }
 }

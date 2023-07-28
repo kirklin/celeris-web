@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { RoleConstants } from "@celeris/constants";
+
+const { t } = useI18n();
 </script>
 
 <template>
-  <NCard :title="`${RoleConstants.USER} 角色可见`" />
+  <NCard :title="t('page.permission.roleButtonText', { role: RoleConstants.USER })" />
 </template>
 
 <style scoped>
