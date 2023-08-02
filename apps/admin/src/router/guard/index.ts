@@ -94,21 +94,21 @@ export function createHttpGuard(router: Router) {
  * @param router - 路由对象。
  */
 export function createProgressGuard(router: Router) {
-  const { getShouldOpenNProgress } = useTransitionSetting();
+  const { getShouldEnableTransition, getShouldOpenNProgress } = useTransitionSetting();
   router.beforeEach((to) => {
     // 如果目标路由已经加载过，则直接放行
     // If the target route has been loaded, pass directly
     if (to.meta.loaded) {
       return true;
     }
-    if (toValue(getShouldOpenNProgress) && !NProgress.isStarted()) {
+    if (toValue(getShouldEnableTransition) && toValue(getShouldOpenNProgress) && !NProgress.isStarted()) {
       NProgress.start();
     }
     return true;
   });
 
   router.afterEach(() => {
-    if (toValue(getShouldOpenNProgress)) {
+    if (toValue(getShouldEnableTransition) && toValue(getShouldOpenNProgress)) {
       NProgress.done();
     }
     return true;

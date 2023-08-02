@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useHeaderSetting } from "~/composables";
-import { DarkMode, ThemeBackup, ThemeColor } from "~/layouts/setting/components/SettingDrawer/components";
+import { DarkMode, SettingTransition, ThemeBackup, ThemeColor } from "~/layouts/setting/components/SettingDrawer/components";
 
 defineOptions({
   name: "SettingDrawer",
@@ -18,6 +18,7 @@ const { t } = useI18n();
       <DarkMode />
       <ThemeColor />
       <ThemeBackup />
+      <SettingTransition />
     </NDrawerContent>
   </NDrawer>
 </template>

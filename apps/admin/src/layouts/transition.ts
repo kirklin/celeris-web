@@ -10,10 +10,10 @@ interface TransitionOptions {
 }
 
 export function getTransitionName({ route }: Context, { enableTransition }: TransitionOptions): string | undefined {
-  const { getBasicTransition } = useTransitionSetting();
-  if (!enableTransition) {
+  const { getRouterBasicTransition, getShouldEnableTransition } = useTransitionSetting();
+  if (!enableTransition || !toValue(getShouldEnableTransition)) {
     return undefined;
   }
 
-  return (route.meta.transitionName as string) || toValue(getBasicTransition);
+  return (route.meta.transitionName as string) || toValue(getRouterBasicTransition);
 }

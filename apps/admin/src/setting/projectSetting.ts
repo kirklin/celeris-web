@@ -87,7 +87,7 @@ export const DEFAULT_PROJECT_SETTING: ProjectSetting = {
     shouldEnable: true,
     // 路由基本切换动画
     // Route basic switching animation
-    basicTransition: RouterTransitionConstants.FADE,
+    routerBasicTransition: RouterTransitionConstants.FADE,
     // 是否开启页面切换加载
     // Whether to open page switching loading
     shouldOpenPageLoading: true,

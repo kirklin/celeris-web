@@ -5,7 +5,7 @@ import { useUserStoreWithOut } from "~/store/modules/user";
 export function createPageLoadingGuard(router: Router) {
   const userStore = useUserStoreWithOut();
   const appStore = useAppStoreWithOut();
-  const { getShouldOpenPageLoading } = useTransitionSetting();
+  const { getShouldEnableTransition, getShouldOpenPageLoading } = useTransitionSetting();
 
   router.beforeEach((to) => {
     if (!userStore.getToken) {
@@ -15,7 +15,7 @@ export function createPageLoadingGuard(router: Router) {
       return true;
     }
 
-    if (toValue(getShouldOpenPageLoading)) {
+    if (toValue(getShouldEnableTransition) && toValue(getShouldOpenPageLoading)) {
       appStore.setPageLoadingAction(true);
       return true;
     }

@@ -36,6 +36,7 @@ declare module 'vue' {
     NPopover: typeof import('@celeris/ca-components')['NPopover']
     NResult: typeof import('@celeris/ca-components')['NResult']
     NScrollbar: typeof import('@celeris/ca-components')['NScrollbar']
+    NSelect: typeof import('@celeris/ca-components')['NSelect']
     NSpace: typeof import('@celeris/ca-components')['NSpace']
     NSpin: typeof import('@celeris/ca-components')['NSpin']
     NSwitch: typeof import('@celeris/ca-components')['NSwitch']

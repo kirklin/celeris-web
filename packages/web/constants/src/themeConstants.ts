@@ -1,4 +1,5 @@
 /**
+ * 定义系统中在切换不同路由时使用的不同类型的动画过渡效果。
  * Defines different types of animation transitions used when switching between different routes in a system.
  */
 export enum RouterTransitionConstants {
@@ -15,7 +16,7 @@ export enum RouterTransitionConstants {
   /**
    * A transition that fades out the previous route to the side, then fades in the new route from the opposite side.
    */
-  FADE_SIDE = "fade-slide",
+  FADE_SLIDE = "fade-slide",
 
   /**
    * A simple fade transition.

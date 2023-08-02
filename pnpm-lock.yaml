@@ -383,6 +383,9 @@ importers:
       '@kirklin/reset-css':
         specifier: ^0.0.3
         version: 0.0.3
+      animate.css:
+        specifier: ^4.1.1
+        version: 4.1.1
       unocss-preset-chinese:
         specifier: ^0.0.6
         version: 0.0.6(unocss@0.53.5)
@@ -4571,6 +4574,10 @@ packages:
       require-from-string: 2.0.2
       uri-js: 4.4.1
     dev: true
+
+  /animate.css@4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
+    dev: false
 
   /ansi-colors@4.1.3:
     resolution: {integrity: sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw==}

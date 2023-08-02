@@ -48,6 +48,13 @@
           "copyConfigSuccess": "拷贝配置成功！",
           "resetConfigSuccess": "重置配置成功！"
         }
+      },
+      "transitionSetting": {
+        "title": "动画设置",
+        "enableTransition": "开启动画",
+        "enableProgressBar": "开启进度条",
+        "enablePageLoadingTransition": "开启页面加载动画",
+        "routeTransition": "切换路由动画"
       }
     },
     "userInfo": {

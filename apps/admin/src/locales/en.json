@@ -48,6 +48,13 @@
           "copyConfigSuccess": "Configuration copied successfully!",
           "resetConfigSuccess": "Configuration reset successfully!"
         }
+      },
+      "transitionSetting": {
+        "title": "Animation Settings",
+        "enableTransition": "Enable Animation",
+        "enableProgressBar": "Enable Progress Bar",
+        "enablePageLoadingTransition": "Enable Page Loading Animation",
+        "routeTransition": "Route Transition"
       }
     },
     "userInfo": {

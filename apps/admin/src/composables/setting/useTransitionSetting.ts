@@ -10,7 +10,23 @@ export function useTransitionSetting() {
 
   const getShouldOpenPageLoading = toRef(() => appStore.getTransitionSetting.shouldOpenPageLoading);
 
-  const getBasicTransition = toRef(() => appStore.getTransitionSetting.basicTransition);
+  const getRouterBasicTransition = toRef(() => appStore.getTransitionSetting.routerBasicTransition);
+
+  const setRouterBasicTransition = (routerBasicTransition: TransitionSetting["routerBasicTransition"]) => {
+    appStore.setProjectSetting({ transitionSetting: { routerBasicTransition } });
+  };
+
+  const setShouldEnableTransition = (shouldEnable: TransitionSetting["shouldEnable"]) => {
+    appStore.setProjectSetting({ transitionSetting: { shouldEnable } });
+  };
+
+  const setShouldOpenNProgress = (shouldOpenNProgress: TransitionSetting["shouldOpenNProgress"]) => {
+    appStore.setProjectSetting({ transitionSetting: { shouldOpenNProgress } });
+  };
+
+  const setShouldOpenPageLoading = (shouldOpenPageLoading: TransitionSetting["shouldOpenPageLoading"]) => {
+    appStore.setProjectSetting({ transitionSetting: { shouldOpenPageLoading } });
+  };
 
   function getTransitionSetting() {
     return appStore.getTransitionSetting;
@@ -23,8 +39,12 @@ export function useTransitionSetting() {
     setTransitionSetting,
 
     getShouldEnableTransition,
+    setShouldEnableTransition,
     getShouldOpenNProgress,
+    setShouldOpenNProgress,
     getShouldOpenPageLoading,
-    getBasicTransition,
+    setShouldOpenPageLoading,
+    getRouterBasicTransition,
+    setRouterBasicTransition,
   };
 }
