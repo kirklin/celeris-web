@@ -1,6 +1,7 @@
 import type { ViteEnvVariables } from "@celeris/types";
 import type { PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
+import vueJsx from "@vitejs/plugin-vue-jsx";
 
 import { createConfigPluginConfig } from "./generateConfig";
 import { createInspectPluginConfig } from "./inspect";
@@ -32,6 +33,10 @@ export function configVitePlugins(
       defineModel: true,
     },
   }));
+
+  // Add the Vue JSX plugin.
+  // 添加 Vue JSX 插件
+  vitePlugins.push(vueJsx());
 
   // Add the unplugin-auto-import plugin.
   // 添加 unplugin-auto-import 插件

@@ -225,6 +225,9 @@ importers:
       '@celeris/types':
         specifier: workspace:*
         version: link:../../web/types
+      '@vitejs/plugin-vue-jsx':
+        specifier: ^3.0.1
+        version: 3.0.1(vite@4.4.4)(vue@3.3.4)
       rollup-plugin-visualizer:
         specifier: ^5.9.2
         version: 5.9.2(rollup@2.79.1)
@@ -4162,6 +4165,22 @@ packages:
       birpc: 0.2.12
       vite: 4.4.4(@types/node@18.15.11)
       vite-hot-client: 0.2.1(vite@4.4.4)
+    dev: true
+
+  /@vitejs/plugin-vue-jsx@3.0.1(vite@4.4.4)(vue@3.3.4):
+    resolution: {integrity: sha512-+Jb7ggL48FSPS1uhPnJbJwWa9Sr90vQ+d0InW+AhBM22n+cfuYqJZDckBc+W3QSHe1WDvewMZfa4wZOtk5pRgw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      vite: ^4.0.0
+      vue: ^3.0.0
+    dependencies:
+      '@babel/core': 7.21.3
+      '@babel/plugin-transform-typescript': 7.21.3(@babel/core@7.21.3)
+      '@vue/babel-plugin-jsx': 1.1.1(@babel/core@7.21.3)
+      vite: 4.4.4(@types/node@18.15.11)
+      vue: 3.3.4
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@vitejs/plugin-vue@4.2.3(vite@4.4.4)(vue@3.3.4):
