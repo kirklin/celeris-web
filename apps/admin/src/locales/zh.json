@@ -1,5 +1,11 @@
 {
   "routes": {
+    "components": {
+      "components": "组件示例",
+      "table": "表格组件",
+      "headlessTable": "Headless 表格",
+      "headlessTableBasic": "基础表格"
+    },
     "dashboard": {
       "dashboard": "仪表盘"
     },
@@ -10,8 +16,8 @@
     },
     "iframe": {
       "iframe": "内嵌网页",
-      "githubInternal": "GitHub仓库（内链）",
-      "GitHubExternal": "GitHub仓库（外链）"
+      "githubInternal": "GitHub 仓库（内链）",
+      "GitHubExternal": "GitHub 仓库（外链）"
     },
     "permission": {
       "permission": "权限测试页",
@@ -130,6 +136,11 @@
       "functionWayButtonBoth": "拥有[USER,ADMIN]角色权限可见",
       "directiveWayTitle": "指令方式方式判断权限(该方式不能动态修改权限.)",
       "backendLeftMenuChangeTitle": "点击后请查看左侧菜单变化(必须处于后台权限模式才可测试此页面所展示的功能)"
+    },
+    "headlessTable": {
+      "pageTitles": {
+        "basic": "基础表格"
+      }
     }
   }
 }

@@ -1,5 +1,11 @@
 {
   "routes": {
+    "components": {
+      "components": "Component Example",
+      "table": "Table Component",
+      "headlessTable": "Headless Table",
+      "headlessTableBasic": "Basic Table"
+    },
     "dashboard": {
       "dashboard": "Dashboard"
     },
@@ -129,6 +135,11 @@
       "functionWayTitle": "Function-based Permission Check (Suitable for filtering within functions)",
       "directiveWayTitle": "Directive-based Permission Check (This method cannot dynamically modify permissions)",
       "backendLeftMenuChangeTitle": "Click to see left menu changes (Must be in Backend Role mode to test the functionality displayed on this page)"
+    },
+    "headlessTable": {
+      "pageTitles": {
+        "basic": "Basic Table"
+      }
     }
   }
 }

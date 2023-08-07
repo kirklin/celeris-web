@@ -9,6 +9,7 @@ const dashboard: RouteRecordRaw = {
   meta: {
     title: "routes.dashboard.dashboard",
     icon: "i-mdi-monitor-dashboard",
+    orderNumber: -9000,
     shouldHideSubMenuInMenu: true,
   },
   children: [
