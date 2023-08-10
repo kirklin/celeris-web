@@ -12,7 +12,8 @@
     "directives": {
       "directives": "指令示例",
       "permission": "权限指令",
-      "copy": "复制指令"
+      "copy": "复制指令",
+      "ripple": "涟漪指令"
     },
     "iframe": {
       "iframe": "内嵌网页",
@@ -109,6 +110,12 @@
       "copyPlaceholder": "请输入要复制的内容",
       "copySuccess": "复制成功",
       "copyError": "复制失败"
+    },
+    "rippleDirective": {
+      "ripple": "涟漪",
+      "rippleDirective": "涟漪指令示例",
+      "description1": "涟漪是用于传达组件或交互元素状态的状态图层。",
+      "description2": "状态图层是放置在元素上的半透明覆盖层，用于指示其状态。"
     },
     "permission": {
       "permissionMode": {

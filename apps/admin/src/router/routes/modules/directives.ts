@@ -13,6 +13,15 @@ const directive: RouteRecordRaw = {
   },
   children: [
     {
+      path: "ripple",
+      name: "Ripple",
+      component: () => import("~/pages/directives/ripple/index.vue"),
+      meta: {
+        title: "routes.directives.ripple",
+        icon: "i-material-symbols-ripples",
+      },
+    },
+    {
       path: "copy",
       name: "Copy",
       component: () => import("~/pages/directives/copy/index.vue"),

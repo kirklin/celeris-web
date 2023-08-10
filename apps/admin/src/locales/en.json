@@ -12,7 +12,8 @@
     "directives": {
       "directives": "Directive Examples",
       "permission": "Permission Directive",
-      "copy": "Copy Directive"
+      "copy": "Copy Directive",
+      "ripple": "Ripple Directive"
     },
     "iframe": {
       "iframe": "Embedded Webpage",
@@ -109,6 +110,12 @@
       "copyPlaceholder": "Please enter the content to copy",
       "copySuccess": "Copy successful",
       "copyError": "Copy failed"
+    },
+    "rippleDirective": {
+      "ripple": "Ripple",
+      "rippleDirective": "Ripple Directive Example",
+      "description1": "Ripples are state layers used to communicate the status of a component or interactive element.",
+      "description2": "A state layer is a semi-transparent covering on an element that indicates its state."
     },
     "permission": {
       "permissionMode": {

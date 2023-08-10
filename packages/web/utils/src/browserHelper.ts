@@ -1,4 +1,4 @@
-import {field, isClient, logger} from "../index";
+import { field, isClient, logger } from "../index";
 
 /**
  * 打开一个新的浏览器窗口
