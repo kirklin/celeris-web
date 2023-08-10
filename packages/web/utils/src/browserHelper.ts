@@ -1,4 +1,4 @@
-import { field, logger } from "../index";
+import {field, isClient, logger} from "../index";
 
 /**
  * 打开一个新的浏览器窗口
@@ -43,3 +43,14 @@ export const copyToClipboard = (text: string) => {
     }
   });
 };
+
+/**
+ * Checks if the current environment supports touch events, typically indicating touch-enabled devices.
+ * 检查当前环境是否支持触摸事件，通常表示支持触摸的设备。
+ *
+ * @returns {boolean} Returns true if the environment supports touch events, otherwise returns false.
+ *                    如果环境支持触摸事件，则返回 true；否则返回 false。
+ */
+export function isTouchSupported() {
+  return isClient && "ontouchstart" in window;
+}
