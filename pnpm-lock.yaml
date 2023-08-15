@@ -393,6 +393,12 @@ importers:
         specifier: ^0.0.6
         version: 0.0.6(unocss@0.53.5)
     devDependencies:
+      '@css-render/plugin-bem':
+        specifier: ^0.15.12
+        version: 0.15.12(css-render@0.15.12)
+      '@css-render/vue3-ssr':
+        specifier: ^0.15.12
+        version: 0.15.12(vue@3.3.4)
       '@iconify/json':
         specifier: ^2.2.92
         version: 2.2.92
