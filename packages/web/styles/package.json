@@ -19,9 +19,9 @@
     "unocss-preset-chinese": "^0.0.6"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.92",
     "@css-render/plugin-bem": "^0.15.12",
     "@css-render/vue3-ssr": "^0.15.12",
+    "@iconify/json": "^2.2.92",
     "css-render": "^0.15.12",
     "unocss": "^0.53.5",
     "vite": "^4.4.4"
