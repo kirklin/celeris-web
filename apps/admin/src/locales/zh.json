@@ -30,6 +30,11 @@
       "buttonAuth": "按钮权限",
       "role": "角色权限",
       "directive": "指令权限"
+    },
+    "result": {
+      "result": "结果页",
+      "success": "成功页",
+      "fail": "失败页"
     }
   },
   "layouts": {
@@ -147,6 +152,43 @@
     "headlessTable": {
       "pageTitles": {
         "basic": "基础表格"
+      }
+    },
+    "result": {
+      "status": {
+        "error": "错误",
+        "success": "成功"
+      },
+      "failPage": {
+        "title": "内容发送出错",
+        "subTitle": "很抱歉，发送内容时出现了问题。",
+        "buttons": {
+          "home": "返回主页",
+          "back": "返回上一级"
+        },
+        "errorHeader": "发送内容出错时可能会有以下问题：",
+        "networkIssue": "网络连接问题",
+        "checkNetwork": "检查网络 >",
+        "messageTooLong": "消息过长，请精简一些",
+        "viewHelp": "查看帮助 >"
+      },
+      "successPage": {
+        "title": "操作成功",
+        "subTitle": "ChatGPT 生成的内容已成功创建。",
+        "buttons": {
+          "home": "返回主页"
+        },
+        "contentHeader": "AIGC 生成内容：",
+        "generatedTimeLabel": "生成时间",
+        "generatorLabel": "生成者",
+        "generatedContent": "在此显示生成的内容",
+        "contentLabel": "内容",
+        "step1": "输入内容",
+        "step2": "生成中",
+        "step2Content": "ChatGPT 正在生成内容，请稍等片刻。",
+        "step3": "审核中",
+        "step3Content": "生成的内容正在审核中，将很快完成审核。",
+        "step4": "完成"
       }
     }
   }
