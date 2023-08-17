@@ -325,6 +325,9 @@ importers:
       '@celeris/types':
         specifier: workspace:*
         version: link:../types
+      '@celeris/utils':
+        specifier: workspace:*
+        version: link:../utils
       '@vueuse/core':
         specifier: ^10.2.1
         version: 10.2.1(vue@3.3.4)

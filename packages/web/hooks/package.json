@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@celeris/types": "workspace:*",
+    "@celeris/utils": "workspace:*",
     "@vueuse/core": "^10.2.1",
     "@vueuse/integrations": "^10.2.1"
   },

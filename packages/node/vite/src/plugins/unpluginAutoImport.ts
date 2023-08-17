@@ -17,6 +17,15 @@ export function createAutoImportPluginConfig(): PluginOption {
           "useLoadingBar",
         ],
       },
+      {
+        "@celeris/hooks": [
+          "useComponentRef",
+          "useLoading",
+          "useMergeState",
+          "useScreen",
+          "useState",
+        ],
+      },
     ],
     dts: "autoResolver/auto-imports.d.ts",
     dirs: [
