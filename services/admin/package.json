@@ -1,5 +1,6 @@
 {
   "name": "@celeris/admin-api",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "cross-env PORT=8899 nitro dev",

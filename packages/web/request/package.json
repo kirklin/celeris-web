@@ -1,5 +1,6 @@
 {
   "name": "@celeris/request",
+  "type": "module",
   "version": "0.0.1",
   "description": "request for Celeris",
   "author": "Kirk Lin (https://github.com/kirklin)",

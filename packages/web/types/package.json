@@ -1,5 +1,6 @@
 {
   "name": "@celeris/types",
+  "type": "module",
   "version": "0.0.1",
   "description": "types for Celeris",
   "author": "Kirk Lin (https://github.com/kirklin)",

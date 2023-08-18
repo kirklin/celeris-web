@@ -1,5 +1,6 @@
 {
   "name": "@celeris/styles",
+  "type": "module",
   "version": "0.0.1",
   "description": "styles for Celeris",
   "author": "Kirk Lin (https://github.com/kirklin)",

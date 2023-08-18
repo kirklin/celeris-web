@@ -1,5 +1,6 @@
 {
   "name": "@celeris/constants",
+  "type": "module",
   "version": "0.0.1",
   "description": "constants for Celeris",
   "author": "Kirk Lin (https://github.com/kirklin)",

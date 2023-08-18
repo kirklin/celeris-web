@@ -1,5 +1,6 @@
 {
   "name": "@celeris/assets",
+  "type": "module",
   "version": "0.0.1",
   "description": "assets for Celeris",
   "author": "Kirk Lin (https://github.com/kirklin)",

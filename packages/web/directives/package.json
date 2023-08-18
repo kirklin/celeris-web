@@ -1,5 +1,6 @@
 {
   "name": "@celeris/directives",
+  "type": "module",
   "version": "0.0.1",
   "description": "directives for Celeris",
   "author": "Kirk Lin (https://github.com/kirklin)",
