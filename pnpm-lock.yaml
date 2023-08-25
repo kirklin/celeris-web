@@ -395,6 +395,9 @@ importers:
       unocss-preset-chinese:
         specifier: ^0.0.6
         version: 0.0.6(unocss@0.53.5)
+      unocss-preset-ease:
+        specifier: ^0.0.3
+        version: 0.0.3(unocss@0.53.5)
     devDependencies:
       '@css-render/plugin-bem':
         specifier: ^0.15.12
@@ -11295,6 +11298,20 @@ packages:
         optional: true
     dependencies:
       '@unocss/core': 0.50.4
+      unocss: 0.53.5(postcss@8.4.25)(rollup@3.22.0)(vite@4.4.4)
+    dev: false
+
+  /unocss-preset-ease@0.0.3(unocss@0.53.5):
+    resolution: {integrity: sha512-xSJcLZWeEBmeElddjLgKTY/NHP1ycwxSfSW6ldCG2OWPfa4vNNrRl0eL+kuMWNWzewCKGeQS/XIYI66mmd0R0Q==}
+    peerDependencies:
+      '@unocss/nuxt': '*'
+      unocss: '*'
+    peerDependenciesMeta:
+      '@unocss/nuxt':
+        optional: true
+      unocss:
+        optional: true
+    dependencies:
       unocss: 0.53.5(postcss@8.4.25)(rollup@3.22.0)(vite@4.4.4)
     dev: false
 
