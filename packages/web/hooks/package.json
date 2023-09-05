@@ -9,7 +9,9 @@
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
-    "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
+    "clean": "pnpm rimraf node_modules && pnpm rimraf dist",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@celeris/types": "workspace:*",
