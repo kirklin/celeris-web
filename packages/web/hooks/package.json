@@ -13,6 +13,9 @@
     "test": "vitest",
     "test:coverage": "vitest run --coverage"
   },
+  "peerDependencies": {
+    "vue": ">=3.3.4"
+  },
   "dependencies": {
     "@celeris/types": "workspace:*",
     "@celeris/utils": "workspace:*",

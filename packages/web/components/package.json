@@ -12,7 +12,7 @@
     "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
   },
   "peerDependencies": {
-    "vue": ">3.3.4"
+    "vue": ">=3.3.4"
   },
   "dependencies": {
     "@celeris/ca-components": "workspace:*",
