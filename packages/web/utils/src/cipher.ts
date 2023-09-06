@@ -33,7 +33,7 @@ class AesEncryption implements Encryption {
     this.iv = parse(iv);
   }
 
-  get getOptions(): Object {
+  get getOptions() {
     return {
       mode: CTR,
       padding: pkcs7,

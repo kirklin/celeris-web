@@ -1,10 +1,11 @@
+import process from "node:process";
 import type { UserConfig } from "vite";
 import { defineConfig, mergeConfig } from "vite";
 import { createApplicationViteConfig } from "./configs/application";
 
 interface ApplicationViteConfigOptions {
   overrides?: UserConfig;
-  options?: {};
+  // options?: {};
 }
 
 export async function createViteConfig(applicationViteConfigOptions: ApplicationViteConfigOptions = {}) {

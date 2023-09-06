@@ -1,15 +1,7 @@
+import process from "node:process";
 import { execa } from "execa";
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import prompts from "prompts";
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import scriptPkg from "../package.json";
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import rootPkg from "../../package.json";
 
 interface WorkspacePackage {

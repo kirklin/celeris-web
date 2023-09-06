@@ -1,3 +1,4 @@
+import process from "node:process";
 import type { ViteEnvVariables } from "@celeris/types";
 import type { ProxyOptions } from "vite";
 

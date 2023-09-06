@@ -116,7 +116,7 @@ export function getThemeColors(
 function getTextColor(darkMode: boolean): string {
   return darkMode ? commonDark.textColor2 : commonLight.baseColor;
 }
-function getOtherTheme(darkMode: boolean): GlobalThemeOverrides {
+function getOtherTheme(_darkMode: boolean): GlobalThemeOverrides {
   return {
     common: {
       borderRadius: "0.5rem",

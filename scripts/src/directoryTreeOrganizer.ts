@@ -1,7 +1,5 @@
 import * as path from "node:path";
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
+import process from "node:process";
 import directoryTree from "directory-tree";
 import treeify from "treeify";
 
