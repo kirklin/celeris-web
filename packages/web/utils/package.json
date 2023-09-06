@@ -24,8 +24,8 @@
   "devDependencies": {
     "@celeris/constants": "workspace:*",
     "@celeris/types": "workspace:*",
-    "@types/crypto-js": "^4.1.1",
-    "@types/lodash-es": "^4.17.8",
+    "@types/crypto-js": "^4.1.2",
+    "@types/lodash-es": "^4.17.9",
     "@vue/runtime-core": "3.3.4",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"

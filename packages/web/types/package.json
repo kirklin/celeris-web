@@ -16,7 +16,7 @@
     "@celeris/constants": "workspace:*"
   },
   "devDependencies": {
-    "pinia": "2.1.4",
+    "pinia": "2.1.6",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   }
