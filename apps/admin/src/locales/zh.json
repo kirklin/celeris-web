@@ -4,7 +4,8 @@
       "components": "组件示例",
       "table": "表格组件",
       "headlessTable": "Headless 表格",
-      "headlessTableBasic": "基础表格"
+      "headlessTableBasic": "基础表格",
+      "headlessTablePagination": "分页表格"
     },
     "dashboard": {
       "dashboard": "仪表盘"
