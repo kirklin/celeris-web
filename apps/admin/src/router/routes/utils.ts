@@ -13,11 +13,11 @@ interface BackendRouteRecordRaw extends Omit<RouteRecordRaw, "component"> {
 }
 
 /**
-* Asynchronously imports the route component
-* 异步导入路由组件
-* @param routes 路由配置项
-* @param dynamicPagesModules 动态路由模块
-*/
+ * Asynchronously imports the route component
+ * 异步导入路由组件
+ * @param routes 路由配置项
+ * @param dynamicPagesModules 动态路由模块
+ */
 function asyncImportRoute(routes: BackendRouteRecordRaw[] | RouteRecordRaw[], dynamicPagesModules: DynamicPagesModules = import.meta.glob<{ default: any }>("../../pages/**/*.{vue,tsx}")) {
   if (!routes) {
     return;

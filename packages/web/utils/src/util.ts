@@ -58,11 +58,11 @@ export function deepMerge<T extends object | null | undefined, U extends object 
  *           The computation function that takes dependency parameters and returns the computed result.
  * @param options 配置选项对象，包含 key、debug 和 onChange 属性。
  *             Configuration options object that includes key, debug, and onChange properties.
- *   - key: 用于标识缓存的唯一键。
+ * @param options.key 用于标识缓存的唯一键。
  *          A key used to identify the unique cache.
- *   - debug: 一个可选的调试函数，在每次计算时执行以提供调试信息。
+ * @param options.debug 一个可选的调试函数，在每次计算时执行以提供调试信息。
  *            An optional debug function that executes during each computation to provide debugging information.
- *   - onChange: 一个可选的回调函数，在计算结果发生变化时执行。
+ * @param options.onChange 一个可选的回调函数，在计算结果发生变化时执行。
  *               An optional callback function that executes when the computed result changes.
  * @returns 返回一个函数，用于执行记忆化函数的计算逻辑，并返回计算结果。
  *          Returns a function that executes the computation logic of the memoized function and returns the computed result.

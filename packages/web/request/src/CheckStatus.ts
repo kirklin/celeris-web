@@ -218,10 +218,10 @@ class CheckStatus {
   }
 
   /**
-
-   根据状态码选择合适的策略类并执行 check 方法
-   @param status 状态码
-   @param msg 提示消息
+   *
+   *根据状态码选择合适的策略类并执行 check 方法
+   *@param status 状态码
+   *@param msg 提示消息
    */
   checkStatus(status: number, msg?: string): void {
     const strategy = this.strategyMap.get(status) || new DefaultCheckStrategy();

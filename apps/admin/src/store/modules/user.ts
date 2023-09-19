@@ -166,11 +166,11 @@ export const useUserStore = defineStore({
     /**
      * Logs the user in and retrieves their information.
      * 登录用户并获取其信息。
-     * @param {Object} payload - Login parameters and options.
+     * @param {object} payload - Login parameters and options.
      * @param {string} payload.username - The username of the user.
      * @param {string} payload.password - The password of the user.
      * @param {boolean} payload.remember - Whether to remember the user. 是否记住用户
-     * @param {boolean} [payload.redirectToHome=true] - Whether to redirect to the home page after login. 登录后是否重定向到首页
+     * @param {boolean} [payload.redirectToHome] - Whether to redirect to the home page after login. 登录后是否重定向到首页
      * @param {MessageMode} [payload.errorMessageMode] - The error message display mode.
      * @returns {Promise<UserInfo|null>} The user's information or null if there was an error.
      */
@@ -232,7 +232,7 @@ export const useUserStore = defineStore({
     /**
      * Logs the user out and resets the user's state.
      * 登出用户并重置用户状态。
-     * @param {boolean} [redirectToLogin=true] - Whether to redirect to the login page after logout.
+     * @param {boolean} [redirectToLogin] - Whether to redirect to the login page after logout.
      */
     async logout(redirectToLogin = true) {
       if (this.getToken) {
