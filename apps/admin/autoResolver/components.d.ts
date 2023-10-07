@@ -44,8 +44,6 @@ declare module 'vue' {
     NSteps: typeof import('@celeris/ca-components')['NSteps']
     NSwitch: typeof import('@celeris/ca-components')['NSwitch']
     NTable: typeof import('@celeris/ca-components')['NTable']
-    NTh: typeof import('@celeris/ca-components')['NTh']
-    NThead: typeof import('@celeris/ca-components')['NThead']
     NTooltip: typeof import('@celeris/ca-components')['NTooltip']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
