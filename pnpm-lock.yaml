@@ -238,8 +238,8 @@ importers:
         specifier: ^0.16.6
         version: 0.16.6(rollup@2.79.1)
       unplugin-config:
-        specifier: ^0.0.7
-        version: 0.0.7
+        specifier: ^0.0.8
+        version: 0.0.8
       unplugin-vue-components:
         specifier: ^0.25.2
         version: 0.25.2(rollup@2.79.1)(vue@3.3.4)
@@ -5093,11 +5093,6 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  /acorn@8.8.2:
-    resolution: {integrity: sha512-xjIYgE8HBrkpd/sJqOGNspf8uHG+NOHGOw6a/Urj8taM2EXfdNAH2oFcPeIFfsv3+kz/mJrS5VuMqbNLjCa2vw==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
-
   /agent-base@6.0.2:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
@@ -9219,7 +9214,7 @@ packages:
   /mlly@1.2.0:
     resolution: {integrity: sha512-+c7A3CV0KGdKcylsI6khWyts/CYrGTrRVo4R/I7u/cUsy0Conxa6LUhiEzVKIw14lc2L5aiO4+SeVe4TeGRKww==}
     dependencies:
-      acorn: 8.8.2
+      acorn: 8.10.0
       pathe: 1.1.0
       pkg-types: 1.0.3
       ufo: 1.1.2
@@ -11898,8 +11893,8 @@ packages:
       - rollup
     dev: true
 
-  /unplugin-config@0.0.7:
-    resolution: {integrity: sha512-bbOSTap9pXM2Rz6Mtl749qAJOOEYIIf+Pk8e/0pHTO2Hjb8uofprRhp7qnJNoEMCPZmumedA+0JSrOpSoIkX6Q==}
+  /unplugin-config@0.0.8:
+    resolution: {integrity: sha512-T3efwPLM4pSeVU8W00ScNMGZG5wm6ZKH0a41SrfvYJS1lxqDXwWTTM6IalxjIvmHweAlUblHAxgGQQISL3jgNg==}
     dependencies:
       '@kirklin/logger': 0.0.2
       fs-extra: 11.1.1
