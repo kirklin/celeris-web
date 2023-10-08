@@ -17,7 +17,7 @@
     "@kirklin/logger": "0.0.2",
     "colord": "^2.9.3",
     "crypto-js": "^4.1.1",
-    "dayjs": "^1.11.9",
+    "dayjs": "^1.11.10",
     "lodash-es": "^4.17.21",
     "path-to-regexp": "^6.2.1"
   },
@@ -28,6 +28,6 @@
     "@types/lodash-es": "^4.17.9",
     "@vue/runtime-core": "3.3.4",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4"
+    "vue-router": "^4.2.5"
   }
 }

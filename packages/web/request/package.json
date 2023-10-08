@@ -16,7 +16,7 @@
     "@celeris/locale": "workspace:*",
     "@celeris/types": "workspace:*",
     "@celeris/utils": "workspace:*",
-    "axios": "^1.5.0",
+    "axios": "^1.5.1",
     "qs": "^6.11.2"
   },
   "devDependencies": {
