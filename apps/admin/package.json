@@ -2,7 +2,7 @@
   "name": "@celeris/admin",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@8.8.0",
+  "packageManager": "pnpm@8.9.0",
   "description": "Celeris Web",
   "author": "Kirk Lin (https://github.com/kirklin)",
   "license": "MIT",
@@ -36,7 +36,7 @@
     "@formily/vue": "^2.2.29",
     "@tanstack/query-persist-client-core": "^4.36.1",
     "@tanstack/query-sync-storage-persister": "^4.36.1",
-    "@tanstack/vue-query": "^4.36.1",
+    "@tanstack/vue-query": "^4.36.2",
     "@tanstack/vue-table": "^8.10.6",
     "destr": "^2.0.1",
     "nprogress": "^0.2.0",
@@ -59,11 +59,11 @@
     "@vue/compiler-dom": "^3.3.4",
     "@vue/test-utils": "^2.4.1",
     "jsdom": "^22.1.0",
-    "pnpm": "^8.8.0",
+    "pnpm": "^8.9.0",
     "typescript": "^5.2.2",
     "unocss": "^0.56.5",
     "vite": "^4.4.11",
     "vitest": "^0.34.6",
-    "vue-tsc": "^1.8.16"
+    "vue-tsc": "^1.8.18"
   }
 }

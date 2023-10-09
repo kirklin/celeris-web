@@ -24,7 +24,7 @@
     "rollup-plugin-visualizer": "^5.9.2",
     "typescript": "^5.2.2",
     "unplugin-auto-import": "^0.16.6",
-    "unplugin-config": "^0.0.13",
+    "unplugin-config": "^0.1.2",
     "unplugin-vue-components": "^0.25.2",
     "vite-plugin-inspect": "^0.7.40",
     "vite-plugin-pwa": "^0.16.5",
