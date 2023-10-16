@@ -1,6 +1,6 @@
 // @unocss-include
 import type { RouteRecordRaw } from "vue-router";
-import { CELERIS_WEB_GITHUB_URL } from "@celeris/constants";
+import { CELERIS_WEB_GITHUB_URL, VITE_DOCS_CN_URL, VITE_DOCS_URL } from "@celeris/constants";
 import { IFRAME, LAYOUT } from "~/router/constant";
 
 const iframe: RouteRecordRaw = {
@@ -13,6 +13,27 @@ const iframe: RouteRecordRaw = {
     icon: "i-line-md-external-link",
   },
   children: [
+    // 新添加的Vite链接
+    {
+      path: "vite",
+      name: "Vite",
+      component: IFRAME,
+      meta: {
+        title: "routes.iframe.viteInternal",
+        icon: "i-vscode-icons:file-type-vite",
+        iframeLink: VITE_DOCS_CN_URL, // 内部链接
+      },
+    },
+    {
+      path: "vite-external",
+      name: "ViteExternal",
+      component: IFRAME,
+      meta: {
+        title: "routes.iframe.ViteExternal",
+        icon: "i-vscode-icons:file-type-vite",
+        externalLink: VITE_DOCS_URL, // 外部链接
+      },
+    },
     {
       path: "github",
       name: "GitHub",

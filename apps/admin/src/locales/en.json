@@ -17,8 +17,10 @@
     },
     "iframe": {
       "iframe": "Embedded Webpage",
-      "githubInternal": "GitHub (Internal)",
-      "GitHubExternal": "GitHub (External)"
+      "githubInternal": "GitHub (Embedded)",
+      "GitHubExternal": "GitHub (External)",
+      "viteInternal": "Vite Documentation (Embedded)",
+      "ViteExternal": "Vite Documentation (External)"
     },
     "permission": {
       "permission": "Permission Test",

@@ -17,8 +17,10 @@
     },
     "iframe": {
       "iframe": "内嵌网页",
-      "githubInternal": "GitHub 仓库（内链）",
-      "GitHubExternal": "GitHub 仓库（外链）"
+      "githubInternal": "GitHub 仓库（内嵌）",
+      "GitHubExternal": "GitHub 仓库（外链）",
+      "viteInternal": "Vite 中文文档 (内嵌)",
+      "ViteExternal": "Vite 官方文档 (外链)"
     },
     "permission": {
       "permission": "权限测试页",
