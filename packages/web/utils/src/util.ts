@@ -158,8 +158,10 @@ export function memo<TDeps extends readonly any[], TResult>(
  * @param error The error object to extract error message from. 用于提取错误信息的错误对象。
  * @returns The error message string. 错误信息字符串。
  */
-export function getErrorMessage(error): string {
+export function getErrorMessage(error: Error | { message: string } | string): string {
   if (error instanceof Error) {
+    return error.message;
+  } else if (isObject(error) && "message" in error) {
     return error.message;
   } else {
     return String(error);

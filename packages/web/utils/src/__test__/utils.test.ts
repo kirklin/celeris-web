@@ -9,7 +9,7 @@ describe("getErrorMessage", () => {
 
   test("should convert the error object to string if it is not an instance of Error", () => {
     const error = { message: "This is not an Error instance" };
-    expect(getErrorMessage(error)).toBe("[object Object]");
+    expect(getErrorMessage(error)).toBe("This is not an Error instance");
   });
 
   test("should return the error message as string if the error object is a string", () => {
