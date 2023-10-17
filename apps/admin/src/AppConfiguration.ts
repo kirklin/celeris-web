@@ -45,9 +45,9 @@ function initializeHttpRequest() {
     if (mode === "message") {
       _message.success(message);
     } else if (mode === "dialog") {
-      dialog.success({ title: "Error", content: message });
+      dialog.success({ title: "Success", content: message });
     } else if (mode === "notification") {
-      notification.success({ title: "Error", content: message });
+      notification.success({ title: "Success", content: message });
     } else if (mode === undefined || mode === "none") {
       logger.info(`HttpRequestEngine SuccessHandler: ${message}`);
     }
