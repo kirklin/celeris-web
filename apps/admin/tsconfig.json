@@ -3,8 +3,8 @@
   "compilerOptions": {
     "target": "esnext",
     "lib": ["dom", "esnext"],
-    "module": "esnext",
     "baseUrl": ".",
+    "module": "esnext",
     "paths": {
       "~/*": ["src/*"]
     },

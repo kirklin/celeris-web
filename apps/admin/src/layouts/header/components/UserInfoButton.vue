@@ -8,7 +8,7 @@ const userStore = useUserStore();
 const userInfo = toRef<UserInfo | null>(userStore.getUserInfo);
 const dialog = useDialog();
 const message = useMessage();
-const handleLogout = () => {
+function handleLogout() {
   dialog.warning({
     title: t("layouts.logoutConfirmation.title"),
     content: t("layouts.logoutConfirmation.content"),
@@ -22,7 +22,7 @@ const handleLogout = () => {
       message.info(t("layouts.logoutConfirmation.onNegativeClickMessage"));
     },
   });
-};
+}
 </script>
 
 <template>

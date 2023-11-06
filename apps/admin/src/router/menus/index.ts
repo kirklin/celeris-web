@@ -40,14 +40,14 @@ function filterMenusByPermissionMode(menus: Menu[]): Menu[] {
 }
 
 // Get all menus, filtered by permission mode and role
-export const getMenus = (): Menu[] => {
+export function getMenus(): Menu[] {
   const menus = filterMenusByPermissionMode(staticMenus);
   if (toValue(isRolePermissionMode)) {
     const routes = router.getRoutes();
     return filterTree(menus, basicFilter(routes));
   }
   return menus;
-};
+}
 
 // Get the path of the closest parent menu
 export function getCurrentParentPath(currentPath: string) {

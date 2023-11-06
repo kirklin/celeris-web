@@ -112,7 +112,8 @@ export const defaultTransform: AxiosTransform = {
    */
   onRequestError(error: Error, options: RequestOptions): any {
     return {
-      error, options,
+      error,
+      options,
     };
   },
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 withDefaults(
-  defineProps<{ icon: string;size?: string }>(), {
+  defineProps<{ icon: string;size?: string }>(),
+  {
     icon: "i-mdi-alert",
     size: "5",
   },

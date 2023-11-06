@@ -12,16 +12,16 @@ import { field, isClient, logger } from "../index";
  * @param {string} options.target - 新窗口的名称或特殊选项，默认为 "_blank"
  * @param {string} options.features - 新窗口的特性（大小，位置等），默认为 "noopener=yes,noreferrer=yes"
  */
-export const openWindow = (url: string, { target = "_blank", features = "noopener=yes,noreferrer=yes" }: {
+export function openWindow(url: string, { target = "_blank", features = "noopener=yes,noreferrer=yes" }: {
   target?: "_blank" | "_self" | "_parent" | "_top"; // 新窗口的名称或特殊选项，默认为 "_blank"
   features?: string; // 新窗口的特性（大小，位置等），默认为 "noopener=yes,noreferrer=yes"
-} = {}) => {
+} = {}) {
   window.open(url, target, features);
-};
+}
 
 // copy text to clipboard
 // 将文本复制到剪贴板
-export const copyToClipboard = (text: string) => {
+export function copyToClipboard(text: string) {
   // Try to use the navigator.clipboard.writeText method
   // 尝试使用navigator.clipboard.writeText方法
   void navigator.clipboard.writeText(text).then(() => {
@@ -43,7 +43,7 @@ export const copyToClipboard = (text: string) => {
       logger.info("Copy Success", field("Content:", text));
     }
   });
-};
+}
 
 /**
  * Checks if the current environment supports touch events, typically indicating touch-enabled devices.

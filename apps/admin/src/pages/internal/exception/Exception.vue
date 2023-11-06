@@ -40,7 +40,7 @@ onMounted(() => {
   try {
     statusType.value = getStatusType(props.status);
     checkStatus(props.status);
-  } catch (error) {
+  } catch (error: any) {
     title.value = `${props.status} ${getErrorMessage(error)}`;
   }
 });

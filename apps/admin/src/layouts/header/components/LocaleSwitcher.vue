@@ -13,11 +13,11 @@ const options = computed(
     key: item,
   })),
 );
-const handleSelect = (key: string) => {
+function handleSelect(key: string) {
   setProjectSetting({ locale: key });
   locale.value = key;
   LocalesEngine.setLocale(key);
-};
+}
 </script>
 
 <template>

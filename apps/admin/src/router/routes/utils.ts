@@ -74,8 +74,7 @@ function dynamicImport(dynamicPagesModules: DynamicPagesModules, component: stri
       field("请不要在pages目录下的同一层级目录中创建同名的.vue和.tsx文件，否则会导致动态引入失败", ""),
     );
   } else {
-    logger.warn(`Could not find \`${component}.vue\` or \`${component}.tsx\` in src/pages/, please create it yourself!`
-      , field(`在src/pages/中找不到\`${component}.vue\`或\`${component}.tsx\`，请自行创建！`, ""));
+    logger.warn(`Could not find \`${component}.vue\` or \`${component}.tsx\` in src/pages/, please create it yourself!`, field(`在src/pages/中找不到\`${component}.vue\`或\`${component}.tsx\`，请自行创建！`, ""));
     return EXCEPTION_COMPONENT;
   }
 }
@@ -102,8 +101,7 @@ export function transformBackendDataToRoutes(routeList: RouteRecordRaw[]): Route
         route.meta = meta;
       }
     } else {
-      logger.warn(`Please configure the component property of the ${String(route.name)} route correctly.`
-        , field(`请正确配置${String(route.name)}路由的component属性。`, ""));
+      logger.warn(`Please configure the component property of the ${String(route.name)} route correctly.`, field(`请正确配置${String(route.name)}路由的component属性。`, ""));
     }
 
     route.children && asyncImportRoute(route.children, undefined);

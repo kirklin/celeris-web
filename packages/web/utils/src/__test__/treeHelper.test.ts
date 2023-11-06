@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
-  filterTree, findAllNodePaths,
+  filterTree,
+  findAllNodePaths,
   findFirstNodePath,
   findTreeNode,
   findTreeNodes,
@@ -13,7 +14,7 @@ import {
   traverseTreeRecursive,
 } from "../treeHelper";
 
-describe("Tree Helper", () => {
+describe("tree Helper", () => {
   interface TreeNode {
     id: number;
     parentId: number | null;

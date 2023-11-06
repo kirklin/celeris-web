@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { Snowflake } from "../snowflake";
 
-describe("Snowflake", () => {
+describe("snowflake", () => {
   it("generates unique IDs", () => {
     const snowflake1 = new Snowflake(1, 2);
     const snowflake2 = new Snowflake(3, 4);
@@ -38,7 +38,7 @@ describe("Snowflake", () => {
     const snowflake = new Snowflake(0, 0);
     snowflake.nextId();
     const timestamp = Date.now();
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // eslint-disable-next-line ts/ban-ts-comment
     // @ts-expect-error
     snowflake.lastTimestamp = BigInt(timestamp + 1000);
     expect(() => snowflake.nextId()).toThrow();

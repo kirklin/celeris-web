@@ -20,7 +20,7 @@ export function joinTimestamp(join: boolean, restful = false): string | object {
 /**
  * @description: Format request parameter time
  */
-export const formatRequestDate = (params: Record<string, any>) => {
+export function formatRequestDate(params: Record<string, any>) {
   if (!isObject(params)) {
     return;
   }
@@ -44,7 +44,7 @@ export const formatRequestDate = (params: Record<string, any>) => {
       formatRequestDate(params[key]);
     }
   });
-};
+}
 /**
  * Add the object as a parameter to the URL
  * @param baseUrl url

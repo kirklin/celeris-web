@@ -238,7 +238,7 @@ export const useUserStore = defineStore({
       if (this.getToken) {
         try {
           await logoutApi();
-        } catch (error) {
+        } catch (error: any) {
           logger.error("logout error", field("error", getErrorMessage(error)));
         }
       }

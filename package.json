@@ -61,7 +61,7 @@
     "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^18.2.0",
     "@commitlint/config-conventional": "^18.1.0",
-    "@kirklin/eslint-config": "^1.0.0",
+    "@kirklin/eslint-config": "^1.0.1",
     "@types/fs-extra": "^11.0.3",
     "@types/node": "^20.8.10",
     "@types/nprogress": "^0.2.2",

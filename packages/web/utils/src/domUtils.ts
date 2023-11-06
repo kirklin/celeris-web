@@ -166,17 +166,14 @@ export const off = (() => {
  * @returns {HTMLElement | undefined} The first element that matches the selectors within the container, or undefined if not found.
  *                                    与选择器匹配的第一个元素（在容器内），如果找不到则返回 undefined。
  */
-export const querySelector = (
-  selectors: string,
-  container?: Document | HTMLElement,
-): HTMLElement | undefined => {
+export function querySelector(selectors: string, container?: Document | HTMLElement): HTMLElement | undefined {
   if (isServerRendering) {
     return NOOP();
   }
   return (
     (container ?? document).querySelector<HTMLElement>(selectors) ?? undefined
   );
-};
+}
 
 /**
  * Gets the DOM element based on the target string, element, or undefined input within the given container.
@@ -202,13 +199,10 @@ export const querySelector = (
  * @returns {HTMLElement | undefined} The DOM element based on the target input, or undefined if not found or if the input is undefined.
  *                                    根据目标输入获取的 DOM 元素，如果未找到或输入为 undefined，则返回 undefined。
  */
-export const getElement = (
-  target: string | HTMLElement | undefined,
-  container?: Document | HTMLElement,
-): HTMLElement | undefined => {
+export function getElement(target: string | HTMLElement | undefined, container?: Document | HTMLElement): HTMLElement | undefined {
   if (isString(target)) {
     const selector = target[0] === "#" ? `[id='${target.slice(1)}']` : target;
     return querySelector(selector, container);
   }
   return target;
-};
+}

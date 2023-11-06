@@ -35,11 +35,11 @@ async function handleMenuChange(route?: RouteLocationNormalizedLoaded) {
   const menu = route || unref(currentRoute);
   activeMenu.value = menu.path;
 }
-const i18nRender = (key: string) => {
+function i18nRender(key: string) {
   return te(key) ? t(key) : key;
-};
+}
 
-const transformProjectMenuToNaiveUIMenu = (menu: Menu) => {
+function transformProjectMenuToNaiveUIMenu(menu: Menu) {
   const { path, meta, icon, children } = menu;
   const renderIcon = (icon?: string) => {
     if (!icon) {
@@ -66,12 +66,12 @@ const transformProjectMenuToNaiveUIMenu = (menu: Menu) => {
     icon: renderIcon(icon || meta?.icon as string),
     collapseTitle: i18nRender(meta?.title as string),
   };
-};
+}
 // Generate menu
-const generateMenu = () => {
+function generateMenu() {
   const menus = getMenus();
   menuList.value = mapTreeStructure(menus, menu => transformProjectMenuToNaiveUIMenu(menu));
-};
+}
 // Menu changes
 watch(
   [() => permissionStore.getLastMenuBuildTime, () => permissionStore.getBackendMenuList],

@@ -85,8 +85,6 @@ export function isHttpUrl(path: string): boolean {
   return regex.test(path);
 }
 
-export const isComponentInstance = (
-  value: any,
-): value is ComponentPublicInstance => {
+export function isComponentInstance(value: any): value is ComponentPublicInstance {
   return value?.$ !== undefined;
-};
+}

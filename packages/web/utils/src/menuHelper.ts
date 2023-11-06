@@ -103,8 +103,7 @@ export function transformRouteToMenu(routeModList: RouteRecordRaw[], routerMappi
       path: node.path,
       ...(node.redirect ? { redirect: node.redirect } : {}),
     };
-  },
-  );
+  });
 
   // Handle the paths
   joinParentPath(list);

@@ -28,7 +28,7 @@ export const PERSIST_KEY_PREFIX = createStorageName(<GlobEnvConfig>import.meta.e
  * @param shouldEnableEncryption whether to enable encryption for storage data 是否启用存储数据加密
  * @returns serializer
  */
-const customSerializer = (shouldEnableEncryption: boolean): Serializer => {
+function customSerializer(shouldEnableEncryption: boolean): Serializer {
   if (shouldEnableEncryption) {
     return {
       deserialize: (value) => {
@@ -50,7 +50,7 @@ const customSerializer = (shouldEnableEncryption: boolean): Serializer => {
       },
     };
   }
-};
+}
 
 /**
  * Register Pinia Persist Plugin

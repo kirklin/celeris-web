@@ -49,15 +49,11 @@ export interface ErrorResponse<T = any> {
  * @returns {[]} - 分页后的项目列表。
  * The paginated list of items.
  */
-export const paginate = <T = any>(
-  pageNo: number,
-  pageSize: number,
-  array: T[],
-): T[] => {
+export function paginate<T = any>(pageNo: number, pageSize: number, array: T[]): T[] {
   const startIndex = (pageNo - 1) * Number(pageSize);
   const endIndex = startIndex + Number(pageSize);
   return array.slice(startIndex, endIndex);
-};
+}
 
 /**
  * 返回带有数据的成功响应。
@@ -72,15 +68,14 @@ export const paginate = <T = any>(
  * @returns {SuccessResponse<T>} - 带有数据的成功响应。
  * A successful response with data.
  */
-export const createSuccessResponse = <T = any>(
-  data: T,
-  message = "ok",
-): SuccessResponse<T> => ({
+export function createSuccessResponse<T = any>(data: T, message = "ok"): SuccessResponse<T> {
+  return {
     code: ResultConstants.SUCCESS,
     data,
     message,
     type: "success",
-  });
+  };
+}
 
 /**
  * 返回带有分页结果的成功响应。
@@ -101,12 +96,7 @@ export const createSuccessResponse = <T = any>(
  * @returns {SuccessResponse<{ items: T[]; total: number }>} - 带有分页结果的成功响应。
  * A successful response with a paginated list of results.
  */
-export const createPaginatedSuccessResponse = <T = any>(
-  page: number,
-  pageSize: number,
-  list: T[],
-  message = "ok",
-): SuccessResponse<{ items: T[]; total: number }> => {
+export function createPaginatedSuccessResponse<T = any>(page: number, pageSize: number, list: T[], message = "ok"): SuccessResponse<{ items: T[]; total: number }> {
   const paginatedList = paginate(page, pageSize, list);
 
   return {
@@ -115,7 +105,7 @@ export const createPaginatedSuccessResponse = <T = any>(
       total: list.length,
     }, message),
   };
-};
+}
 
 /**
  * 返回带有消息和可选代码和数据的错误响应。
@@ -133,16 +123,14 @@ export const createPaginatedSuccessResponse = <T = any>(
  * @returns {ErrorResponse<T>} - 带有消息和可选代码和数据的错误响应。
  * An error response with a message and optional code and data.
  */
-export const createErrorResponse = <T = any>(
-  message = "请求失败。",
-  code = ResultConstants.ERROR,
-  data: T | null = null,
-): ErrorResponse<T> => ({
+export function createErrorResponse<T = any>(message = "请求失败。", code = ResultConstants.ERROR, data: T | null = null): ErrorResponse<T> {
+  return {
     code,
     data,
     message,
     type: "error",
-  });
+  };
+}
 
 /**
  * 从请求头中提取授权令牌。
@@ -154,6 +142,6 @@ export const createErrorResponse = <T = any>(
  * @returns {string | undefined} - 如果存在授权令牌，则返回授权令牌；否则返回 undefined。
  * The authorization token, if present; otherwise, undefined.
  */
-export const extractAuthorizationToken = (
-  { headers }: RequestParams,
-): string | undefined => headers?.authorization;
+export function extractAuthorizationToken({ headers }: RequestParams): string | undefined {
+  return headers?.authorization;
+}

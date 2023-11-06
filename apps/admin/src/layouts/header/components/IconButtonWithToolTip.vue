@@ -2,7 +2,8 @@
 import ToolTipper from "~/layouts/header/components/ToolTipper.vue";
 
 withDefaults(
-  defineProps<{ tooltipText?: string;icon: string;color: string }>(), {
+  defineProps<{ tooltipText?: string;icon: string;color: string }>(),
+  {
     tooltipText: "icon Button",
     icon: "i-mdi-alert ",
     color: "gray",

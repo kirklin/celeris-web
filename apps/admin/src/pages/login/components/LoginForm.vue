@@ -26,7 +26,7 @@ const loginFormRef = ref<HTMLElement & FormInst>();
 /**
  * This function handles the login process
  */
-const login = async () => {
+async function login() {
   try {
     // Validate the login form
     const errors = await loginFormRef.value?.validate();
@@ -55,7 +55,7 @@ const login = async () => {
   } finally {
     loading.value = false;
   }
-};
+}
 </script>
 
 <template>
