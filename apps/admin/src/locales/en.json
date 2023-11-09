@@ -6,6 +6,9 @@
       "headlessTable": "Headless Table",
       "headlessTableBasic": "Basic Table"
     },
+    "chat": {
+      "chat": "Chat"
+    },
     "dashboard": {
       "dashboard": "Dashboard"
     },
