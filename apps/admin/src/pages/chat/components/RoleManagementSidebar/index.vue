@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import ChatLayout from "./components/ChatLayout.vue";
-
 defineOptions({
-  name: "Chat",
+  name: "RoleManagementSidebar",
 });
 </script>
 
 <template>
-  <ChatLayout />
+  <div>RoleManagementSidebar</div>
 </template>
 
 <style scoped>
