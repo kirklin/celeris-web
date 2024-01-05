@@ -19,8 +19,8 @@
   "dependencies": {
     "@celeris/types": "workspace:*",
     "@celeris/utils": "workspace:*",
-    "@vueuse/core": "^10.5.0",
-    "@vueuse/integrations": "^10.5.0"
+    "@vueuse/core": "^10.7.1",
+    "@vueuse/integrations": "^10.7.1"
   },
   "devDependencies": {}
 }
