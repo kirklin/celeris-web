@@ -16,7 +16,6 @@ Celeris Admin的一个特色是它与OpenAI的ChatGPT API集成，提供了强�
 
 立即开始使用Celeris Admin，并体验高度简化的前端开发流程，利用最新技术，包括尖端自然语言处理功能。
 
-
 ## 特点
 
 - ⚡  [闪电般快速](https://github.com/kirklin/celeris-web#readme)：使用Vue 3，Vite和pnpm构建 🔥
@@ -32,7 +31,6 @@ Celeris Admin的一个特色是它与OpenAI的ChatGPT API集成，提供了强�
 - 🌍 [国际化就绪](https://github.com/kirklin/celeris-web/tree/master/packages/web/locale)：具备使用本地化的国际化功能 🌎
 - ☁️ [Netlify准备就绪](https://www.netlify.com/)：在Netlify上零配置部署 ☁️
 - 🤖 集成[OpenAI的ChatGPT API](https://openai.com/)：用于自然语言处理 🤖
-
 
 ### 编码风格
 
@@ -87,8 +85,8 @@ Celeris Admin的一个特色是它与OpenAI的ChatGPT API集成，提供了强�
    types
    types --> constants
    utils
-   utils --> types  
-   
+   utils --> types
+
 ```
 
 要更新上面的图表，请编辑README文件，并在修改后打开一个新的PR。
@@ -127,7 +125,6 @@ pnpm run build
 
 然后你会看到用于发布的 `dist` 文件夹被生成。
 
-
 ### 部署到 Netlify
 
 前往 [Netlify](https://app.netlify.com/start) 并选择你的仓库, 一路 `OK` 下去，稍等一下后，你的应用将被创建.
@@ -145,4 +142,3 @@ docker buildx build . -t celeris-web:latest
 ```bash
 docker run --rm -it -p 8080:80 celeris-web:latest
 ```
-

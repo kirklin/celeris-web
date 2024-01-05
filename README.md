@@ -16,7 +16,6 @@ Whether you're a seasoned developer or just starting out, Celeris Web offers a s
 
 Get started with celeris-web today and experience a highly streamlined front-end development process that harnesses the power of the latest technologies, including cutting-edge natural language processing capabilities.
 
-
 ## Features
 
 - ⚡  [Lightning fast](https://github.com/kirklin/celeris-web#readme): Built with Vue 3, Vite, and pnpm 🔥
@@ -33,7 +32,6 @@ Get started with celeris-web today and experience a highly streamlined front-end
 - ☁️ [Netlify ready](https://www.netlify.com/): Zero-config deployment on Netlify ☁️
 - 🤖 Integration with [OpenAI's ChatGPT API](https://openai.com/https://openai.com/): for natural language processing 🤖
 
-
 ### Coding Style
 
 - [@kirklin/eslint-config](https://github.com/kirklin/eslint-config)
@@ -43,7 +41,6 @@ Get started with celeris-web today and experience a highly streamlined front-end
 - 🌪️ [WebStorm](https://www.jetbrains.com/webstorm/)
 - 💻 [VSCode](https://code.visualstudio.com/)
 - 💡 [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
-
 
 ### [packages](packages) dependency relationship
 
@@ -88,8 +85,8 @@ Get started with celeris-web today and experience a highly streamlined front-end
    types
    types --> constants
    utils
-   utils --> types  
-   
+   utils --> types
+
 ```
 
 To update the diagram above edit the README file and open a new PR with the changes.
@@ -128,7 +125,6 @@ pnpm run build
 
 And you will see the generated file in `dist` that ready to be served.
 
-
 ### Deploy on Netlify
 
 Go to [Netlify](https://app.netlify.com/start) and select your clone, `OK` along the way, and your App will be live in a minute.
@@ -146,4 +142,3 @@ Run the image and specify port mapping with the `-p` flag.
 ```bash
 docker run --rm -it -p 8080:80 celeris-web:latest
 ```
-
