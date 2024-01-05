@@ -12,7 +12,7 @@
     "generate-tree": "pnpm esno ./src/directoryTreeOrganizer.ts"
   },
   "devDependencies": {
-    "@types/prompts": "^2.4.7",
+    "@types/prompts": "^2.4.9",
     "execa": "^8.0.1",
     "prompts": "^2.4.2"
   }

@@ -1,9 +1,11 @@
 <script setup lang="ts">
-
+defineOptions({
+  name: "Chat",
+});
 </script>
 
 <template>
-  chat
+  <div></div>
 </template>
 
 <style scoped>

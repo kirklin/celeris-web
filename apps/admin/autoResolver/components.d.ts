@@ -9,7 +9,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     CAAppLogo: typeof import('@celeris/components')['CAAppLogo']
     CAAppNaiveUIProvider: typeof import('@celeris/components')['CAAppNaiveUIProvider']
-    NAlert: typeof import('@celeris/ca-components')['NAlert']
     NAvatar: typeof import('@celeris/ca-components')['NAvatar']
     NButton: typeof import('@celeris/ca-components')['NButton']
     NCard: typeof import('@celeris/ca-components')['NCard']
@@ -29,7 +28,6 @@ declare module 'vue' {
     NGrid: typeof import('@celeris/ca-components')['NGrid']
     NGridItem: typeof import('@celeris/ca-components')['NGridItem']
     NInput: typeof import('@celeris/ca-components')['NInput']
-    NInputGroup: typeof import('@celeris/ca-components')['NInputGroup']
     NLoadingBarProvider: typeof import('@celeris/ca-components')['NLoadingBarProvider']
     NMenu: typeof import('@celeris/ca-components')['NMenu']
     NMessageProvider: typeof import('@celeris/ca-components')['NMessageProvider']
@@ -39,7 +37,6 @@ declare module 'vue' {
     NScrollbar: typeof import('@celeris/ca-components')['NScrollbar']
     NSelect: typeof import('@celeris/ca-components')['NSelect']
     NSpace: typeof import('@celeris/ca-components')['NSpace']
-    NSpin: typeof import('@celeris/ca-components')['NSpin']
     NStep: typeof import('@celeris/ca-components')['NStep']
     NSteps: typeof import('@celeris/ca-components')['NSteps']
     NSwitch: typeof import('@celeris/ca-components')['NSwitch']
