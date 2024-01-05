@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import ChatLayout from "./components/ChatLayout.vue";
-
 defineOptions({
-  name: "Chat",
+  name: "ChatHistorySidebar",
 });
 </script>
 
 <template>
-  <ChatLayout />
+  <div>
+    ChatHistorySidebar
+  </div>
 </template>
 
 <style scoped>
