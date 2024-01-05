@@ -37,7 +37,6 @@ export async function createApplicationViteConfig(command: "build" | "serve", mo
       host: VITE_USE_HTTPS,
       port: VITE_PORT,
       open: true,
-      https: false,
       proxy: !VITE_USE_HTTPS ? configureProxy(VITE_PROXY) : {},
     },
     esbuild: {

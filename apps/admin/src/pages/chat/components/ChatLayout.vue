@@ -10,7 +10,7 @@ import RoleManagementSidebar from "./RoleManagementSidebar/index.vue";
 右侧边栏显示了每个角色的聊天记录，并且可以根据用户选择的角色动态加载相应的聊天记录。
 中央面板则用于展示选定角色的实时对话界面，可能包含一个消息输入框以及用于加载历史对话记录的功能。 -->
   <div class="chat-layout rounded-2xl w-full h-full min-h-full ">
-    <NLayout has-sider sider-placement="left" class="h-full">
+    <NLayout has-sider sider-placement="left" class="h-full rounded-2xl">
       <NLayoutSider
         collapse-mode="width"
         :collapsed-width="240"
