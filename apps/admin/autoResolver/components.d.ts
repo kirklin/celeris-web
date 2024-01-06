@@ -22,6 +22,7 @@ declare module 'vue' {
     NDrawer: typeof import('@celeris/ca-components')['NDrawer']
     NDrawerContent: typeof import('@celeris/ca-components')['NDrawerContent']
     NDropdown: typeof import('@celeris/ca-components')['NDropdown']
+    NEl: typeof import('@celeris/ca-components')['NEl']
     NEmpty: typeof import('@celeris/ca-components')['NEmpty']
     NForm: typeof import('@celeris/ca-components')['NForm']
     NFormItem: typeof import('@celeris/ca-components')['NFormItem']

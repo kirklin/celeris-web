@@ -29,14 +29,14 @@ const shouldShowTooltip = computed(() => Boolean(tooltipText));
   <div v-if="shouldShowTooltip">
     <NTooltip :placement="placement" trigger="hover">
       <template #trigger>
-        <div class="flex-center h-full rounded-lg cursor-pointer dark:hover:bg-gray-900" :class="contentClass">
+        <div class="flex-center h-full rounded-lg cursor-pointer" :class="contentClass">
           <slot />
         </div>
       </template>
       {{ tooltipText }}
     </NTooltip>
   </div>
-  <div v-else class="flex-center rounded-lg cursor-pointer dark:hover:bg-gray-900" :class="contentClass">
+  <div v-else class="flex-center rounded-lg cursor-pointer" :class="contentClass">
     <slot />
   </div>
 </template>

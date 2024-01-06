@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import IconButtonWithToolTip from "~/layouts/header/components/IconButtonWithToolTip.vue";
+import { ActionIcon } from "~/component/ActionIcon";
 
 const { toggle: toggleFullScreen } = useFullscreen();
 const { t } = useI18n();
 </script>
 
 <template>
-  <IconButtonWithToolTip :tooltip-text="t('layouts.header.toggleFullScreen')" icon="i-tabler-maximize" color="gray" @click="toggleFullScreen" />
+  <ActionIcon :tooltip-text="t('layouts.header.toggleFullScreen')" icon="i-tabler-maximize" @click="toggleFullScreen" />
 </template>
 
 <style scoped>

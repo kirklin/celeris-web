@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { LocalesEngine, languagesNameList, useI18n } from "@celeris/locale";
-import IconButtonWithToolTip from "~/layouts/header/components/IconButtonWithToolTip.vue";
+import { ActionIcon } from "~/component/ActionIcon";
 
 import { useAppSetting } from "~/composables";
 
@@ -22,7 +22,7 @@ function handleSelect(key: string) {
 
 <template>
   <NDropdown :options="options" trigger="click" :value="getLocale" @select="handleSelect">
-    <IconButtonWithToolTip :tooltip-text="t('layouts.header.switchLocale')" icon="i-tabler-language" color="gray" />
+    <ActionIcon :tooltip-text="t('layouts.header.switchLocale')" icon="i-tabler-language" />
   </NDropdown>
 </template>
 
