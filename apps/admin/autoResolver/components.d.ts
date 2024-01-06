@@ -38,6 +38,7 @@ declare module 'vue' {
     NMenu: typeof import('@celeris/ca-components')['NMenu']
     NMessageProvider: typeof import('@celeris/ca-components')['NMessageProvider']
     NNotificationProvider: typeof import('@celeris/ca-components')['NNotificationProvider']
+    NPopconfirm: typeof import('@celeris/ca-components')['NPopconfirm']
     NPopover: typeof import('@celeris/ca-components')['NPopover']
     NResult: typeof import('@celeris/ca-components')['NResult']
     NScrollbar: typeof import('@celeris/ca-components')['NScrollbar']

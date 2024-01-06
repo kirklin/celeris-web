@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MessageInput from "~/pages/chat/components/ChatPanel/MessageInput.vue";
+import MessageInputArea from "./MessageInputArea/index.vue";
 import ChatConversation from "~/pages/chat/components/ChatPanel/ChatConversation.vue";
 
 defineOptions({
@@ -13,7 +13,7 @@ defineOptions({
       <ChatConversation />
     </template>
     <template #2>
-      <MessageInput />
+      <MessageInputArea />
     </template>
   </NSplit>
 </template>
