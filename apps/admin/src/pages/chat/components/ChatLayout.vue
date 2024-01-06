@@ -17,7 +17,7 @@ import RoleManagementSidebar from "./RoleManagementSidebar/index.vue";
         :width="360"
         :native-scrollbar="true"
         show-trigger="arrow-circle"
-        content-style="padding: 24px;"
+        class="p-4"
         bordered
       >
         <ChatHistorySidebar />
@@ -33,7 +33,6 @@ import RoleManagementSidebar from "./RoleManagementSidebar/index.vue";
             :width="360"
             :native-scrollbar="true"
             show-trigger="arrow-circle"
-            content-style="padding: 24px;"
             bordered
           >
             <RoleManagementSidebar />
