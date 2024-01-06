@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { UserInfo } from "@celeris/types";
-import ToolTipper from "~/layouts/header/components/ToolTipper.vue";
+import { ToolTipper } from "~/component/ActionIcon";
 import { useUserStore } from "~/store/modules/user";
 
 const { t } = useI18n();
@@ -29,16 +29,16 @@ function handleLogout() {
   <NPopover trigger="click" :show-arrow="false">
     <template #trigger>
       <ToolTipper :tooltip-text="t('layouts.userInfo.userInformation')">
-        <div class="btn-icon rounded-3xl p-2 pr-2 justify-between h-12 w-24 bg-gray-50 hover:bg-gray-100">
+        <NEl tag="div" class="btn-icon rounded-3xl p-2 pr-2 justify-between h-12 w-24 bg-[var(--action-color)] hover:bg-[var(--hover-color)]">
           <div class="flex flex-row">
             <div class="flex-1 flex items-center justify-center">
               <NAvatar round :src="userInfo?.avatarUrl" />
             </div>
             <div class="flex-1 flex items-center justify-center">
-              <svg class="text-center text-gray-700 text-xl i-tabler-settings" />
+              <svg class="text-center text-[var(--text-color-base)] text-xl i-tabler-settings" />
             </div>
           </div>
-        </div>
+        </NEl>
       </ToolTipper>
     </template>
     <h4 class="mb-1">
