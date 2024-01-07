@@ -4,6 +4,7 @@ import type { RouteRecordRaw } from "vue-router";
 import { loadDataFromModules } from "./moduleHelper";
 import { findFirstNodePath, mapTreeStructure } from "./treeHelper";
 import { isHttpUrl } from "./typeChecks";
+import { createPathMatcher } from "./router";
 
 /**
  * 从模块对象中加载菜单配置并加入到菜单集合中
@@ -119,10 +120,12 @@ export function transformRouteToMenu(routeModList: RouteRecordRaw[], routerMappi
  * @param path The path to match. 要匹配的路径。
  * @returns An array of parent paths of the node in the tree that matches the given path. 与给定路径匹配的节点的所有父路径组成的数组。
  */
-export function getAllParentPaths<T>(
+export function getAllParentPaths<T extends {
+  path: string;
+}>(
   treeData: T[],
   path: string,
-): string[] {
-  const menuList = findFirstNodePath(treeData, n => n[path] === path) as Menu[];
-  return menuList?.map(m => m.path);
+): string[] | null {
+  const menuList = findFirstNodePath(treeData, n => createPathMatcher(n.path).test(path));
+  return menuList?.map(m => m.path) ?? null;
 }
