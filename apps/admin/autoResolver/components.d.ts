@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     CAAppLogo: typeof import('@celeris/components')['CAAppLogo']
     CAAppNaiveUIProvider: typeof import('@celeris/components')['CAAppNaiveUIProvider']
+    CAIcon: typeof import('@celeris/components')['CAIcon']
     NAlert: typeof import('@celeris/ca-components')['NAlert']
     NAvatar: typeof import('@celeris/ca-components')['NAvatar']
     NBreadcrumb: typeof import('@celeris/ca-components')['NBreadcrumb']
