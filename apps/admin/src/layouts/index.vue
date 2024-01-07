@@ -10,7 +10,7 @@ defineOptions({
 </script>
 
 <template>
-  <div class="flex flex-row flex-1 h-full w-full min-w-[970px]">
+  <NEl tag="div" class="flex flex-row flex-1 h-full w-full min-w-[970px]">
     <div class="w-auto">
       <Menu />
     </div>
@@ -27,7 +27,7 @@ defineOptions({
         <Footer />
       </footer>
     </div>
-  </div>
+  </NEl>
 </template>
 
 <style scoped>

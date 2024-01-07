@@ -4,6 +4,7 @@ import FullScreenButton from "~/layouts/header/components/FullScreenButton.vue";
 import LocaleSwitcher from "~/layouts/header/components/LocaleSwitcher.vue";
 import UserInfoButton from "~/layouts/header/components/UserInfoButton.vue";
 import SettingButton from "~/layouts/setting/index.vue";
+import Breadcrumb from "~/layouts/header/components/Breadcrumb.vue";
 
 defineOptions({
   name: "HeaderLayout",
@@ -15,7 +16,9 @@ defineOptions({
     <div class="hidden md:block px-4">
       <CollapseButton />
     </div>
-    <div class="flex-grow-1" />
+    <div class="flex-grow-1">
+      <Breadcrumb />
+    </div>
     <div class="flex">
       <div class="flex items-center justify-center">
         <div class="px-2">

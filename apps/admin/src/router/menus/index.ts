@@ -3,6 +3,7 @@ import {
   createPathMatcher,
   filterTree,
   getAllParentPaths,
+  getFirstMatchingParent,
   isHttpUrl,
   loadMenusFromModules,
   transformMenuModule,
@@ -54,6 +55,11 @@ export function getCurrentParentPath(currentPath: string) {
   const menus = getMenus();
   const allParentPaths = getAllParentPaths<Menu>(menus, currentPath);
   return allParentPaths?.[0];
+}
+
+export function getCurrentParent(currentPath: string) {
+  const menus = getMenus();
+  return getFirstMatchingParent<Menu>(menus, currentPath);
 }
 
 // Get a list of top-level menus

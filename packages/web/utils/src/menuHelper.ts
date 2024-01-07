@@ -129,3 +129,18 @@ export function getAllParentPaths<T extends {
   const menuList = findFirstNodePath(treeData, n => createPathMatcher(n.path).test(path));
   return menuList?.map(m => m.path) ?? null;
 }
+
+/**
+ * 获取树形结构中与给定路径匹配的第一个节点及其所有父节点。
+ * @param treeData 树形结构的根节点列表。
+ * @param path 要匹配的路径。
+ * @returns 与给定路径匹配的第一个节点及其所有父节点，如果没有匹配项，则返回 null。
+ */
+export function getFirstMatchingParent<T extends {
+  path: string;
+}>(
+  treeData: T[],
+  path: string,
+) {
+  return findFirstNodePath(treeData, n => createPathMatcher(n.path).test(path));
+}

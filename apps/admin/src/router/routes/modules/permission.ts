@@ -19,6 +19,7 @@ const permission: RouteRecordRaw = {
       path: "frontend",
       name: "PermissionFrontDemo",
       component: getParentLayout("PermissionFrontDemo"),
+      redirect: "/permission/frontend/page",
       meta: {
         title: "routes.permission.frontend",
       },
@@ -63,6 +64,7 @@ const permission: RouteRecordRaw = {
       path: "back",
       name: "PermissionBackDemo",
       component: getParentLayout("PermissionBackDemo"),
+      redirect: "/permission/back/page",
       meta: {
         title: "routes.permission.backend",
       },

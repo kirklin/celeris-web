@@ -6,7 +6,7 @@ const components: RouteRecordRaw = {
   path: "/components",
   name: "Components",
   component: LAYOUT,
-  redirect: "/components/index",
+  redirect: "/components/headlessTable/basic",
   meta: {
     title: "routes.components.components",
     icon: "i-radix-icons-component-1",
@@ -17,6 +17,7 @@ const components: RouteRecordRaw = {
       path: "headlessTable",
       name: "HeadlessTable",
       component: LAYOUT,
+      redirect: "/components/headlessTable/basic",
       meta: {
         title: "routes.components.headlessTable",
         icon: "i-mdi-table",
