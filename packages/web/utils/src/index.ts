@@ -7,6 +7,7 @@ export * from "./domUtils";
 export * from "./mitt";
 export * from "./mock";
 export * from "./moduleHelper";
+export * from "./platformUtils";
 export * from "./menuHelper";
 export * from "./router";
 export * from "./typeChecks";
