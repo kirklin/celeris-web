@@ -12,3 +12,8 @@ export function isBlackColor(color: string) {
 export function colorToRgb(color: string): RgbaColor {
   return colord(color).toRgb();
 }
+
+export function colorToRgbString(color: string) {
+  const rgba = colord(color).toRgb();
+  return [rgba.r, rgba.g, rgba.b].join(", ");
+}

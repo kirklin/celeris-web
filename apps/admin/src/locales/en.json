@@ -89,6 +89,17 @@
       "onPositiveClickMessage": "Logout successful"
     }
   },
+  "searchDialog": {
+    "searchPlaceholder": "Search",
+    "noResultsFound": "Sorry, no results found for { search }",
+    "toSelectTooltip": "to select",
+    "toNavigateTooltip": "to navigate",
+    "applications": "Applications",
+    "chatBot": "ChatBot",
+    "action": "Action",
+    "actions": "Actions",
+    "shortcut": "Shortcut"
+  },
   "page": {
     "login": {
       "title": "Login",

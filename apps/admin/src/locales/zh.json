@@ -89,6 +89,17 @@
       "onPositiveClickMessage": "退出登录成功"
     }
   },
+  "searchDialog": {
+    "searchPlaceholder": "搜索",
+    "noResultsFound": "抱歉，未找到符合 { search } 的结果",
+    "toSelectTooltip": "选择",
+    "toNavigateTooltip": "导航",
+    "applications": "应用程序",
+    "chatBot": "ChatBot",
+    "actions": "操作列表",
+    "action": "操作",
+    "shortcut": "快捷方式"
+  },
   "page": {
     "login": {
       "title": "登录",

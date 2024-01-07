@@ -5,6 +5,7 @@ import LocaleSwitcher from "~/layouts/header/components/LocaleSwitcher.vue";
 import UserInfoButton from "~/layouts/header/components/UserInfoButton.vue";
 import SettingButton from "~/layouts/setting/index.vue";
 import Breadcrumb from "~/layouts/header/components/Breadcrumb.vue";
+import SearchAnyWhere from "~/layouts/header/components/SearchAnyWhere.vue";
 
 defineOptions({
   name: "HeaderLayout",
@@ -13,24 +14,25 @@ defineOptions({
 
 <template>
   <div class="flex h-16 items-center">
-    <div class="hidden md:block px-4">
+    <div class="md:block px-4">
       <CollapseButton />
     </div>
     <div class="flex-grow-1">
       <Breadcrumb />
     </div>
     <div class="flex">
-      <div class="flex items-center justify-center">
-        <div class="px-2">
-          <FullScreenButton />
+      <NSpace>
+        <SearchAnyWhere />
+        <div class="flex items-center justify-center">
+          <NSpace>
+            <FullScreenButton />
+
+            <LocaleSwitcher />
+
+            <SettingButton />
+          </NSpace>
         </div>
-        <div class="px-2">
-          <LocaleSwitcher />
-        </div>
-      </div>
-    </div>
-    <div class="hidden md:block px-4">
-      <SettingButton />
+      </NSpace>
     </div>
     <div class="px-4">
       <UserInfoButton />

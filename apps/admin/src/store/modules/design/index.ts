@@ -3,7 +3,7 @@ import { deepMerge } from "@celeris/utils";
 import { defineStore } from "pinia";
 import { APP_DESIGN_STORE_ID } from "@celeris/constants";
 import type { GlobalTheme, GlobalThemeOverrides } from "naive-ui";
-import { darkTheme } from "naive-ui";
+import { darkTheme, lightTheme } from "naive-ui";
 import { getNaiveUICustomTheme } from "./themeUtils";
 import { DEFAULT_THEME_SETTING } from "~/setting/themeSetting";
 
@@ -28,8 +28,8 @@ export const useDesignStore = defineStore({
       return state.themeSetting;
     },
     //   获取Naive UI 预设主题
-    getNaiveUIPresetTheme(): GlobalTheme | null {
-      return this.getDarkMode ? darkTheme : null;
+    getNaiveUIPresetTheme(): GlobalTheme {
+      return this.getDarkMode ? darkTheme : lightTheme;
     },
     // 获取Naive UI 自定义主题
     getNaiveUICustomTheme(state): GlobalThemeOverrides | null {

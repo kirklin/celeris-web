@@ -44,6 +44,7 @@
     "pinia-plugin-persistedstate": "^3.2.1",
     "pkg-types": "^1.0.3",
     "vue": "^3.4.5",
+    "vue-highlight-words": "^3.0.1",
     "vue-i18n": "^9.8.0",
     "vue-router": "^4.2.5"
   },

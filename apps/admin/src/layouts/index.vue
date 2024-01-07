@@ -3,6 +3,7 @@ import Menu from "./menu/index.vue";
 import Footer from "./footer/index.vue";
 import Header from "./header/index.vue";
 import Content from "./content/index.vue";
+import SearchDialog from "~/component/SearchDialog/src/SearchDialog.vue";
 
 defineOptions({
   name: "Layout",
@@ -27,6 +28,7 @@ defineOptions({
         <Footer />
       </footer>
     </div>
+    <SearchDialog />
   </NEl>
 </template>
 
