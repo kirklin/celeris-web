@@ -1,7 +1,7 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 import { isNil } from "@celeris/utils";
-import { CAUnoCSSIcon } from "@celeris/components";
+import { renderIcon } from "@celeris/components";
 import { getCurrentParent } from "~/router/menus";
 
 defineOptions({
@@ -33,7 +33,7 @@ watchEffect(() => {
         key: isNil(child?.redirect) ? child.path : child?.redirect,
         children: undefined,
         label: localize(child.name),
-        icon: () => isNil(child.icon) ? null : h(CAUnoCSSIcon, { icon: child.icon }),
+        icon: () => renderIcon(child.icon),
       })),
     }));
   }

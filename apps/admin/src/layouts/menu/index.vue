@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Menu } from "@celeris/types";
-import { CAUnoCSSIcon } from "@celeris/components";
+import { renderIcon } from "@celeris/components";
 import { mapTreeStructure } from "@celeris/utils";
 import type { RouteLocationNormalizedLoaded } from "vue-router";
 import { RouterLink } from "vue-router";
@@ -41,12 +41,6 @@ function i18nRender(key: string) {
 
 function transformProjectMenuToNaiveUIMenu(menu: Menu) {
   const { path, meta, icon, children } = menu;
-  const renderIcon = (icon?: string) => {
-    if (!icon) {
-      return;
-    }
-    return () => h(CAUnoCSSIcon, { icon });
-  };
   return {
     label: () => {
       if (children) {
@@ -85,7 +79,7 @@ watch(
 </script>
 
 <template>
-  <div :class="isCollapse ? 'w-16' : 'w-64'" class="transition-width h-full shrink-0 flex-col overflow-hidden duration-75 lg:flex">
+  <div :class="isCollapse ? 'w-16' : 'w-75'" class="transition-width h-full shrink-0 flex-col overflow-hidden duration-75 lg:flex">
     <div class="my-auto flex h-16">
       <CAAppLogo :show-title="!isCollapse" />
     </div>

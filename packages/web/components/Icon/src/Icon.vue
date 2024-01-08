@@ -3,9 +3,11 @@ import { NIcon, NIconWrapper } from "naive-ui";
 import { Icon, type IconifyIcon, loadIcon } from "@iconify/vue";
 import { computed, defineProps, ref, watchEffect } from "vue";
 import { isNil } from "@celeris/utils";
+import { normalizeIconName } from "./utils";
 
 interface IconOptions {
   name?: string;
+  icon?: string;
   size?: number;
   bgSize?: number;
   color?: string;
@@ -53,13 +55,18 @@ const icon = ref<void | Required<IconifyIcon>>();
 
 function setIcon(name: string | undefined) {
   if (!isNil(name)) {
+    name = normalizeIconName(name);
     loadIconByName(name).then(res => (icon.value = res));
   }
 }
 
-setIcon(props.name);
-
-watchEffect(() => setIcon(props.name));
+watchEffect(() => {
+  if (!isNil(props.icon)) {
+    setIcon(props.icon);
+  } else {
+    setIcon(props.name);
+  }
+});
 </script>
 
 <template>

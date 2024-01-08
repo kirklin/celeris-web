@@ -9,7 +9,7 @@ const components: RouteRecordRaw = {
   redirect: "/components/headlessTable/basic",
   meta: {
     title: "routes.components.components",
-    icon: "i-radix-icons-component-1",
+    icon: "material-symbols:view-comfy-alt-outline-rounded",
     shouldHideSubMenuInMenu: false,
   },
   children: [

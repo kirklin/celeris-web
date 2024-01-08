@@ -10,7 +10,7 @@ const iframe: RouteRecordRaw = {
   redirect: "/frame/github",
   meta: {
     title: "routes.iframe.iframe",
-    icon: "i-line-md-external-link",
+    icon: "line-md:external-link",
   },
   children: [
     // 新添加的Vite链接
@@ -40,7 +40,7 @@ const iframe: RouteRecordRaw = {
       component: IFRAME,
       meta: {
         title: "routes.iframe.githubInternal",
-        icon: "i-line-md-github-loop",
+        icon: "line-md:github-loop",
         iframeLink: CELERIS_WEB_GITHUB_URL,
       },
     },
@@ -50,7 +50,7 @@ const iframe: RouteRecordRaw = {
       component: IFRAME,
       meta: {
         title: "routes.iframe.GitHubExternal",
-        icon: "i-line-md-github-loop",
+        icon: "line-md:github-loop",
         externalLink: CELERIS_WEB_GITHUB_URL,
       },
     },

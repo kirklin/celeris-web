@@ -5,7 +5,7 @@ withDefaults(
   defineProps<{ tooltipText?: string;icon: string }>(),
   {
     tooltipText: "icon Button",
-    icon: "i-mdi-alert ",
+    icon: "i-mdi-alert",
   },
 );
 </script>
@@ -17,7 +17,7 @@ withDefaults(
       hover:bg-[var(--hover-color)]"
     >
       <span class="sr-only">{{ tooltipText }}</span>
-      <svg :class="`${icon}`" />
+      <CAIcon :icon="icon" :size="16" />
     </NEl>
   </ToolTipper>
 </template>
