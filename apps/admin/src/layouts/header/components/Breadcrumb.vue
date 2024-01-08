@@ -33,7 +33,7 @@ watchEffect(() => {
         key: isNil(child?.redirect) ? child.path : child?.redirect,
         children: undefined,
         label: localize(child.name),
-        icon: () => renderIcon(child.icon),
+        icon: renderIcon(child.icon),
       })),
     }));
   }
@@ -51,19 +51,19 @@ function selectDropdown(key) {
 <template>
   <NBreadcrumb class="breadcrumb">
     <NBreadcrumbItem @click="navigateTo({ path: '/' })">
-      <span class="inline-block align-text-bottom i-tabler-home text-16px" />
+      <CAIcon icon="tabler:home" :size="16" />
     </NBreadcrumbItem>
     <TransitionGroup name="breadcrumbAnimation">
       <template v-for="breadcrumb in breadcrumbs" :key="breadcrumb.path">
         <NBreadcrumbItem>
           <NDropdown v-if="breadcrumb.children" :options="breadcrumb.options" @select="selectDropdown">
             <span>
-              <svg v-if="breadcrumb.icon" :class="breadcrumb.icon" class="inline-block align-text-bottom mr-4px text-16px" />
+              <CAIcon v-if="breadcrumb.icon" :icon="breadcrumb.icon" :size="16" class="inline-block align-text-bottom mr-4px text-16px" />
               <span>{{ localize(breadcrumb.name) }}</span>
             </span>
           </NDropdown>
           <template v-else>
-            <svg v-if="breadcrumb.icon" :class="breadcrumb.icon" class="inline-block align-text-bottom mr-4px text-16px" />
+            <CAIcon v-if="breadcrumb.icon" :icon="breadcrumb.icon" :size="16" class="inline-block align-text-bottom mr-2" />
             <span>{{ localize(breadcrumb.name) }}</span>
           </template>
         </NBreadcrumbItem>
