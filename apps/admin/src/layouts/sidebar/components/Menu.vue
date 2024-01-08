@@ -5,7 +5,6 @@ import { mapTreeStructure } from "@celeris/utils";
 import type { RouteLocationNormalizedLoaded } from "vue-router";
 import { RouterLink } from "vue-router";
 import { useI18n } from "vue-i18n";
-import { useMenuSetting } from "~/composables/setting/useMenuSetting";
 import { REDIRECT_NAME } from "~/router/constant";
 import { getMenus } from "~/router/menus";
 import { listenToRouteChange } from "~/router/mitt/routeChange";
@@ -14,10 +13,18 @@ import { usePermissionStore } from "~/store/modules/permission";
 defineOptions({
   name: "MenuLayout",
 });
+const props = withDefaults(
+  defineProps<{
+    mode?: "vertical" | "horizontal";
+    collapsed?: boolean;
+  }>(),
+  { mode: "vertical", collapsed: false },
+);
+const { mode, collapsed } = toRefs(props);
+
 const { te, t } = useI18n();
 const activeMenu = ref();
 const permissionStore = usePermissionStore();
-const isCollapse = useMenuSetting().getCollapsed;
 const { currentRoute } = useRouter();
 const menuList = ref<any[]>([]);
 
@@ -76,18 +83,21 @@ watch(
     immediate: true,
   },
 );
+const collapsedWidth = computed<number>(() => collapsed ? 64 : 300);
 </script>
 
 <template>
-  <div :class="isCollapse ? 'w-16' : 'w-75'" class="transition-width h-full shrink-0 flex-col overflow-hidden duration-75 lg:flex">
-    <div class="my-auto flex h-16">
-      <CAAppLogo :show-title="!isCollapse" />
-    </div>
-    <NScrollbar class="overflow-hidden">
-      <NMenu v-model:value="activeMenu" :collapsed="isCollapse" :options="menuList" />
+  <div :class="collapsed ? 'w-16' : 'w-75'" class="transition-width h-full shrink-0 flex-col overflow-hidden duration-75">
+    <NScrollbar>
+      <NMenu
+        v-model:value="activeMenu"
+        :collapsed="collapsed"
+        :collapsed-width="collapsedWidth"
+        :mode="mode" :options="menuList"
+      />
     </NScrollbar>
   </div>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 </style>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Menu from "./menu/index.vue";
 import Footer from "./footer/index.vue";
 import Header from "./header/index.vue";
 import Content from "./content/index.vue";
 import SearchDialog from "~/component/SearchDialog/src/SearchDialog.vue";
+import SidebarLayout from "~/layouts/sidebar/index.vue";
 
 defineOptions({
   name: "Layout",
@@ -12,8 +12,8 @@ defineOptions({
 
 <template>
   <NEl tag="div" class="flex flex-row flex-1 h-full w-full min-w-[970px]">
-    <div class="w-auto">
-      <Menu />
+    <div>
+      <SidebarLayout />
     </div>
     <div class="flex flex-col flex-1 h-full w-full min-w-[970px]">
       <header class="">

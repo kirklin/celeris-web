@@ -23,7 +23,7 @@ function goHome() {
 
 <template>
   <div :class="`text-${titleSize}`" class="flex items-center justify-center font-semibold dark:text-white" @click="goHome">
-    <img width="44" height="44" :src="logoImage" class="m-4 h-11" alt="Logo">
+    <img width="44" height="44" :src="logoImage" class="m-3 h-11" alt="Logo">
     <span v-show="showTitle">{{ AppName }}</span>
   </div>
 </template>
