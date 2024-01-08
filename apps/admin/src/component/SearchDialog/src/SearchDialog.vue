@@ -196,12 +196,11 @@ onMounted(() => {
                 {{ group.name }}
               </div>
               <NEl class="group-list">
-                <NEl
+                <div
                   v-for="item of group.items"
                   :id="item.key.toString()"
                   :key="item.key"
-                  tag="button"
-                  class="item flex items-center bg-[var(--modal-color)] my-2"
+                  class="item flex items-center my-2"
                   :class="{ active: item.key === activeItem }"
                   @click="executeAction(item.action)"
                 >
@@ -220,7 +219,7 @@ onMounted(() => {
                   <div class="label">
                     {{ item.label }}
                   </div>
-                </NEl>
+                </div>
               </NEl>
             </div>
             <div v-if="!filteredGroups.length" class="group-empty">
@@ -296,7 +295,8 @@ onMounted(() => {
   font-size: 0.9em;
 }
 .search-dialog .search-dialog-action-bar .content-wrap .group .group-list .item.active {
-  background-color: var(--primary-color-hover);
+  background-color: var(--primary-color-suppl);
+  box-shadow: 0 0 8px 0 var(--primary-color-suppl);
 }
 .search-dialog .search-dialog-action-bar .content-wrap .group .group-list .item:hover {
   box-shadow: 0 0 0 1px var(--primary-color-hover) inset;

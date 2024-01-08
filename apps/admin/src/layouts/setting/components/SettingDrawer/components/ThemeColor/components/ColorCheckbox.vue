@@ -31,7 +31,7 @@ const isWhite = computed(() => isWhiteColor(props.color));
 </script>
 
 <template>
-  <div class="flex justify-center items-center p-0 w-5 h-5 rounded shadow cursor-pointer" :style="{ backgroundColor: color }">
+  <div class="flex justify-center items-center p-0 w-5 h-5 rounded shadow cursor-pointer hover:border" :style="{ backgroundColor: color }">
     <svg v-if="checked" :class="[iconClass, isWhite ? 'text-gray-700' : 'text-white']" />
   </div>
 </template>

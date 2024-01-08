@@ -3,7 +3,7 @@
 }
 .ca-modal,
 .ca-card.ca-modal[role] {
-	background-color: rgba(var(--modal-color), 0.6);
+	background-color: rgba(var(--modal-color), 0.75);
 	backdrop-filter: blur(20px);
 	max-width: 90%;
 	margin: 10vh auto;
