@@ -1,4 +1,4 @@
-import { colorToRgb, generateColorPalettes, setCssVariable } from "@celeris/utils";
+import { convertColorToRgbString, convertColorToRgbValues, generateColorPalettes, setCssVariable } from "@celeris/utils";
 import { effectScope, onScopeDispose, watch } from "vue";
 import type { GlobalThemeOverrides } from "naive-ui";
 import { kebabCase } from "lodash-es";
@@ -17,7 +17,8 @@ export default function subscribeThemeStore() {
       () => designStore.getNaiveUICustomTheme,
       (newTheme) => {
         if (newTheme?.common) {
-          addThemeCssVariablesToHtml(newTheme?.common);
+          addThemeColorCssVariablesToHtml(newTheme?.common);
+          addThemeRgbColorCssVariablesToHtml(newTheme?.common);
         }
       },
       { immediate: true },
@@ -40,18 +41,37 @@ type ThemeVarsKeys = keyof ThemeVars;
  * Add theme color variables to HTML
  * @param {ThemeVars} themeVars - 主题变量对象
  */
-function addThemeCssVariablesToHtml(themeVars: ThemeVars) {
+function addThemeColorCssVariablesToHtml(themeVars: ThemeVars) {
   for (const [key, color] of Object.entries(themeVars) as [ThemeVarsKeys, string][]) {
     if (color) {
-      const { r, g, b } = colorToRgb(color);
-      setCssVariable(`--${kebabCase(key)}`, `${r},${g},${b}`);
+      setCssVariable(`--${kebabCase(key)}`, convertColorToRgbString(color));
       if (key === "primaryColor") {
         const colorPalettes = generateColorPalettes(color);
 
         for (let index = 0; index < colorPalettes.length; index++) {
           const palette = colorPalettes[index];
-          const { r: pR, g: pG, b: pB } = colorToRgb(palette);
-          setCssVariable(`--${kebabCase(key)}${index + 1}`, `${pR},${pG},${pB}`);
+          setCssVariable(`--${kebabCase(key)}-${index + 1}`, convertColorToRgbString(palette));
+        }
+      }
+    }
+  }
+}
+
+/**
+ * 向 HTML 添加主题颜色变量的 RGB CSS 变量
+ * Add theme color variables as RGB CSS variables to HTML
+ * @param {ThemeVars} themeVars - 主题变量对象
+ */
+function addThemeRgbColorCssVariablesToHtml(themeVars: ThemeVars) {
+  for (const [key, color] of Object.entries(themeVars) as [ThemeVarsKeys, string][]) {
+    if (color) {
+      setCssVariable(`--${kebabCase(key)}-rgb`, convertColorToRgbValues(color));
+      if (key === "primaryColor") {
+        const colorPalettes = generateColorPalettes(color);
+
+        for (let index = 0; index < colorPalettes.length; index++) {
+          const palette = colorPalettes[index];
+          setCssVariable(`--${kebabCase(key)}-${index + 1}-rgb`, convertColorToRgbValues(palette));
         }
       }
     }
