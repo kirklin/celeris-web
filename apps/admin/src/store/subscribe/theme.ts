@@ -1,4 +1,10 @@
-import { convertColorToRgbString, convertColorToRgbValues, generateColorPalettes, setCssVariable } from "@celeris/utils";
+import {
+  convertColorToRgbString,
+  convertColorToRgbValues,
+  generateColorPalettes,
+  isColor,
+  setCssVariable,
+} from "@celeris/utils";
 import { effectScope, onScopeDispose, watch } from "vue";
 import type { GlobalThemeOverrides } from "naive-ui";
 import { kebabCase } from "lodash-es";
@@ -42,16 +48,20 @@ type ThemeVarsKeys = keyof ThemeVars;
  * @param {ThemeVars} themeVars - 主题变量对象
  */
 function addThemeColorCssVariablesToHtml(themeVars: ThemeVars) {
-  for (const [key, color] of Object.entries(themeVars) as [ThemeVarsKeys, string][]) {
-    if (color) {
-      setCssVariable(`--${kebabCase(key)}`, convertColorToRgbString(color));
-      if (key === "primaryColor") {
-        const colorPalettes = generateColorPalettes(color);
+  for (const [key, vars] of Object.entries(themeVars) as [ThemeVarsKeys, string][]) {
+    if (vars) {
+      if (isColor(vars)) {
+        setCssVariable(`--${kebabCase(key)}`, convertColorToRgbString(vars));
+        if (key === "primaryColor") {
+          const colorPalettes = generateColorPalettes(vars);
 
-        for (let index = 0; index < colorPalettes.length; index++) {
-          const palette = colorPalettes[index];
-          setCssVariable(`--${kebabCase(key)}-${index + 1}`, convertColorToRgbString(palette));
+          for (let index = 0; index < colorPalettes.length; index++) {
+            const palette = colorPalettes[index];
+            setCssVariable(`--${kebabCase(key)}-${index + 1}`, convertColorToRgbString(palette));
+          }
         }
+      } else {
+        setCssVariable(`--${kebabCase(key)}`, vars);
       }
     }
   }
@@ -63,16 +73,20 @@ function addThemeColorCssVariablesToHtml(themeVars: ThemeVars) {
  * @param {ThemeVars} themeVars - 主题变量对象
  */
 function addThemeRgbColorCssVariablesToHtml(themeVars: ThemeVars) {
-  for (const [key, color] of Object.entries(themeVars) as [ThemeVarsKeys, string][]) {
-    if (color) {
-      setCssVariable(`--${kebabCase(key)}-rgb`, convertColorToRgbValues(color));
-      if (key === "primaryColor") {
-        const colorPalettes = generateColorPalettes(color);
+  for (const [key, vars] of Object.entries(themeVars) as [ThemeVarsKeys, string][]) {
+    if (vars) {
+      if (isColor(vars)) {
+        setCssVariable(`--${kebabCase(key)}-rgb`, convertColorToRgbValues(vars));
+        if (key === "primaryColor") {
+          const colorPalettes = generateColorPalettes(vars);
 
-        for (let index = 0; index < colorPalettes.length; index++) {
-          const palette = colorPalettes[index];
-          setCssVariable(`--${kebabCase(key)}-${index + 1}-rgb`, convertColorToRgbValues(palette));
+          for (let index = 0; index < colorPalettes.length; index++) {
+            const palette = colorPalettes[index];
+            setCssVariable(`--${kebabCase(key)}-${index + 1}-rgb`, convertColorToRgbValues(palette));
+          }
         }
+      } else {
+        setCssVariable(`--${kebabCase(key)}`, vars);
       }
     }
   }

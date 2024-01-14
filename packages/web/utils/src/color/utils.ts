@@ -5,6 +5,10 @@ export function isWhiteColor(color: string) {
   return colord(color).isEqual("#ffffff");
 }
 
+export function isColor(color: string) {
+  return colord(color).isValid();
+}
+
 export function isBlackColor(color: string) {
   return colord(color).isEqual("#000000");
 }
