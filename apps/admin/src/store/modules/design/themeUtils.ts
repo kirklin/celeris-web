@@ -130,6 +130,12 @@ function getOtherTheme(_darkMode: boolean): GlobalThemeOverrides {
     Card: {
       borderRadius: "1rem",
     },
+    Statistic: {
+      labelTextColor: _darkMode ? "#fff" : "#000",
+      valueTextColor: _darkMode ? "#fff" : "#000",
+      labelFontWeight: 400,
+      valueFontWeight: 800,
+    },
   };
 }
 /**

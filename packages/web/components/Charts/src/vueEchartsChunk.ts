@@ -3,63 +3,64 @@ import ECharts from "vue-echarts";
 import { use } from "echarts/core";
 import { CanvasRenderer, SVGRenderer } from "echarts/renderers";
 
-// import {
-// BarChart,
-// BoxplotChart,
-// CandlestickChart,
-// CustomChart,
-// EffectScatterChart,
-// FunnelChart,
-// GaugeChart,
-// GraphChart,
-// HeatmapChart,
-// LineChart,
-// LinesChart,
-// MapChart,
-// PictorialBarChart,
-// PieChart,
-// RadarChart,
-// SankeyChart,
-// ScatterChart,
-// SunburstChart,
-// ThemeRiverChart,
-// TreeChart,
-// TreemapChart,
-// } from "echarts/charts";
+import {
+  BarChart,
+  BoxplotChart,
+  CandlestickChart,
+  CustomChart,
+  EffectScatterChart,
+  FunnelChart,
+  GaugeChart,
+  GraphChart,
+  HeatmapChart,
+  LineChart,
+  LinesChart,
+  MapChart,
+  ParallelChart,
+  PictorialBarChart,
+  PieChart,
+  RadarChart,
+  SankeyChart,
+  ScatterChart,
+  SunburstChart,
+  ThemeRiverChart,
+  TreeChart,
+  TreemapChart,
+} from "echarts/charts";
 
-// import {
-// AriaComponent,
-// AxisPointerComponent,
-// BrushComponent,
-// CalendarComponent,
-// DataZoomComponent,
-// DataZoomInsideComponent,
-// DataZoomSliderComponent,
-// DatasetComponent,
-// GeoComponent,
-// GraphicComponent,
-// GridComponent,
-// LegendComponent,
-// MarkAreaComponent,
-// MarkLineComponent,
-// MarkPointComponent,
-// ParallelComponent,
-// PolarComponent,
-// SingleAxisComponent,
-// TimelineComponent,
-// TitleComponent,
-// ToolboxComponent,
-// TooltipComponent,
-// TransformComponent,
-// VisualMapComponent,
-// VisualMapContinuousComponent,
-// VisualMapPiecewiseComponent,
-// } from "echarts/components";
+import {
+  AriaComponent,
+  AxisPointerComponent,
+  BrushComponent,
+  CalendarComponent,
+  DataZoomComponent,
+  DataZoomInsideComponent,
+  DataZoomSliderComponent,
+  DatasetComponent,
+  GeoComponent,
+  GraphicComponent,
+  GridComponent,
+  LegendComponent,
+  MarkAreaComponent,
+  MarkLineComponent,
+  MarkPointComponent,
+  ParallelComponent,
+  PolarComponent,
+  SingleAxisComponent,
+  TimelineComponent,
+  TitleComponent,
+  ToolboxComponent,
+  TooltipComponent,
+  TransformComponent,
+  VisualMapComponent,
+  VisualMapContinuousComponent,
+  VisualMapPiecewiseComponent,
+} from "echarts/components";
 
-// import {
-//   LabelLayout,
-//   UniversalTransition,
-// } from "echarts/features";
+import {
+  LabelLayout,
+  UniversalTransition,
+} from "echarts/features";
 
 // -----------------
 // Render engines
@@ -84,28 +85,28 @@ use([SVGRenderer]);
 // });
 
 use([
-  // LineChart,
-  // BarChart,
-  // PieChart,
-  // ScatterChart,
-  // RadarChart,
-  // MapChart,
-  // TreeChart,
-  // TreemapChart,
-  // GraphChart,
-  // GaugeChart,
-  // FunnelChart,
-  // ParallelChart,
-  // SankeyChart,
-  // BoxplotChart,
-  // CandlestickChart,
-  // EffectScatterChart,
-  // LinesChart,
-  // HeatmapChart,
-  // PictorialBarChart,
-  // ThemeRiverChart,
-  // SunburstChart,
-  // CustomChart,
+  LineChart,
+  BarChart,
+  PieChart,
+  ScatterChart,
+  RadarChart,
+  MapChart,
+  TreeChart,
+  TreemapChart,
+  GraphChart,
+  GaugeChart,
+  FunnelChart,
+  ParallelChart,
+  SankeyChart,
+  BoxplotChart,
+  CandlestickChart,
+  EffectScatterChart,
+  LinesChart,
+  HeatmapChart,
+  PictorialBarChart,
+  ThemeRiverChart,
+  SunburstChart,
+  CustomChart,
 ]);
 
 // -------------------
@@ -124,7 +125,7 @@ use([
 //     yAxis: {...},
 //     series: [{...}]
 // });
-// use(GridComponent);
+use(GridComponent);
 
 // `polar` coordinate system, for example:
 // chart.setOption({
@@ -135,7 +136,7 @@ use([
 //         coordinateSystem: 'polar'
 //     }]
 // });
-// use(PolarComponent);
+use(PolarComponent);
 
 // `geo` coordinate system, for example:
 // chart.setOption({
@@ -144,7 +145,7 @@ use([
 //         coordinateSystem: 'geo'
 //     }]
 // });
-// use(GeoComponent);
+use(GeoComponent);
 
 // `singleAxis` coordinate system (notice, it is a coordinate system
 // with only one axis, work for chart like theme river), for example:
@@ -152,7 +153,7 @@ use([
 //     singleAxis: {...}
 //     series: [{type: 'themeRiver', ...}]
 // });
-// use(SingleAxisComponent);
+use(SingleAxisComponent);
 
 // `parallel` coordinate system, only work for parallel series, for example:
 // chart.setOption({
@@ -162,7 +163,7 @@ use([
 //         type: 'parallel'
 //     }]
 // });
-// use(ParallelComponent);
+use(ParallelComponent);
 
 // `calendar` coordinate system. for example,
 // chart.setOption({
@@ -171,7 +172,7 @@ use([
 //         coordinateSystem: 'calendar'
 //     }]
 // );
-// use(CalendarComponent);
+use(CalendarComponent);
 
 // ------------------
 // Other components
@@ -181,19 +182,19 @@ use([
 // chart.setOption({
 //     graphic: {...}
 // });
-// use(GraphicComponent);
+use(GraphicComponent);
 
 // `toolbox` component, for example:
 // chart.setOption({
 //     toolbox: {...}
 // });
-// use(ToolboxComponent);
+use(ToolboxComponent);
 
 // `tooltip` component, for example:
 // chart.setOption({
 //     tooltip: {...}
 // });
-// use(TooltipComponent);
+use(TooltipComponent);
 
 // `axisPointer` component, for example:
 // chart.setOption({
@@ -203,7 +204,7 @@ use([
 // chart.setOption({
 //     axisPointer: {...}
 // });
-// use(AxisPointerComponent);
+use(AxisPointerComponent);
 
 // `brush` component, for example:
 // chart.setOption({
@@ -213,80 +214,80 @@ use([
 // chart.setOption({
 //     tooltip: {feature: {brush: {...}}
 // })
-// use(BrushComponent);
+use(BrushComponent);
 
 // `title` component, for example:
 // chart.setOption({
 //     title: {...}
 // });
-// use(TitleComponent);
+use(TitleComponent);
 
 // `timeline` component, for example:
 // chart.setOption({
 //     timeline: {...}
 // });
-// use(TimelineComponent);
+use(TimelineComponent);
 
 // `markPoint` component, for example:
 // chart.setOption({
 //     series: [{markPoint: {...}}]
 // });
-// use(MarkPointComponent);
+use(MarkPointComponent);
 
 // `markLine` component, for example:
 // chart.setOption({
 //     series: [{markLine: {...}}]
 // });
-// use(MarkLineComponent);
+use(MarkLineComponent);
 
 // `markArea` component, for example:
 // chart.setOption({
 //     series: [{markArea: {...}}]
 // });
-// use(MarkAreaComponent);
+use(MarkAreaComponent);
 
 // `legend` component not scrollable. for example:
 // chart.setOption({
 //     legend: {...}
 // });
-// use(LegendComponent);
+use(LegendComponent);
 
 // `dataZoom` component including both `dataZoomInside` and `dataZoomSlider`.
-// use(DataZoomComponent);
+use(DataZoomComponent);
 
 // `dataZoom` component providing drag, pinch, wheel behaviors
 // inside coordinate system, for example:
 // chart.setOption({
 //     dataZoom: {type: 'inside'}
 // });
-// use(DataZoomInsideComponent);
+use(DataZoomInsideComponent);
 
 // `dataZoom` component providing a slider bar, for example:
 // chart.setOption({
 //     dataZoom: {type: 'slider'}
 // });
-// use(DataZoomSliderComponent);
+use(DataZoomSliderComponent);
 
 // `visualMap` component including both `visualMapContinuous` and `visualMapPiecewise`.
-// use(VisualMapComponent);
+use(VisualMapComponent);
 
 // `visualMap` component providing continuous bar, for example:
 // chart.setOption({
 //     visualMap: {type: 'continuous'}
 // });
-// use(VisualMapContinuousComponent);
+use(VisualMapContinuousComponent);
 
 // `visualMap` component providing pieces bar, for example:
 // chart.setOption({
 //     visualMap: {type: 'piecewise'}
 // });
-// use(VisualMapPiecewiseComponent);
+use(VisualMapPiecewiseComponent);
 
 // `aria` component providing aria, for example:
 // chart.setOption({
 //     aria: {...}
 // });
-// use(AriaComponent);
+use(AriaComponent);
 
 // dataset transform
 // chart.setOption({
@@ -294,9 +295,9 @@ use([
 //          transform: []
 //     }
 // });
-// use(TransformComponent);
+use(TransformComponent);
 
-// use(DatasetComponent);
+use(DatasetComponent);
 
 // universal transition
 // chart.setOption({
@@ -304,7 +305,7 @@ use([
 //         universalTransition: { enabled: true }
 //     }
 // })
-// use(UniversalTransition);
+use(UniversalTransition);
 
 // label layout
 // chart.setOption({
@@ -312,5 +313,5 @@ use([
 //         labelLayout: { hideOverlap: true }
 //     }
 // })
-// use(LabelLayout);
+use(LabelLayout);
 export default ECharts;

@@ -1,4 +1,5 @@
 @import "naive-override.css";
+@import "echarts-tooltip-custom.css";
 @import "mark.css";
 @import "transition.css";
 
