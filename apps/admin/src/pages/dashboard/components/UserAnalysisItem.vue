@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { useThemeVars } from "@celeris/ca-components";
+import { isNil } from "@celeris/utils";
+import type { ToolTipFormatterParams } from "../../../../types/echarts";
 import { DataInsightCard } from "~/component/Card";
 import CardInnerIcon from "~/pages/dashboard/components/CardInnerIcon.vue";
 import { queryUserAnalysisData } from "~/apis/internal/dashboard";
@@ -24,7 +26,7 @@ const props = defineProps({
 });
 
 const { loading, setLoading } = useLoading(true);
-const count = ref(0);
+const count = ref();
 const growth = ref(100);
 const chartData = ref<any>([]);
 const themeVariables = useThemeVars();
@@ -46,7 +48,18 @@ const { chartOption } = useChartOption(() => {
     tooltip: {
       show: true,
       trigger: "axis",
-      formatter: "{c}",
+      formatter(params) {
+        const [firstElement] = params as ToolTipFormatterParams[];
+        const getData = () => {
+          return firstElement.componentSubType === "line" ? firstElement.data : (firstElement.data as any)?.value;
+        };
+        if (!isNil(firstElement)) {
+          count.value = getData();
+        }
+        return `<div>
+            <p class="tooltip-title">${getData()}</p>
+          </div>`;
+      },
     },
     series: [
       {
@@ -98,7 +111,7 @@ fetchData({ quota: props.quota });
 
 <template>
   <NSpin :show="loading" class="w-full">
-    <DataInsightCard :title="title" :data-count="count" :chart-height="100">
+    <DataInsightCard :title="title" :data-count="count" :chart-height="150">
       <template #icon>
         <CardInnerIcon :icon-name="icon" container />
       </template>

@@ -95,7 +95,7 @@ const userData = ref<number[]>([]);
 const totalConversationData = ref<number[]>([]);
 const copiedConversationData = ref<number[]>([]);
 const likedResponsesData = ref<number[]>([]);
-const { chartOption } = useChartOption(() => {
+const { chartOption } = useChartOption((isDark: boolean) => {
   return {
     grid: {
       left: "2.6%",
@@ -152,7 +152,7 @@ const { chartOption } = useChartOption(() => {
       },
       splitLine: {
         lineStyle: {
-          color: getDarkMode.value ? "#2E2E30" : "#F2F3F5",
+          color: isDark ? "#2E2E30" : "#F2F3F5",
         },
       },
     },
@@ -269,7 +269,4 @@ fetchData();
 </template>
 
 <style scoped>
-.ca-statistic .ca-statistic-value .ca-statistic-value__prefix .ca-icon{
-  //vertical-align: text-top !important;
-}
 </style>

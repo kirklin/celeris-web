@@ -8,13 +8,13 @@ import UserAnalysisItem from "~/pages/dashboard/components/UserAnalysisItem.vue"
       <UserAnalysisItem title="对话满意度趋势" chart-type="line" quota="user-heart" icon="tabler:user-heart" />
     </NGridItem>
     <NGridItem>
-      <UserAnalysisItem title="用户增长量" chart-type="bar" quota="user-up" icon="tabler:user-up" />
-    </NGridItem>
-    <NGridItem>
       <UserAnalysisItem title="用户消费趋势" chart-type="line" quota="user-dollar" icon="tabler:user-dollar" />
     </NGridItem>
     <NGridItem>
       <UserAnalysisItem title="用户分享趋势" chart-type="line" quota="user-share" icon="tabler:user-share" />
+    </NGridItem>
+    <NGridItem>
+      <UserAnalysisItem title="用户增长量" chart-type="bar" quota="user-up" icon="tabler:user-up" />
     </NGridItem>
   </NGrid>
 </template>

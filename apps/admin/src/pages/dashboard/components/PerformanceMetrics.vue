@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { useThemeVars } from "@celeris/ca-components";
 
-const { getDarkMode } = useThemeSetting();
 const themeVariables = useThemeVars();
-const { chartOption } = useChartOption(() => {
+const { chartOption } = useChartOption((isDark: boolean) => {
   return {
     grid: {
       left: 0,
@@ -21,7 +20,7 @@ const { chartOption } = useChartOption(() => {
       itemHeight: 10,
       itemGap: 20,
       textStyle: {
-        color: getDarkMode.value ? "#ffffff" : "#4E5969",
+        color: isDark ? "#ffffff" : "#4E5969",
       },
     },
     radar: {
@@ -36,16 +35,16 @@ const { chartOption } = useChartOption(() => {
         { name: "消息处理速度" },
       ],
       axisName: {
-        color: getDarkMode.value ? "#ffffff" : "#1D2129",
+        color: isDark ? "#ffffff" : "#1D2129",
       },
       axisLine: {
         lineStyle: {
-          color: getDarkMode.value ? "#484849" : "#E5E6EB",
+          color: isDark ? "#484849" : "#E5E6EB",
         },
       },
       splitLine: {
         lineStyle: {
-          color: getDarkMode.value ? "#484849" : "#E5E6EB",
+          color: isDark ? "#484849" : "#E5E6EB",
         },
       },
       splitArea: {
@@ -74,7 +73,7 @@ const { chartOption } = useChartOption(() => {
             name: "gpt-4",
             symbol: "none",
             itemStyle: {
-              color: getDarkMode.value ? "#A079DC" : "#313CA9",
+              color: isDark ? "#A079DC" : "#313CA9",
             },
           },
           {
@@ -82,7 +81,7 @@ const { chartOption } = useChartOption(() => {
             name: "gpt-4-vision-preview",
             symbol: "none",
             itemStyle: {
-              color: getDarkMode.value ? "#3D72F6" : "#21CCFF",
+              color: isDark ? "#3D72F6" : "#21CCFF",
             },
           },
         ],
