@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HeroImg from "./images/ripple/hero.gif";
+import PageWrapper from "~/component/PageWrapper/src/PageWrapper.vue";
 
 defineOptions({
   name: "Ripple",
@@ -9,7 +10,7 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div class="h-full flex flex-row space-x-2xl">
+  <PageWrapper class="flex flex-row space-x-2xl">
     <NCard v-ripple content-class="bg-primary rounded-2xl">
       <div class="space-y-3xl text-white text-chinese">
         <h1 class="text-7xl">
@@ -29,7 +30,7 @@ const { t } = useI18n();
       alt="Two containers that display a bounded and unbounded ripple on interaction."
       title="A bounded and unbounded ripple."
     >
-  </div>
+  </PageWrapper>
 </template>
 
 <style scoped>

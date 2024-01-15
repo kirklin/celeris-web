@@ -2,6 +2,7 @@
 import type { UserInfo } from "@celeris/types";
 import { useUserStore } from "~/store/modules/user";
 import ToolTipper from "~/component/ActionIcon/src/ToolTipper.vue";
+import PageWrapper from "~/component/PageWrapper/src/PageWrapper.vue";
 
 const ROLE_ICON = "tabler:user";
 const LOCATION_ICON = "tabler:map-pin";
@@ -14,7 +15,7 @@ const userInfo = toRef<UserInfo | null>(userStore.getUserInfo);
 </script>
 
 <template>
-  <div class="page-wrapper">
+  <PageWrapper>
     <NCard class="header flex flex-col" :content-style="{ padding: 0 }">
       <div class="user-info flex flex-wrap gap-8 p-8 pb-6 border-b border-solid">
         <div class="avatar relative h-24">
@@ -69,7 +70,7 @@ const userInfo = toRef<UserInfo | null>(userStore.getUserInfo);
         </NTabPane>
       </NTabs>
     </div>
-  </div>
+  </PageWrapper>
 </template>
 
 <style scoped>

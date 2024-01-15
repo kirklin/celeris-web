@@ -4,6 +4,7 @@ import { createColumnHelper, getCoreRowModel, useVueTable } from "@tanstack/vue-
 import { AppTable } from "~/component/AppTable";
 import type { ChatGPTDemoTableRow } from "~/pages/components/headless-table/basic/data";
 import { chatGPTDemoTestData } from "~/pages/components/headless-table/basic/data";
+import PageWrapper from "~/component/PageWrapper/src/PageWrapper.vue";
 
 defineOptions({
   name: "HeadlessTableBasic",
@@ -41,9 +42,11 @@ const table = useVueTable({
 </script>
 
 <template>
-  <NCard :title="t('page.headlessTable.pageTitles.basic')">
-    <AppTable :table="table" />
-  </NCard>
+  <PageWrapper>
+    <NCard :title="t('page.headlessTable.pageTitles.basic')">
+      <AppTable :table="table" />
+    </NCard>
+  </PageWrapper>
 </template>
 
 <style scoped>
