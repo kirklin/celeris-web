@@ -263,7 +263,7 @@ fetchData();
           </NStatistic>
         </NCol>
       </NRow>
-      <CACharts style="height: 328px; margin-top: 20px" :option="chartOption" />
+      <CACharts style="height: 320px; margin-top: 10px" :option="chartOption" />
     </NCard>
   </NSpin>
 </template>
