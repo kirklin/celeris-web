@@ -9,6 +9,9 @@
     "chat": {
       "chat": "Chat"
     },
+    "profile": {
+      "profile": "个人资料"
+    },
     "dashboard": {
       "dashboard": "仪表盘"
     },

@@ -4,6 +4,7 @@ import { ToolTipper } from "~/component/ActionIcon";
 import { useUserStore } from "~/store/modules/user";
 
 const { t } = useI18n();
+const router = useRouter();
 const userStore = useUserStore();
 const userInfo = toRef<UserInfo | null>(userStore.getUserInfo);
 const dialog = useDialog();
@@ -41,18 +42,21 @@ function handleLogout() {
         </NEl>
       </ToolTipper>
     </template>
-    <h4 class="mb-1">
-      <span class="font-bold">{{ t('layouts.userInfo.greeting') }}, </span> <span class="">{{ userInfo?.fullName }} </span>
-    </h4>
-    <p>
-      {{ t('layouts.userInfo.rolesList', { roles: userInfo?.roles }) }}
-    </p>
+    <template #header>
+      <h4 class="mb-1">
+        <span class="font-bold">{{ t('layouts.userInfo.greeting') }}, </span> <span class="">{{ userInfo?.fullName }} </span>
+      </h4>
+      <p>
+        {{ t('layouts.userInfo.rolesList', { roles: userInfo?.roles }) }}
+      </p>
+    </template>
+    <NButton block quaternary @click="router.push('/profile')">
+      {{ t('routes.profile.profile') }}
+    </NButton>
     <template #footer>
-      <div>
-        <NButton block quaternary @click="handleLogout">
-          {{ t('layouts.userInfo.logoutButton') }}
-        </NButton>
-      </div>
+      <NButton block quaternary @click="handleLogout">
+        {{ t('layouts.userInfo.logoutButton') }}
+      </NButton>
     </template>
   </NPopover>
 </template>

@@ -9,6 +9,9 @@
     "chat": {
       "chat": "Chat"
     },
+    "profile": {
+      "profile": "Profile"
+    },
     "dashboard": {
       "dashboard": "Dashboard"
     },
