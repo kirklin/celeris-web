@@ -44,7 +44,7 @@ const applicationRouterSearchGroupData: SearchGroup = reactive({
   name: t("searchDialog.applications"),
   items: shallowMenus.map(createRouterSearchGroupItem),
 });
-// TODO ChatBot 的角色和系统操作自动生成数据。
+
 const searchGroups = ref<SearchGroups>([
   applicationRouterSearchGroupData,
   {
@@ -294,7 +294,7 @@ onMounted(() => {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background-color: var(--primary-color-1);
+  background-color: var(--code-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -307,8 +307,7 @@ onMounted(() => {
   font-size: 0.9em;
 }
 .search-dialog .search-dialog-action-bar .content-wrap .group .group-list .item.active {
-  background-color: rgba(var(--primary-color-suppl-rgb),0.85);
-  box-shadow: 0 0 8px 0 var(--primary-color-suppl);
+  background-color: var(--hover-color);
 }
 .search-dialog .search-dialog-action-bar .content-wrap .group .group-list .item:hover {
   box-shadow: 0 0 0 1px var(--primary-color-hover) inset;
