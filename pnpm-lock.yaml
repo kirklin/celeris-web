@@ -399,8 +399,8 @@ importers:
         specifier: ^4.1.1
         version: 4.1.1
       unocss-preset-chinese:
-        specifier: ^0.3.0
-        version: 0.3.0(unocss@0.58.3)
+        specifier: ^0.3.2
+        version: 0.3.2(unocss@0.58.3)
       unocss-preset-ease:
         specifier: ^0.0.3
         version: 0.0.3(unocss@0.58.3)
@@ -4600,18 +4600,8 @@ packages:
       '@unocss/core': 0.58.3
       unconfig: 0.3.11
 
-  /@unocss/core@0.55.7:
-    resolution: {integrity: sha512-c+bWe844Xjlwc1EPwHj0+n3LpntJG7ELPbEOOxNIG+CQdcEX0l1G0rkM8+nKstJ9WJmgpf1HdJQLVMF62HXvhw==}
-    dev: false
-
   /@unocss/core@0.58.3:
     resolution: {integrity: sha512-9hTxzsrSLh+07ql/lGhE+8ZbE9MTTeZeMx131cPf2jDJUxAZooLE5pBCoK0k77ZJGcribRrwPGkUScBNOK0cYQ==}
-
-  /@unocss/extractor-arbitrary-variants@0.55.7:
-    resolution: {integrity: sha512-imK2g/frlo5Ag0uVB+C/Psyo5+9AnqhoRAgYa6gyrQ/TJnrnwf+M3jFngU9evIMHw92vig1DGfPa2ZId901DwQ==}
-    dependencies:
-      '@unocss/core': 0.55.7
-    dev: false
 
   /@unocss/extractor-arbitrary-variants@0.58.3:
     resolution: {integrity: sha512-QszC2atLcvzyoZFsjgtMBbILN4lrYI60iVRWdii+GGiKVtoIaKRWiA/3WERkvYGVPseVWOMflUpfxNeq+s9zUw==}
@@ -4653,13 +4643,6 @@ packages:
       ofetch: 1.3.3
     transitivePeerDependencies:
       - supports-color
-
-  /@unocss/preset-mini@0.55.7:
-    resolution: {integrity: sha512-ZCskE2uprjGkpQezEPM6KPMf84rIZEUNc1p2DxWVHaFUPRV24/JSNsO4PsKrQgNIb2dLQxzPNlMzQJI7ssdBXQ==}
-    dependencies:
-      '@unocss/core': 0.55.7
-      '@unocss/extractor-arbitrary-variants': 0.55.7
-    dev: false
 
   /@unocss/preset-mini@0.58.3:
     resolution: {integrity: sha512-vPC97vZPY6J9uZ+KmK4x7atKFlZJPH4tR7+SmzTmguaGIHZJG8k1cjBCg+5M7P4MaxINRMukUQS8/mM/uWFqvQ==}
@@ -12135,8 +12118,8 @@ packages:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
     engines: {node: '>= 10.0.0'}
 
-  /unocss-preset-chinese@0.3.0(unocss@0.58.3):
-    resolution: {integrity: sha512-8Be43p6JxK+f50hbE9CXwrvyMmeSEMiw+lcu+6cZMnPQOOMoPYl/9IwC3SsoZw8d6aqnlAR5lBC6rMXICgAbjg==}
+  /unocss-preset-chinese@0.3.2(unocss@0.58.3):
+    resolution: {integrity: sha512-/0Y7DfwRMOntb/drvhz+FxZ6jisapBH8W+u+1Lkt6LYW19m9fg/xiQeWodcWhZrAaoSuv42mvsALBzZLngzo6Q==}
     peerDependencies:
       '@unocss/nuxt': '*'
       unocss: '*'
@@ -12146,8 +12129,8 @@ packages:
       unocss:
         optional: true
     dependencies:
-      '@unocss/core': 0.55.7
-      '@unocss/preset-mini': 0.55.7
+      '@unocss/core': 0.58.3
+      '@unocss/preset-mini': 0.58.3
       unocss: 0.58.3(postcss@8.4.32)(rollup@3.29.0)(vite@5.0.11)
     dev: false
 

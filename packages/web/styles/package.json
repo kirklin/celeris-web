@@ -17,7 +17,7 @@
   "dependencies": {
     "@kirklin/reset-css": "^0.0.3",
     "animate.css": "^4.1.1",
-    "unocss-preset-chinese": "^0.3.0",
+    "unocss-preset-chinese": "^0.3.2",
     "unocss-preset-ease": "^0.0.3"
   },
   "devDependencies": {

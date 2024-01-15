@@ -12,6 +12,11 @@
     "profile": {
       "profile": "个人资料"
     },
+    "design": {
+      "design": "设计",
+      "palette": "调色板",
+      "typography": "汉字排版"
+    },
     "dashboard": {
       "dashboard": "仪表盘"
     },

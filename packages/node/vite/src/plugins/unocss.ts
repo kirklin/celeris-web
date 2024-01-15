@@ -1,6 +1,6 @@
 import { presetAttributify, presetIcons, presetUno, transformerDirectives, transformerVariantGroup } from "unocss";
 import UnoCSS from "unocss/vite";
-import presetChinese from "unocss-preset-chinese";
+import presetChinese, { chineseTypography } from "unocss-preset-chinese";
 import presetEase from "unocss-preset-ease";
 import type { PluginOption } from "vite";
 
@@ -14,7 +14,10 @@ export function createUnoCSSPluginConfig(): PluginOption {
     presets: [
       presetUno({ dark: "class" }),
       presetAttributify(),
-      presetChinese(),
+      chineseTypography(),
+      presetChinese({
+        chineseType: "simplified",
+      }),
       presetEase(),
       presetIcons({
         scale: 1.2,

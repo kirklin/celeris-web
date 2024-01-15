@@ -12,6 +12,11 @@
     "profile": {
       "profile": "Profile"
     },
+    "design": {
+      "design": "Design",
+      "palette": "Palette",
+      "typography": "Typography"
+    },
     "dashboard": {
       "dashboard": "Dashboard"
     },
