@@ -108,7 +108,7 @@ const showColorPaletteValue = ref(false);
 }
 
 .color-palette__header {
-  @apply text-light h-24 p-4 font-semibold rounded-2xl hover:scale-105 transition-all;
+  @apply text-light h-24 p-4 font-semibold rounded hover:scale-105 transition-all;
 }
 
 .color-palette__header-title {
