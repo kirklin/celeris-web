@@ -1,5 +1,5 @@
 export interface SearchGroupItem {
-  iconName: string | null;
+  iconName: string | null | undefined;
   iconImage: string | null;
   key: number | string;
   title: string;

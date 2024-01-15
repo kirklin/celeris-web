@@ -101,7 +101,8 @@
     "chatBot": "ChatBot",
     "actions": "操作列表",
     "action": "操作",
-    "shortcut": "快捷方式"
+    "shortcut": "快捷方式",
+    "go": "前往"
   },
   "page": {
     "login": {

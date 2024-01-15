@@ -101,7 +101,8 @@
     "chatBot": "ChatBot",
     "action": "Action",
     "actions": "Actions",
-    "shortcut": "Shortcut"
+    "shortcut": "Shortcut",
+    "go": "Go to "
   },
   "page": {
     "login": {

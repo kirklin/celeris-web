@@ -2,8 +2,10 @@
 import type { ScrollbarInst } from "naive-ui";
 import { isWindows } from "@celeris/utils";
 import Highlighter from "vue-highlight-words";
+import type { Menu } from "@celeris/types";
 import { useSearchDialog } from "~/composables/useSearchDialog";
-import type { SearchGroupItem, SearchGroups } from "~/component/SearchDialog/src/types";
+import type { SearchGroup, SearchGroupItem, SearchGroups } from "~/component/SearchDialog/src/types";
+import { getShallowMenus } from "~/router/menus";
 
 const SearchIcon = "tabler:search";
 const ArrowEnterIcon = "fluent:arrow-enter-left-24-regular";
@@ -13,28 +15,38 @@ const CloseIcon = "tabler:x";
 const { toggle: toggleFullScreen } = useFullscreen();
 
 const router = useRouter();
-const { t } = useI18n();
+const { t, te } = useI18n();
 const isDialogVisible = ref(false);
 const search = ref("");
 const activeItem = ref<null | string | number>(null);
 const scrollContent = ref<(ScrollbarInst & { $el: any }) | null>(null);
-// TODO 根据路由、ChatBot 的角色和系统行为自动生成数据。
-const groups = ref<SearchGroups>([
-  {
-    name: t("searchDialog.applications"),
-    items: [
-      {
-        iconName: "tabler:home",
-        iconImage: null,
-        key: 1,
-        title: "回到首页",
-        label: t("searchDialog.shortcut"),
-        action() {
-          router.push({ path: "/" });
-        },
-      },
-    ],
-  },
+
+function i18nRender(key: string) {
+  return te(key) ? t(key) : key;
+}
+
+function createRouterSearchGroupItem(item: Menu): SearchGroupItem {
+  return {
+    iconName: item.icon,
+    iconImage: null,
+    key: item.path,
+    title: `${t("searchDialog.go")}${i18nRender(item.name)}`,
+    label: t("searchDialog.shortcut"),
+    action() {
+      router.push({ path: item.path });
+    },
+  };
+}
+
+// 获取菜单数据
+const shallowMenus = getShallowMenus();
+const applicationRouterSearchGroupData: SearchGroup = reactive({
+  name: t("searchDialog.applications"),
+  items: shallowMenus.map(createRouterSearchGroupItem),
+});
+// TODO ChatBot 的角色和系统操作自动生成数据。
+const searchGroups = ref<SearchGroups>([
+  applicationRouterSearchGroupData,
   {
     name: t("searchDialog.chatBot"),
     items: [
@@ -73,10 +85,10 @@ const keywords = computed<string[]>(() => {
 
 const filteredGroups = computed<SearchGroups>(() => {
   if (keywords.value.length === 0) {
-    return groups.value;
+    return searchGroups.value;
   }
 
-  const newGroups: SearchGroups = groups.value.map((group) => {
+  const newGroups: SearchGroups = searchGroups.value.map((group) => {
     const items = group.items.filter((item) => {
       const titleMatch = keywords.value.some(k => item.title.toLowerCase().includes(k.toLowerCase()));
       const tagsMatch = item.tags && keywords.value.some(k => item.tags?.toLowerCase().includes(k.toLowerCase()));
@@ -172,7 +184,7 @@ onMounted(() => {
 <template>
   <NModal v-model:show="isDialogVisible" class="search-dialog">
     <NCard
-      class="w-1/4"
+      class="w-[650px]"
       content-style="padding: 0;"
       :bordered="false"
       size="huge"
@@ -282,7 +294,7 @@ onMounted(() => {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background-color: var(--primary-color5);
+  background-color: var(--primary-color-1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -295,7 +307,7 @@ onMounted(() => {
   font-size: 0.9em;
 }
 .search-dialog .search-dialog-action-bar .content-wrap .group .group-list .item.active {
-  background-color: var(--primary-color-suppl);
+  background-color: rgba(var(--primary-color-suppl-rgb),0.85);
   box-shadow: 0 0 8px 0 var(--primary-color-suppl);
 }
 .search-dialog .search-dialog-action-bar .content-wrap .group .group-list .item:hover {
