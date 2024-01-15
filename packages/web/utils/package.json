@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@kirklin/logger": "0.0.2",
+    "@kirklin/palette": "^0.1.1",
     "colord": "^2.9.3",
     "crypto-js": "^4.2.0",
     "dayjs": "^1.11.10",

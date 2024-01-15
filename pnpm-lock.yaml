@@ -448,6 +448,9 @@ importers:
       '@kirklin/logger':
         specifier: 0.0.2
         version: 0.0.2
+      '@kirklin/palette':
+        specifier: ^0.1.1
+        version: 0.1.1
       colord:
         specifier: ^2.9.3
         version: 2.9.3
@@ -3309,6 +3312,13 @@ packages:
 
   /@kirklin/logger@0.0.2:
     resolution: {integrity: sha512-CGZ9HGmHGTcGnU8CDQm7RR7hZgxLyRHTIFpS1FDCQkVaipdL/poq72ibpKqqQflomgKRCYV6GReP7ZXEZeDx1w==}
+
+  /@kirklin/palette@0.1.1:
+    resolution: {integrity: sha512-0Anm4y7CFwkOS/vZEUjmMa1Rmxu/YfKEKXUZbw1lqN0KCN2YoJ4mZs7yJ+6t7UGCiW/Mk7izXEZ6tt7m5VFDiw==}
+    engines: {node: '>=16'}
+    dependencies:
+      colord: 2.9.3
+    dev: false
 
   /@kirklin/reset-css@0.0.3:
     resolution: {integrity: sha512-EUfxCc0U8iIn4hwhtsOha6uYKul839pyol4Yt5FJtLT8BH/F9MLMkik6KkKHhvInk8nVu4flSsFBGn/OZuu74g==}
