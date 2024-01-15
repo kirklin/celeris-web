@@ -24,12 +24,12 @@ const { chartOption } = useChartOption((isDark: boolean) => {
       },
     },
     radar: {
-      center: ["40%", "50%"],
+      center: ["35%", "50%"],
       radius: 80,
       indicator: [
+        { name: "API调用次数" },
         { name: "响应时间" },
         { name: "错误率" },
-        { name: "API调用次数" },
         { name: "服务器负载" },
         { name: "用户满意度" },
         { name: "消息处理速度" },
@@ -78,7 +78,7 @@ const { chartOption } = useChartOption((isDark: boolean) => {
           },
           {
             value: [5850, 11000, 26000, 27500, 46950, 18000],
-            name: "gpt-4-vision-preview",
+            name: "gpt-4-vision",
             symbol: "none",
             itemStyle: {
               color: isDark ? "#3D72F6" : "#21CCFF",
