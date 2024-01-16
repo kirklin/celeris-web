@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { ScrollbarInst } from "naive-ui";
 import { isWindows } from "@celeris/utils";
-import Highlighter from "vue-highlight-words";
+import Highlighter from "headless-highlighter";
 import type { Menu } from "@celeris/types";
 import { useSearchDialog } from "~/composables/useSearchDialog";
 import type { SearchGroup, SearchGroupItem, SearchGroups } from "~/component/SearchDialog/src/types";

@@ -134,6 +134,9 @@ importers:
       destr:
         specifier: ^2.0.2
         version: 2.0.2
+      headless-highlighter:
+        specifier: ^0.0.0
+        version: 0.0.0(vue@3.4.5)
       nprogress:
         specifier: ^0.2.0
         version: 0.2.0
@@ -149,9 +152,6 @@ importers:
       vue:
         specifier: ^3.4.5
         version: 3.4.5(typescript@5.3.3)
-      vue-highlight-words:
-        specifier: ^3.0.1
-        version: 3.0.1(vue@3.4.5)
       vue-i18n:
         specifier: ^9.8.0
         version: 9.8.0(vue@3.4.5)
@@ -8055,6 +8055,15 @@ packages:
     hasBin: true
     dev: true
 
+  /headless-highlighter@0.0.0(vue@3.4.5):
+    resolution: {integrity: sha512-I2ed8XvqNkyhRfTadX2PKdxQle0nRZz/xg2fOA4E1BVdJfkZL8hMmWM26KQgfVkSbsPB+l7tTT79ztzYRUaoHQ==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      highlight-words-core: 1.2.2
+      vue: 3.4.5(typescript@5.3.3)
+    dev: false
+
   /highlight-words-core@1.2.2:
     resolution: {integrity: sha512-BXUKIkUuh6cmmxzi5OIbUJxrG8OAk2MqoL1DtO3Wo9D2faJg2ph5ntyuQeLqaHJmzER6H5tllCDA9ZnNe9BVGg==}
     dev: false
@@ -12791,15 +12800,6 @@ packages:
     peerDependencies:
       vue: ^2.6.0
     dependencies:
-      vue: 3.4.5(typescript@5.3.3)
-    dev: false
-
-  /vue-highlight-words@3.0.1(vue@3.4.5):
-    resolution: {integrity: sha512-t6L0+KRaMzX5RVubWl6Sog+Aa+U0kHsbUlDIrln1VfajR2SEg+zQYfXov8UmX3MLNOfd6cv7MCM6LclqNlW4ww==}
-    peerDependencies:
-      vue: ^3.0.0
-    dependencies:
-      highlight-words-core: 1.2.2
       vue: 3.4.5(typescript@5.3.3)
     dev: false
 

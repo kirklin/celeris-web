@@ -39,12 +39,12 @@
     "@tanstack/vue-query": "^5.17.1",
     "@tanstack/vue-table": "^8.11.3",
     "destr": "^2.0.2",
+    "headless-highlighter": "^0.0.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
     "pkg-types": "^1.0.3",
     "vue": "^3.4.5",
-    "vue-highlight-words": "^3.0.1",
     "vue-i18n": "^9.8.0",
     "vue-router": "^4.2.5"
   },
