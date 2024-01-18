@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, defineProps, toRefs, withDefaults } from "vue";
-import { PageConstants } from "@celeris/constants";
+import { PageConstants, RouterTransitionConstants } from "@celeris/constants";
 import { useRouter } from "vue-router";
 import { logoImage } from "@celeris/assets";
 
@@ -56,18 +56,22 @@ const isLightTheme = computed(() => !isDarkMode.value);
   <!-- 应用程序 Logo 区域 -->
   <div :class="`text-${titleSize}`" class="app-logo flex items-center h-full " @click="navigateHome">
     <!-- 根据主题和模式显示 Logo 图片 -->
-    <img
-      v-if="isDarkTheme && !isMini || isLightTheme && !isMini"
-      :src="logoImage"
-      class="block h-full max-h-8 m-3"
-      alt="App Logo"
+    <Transition
+      appear :name="RouterTransitionConstants.FADE" mode="in-out"
     >
-    <img
-      v-else-if="isDarkTheme && isMini || isLightTheme && isMini"
-      :src="logoImage"
-      class="block h-full max-h-8 m-3"
-      alt="App Logo"
-    >
+      <img
+        v-if="isDarkTheme && !isMini || isLightTheme && !isMini"
+        :src="logoImage"
+        class="block h-full max-h-8 m-3"
+        alt="App Logo"
+      >
+      <img
+        v-else-if="isDarkTheme && isMini || isLightTheme && isMini"
+        :src="logoImage"
+        class="block h-full max-h-8 m-3"
+        alt="App Logo"
+      >
+    </Transition>
     <!-- 显示标题部分 -->
     <span v-show="displayTitle" class="font-semibold">{{ applicationName }}</span>
   </div>
