@@ -11,7 +11,7 @@ const { collapsed } = toRefs(props);
 
 <template>
   <div class="my-auto flex h-16">
-    <CAAppLogo :show-title="!collapsed" />
+    <CAAppLogo :display-title="!collapsed" />
   </div>
 </template>
 
