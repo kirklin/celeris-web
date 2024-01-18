@@ -17,6 +17,7 @@ declare module 'vue' {
     NBreadcrumbItem: typeof import('@celeris/ca-components')['NBreadcrumbItem']
     NButton: typeof import('@celeris/ca-components')['NButton']
     NCard: typeof import('@celeris/ca-components')['NCard']
+    NCheckbox: typeof import('@celeris/ca-components')['NCheckbox']
     NCol: typeof import('@celeris/ca-components')['NCol']
     NColorPicker: typeof import('@celeris/ca-components')['NColorPicker']
     NConfigProvider: typeof import('@celeris/ca-components')['NConfigProvider']

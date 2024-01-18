@@ -123,6 +123,36 @@
           "placeholder": "请输入密码",
           "error": "密码不能为空"
         },
+        "confirmPassword": {
+          "label": "确认密码",
+          "placeholder": "请输入密码",
+          "error": "确认密码不能为空",
+          "validator": "两次密码不一致！"
+        },
+        "forgotPassword": {
+          "label": "手机号码",
+          "placeholder": "示例：15912345678",
+          "requiredError": "手机号码不能为空",
+          "invalidFormatError": "无效的手机号码格式"
+        },
+        "socialButtons": {
+          "signInWithQQ": "使用 QQ 登录",
+          "signInWithWeChat": "使用微信登录"
+        },
+        "signText": {
+          "signIn": "还没有账号吗？",
+          "forgotPassword": "返回登录",
+          "signUp": "已经有账号了吗？"
+        },
+        "welcomeBackTitle": "欢迎回来",
+        "helloTitle": "你好",
+        "forgotPasswordTitle": "忘记密码",
+        "greetingText": "Celeris Web 是一个使用 Vue 3、Vite 和 TypeScript 构建的高性能、可定制的前端开发模板。",
+        "sendResetLinkButton": "发送重置链接",
+        "resetLinkSentMessage": "重置链接已发送",
+        "signUp": "注册",
+        "backToSignIn": "返回登录",
+        "signIn": "登录",
         "remember": "记住我",
         "loginButton": "登录",
         "registerButton": "注册",

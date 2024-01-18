@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { earningsIndicator, interwovenReflections, totalIncomeIndicator } from "@celeris/assets";
-import LoginForm from "~/pages/login/components/LoginForm.vue";
+import AuthForm from "~/pages/login/components/AuthForm/index.vue";
 
 defineOptions({
   name: "Login",
@@ -8,9 +8,9 @@ defineOptions({
 </script>
 
 <template>
-  <main class="bg-gray-50 dark:bg-gray-900 flex justify-center items-center">
-    <div
-      class="flex-[1.7] dark:bg-[rgb(33,41,70)] bg-white h-[100vh] relative <lg:hidden"
+  <NEl tag="main" class="bg-gray-100 dark:bg-[--base-color] flex justify-center items-center">
+    <NEl
+      class="flex-[2.5] bg-[--body-color] h-[100vh] rounded-l rounded-[3rem] relative <lg:hidden"
       :style="{
         backgroundImage: `url(${interwovenReflections})`,
       }"
@@ -27,21 +27,13 @@ defineOptions({
           backgroundImage: `url(${earningsIndicator})`,
         }"
       />
-    </div>
+    </NEl>
     <div class="flex-[2.5] flex justify-center">
-      <div class="dark:bg-[rgb(33,41,70)] w-[500px] px-[32px] py-[30px] mt-[-12%] bg-white rounded-lg <lg:(w-[94%] mx-auto)">
-        <div class="text-center">
-          <div class="flex justify-center gap-2">
-            <CAAppLogo title-size="3xl" />
-          </div>
-          <h3
-            class="dark:(text-white) text-[rgba(0,0,0,.45)] mb-[1em] text-[14px] font-normal"
-          />
-        </div>
-        <LoginForm />
+      <div class="w-[600px] px-[32px] py-[30px] mt-[-12%] rounded-2xl <lg:(w-[94%] mx-auto)">
+        <AuthForm />
       </div>
     </div>
-  </main>
+  </NEl>
 </template>
 
 <style scoped>
