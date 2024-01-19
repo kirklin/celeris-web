@@ -8,7 +8,7 @@ defineOptions({
 </script>
 
 <template>
-  <NEl tag="main" class="bg-gray-100 dark:bg-[--base-color] flex justify-center items-center">
+  <NEl tag="main" class="bg-gray-100 dark:bg-[--base-color] flex justify-center items-center overflow-x-hidden">
     <NEl
       class="flex-[2.5] bg-[--body-color] h-[100vh] rounded-l rounded-[3rem] relative <lg:hidden"
       :style="{
@@ -29,7 +29,7 @@ defineOptions({
       />
     </NEl>
     <div class="flex-[2.5] flex justify-center">
-      <div class="w-[600px] px-[32px] py-[30px] mt-[-12%] rounded-2xl <lg:(w-[94%] mx-auto)">
+      <div class="w-[600px] px-[32px] py-[30px] mt-[-5%] rounded-2xl <lg:(w-[94%] mx-auto)">
         <AuthForm />
       </div>
     </div>
