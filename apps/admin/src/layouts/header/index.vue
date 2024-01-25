@@ -6,6 +6,7 @@ import UserInfoButton from "~/layouts/header/components/UserInfoButton.vue";
 import SettingButton from "~/layouts/setting/index.vue";
 import Breadcrumb from "~/layouts/header/components/Breadcrumb.vue";
 import SearchAnyWhere from "~/layouts/header/components/SearchAnyWhere.vue";
+import LayoutTabs from "~/layouts/tabs/index.vue";
 
 defineOptions({
   name: "HeaderLayout",
@@ -17,8 +18,11 @@ defineOptions({
     <div class="md:block px-4">
       <CollapseButton />
     </div>
-    <div class="flex-grow-1">
+    <div class="flex-1">
       <Breadcrumb />
+    </div>
+    <div class="flex flex-grow-1 items-center">
+      <LayoutTabs />
     </div>
     <div class="flex">
       <NSpace>

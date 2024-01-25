@@ -6,4 +6,6 @@ export {
   intersection,
   uniqBy,
   pick,
+  split,
+  takeRight,
 } from "lodash-es";

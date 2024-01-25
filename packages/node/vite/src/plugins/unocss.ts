@@ -67,6 +67,7 @@ export function createUnoCSSPluginConfig(): PluginOption {
         primary_8: "var(--primary-color-8)",
         primary_9: "var(--primary-color-9)",
         primary_10: "var(--primary-color10)",
+        action: "var(--action-color)",
         info: "var(--info-color)",
         info_hover: "var(--info-color-hover)",
         info_suppl: "var(--info-color-suppl)",
