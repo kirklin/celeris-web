@@ -1,4 +1,4 @@
-export interface Role {
+export interface Assistant {
   id: string;
   name: string;
   avatar: string;
@@ -7,4 +7,7 @@ export interface Role {
   lastDate: Date;
   lastDateText: string;
   description: string;
+  likes?: number;
+  dislikes?: number;
+  shares?: number;
 }
