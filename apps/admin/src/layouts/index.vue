@@ -20,7 +20,7 @@ defineOptions({
         <Header />
       </header>
       <div class="block flex-1 h-full overflow-x-hidden rounded-2xl pl-0 pr-5 pt-0 pb-6">
-        <div class="min-h-full h-full w-full rounded-2xl bg-gray-100 p-4 dark:bg-gray-9">
+        <div class="min-h-full h-full w-full rounded-2xl common-bg p-4">
           <Content />
         </div>
       </div>

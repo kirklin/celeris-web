@@ -65,7 +65,9 @@ declare module 'vue' {
     NTabPane: typeof import('@celeris/ca-components')['NTabPane']
     NTabs: typeof import('@celeris/ca-components')['NTabs']
     NText: typeof import('@celeris/ca-components')['NText']
+    NTime: typeof import('@celeris/ca-components')['NTime']
     NTooltip: typeof import('@celeris/ca-components')['NTooltip']
+    NVirtualList: typeof import('@celeris/ca-components')['NVirtualList']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

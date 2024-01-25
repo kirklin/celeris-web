@@ -26,6 +26,7 @@ export function createUnoCSSPluginConfig(): PluginOption {
     ],
     shortcuts: {
       // position
+      "common-bg": "bg-gray-100 dark:bg-gray-900",
       "pr": "relative",
       "pa": "absolute",
       "pf": "fixed",

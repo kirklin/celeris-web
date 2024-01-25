@@ -28,7 +28,7 @@ provide(chatContextInjectionKey, {
     </NLayoutSider>
     <NLayoutContent>
       <NLayout has-sider sider-placement="right" class="h-full">
-        <NLayoutContent content-style="padding: 24px;">
+        <NLayoutContent content-class="p-4">
           <ChatPanel />
         </NLayoutContent>
         <NLayoutSider

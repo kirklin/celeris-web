@@ -5,12 +5,12 @@ import SendMessageButton from "~/pages/chat/components/ChatPanel/MessageInputAre
 </script>
 
 <template>
-  <div class="h-full w-full flex flex-col">
-    <div class="mb-2">
+  <div class="h-full w-full flex flex-col py-2">
+    <div class="mb-1">
       <ChatInputActionBar />
     </div>
     <ChatInputAreaInner />
-    <div class="flex mt-2">
+    <div class="flex mt-1">
       <div class="flex-1" />
       <SendMessageButton />
     </div>
