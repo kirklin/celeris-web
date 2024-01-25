@@ -36,7 +36,7 @@ function handleLogout() {
               <NAvatar round :src="userInfo?.avatarUrl" />
             </div>
             <div class="flex-1 flex items-center justify-center">
-              <svg class="text-center text-[var(--text-color-base)] text-xl i-tabler-settings" />
+              <svg class="text-center text-[var(--text-color-base)] text-xl i-tabler:user" />
             </div>
           </div>
         </NEl>

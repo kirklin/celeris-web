@@ -58,7 +58,7 @@ listenToRouteChange((route) => {
         closable
         @close="closePinnedTab(tab)"
       >
-        <div class="router-name color-primary-color" :class="{ 'current-tab': getCurrentTab()?.fullPath === tab.fullPath }" @click="go(tab.fullPath)">
+        <div class="router-name" :class="{ 'current-tab': getCurrentTab()?.fullPath === tab.fullPath }" @click="go(tab.fullPath)">
           {{ localize(tab.title) }}
         </div>
       </NTag>
@@ -74,8 +74,13 @@ listenToRouteChange((route) => {
 .layout-tags :deep(.ca-tag) {
   background-color: transparent;
 }
+
+.pinned-list :deep(.ca-tag) {
+  background-color: var(--action-color);
+}
+
 .layout-tags :deep(.ca-tag).ca-tag--round {
-  padding: 0;
+  padding: 0.5rem;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 400ms;
@@ -111,11 +116,6 @@ listenToRouteChange((route) => {
   cursor: pointer;
   margin-left: 0.25rem;
   margin-right: 0.25rem;
-}
-.layout-tags .router-name:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 0.1rem;
-  text-decoration-color: var(--primary-color-hover);
 }
 .layout-tags .current-tab {
   text-decoration: underline;
