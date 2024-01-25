@@ -525,10 +525,10 @@ defineOptions({
 </template>
 
 <style scoped>
-a{
+a {
   color: hsl(217, 89%, 61%);
   text-decoration: none;
-  @apply cursor-pointer
+  @apply cursor-pointer;
 }
 .article {
   margin-inline-start: auto;
@@ -541,28 +541,38 @@ a{
 .anchor {
   margin-inline-start: 0.25em;
 }
-  .article .anchor {
-    position: absolute;
-    left: -1em;
-    width: 1em;
-    margin-inline-start: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    line-height: inherit;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.2s linear;
-  }
-  .article .anchor:hover {
-    text-decoration: none;
-    border: 0;
-  }
-  .article h1, .article h2, .article h3, .article h4, .article h5, .article h6 {
-    position: relative;
-  }
-  .article h1:hover .anchor, .article h2:hover .anchor, .article h3:hover .anchor, .article h4:hover .anchor, .article h5:hover .anchor, .article h6:hover .anchor {
-    opacity: 1;
-  }
+.article .anchor {
+  position: absolute;
+  left: -1em;
+  width: 1em;
+  margin-inline-start: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: inherit;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+.article .anchor:hover {
+  text-decoration: none;
+  border: 0;
+}
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+  position: relative;
+}
+.article h1:hover .anchor,
+.article h2:hover .anchor,
+.article h3:hover .anchor,
+.article h4:hover .anchor,
+.article h5:hover .anchor,
+.article h6:hover .anchor {
+  opacity: 1;
+}
 .card {
   position: relative;
   width: 100%;

@@ -73,7 +73,8 @@ function selectDropdown(key) {
 </template>
 
 <style scoped>
-.breadcrumbAnimation-move, .breadcrumbAnimation-enter-active {
+.breadcrumbAnimation-move,
+.breadcrumbAnimation-enter-active {
   transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 }
 

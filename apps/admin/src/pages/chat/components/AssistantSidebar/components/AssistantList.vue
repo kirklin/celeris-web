@@ -32,7 +32,7 @@ function handleSelectedRole(assistant: Assistant) {
 </template>
 
 <style scoped>
-.contacts-list :deep(.ca-collapse-item__header){
+.contacts-list :deep(.ca-collapse-item__header) {
   padding-left: 0.5rem;
 }
 </style>

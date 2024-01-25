@@ -1,23 +1,23 @@
 .ca-modal-mask {
-	backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 .ca-modal,
 .ca-card.ca-modal[role] {
-	background-color: rgba(var(--modal-color-rgb), 0.75);
-	backdrop-filter: blur(20px);
-	max-width: 90%;
-	margin: 10vh auto;
+  background-color: rgba(var(--modal-color-rgb), 0.75);
+  backdrop-filter: blur(20px);
+  max-width: 90%;
+  margin: 10vh auto;
 }
 
 .ca-image-preview-overlay {
-	backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .ca-slider {
-	box-sizing: content-box;
+  box-sizing: content-box;
 }
 .ca-calendar * {
-	box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 /* Drawer component with rounded corners */

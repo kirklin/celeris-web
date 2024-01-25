@@ -34,7 +34,7 @@ const { t } = useI18n();
   font-size: inherit;
   top: 0;
 }
-.search-btn  > .ca-icon {
+.search-btn > .ca-icon {
   opacity: 0.5;
   transition: opacity 0.3s;
 }
@@ -44,13 +44,13 @@ const { t } = useI18n();
   font-size: 14px;
   transition: opacity 0.3s;
 }
-.search-btn  > code {
+.search-btn > code {
   background-color: var(--hover-color);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   padding-right: 10px;
 }
-.search-btn:hover  > .ca-icon {
+.search-btn:hover > .ca-icon {
   opacity: 0.9;
 }
 .search-btn:hover > span {

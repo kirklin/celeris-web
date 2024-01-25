@@ -282,7 +282,12 @@ onMounted(() => {
   margin-bottom: 5px;
   padding: 20px 10px 5px;
 }
-.search-dialog .search-dialog-action-bar .content-wrap .group .group-list .item {
+.search-dialog
+  .search-dialog-action-bar
+  .content-wrap
+  .group
+  .group-list
+  .item {
   padding: 7px 10px;
   gap: 10px;
   cursor: pointer;
@@ -290,7 +295,13 @@ onMounted(() => {
   width: 100%;
   text-align: left;
 }
-.search-dialog .search-dialog-action-bar .content-wrap .group .group-list .item .icon {
+.search-dialog
+  .search-dialog-action-bar
+  .content-wrap
+  .group
+  .group-list
+  .item
+  .icon {
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -299,17 +310,39 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
 }
-.search-dialog .search-dialog-action-bar .content-wrap .group .group-list .item .title {
+.search-dialog
+  .search-dialog-action-bar
+  .content-wrap
+  .group
+  .group-list
+  .item
+  .title {
   font-weight: bold;
 }
-.search-dialog .search-dialog-action-bar .content-wrap .group .group-list .item .label {
+.search-dialog
+  .search-dialog-action-bar
+  .content-wrap
+  .group
+  .group-list
+  .item
+  .label {
   opacity: 0.8;
   font-size: 0.9em;
 }
-.search-dialog .search-dialog-action-bar .content-wrap .group .group-list .item.active {
+.search-dialog
+  .search-dialog-action-bar
+  .content-wrap
+  .group
+  .group-list
+  .item.active {
   background-color: var(--hover-color);
 }
-.search-dialog .search-dialog-action-bar .content-wrap .group .group-list .item:hover {
+.search-dialog
+  .search-dialog-action-bar
+  .content-wrap
+  .group
+  .group-list
+  .item:hover {
   box-shadow: 0 0 0 1px var(--primary-color-hover) inset;
 }
 </style>

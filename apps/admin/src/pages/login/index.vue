@@ -38,7 +38,8 @@ defineOptions({
 
 <style scoped>
 .total-income-indicator-img {
-  animation: total-income-indicator-img-anim 10s linear 0ms infinite normal backwards;
+  animation: total-income-indicator-img-anim 10s linear 0ms infinite normal
+    backwards;
 }
 
 .earnings-indicator-img {
@@ -51,25 +52,25 @@ defineOptions({
   }
 
   50% {
-    transform: translate3d(0px, 30px, 0)
+    transform: translate3d(0px, 30px, 0);
   }
 
   100% {
-    transform: translate3d(0px, 0px, 0)
+    transform: translate3d(0px, 0px, 0);
   }
 }
 
 @keyframes earnings-indicator-img-anim {
   0% {
-    transform: translate3d(0px, 0px, 0)
+    transform: translate3d(0px, 0px, 0);
   }
 
   50% {
-    transform: translate3d(0px, 20px, 0)
+    transform: translate3d(0px, 20px, 0);
   }
 
   100% {
-    transform: translate3d(0px, 0px, 0)
+    transform: translate3d(0px, 0px, 0);
   }
 }
 
@@ -78,6 +79,6 @@ defineOptions({
 }
 
 .custom.slick-dots button {
-  background: rgba(0, 0, 0, .7) !important;
+  background: rgba(0, 0, 0, 0.7) !important;
 }
 </style>

@@ -73,11 +73,14 @@ const { selectedAssistantRef } = inject<ChatContextInjectionKey>(chatContextInje
 </template>
 
 <style scoped>
-.chat-history-action :deep(.ca-card) > .ca-card__content, :deep(.ca-card) > .ca-card__footer {
+.chat-history-action :deep(.ca-card) > .ca-card__content,
+:deep(.ca-card) > .ca-card__footer {
   box-sizing: border-box;
-  padding: 0 calc(var(--n-padding-left) / 2) calc(var(--n-padding-bottom) / 2) calc(var(--n-padding-left) / 2);
+  padding: 0 calc(var(--n-padding-left) / 2) calc(var(--n-padding-bottom) / 2)
+    calc(var(--n-padding-left) / 2);
 }
-.chat-history-action :deep(.ca-card) > .ca-card__content:first-child, :deep(.ca-card) > .ca-card__footer:first-child {
+.chat-history-action :deep(.ca-card) > .ca-card__content:first-child,
+:deep(.ca-card) > .ca-card__footer:first-child {
   padding-top: calc(var(--n-padding-bottom) / 2);
 }
 </style>

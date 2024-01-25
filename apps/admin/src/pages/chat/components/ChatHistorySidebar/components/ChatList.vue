@@ -73,7 +73,7 @@ function handleEnter(item: Item, isEdit: boolean, event: KeyboardEvent): void {
 </template>
 
 <style scoped>
-.chat-history-list :deep(.ca-collapse-item__header){
-  @apply pl-4
+.chat-history-list :deep(.ca-collapse-item__header) {
+  @apply pl-4;
 }
 </style>

@@ -8,6 +8,7 @@
 </div>
 
 ## Introduction
+
 Celeris Web is a free and open-source front-end development framework that utilizes the latest technologies, including Vue 3, Vite, and TypeScript. Its monorepo approach makes it easy to manage dependencies and collaborate on multiple projects, providing developers with a comprehensive solution for building modern web applications.
 
 One of the standout features of Celeris Web is its integration with OpenAI's ChatGPT API, which provides access to powerful natural language processing capabilities. This integration allows developers to easily incorporate natural language processing into their applications, making it an ideal choice for projects that require this functionality.
@@ -18,7 +19,7 @@ Get started with celeris-web today and experience a highly streamlined front-end
 
 ## Features
 
-- ⚡  [Lightning fast](https://github.com/kirklin/celeris-web#readme): Built with Vue 3, Vite, and pnpm 🔥
+- ⚡ [Lightning fast](https://github.com/kirklin/celeris-web#readme): Built with Vue 3, Vite, and pnpm 🔥
 - 💪 [Strongly typed](https://www.typescriptlang.org/): Uses TypeScript 💻
 - 📂 [Monorepo approach](https://en.wikipedia.org/wiki/Monorepo): Makes it easy to manage dependencies and collaborate on multiple projects 🤝
 - 🔥 [Latest syntax](https://github.com/vuejs/rfcs/pull/227): Uses the new <script setup> syntax 🆕
