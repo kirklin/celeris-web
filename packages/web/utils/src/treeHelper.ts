@@ -3,9 +3,15 @@ import { isArray } from "./typeChecks";
 /**
  * TreeHelperConfig interface defines the configuration for tree structure.
  * TreeHelperConfig 接口定义了树形结构的配置项。
- * @property idKey 节点标识符属性名，默认值为 "id"
- * @property childrenKey 子节点属性名，默认值为 "children"
- * @property parentKey 父节点标识符属性名，默认值为 "parentId"
+ *
+ * @property {keyof T} idKey - The property name for node identifier, default is "id".
+ *                           节点标识符属性名，默认值为 "id"。
+ *
+ * @property {keyof T} childrenKey - The property name for children nodes, default is "children".
+ *                                 子节点属性名，默认值为 "children"。
+ *
+ * @property {keyof T} parentKey - The property name for parent node identifier, default is "parentId".
+ *                                父节点标识符属性名，默认值为 "parentId"。
  */
 interface TreeHelperConfig<T = any> {
   idKey: keyof T;
@@ -342,10 +348,10 @@ export function mapTreeStructure<T = any, R = any>(
 /**
  * @description: Maps a single node in a tree structure into a new node with a specified structure.
  * @description: 将树形结构中的单个节点映射为具有指定结构的新节点。
- * @param {Object} node - The node to map.
+ * @param {object} node - The node to map.
  * @param {Function} convertNodeToStructure - The function that converts the node to a new node.
  * @param {TreeHelperConfig} config - The configuration options for the tree helper.
- * @returns {Object} - The new node.
+ * @returns {object} - The new node.
  */
 export function mapTreeNodeStructure<T = any, R = any>(
   node: T,

@@ -54,7 +54,7 @@ export function configVitePlugins(
 
   // Add the GenerateConfig plugin.
   // 添加 生成配置 插件
-  vitePlugins.push(createConfigPluginConfig(viteEnv.VITE_GLOB_BUILD_GENERATE_CONFIG === false));
+  vitePlugins.push(createConfigPluginConfig(viteEnv.VITE_GLOB_BUILD_GENERATE_CONFIG ?? true));
 
   // Add the rollup-plugin-visualizer
   // 添加 打包分析 插件

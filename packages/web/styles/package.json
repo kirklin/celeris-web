@@ -17,15 +17,16 @@
   "dependencies": {
     "@kirklin/reset-css": "^0.0.3",
     "animate.css": "^4.1.1",
-    "unocss-preset-chinese": "^0.2.1",
+    "unocss-preset-chinese": "^0.3.2",
     "unocss-preset-ease": "^0.0.3"
   },
   "devDependencies": {
     "@css-render/plugin-bem": "^0.15.12",
     "@css-render/vue3-ssr": "^0.15.12",
-    "@iconify/json": "^2.2.112",
+    "@iconify/json": "^2.2.165",
+    "@iconify/vue": "4.1.1",
     "css-render": "^0.15.12",
-    "unocss": "^0.55.7",
-    "vite": "^4.4.9"
+    "unocss": "^0.58.3",
+    "vite": "^5.0.11"
   }
 }

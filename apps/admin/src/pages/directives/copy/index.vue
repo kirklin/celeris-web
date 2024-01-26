@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import PageWrapper from "~/component/PageWrapper/src/PageWrapper.vue";
+
 defineOptions({
   name: "Copy",
 });
@@ -11,7 +13,7 @@ function handleCopy() {
 </script>
 
 <template>
-  <div class="h-full">
+  <PageWrapper>
     <NCard :title="t('page.copyDirective.copyDirective')">
       <NInputGroup>
         <NInput v-model:value="source" :placeholder="t('page.copyDirective.copyPlaceholder')" />
@@ -20,7 +22,7 @@ function handleCopy() {
         </NButton>
       </NInputGroup>
     </NCard>
-  </div>
+  </PageWrapper>
 </template>
 
 <style scoped></style>

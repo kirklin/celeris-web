@@ -117,15 +117,24 @@ function getTextColor(darkMode: boolean): string {
   return darkMode ? commonDark.textColor2 : commonLight.baseColor;
 }
 function getOtherTheme(_darkMode: boolean): GlobalThemeOverrides {
+  const naiveTheme = useThemeSetting().getNaiveUIPresetTheme.value;
   return {
     common: {
       borderRadius: "0.5rem",
+      borderRadiusSmall: "0.25rem",
       cubicBezierEaseInOut: "cubic-bezier(0.65, 0, 0.35, 1)",
       cubicBezierEaseOut: "cubic-bezier(0.33, 1, 0.68, 1)",
       cubicBezierEaseIn: "cubic-bezier(0.32, 0, 0.67, 0)",
+      modalColor: naiveTheme?.common?.modalColor,
     },
     Card: {
       borderRadius: "1rem",
+    },
+    Statistic: {
+      labelTextColor: _darkMode ? "#fff" : "#000",
+      valueTextColor: _darkMode ? "#fff" : "#000",
+      labelFontWeight: 400,
+      valueFontWeight: 800,
     },
   };
 }

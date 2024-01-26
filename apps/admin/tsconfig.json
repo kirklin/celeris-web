@@ -2,12 +2,12 @@
   "extends": "@celeris/tsconfig/tsconfig.base.json",
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
+    "lib": ["dom", "esnext"],
     "baseUrl": ".",
+    "module": "esnext",
     "paths": {
       "~/*": ["src/*"]
     },
-    "lib": ["dom", "esnext"],
     "types": [
       "vite/client"
     ]

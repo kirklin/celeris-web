@@ -1,6 +1,6 @@
 import { fakeUserList } from "../data/auth/fakeUserList";
 
-export const getFakeUserByToken = (authorizationToken?: string) => {
+export function getFakeUserByToken(authorizationToken?: string) {
   if (!authorizationToken) {
     throw new Error("Token is required.");
   }
@@ -11,4 +11,4 @@ export const getFakeUserByToken = (authorizationToken?: string) => {
     throw new Error("Invalid token.");
   }
   return checkUser;
-};
+}

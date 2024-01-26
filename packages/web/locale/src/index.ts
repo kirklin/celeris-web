@@ -7,14 +7,14 @@ import { LocalesConfiguration } from "./config";
 // eslint-disable-next-line import/no-mutable-exports
 export let i18n: ReturnType<typeof createI18n>;
 
-const createI18nOptions = async (): Promise<I18nOptions> => {
+async function createI18nOptions(): Promise<I18nOptions> {
   return deepMerge({
     legacy: false,
     locale: LocalesConfiguration.locale,
     fallbackLocale: LocalesConfiguration.fallbackLocale,
     messages: await LocalesConfiguration.messagesHandler(),
   }, LocalesConfiguration.otherOptions);
-};
+}
 export async function setupI18n(app: App) {
   const options = await createI18nOptions();
   i18n = createI18n(options);

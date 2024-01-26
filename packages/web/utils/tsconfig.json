@@ -2,8 +2,8 @@
   "extends": "@celeris/tsconfig/tsconfig.base.json",
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "module": "esnext"
   },
   "include": ["src"]
 }

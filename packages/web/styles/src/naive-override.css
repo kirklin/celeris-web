@@ -1,0 +1,39 @@
+.ca-modal-mask {
+  backdrop-filter: blur(5px);
+}
+.ca-modal,
+.ca-card.ca-modal[role] {
+  background-color: rgba(var(--modal-color-rgb), 0.75);
+  backdrop-filter: blur(20px);
+  max-width: 90%;
+  margin: 10vh auto;
+}
+
+.ca-image-preview-overlay {
+  backdrop-filter: blur(5px);
+}
+
+.ca-slider {
+  box-sizing: content-box;
+}
+.ca-calendar * {
+  box-sizing: content-box;
+}
+
+/* Drawer component with rounded corners */
+.ca-drawer.ca-drawer--right-placement {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+.ca-drawer.ca-drawer--left-placement {
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+.ca-drawer.ca-drawer--top-placement {
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+.ca-drawer.ca-drawer--bottom-placement {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}

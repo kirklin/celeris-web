@@ -2,7 +2,8 @@ import type { RouteRecordRaw } from "vue-router";
 import {
   EXCEPTION_COMPONENT,
   LAYOUT,
-  PAGE_NOT_FOUND_NAME, REDIRECT_NAME,
+  PAGE_NOT_FOUND_NAME,
+  REDIRECT_NAME,
 } from "~/router/constant";
 
 // 404 on a page

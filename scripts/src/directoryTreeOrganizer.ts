@@ -7,22 +7,22 @@ const excludedDirectories = [/node_modules/, /\.git/, /\.vscode/, /\.idea/];
 const rootDirectory = process.cwd();
 const parentDirectory = path.dirname(rootDirectory);
 
-const getFilteredChildren = (root, excludes) => {
+function getFilteredChildren(root, excludes) {
   const filtered = directoryTree(root, { exclude: excludes });
   return filtered.children || [];
-};
+}
 
-const buildTree = (children) => {
+function buildTree(children) {
   return children.reduce((tree, child) => {
     const hasChildren = child.children?.length > 0;
     const formattedChild = hasChildren ? buildTree(child.children) : null;
     return { ...tree, [child.name]: formattedChild };
   }, {});
-};
+}
 
-const formatTree = (object) => {
+function formatTree(object) {
   return treeify.asTree(object, true, null);
-};
+}
 
 const formattedTree = formatTree(buildTree(getFilteredChildren(parentDirectory, excludedDirectories)));
 

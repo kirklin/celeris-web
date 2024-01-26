@@ -2,7 +2,7 @@ import { isComponentInstance } from "@celeris/utils";
 import type { ComponentPublicInstance } from "vue";
 import { onMounted, ref, watch } from "vue";
 
-export const useComponentRef = (name: string) => {
+export function useComponentRef(name: string) {
   const componentRef = ref<HTMLElement | ComponentPublicInstance>();
 
   const getElement = () => {
@@ -26,4 +26,4 @@ export const useComponentRef = (name: string) => {
     componentRef,
     elementRef,
   };
-};
+}

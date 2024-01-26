@@ -18,7 +18,7 @@ const directive: RouteRecordRaw = {
       component: () => import("~/pages/directives/ripple/index.vue"),
       meta: {
         title: "routes.directives.ripple",
-        icon: "i-material-symbols-ripples",
+        icon: "material-symbols:ripples",
       },
     },
     {
@@ -27,7 +27,7 @@ const directive: RouteRecordRaw = {
       component: () => import("~/pages/directives/copy/index.vue"),
       meta: {
         title: "routes.directives.copy",
-        icon: "i-material-symbols-content-copy-outline",
+        icon: "material-symbols:content-copy-outline",
       },
     },
   ],

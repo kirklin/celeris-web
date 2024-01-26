@@ -1,6 +1,6 @@
 import { presetAttributify, presetIcons, presetUno, transformerDirectives, transformerVariantGroup } from "unocss";
 import UnoCSS from "unocss/vite";
-import presetChinese from "unocss-preset-chinese";
+import presetChinese, { chineseTypography } from "unocss-preset-chinese";
 import presetEase from "unocss-preset-ease";
 import type { PluginOption } from "vite";
 
@@ -14,7 +14,10 @@ export function createUnoCSSPluginConfig(): PluginOption {
     presets: [
       presetUno({ dark: "class" }),
       presetAttributify(),
-      presetChinese(),
+      chineseTypography(),
+      presetChinese({
+        chineseType: "simplified",
+      }),
       presetEase(),
       presetIcons({
         scale: 1.2,
@@ -23,6 +26,7 @@ export function createUnoCSSPluginConfig(): PluginOption {
     ],
     shortcuts: {
       // position
+      "common-bg": "bg-gray-100 dark:bg-gray-900",
       "pr": "relative",
       "pa": "absolute",
       "pf": "fixed",
@@ -50,36 +54,37 @@ export function createUnoCSSPluginConfig(): PluginOption {
     },
     theme: {
       colors: {
-        primary: "rgb(var(--primary-color))",
-        primary_hover: "rgb(var(--primary-color-hover))",
-        primary_suppl: "rgb(var(--primary-color-suppl))",
-        primary_pressed: "rgb(var(--primary-color-pressed))",
-        primary_1: "rgb(var(--primary-color1))",
-        primary_2: "rgb(var(--primary-color2))",
-        primary_3: "rgb(var(--primary-color3))",
-        primary_4: "rgb(var(--primary-color4))",
-        primary_5: "rgb(var(--primary-color5))",
-        primary_6: "rgb(var(--primary-color6))",
-        primary_7: "rgb(var(--primary-color7))",
-        primary_8: "rgb(var(--primary-color8))",
-        primary_9: "rgb(var(--primary-color9))",
-        primary_10: "rgb(var(--primary-color10))",
-        info: "rgb(var(--info-color))",
-        info_hover: "rgb(var(--info-color-hover))",
-        info_suppl: "rgb(var(--info-color-suppl))",
-        info_pressed: "rgb(var(--info-color-pressed))",
-        success: "rgb(var(--success-color))",
-        success_hover: "rgb(var(--success-color-hover))",
-        success_suppl: "rgb(var(--success-color-suppl))",
-        success_pressed: "rgb(var(--success-color-pressed))",
-        warning: "rgb(var(--warning-color))",
-        warning_hover: "rgb(var(--warning-color-hover))",
-        warning_suppl: "rgb(var(--warning-color-suppl))",
-        warning_pressed: "rgb(var(--warning-color-pressed))",
-        error: "rgb(var(--error-color))",
-        error_hover: "rgb(var(--error-color-hover))",
-        error_suppl: "rgb(var(--error-color-suppl))",
-        error_pressed: "rgb(var(--error-color-pressed))",
+        primary: "var(--primary-color)",
+        primary_hover: "var(--primary-color-hover)",
+        primary_suppl: "var(--primary-color-suppl)",
+        primary_pressed: "var(--primary-color-pressed)",
+        primary_1: "var(--primary-color-1)",
+        primary_2: "var(--primary-color-2)",
+        primary_3: "var(--primary-color-3)",
+        primary_4: "var(--primary-color-4)",
+        primary_5: "var(--primary-color-5)",
+        primary_6: "var(--primary-color-6)",
+        primary_7: "var(--primary-color-7)",
+        primary_8: "var(--primary-color-8)",
+        primary_9: "var(--primary-color-9)",
+        primary_10: "var(--primary-color10)",
+        action: "var(--action-color)",
+        info: "var(--info-color)",
+        info_hover: "var(--info-color-hover)",
+        info_suppl: "var(--info-color-suppl)",
+        info_pressed: "var(--info-color-pressed)",
+        success: "var(--success-color)",
+        success_hover: "var(--success-color-hover)",
+        success_suppl: "var(--success-color-suppl)",
+        success_pressed: "var(--success-color-pressed)",
+        warning: "var(--warning-color))",
+        warning_hover: "var(--warning-color-hover)",
+        warning_suppl: "var(--warning-color-suppl)",
+        warning_pressed: "var(--warning-color-pressed)",
+        error: "var(--error-color))",
+        error_hover: "var(--error-color-hover)",
+        error_suppl: "var(--error-color-suppl)",
+        error_pressed: "var(--error-color-pressed)",
       },
     },
     transformers: [

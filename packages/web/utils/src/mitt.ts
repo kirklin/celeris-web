@@ -39,7 +39,6 @@ export interface Emitter<Events extends Record<EventType, unknown>> {
 /**
  * Mitt: Tiny (~200b) functional event emitter / pubsub.
  * @name mitt
- * @returns {Mitt}
  */
 export function mitt<Events extends Record<EventType, unknown>>(
   all?: EventHandlerMap<Events>,

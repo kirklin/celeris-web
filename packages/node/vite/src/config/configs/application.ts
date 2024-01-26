@@ -6,7 +6,7 @@ import { loadEnv } from "vite";
 import { configVitePlugins } from "../../plugins";
 import { configureProxy, updateEnvVariables } from "../../utils";
 
-export async function createApplicationViteConfig(command, mode, cwd) {
+export async function createApplicationViteConfig(command: "build" | "serve", mode: string, cwd: string) {
   const root = cwd;
   const isProductionBuild = command === "build";
   const env: Recordable<string> = loadEnv(mode, root);
@@ -37,7 +37,6 @@ export async function createApplicationViteConfig(command, mode, cwd) {
       host: VITE_USE_HTTPS,
       port: VITE_PORT,
       open: true,
-      https: false,
       proxy: !VITE_USE_HTTPS ? configureProxy(VITE_PROXY) : {},
     },
     esbuild: {

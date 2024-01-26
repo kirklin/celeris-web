@@ -7,6 +7,17 @@
       "headlessTableBasic": "Basic Table",
       "headlessTablePagination": "Pagination Table"
     },
+    "chat": {
+      "chat": "Chat"
+    },
+    "profile": {
+      "profile": "Profile"
+    },
+    "design": {
+      "design": "Design",
+      "palette": "Palette",
+      "typography": "Typography"
+    },
     "dashboard": {
       "dashboard": "Dashboard"
     },
@@ -18,8 +29,10 @@
     },
     "iframe": {
       "iframe": "Embedded Webpage",
-      "githubInternal": "GitHub (Internal)",
-      "GitHubExternal": "GitHub (External)"
+      "githubInternal": "GitHub (Embedded)",
+      "GitHubExternal": "GitHub (External)",
+      "viteInternal": "Vite Documentation (Embedded)",
+      "ViteExternal": "Vite Documentation (External)"
     },
     "permission": {
       "permission": "Permission Test",
@@ -85,6 +98,18 @@
       "onPositiveClickMessage": "Logout successful"
     }
   },
+  "searchDialog": {
+    "searchPlaceholder": "Search",
+    "noResultsFound": "Sorry, no results found for { search }",
+    "toSelectTooltip": "to select",
+    "toNavigateTooltip": "to navigate",
+    "applications": "Applications",
+    "chatBot": "ChatBot",
+    "action": "Action",
+    "actions": "Actions",
+    "shortcut": "Shortcut",
+    "go": "Go to "
+  },
   "page": {
     "login": {
       "title": "Login",
@@ -99,9 +124,39 @@
           "placeholder": "Enter your password",
           "error": "Password cannot be empty"
         },
+        "confirmPassword": {
+          "label": "Confirm Password",
+          "placeholder": "Enter your password",
+          "error": "Confirm password cannot be empty",
+          "validator": "Password is not same!"
+        },
+        "forgotPassword": {
+          "label": "Phone Number",
+          "placeholder": "Example: 13812345678",
+          "requiredError": "Phone number is required",
+          "invalidFormatError": "Invalid phone number format"
+        },
+        "socialButtons": {
+          "signInWithQQ": "Sign in with QQ",
+          "signInWithWeChat": "Sign in with WeChat"
+        },
+        "signText": {
+          "signIn": "Don't you have an account?",
+          "forgotPassword": "Back to Sign in",
+          "signUp": "Do you have an account?"
+        },
+        "welcomeBackTitle": "Welcome Back",
+        "helloTitle": "Hello",
+        "forgotPasswordTitle": "Forgot Password",
+        "greetingText": "Celeris Web is a highly performant and customizable front-end development template built with Vue 3, Vite, and TypeScript.",
+        "sendResetLinkButton": "Send Reset Link",
+        "resetLinkSentMessage": "Reset Link sent",
+        "signUp": "Sign up",
+        "backToSignIn": "Back to Sign in",
+        "signIn": "Sign in",
         "remember": "Remember me",
-        "loginButton": "Login",
-        "registerButton": "Register",
+        "loginButton": "Sign in",
+        "registerButton": "Create an account",
         "forgetPassword": "Forgot password",
         "incorrectAccountOrPassword": "Incorrect account or password!"
       },

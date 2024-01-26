@@ -161,22 +161,19 @@ export const off = (() => {
  * @function
  * @param {string} selectors - A DOMString containing one or more CSS selectors separated by commas.
  *                             一个包含一个或多个用逗号分隔的 CSS 选择器的 DOMString。
- * @param {Document | HTMLElement} [container=document] - Optional. The container within which to search for the element(s).
+ * @param {Document | HTMLElement} [container] - Optional. The container within which to search for the element(s).
  *                                                        可选项。要搜索元素的容器。
  * @returns {HTMLElement | undefined} The first element that matches the selectors within the container, or undefined if not found.
  *                                    与选择器匹配的第一个元素（在容器内），如果找不到则返回 undefined。
  */
-export const querySelector = (
-  selectors: string,
-  container?: Document | HTMLElement,
-): HTMLElement | undefined => {
+export function querySelector(selectors: string, container?: Document | HTMLElement): HTMLElement | undefined {
   if (isServerRendering) {
     return NOOP();
   }
   return (
     (container ?? document).querySelector<HTMLElement>(selectors) ?? undefined
   );
-};
+}
 
 /**
  * Gets the DOM element based on the target string, element, or undefined input within the given container.
@@ -197,18 +194,15 @@ export const querySelector = (
  * @function
  * @param {string | HTMLElement | undefined} target - The target to get the DOM element for.
  *                                                   要获取 DOM 元素的目标。
- * @param {Document | HTMLElement} [container=document] - Optional. The container within which to search for the element.
+ * @param {Document | HTMLElement} [container] - Optional. The container within which to search for the element.
  *                                                        可选项。要搜索元素的容器。
  * @returns {HTMLElement | undefined} The DOM element based on the target input, or undefined if not found or if the input is undefined.
  *                                    根据目标输入获取的 DOM 元素，如果未找到或输入为 undefined，则返回 undefined。
  */
-export const getElement = (
-  target: string | HTMLElement | undefined,
-  container?: Document | HTMLElement,
-): HTMLElement | undefined => {
+export function getElement(target: string | HTMLElement | undefined, container?: Document | HTMLElement): HTMLElement | undefined {
   if (isString(target)) {
     const selector = target[0] === "#" ? `[id='${target.slice(1)}']` : target;
     return querySelector(selector, container);
   }
   return target;
-};
+}

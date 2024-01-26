@@ -71,8 +71,8 @@ export interface ThemeSetting {
 }
 
 /**
-* 项目配置接口
-*/
+ * 项目配置接口
+ */
 export interface ProjectSetting {
   // 是否显示配置按钮
   // Whether to display the setting button

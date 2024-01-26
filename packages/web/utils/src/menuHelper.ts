@@ -4,6 +4,7 @@ import type { RouteRecordRaw } from "vue-router";
 import { loadDataFromModules } from "./moduleHelper";
 import { findFirstNodePath, mapTreeStructure } from "./treeHelper";
 import { isHttpUrl } from "./typeChecks";
+import { createPathMatcher } from "./router";
 
 /**
  * 从模块对象中加载菜单配置并加入到菜单集合中
@@ -103,8 +104,7 @@ export function transformRouteToMenu(routeModList: RouteRecordRaw[], routerMappi
       path: node.path,
       ...(node.redirect ? { redirect: node.redirect } : {}),
     };
-  },
-  );
+  });
 
   // Handle the paths
   joinParentPath(list);
@@ -120,10 +120,27 @@ export function transformRouteToMenu(routeModList: RouteRecordRaw[], routerMappi
  * @param path The path to match. 要匹配的路径。
  * @returns An array of parent paths of the node in the tree that matches the given path. 与给定路径匹配的节点的所有父路径组成的数组。
  */
-export function getAllParentPaths<T>(
+export function getAllParentPaths<T extends {
+  path: string;
+}>(
   treeData: T[],
   path: string,
-): string[] {
-  const menuList = findFirstNodePath(treeData, n => n[path] === path) as Menu[];
-  return menuList?.map(m => m.path);
+): string[] | null {
+  const menuList = findFirstNodePath(treeData, n => createPathMatcher(n.path).test(path));
+  return menuList?.map(m => m.path) ?? null;
+}
+
+/**
+ * 获取树形结构中与给定路径匹配的第一个节点及其所有父节点。
+ * @param treeData 树形结构的根节点列表。
+ * @param path 要匹配的路径。
+ * @returns 与给定路径匹配的第一个节点及其所有父节点，如果没有匹配项，则返回 null。
+ */
+export function getFirstMatchingParent<T extends {
+  path: string;
+}>(
+  treeData: T[],
+  path: string,
+) {
+  return findFirstNodePath(treeData, n => createPathMatcher(n.path).test(path));
 }

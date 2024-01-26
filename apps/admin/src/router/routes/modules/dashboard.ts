@@ -21,6 +21,7 @@ const dashboard: RouteRecordRaw = {
         title: "routes.dashboard.dashboard",
         icon: "i-mdi-monitor-dashboard",
         shouldHideInMenu: true,
+        shouldAffixToNavBar: true,
       },
     },
   ],

@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { useMenuSetting } from "~/composables/setting/useMenuSetting";
-import IconButtonWithToolTip from "~/layouts/header/components/IconButtonWithToolTip.vue";
+import { ActionIcon } from "~/component/ActionIcon";
 
 const { t } = useI18n();
+
+const { toggleCollapsed, getCollapsed } = useMenuSetting();
 </script>
 
 <template>
-  <IconButtonWithToolTip :tooltip-text="t('layouts.header.toggleCollapsed')" icon="i-tabler-menu-2" color="gray" @click="useMenuSetting().toggleCollapsed()" />
+  <ActionIcon :tooltip-text="t('layouts.header.toggleCollapsed')" :icon="getCollapsed ? 'lucide:panel-right-close' : 'lucide:panel-left-close'" @click="toggleCollapsed()" />
 </template>

@@ -3,9 +3,9 @@ import type { AxiosRequestConfig } from "axios";
 // 用于存储每个请求的标识和取消函数
 const pendingMap = new Map<string, AbortController>();
 
-const getPendingUrl = (config: AxiosRequestConfig): string => {
+function getPendingUrl(config: AxiosRequestConfig): string {
   return [config.method, config.url].join("&");
-};
+}
 
 export class AxiosCanceler {
   /**

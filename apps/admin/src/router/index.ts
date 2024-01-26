@@ -5,14 +5,14 @@ import { basicRoutes } from "./routes";
 
 // Create a whitelist of route names
 const WHITE_NAME_LIST: RouteRecordName[] = [];
-const generateRouteNames = (routes: RouteRecordRaw[]) => {
+function generateRouteNames(routes: RouteRecordRaw[]) {
   routes.forEach((route) => {
     WHITE_NAME_LIST.push(route.name ?? "");
     if (route.children) {
       generateRouteNames(route.children);
     }
   });
-};
+}
 
 export const router = createRouter({
   history: createWebHashHistory(),

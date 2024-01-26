@@ -9,9 +9,9 @@ withDefaults(defineProps<{
   height: 0,
 });
 const frameRef = ref<HTMLIFrameElement | null>();
-const [loading, setLoading] = useState(true);
+const loading = ref(true);
 function finishLoading() {
-  setLoading(false);
+  loading.value = false;
 }
 </script>
 

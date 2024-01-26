@@ -4,6 +4,7 @@ import { removeRouteChangeListener } from "~/router/mitt/routeChange";
 import { useAppStore } from "~/store/modules/app";
 import { usePermissionStore } from "~/store/modules/permission";
 import { useUserStore } from "~/store/modules/user";
+import { useTabsStore } from "~/store/modules/tabs";
 
 export function createStateGuard(router: Router) {
   router.afterEach((to) => {
@@ -12,9 +13,11 @@ export function createStateGuard(router: Router) {
       const userStore = useUserStore();
       const appStore = useAppStore();
       const permissionStore = usePermissionStore();
+      const tabsStore = useTabsStore();
       appStore.resetAPPState();
       permissionStore.resetPermissionState();
       userStore.resetUserState();
+      tabsStore.resetTabsState();
       removeRouteChangeListener();
     }
   });

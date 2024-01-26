@@ -28,7 +28,6 @@ export function useAppPermission() {
    * Changes the permission mode between backend and route mapping.
    * 在后端和路由映射之间切换权限模式。
    *
-   * @returns void
    */
   function togglePermissionMode() {
     appStore.setProjectSetting({
