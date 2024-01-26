@@ -4,7 +4,8 @@
       "components": "Component Example",
       "table": "Table Component",
       "headlessTable": "Headless Table",
-      "headlessTableBasic": "Basic Table"
+      "headlessTableBasic": "Basic Table",
+      "headlessTablePagination": "Pagination Table"
     },
     "chat": {
       "chat": "Chat"

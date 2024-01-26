@@ -33,6 +33,15 @@ const components: RouteRecordRaw = {
             shouldHideInMenu: false,
           },
         },
+        {
+          path: "pagination",
+          name: "headlessTablePagination",
+          component: () => import("~/pages/components/headless-table/pagination/index.vue"),
+          meta: {
+            title: "routes.components.headlessTablePagination",
+            shouldHideInMenu: false,
+          },
+        },
       ],
     },
   ],
