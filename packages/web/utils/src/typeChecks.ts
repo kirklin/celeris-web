@@ -54,30 +54,6 @@ export const isServerRendering = (() => {
   }
 })();
 
-/**
- * Checks if the code is running on the server-side (server) or client-side (browser) environment.
- * 检查代码是否在服务器端（服务器）或客户端（浏览器）环境中运行。
- *
- * The value of this constant will be true if the code is running on the server-side,
- * and false if it is running on the client-side.
- * 如果代码在服务器端运行，则此常量的值为 true；如果在客户端运行，则值为 false。
- *
- * @constant {boolean}
- */
-export const isServer = typeof window === "undefined";
-
-/**
- * Checks if the code is running on the client-side (browser) environment.
- * 检查代码是否在客户端（浏览器）环境中运行。
- *
- * The value of this constant will be true if the code is running on the client-side,
- * and false if it is running on the server-side.
- * 如果代码在客户端运行，则此常量的值为 true；如果在服务器端运行，则值为 false。
- *
- * @constant {boolean}
- */
-export const isClient = !isServer;
-
 // Define a function isHttpUrl that takes a string argument path and returns true if it is a valid Http URL.
 // 定义一个函数 isHttpUrl，它接受一个字符串参数 path，如果它是有效的Http URL，则返回 true。
 export function isHttpUrl(path: string): boolean {

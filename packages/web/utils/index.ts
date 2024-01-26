@@ -1,5 +1,6 @@
 export * from "./src";
 export * from "@kirklin/logger";
+export * from "detect-mobile";
 export {
   cloneDeep,
   clone,

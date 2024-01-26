@@ -1,7 +1,5 @@
 import type { OS } from "@celeris/constants";
 import { OperatingSystem } from "@celeris/constants";
-import { isClient } from "./typeChecks";
-import { isTouchSupported } from "./browserHelper";
 
 /**
  * Retrieves the operating system (OS) of the current environment based on the user agent.
@@ -70,19 +68,4 @@ export function isUnix(): boolean {
  */
 export function isLinux(): boolean {
   return detectOperatingSystem() === OperatingSystem.Linux;
-}
-
-/**
- * Checks if the current environment is likely a mobile device.
- * 检查当前环境是否可能是移动设备。
- *
- * @returns {boolean} Returns true if the environment is likely a mobile device, otherwise returns false.
- *                    如果环境可能是移动设备，则返回 true；否则返回 false。
- */
-export function isMobile(): boolean {
-  // Let's consider it mobile if the screen width is less than or equal to 768 pixels
-  const isMobileScreen = isClient && window.innerWidth <= 768;
-
-  // Return true if either screen width is small or there is touch support
-  return isMobileScreen || isTouchSupported();
 }

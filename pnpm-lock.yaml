@@ -457,6 +457,9 @@ importers:
       '@kirklin/palette':
         specifier: ^0.1.1
         version: 0.1.1
+      algorithm-snowflake:
+        specifier: ^0.0.0
+        version: 0.0.0
       colord:
         specifier: ^2.9.3
         version: 2.9.3
@@ -466,6 +469,9 @@ importers:
       dayjs:
         specifier: ^1.11.10
         version: 1.11.10
+      detect-mobile:
+        specifier: ^0.0.0
+        version: 0.0.0
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
@@ -5343,6 +5349,10 @@ packages:
       uri-js: 4.4.1
     dev: true
 
+  /algorithm-snowflake@0.0.0:
+    resolution: {integrity: sha512-9/ZGcPC1PyGf7Keao7whCrAOb4AY+rux485WN/NEjOHJgyPNvb3IRFdODREEtYZULkYr3cs+BjmoITS/KycOLw==, tarball: https://registry.npmjs.org/algorithm-snowflake/-/algorithm-snowflake-0.0.0.tgz}
+    dev: false
+
   /animate.css@4.1.1:
     resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
     dev: false
@@ -6580,6 +6590,10 @@ packages:
     resolution: {integrity: sha512-463v3ZeIrcWtdgIg6vI6XUncguvr2TnGl4SzDXinkt9mSLpBJKXT3mW6xT3VQdDN11+WVs29pgvivTc4Lp8v+w==}
     engines: {node: '>=8'}
     dev: true
+
+  /detect-mobile@0.0.0:
+    resolution: {integrity: sha512-atFmlfctFHxBMUnVLumJD6H5LFdg4kEGmaFA1/6YQT7yGAsb9ne//P5uiGigMR+lRinGh3CMTb3qouCYsrteBw==}
+    dev: false
 
   /diff-sequences@29.6.3:
     resolution: {integrity: sha512-EjePK1srD3P08o2j4f0ExnylqRs5B9tJjcp9t1krH2qRi8CCdsYfwe9JgSLurFBWwq4uOlipzfk5fHNvwFKr8Q==}
