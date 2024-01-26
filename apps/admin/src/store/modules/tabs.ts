@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { APP_TABS_STORE_ID, PageConstants } from "@celeris/constants";
+import { isGreaterOrEqual2xl } from "@celeris/hooks";
 import type { RouteLocationNormalized, RouteRecordName } from "vue-router";
 import { takeRight, uniqBy } from "@celeris/utils";
 import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE } from "~/router/routes/basic";
@@ -26,16 +27,21 @@ export const useTabsStore = defineStore({
   state: (): AppTabsState => ({
     tabs: [],
     pinnedTabs: [],
-    maxVisibleTabs: 5,
+    maxVisibleTabs: 3,
   }),
   getters: {
     getTabsList(state): Tab[] {
       return state.tabs;
     },
     getLimitTabsList(state): Tab[] {
+      if (isGreaterOrEqual2xl.value) {
+        state.maxVisibleTabs = 3;
+      } else {
+        state.maxVisibleTabs = 1;
+      }
       return takeRight(
         state.tabs.filter(tab => state.pinnedTabs.findIndex(p => p.fullPath === tab.fullPath) === -1).reverse(),
-        this.maxVisibleTabs,
+        state.maxVisibleTabs,
       );
     },
     getPinnedTabsList(state): Tab[] {

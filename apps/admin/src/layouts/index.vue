@@ -11,11 +11,11 @@ defineOptions({
 </script>
 
 <template>
-  <NEl tag="div" class="flex flex-row flex-1 h-full w-full min-w-[970px]">
+  <NEl tag="div" class="flex flex-row flex-1 h-full w-full">
     <div>
       <SidebarLayout />
     </div>
-    <div class="flex flex-col flex-1 h-full w-full min-w-[970px]">
+    <div class="flex flex-col flex-1 h-full w-full">
       <header class="">
         <Header />
       </header>

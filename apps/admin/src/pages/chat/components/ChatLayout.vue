@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { isGreaterOrEqual2xl, isSmallerOrEqualXl } from "@celeris/hooks";
 import ChatHistorySidebar from "./ChatHistorySidebar/index.vue";
 import ChatPanel from "./ChatPanel/index.vue";
 import AssistantSidebar from "./AssistantSidebar/index.vue";
@@ -7,6 +8,14 @@ import { defaultAssistant } from "~/pages/chat/data";
 
 provide(chatContextInjectionKey, {
   selectedAssistantRef: ref(defaultAssistant),
+});
+const siderWidth = ref<number>(360);
+watchEffect(() => {
+  if (isSmallerOrEqualXl.value) {
+    siderWidth.value = 240;
+  } else if (isGreaterOrEqual2xl.value) {
+    siderWidth.value = 360;
+  }
 });
 </script>
 
@@ -19,10 +28,9 @@ provide(chatContextInjectionKey, {
     <NLayoutSider
       collapse-mode="transform"
       :collapsed-width="0"
-      :width="360"
+      :width="siderWidth"
       :native-scrollbar="true"
       show-trigger="arrow-circle"
-      bordered
     >
       <AssistantSidebar />
     </NLayoutSider>

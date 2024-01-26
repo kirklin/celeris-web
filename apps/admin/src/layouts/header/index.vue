@@ -14,14 +14,14 @@ defineOptions({
 </script>
 
 <template>
-  <div class="flex h-16 items-center">
+  <div class="flex h-16 items-center <lg:justify-end">
     <div class="md:block px-4">
       <CollapseButton />
     </div>
-    <div class="flex-1">
+    <div class="flex-1 <lg:hidden">
       <Breadcrumb />
     </div>
-    <div class="flex flex-grow-1 items-center">
+    <div class="flex flex-grow-1 items-center <2xl:hidden">
       <LayoutTabs />
     </div>
     <div class="flex">
