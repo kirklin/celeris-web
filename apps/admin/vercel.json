@@ -13,6 +13,18 @@
       "destination": "https://celeris-web-api.vercel.app/:match*"
     },
     {
+      "source": "/ai-openai",
+      "destination": "https://celeris-web-api-ai-openai.vercel.app"
+    },
+    {
+      "source": "/ai-openai/",
+      "destination": "https://celeris-web-api-ai-openai.vercel.app/"
+    },
+    {
+      "source": "/ai-openai/:match*",
+      "destination": "https://celeris-web-api-ai-openai.vercel.app/:match*"
+    },
+    {
       "source": "/:path*",
       "destination": "/index.html"
     }

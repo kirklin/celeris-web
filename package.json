@@ -35,9 +35,10 @@
   },
   "scripts": {
     "bootstrap": "pnpm install",
-    "dev": "run-p dev:admin dev:mock",
+    "dev": "run-p dev:admin dev:mock dev:ai-services-openai",
     "dev:admin": "pnpm --filter @celeris/admin dev",
     "dev:mock": "pnpm --filter @celeris/admin-api dev",
+    "dev:ai-services-openai": "pnpm --filter @celeris/ai-services-openai dev",
     "build": "pnpm --filter @celeris/admin build",
     "generate-tree": "pnpm --filter scripts generate-tree",
     "clean": "rimraf node_modules **/*/node_modules **/**/*/node_modules **/*/dist **/**/*/dist",

@@ -1,0 +1,18 @@
+{
+  "name": "@celeris/ai-services-openai",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env PORT=9000 nitro dev",
+    "build": "nitro build",
+    "preview": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "@celeris/ai-core": "workspace:*"
+  },
+  "devDependencies": {
+    "@celeris/constants": "workspace:*",
+    "@celeris/types": "workspace:*",
+    "nitropack": "^2.8.1"
+  }
+}
