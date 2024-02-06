@@ -1,29 +1,41 @@
 {
+  // Enable the ESlint flat config support
+  "eslint.experimental.useFlatConfig": true,
+
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
   "editor.formatOnSave": false,
+
+  // Auto fix
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.fixAll.eslint": true, // this allows ESLint to auto fix on save
-    "source.organizeImports": false
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
-  // ESLint config: https://github.com/kirklin/eslint-config
-  "eslint.codeAction.showDocumentation": {
-    "enable": true
-  },
-  "eslint.quiet": true,
+
+  // Silent the stylistic rules in you IDE, but still auto fix them
+  "eslint.rules.customizations": [
+    { "rule": "style/*", "severity": "off" },
+    { "rule": "*-indent", "severity": "off" },
+    { "rule": "*-spacing", "severity": "off" },
+    { "rule": "*-spaces", "severity": "off" },
+    { "rule": "*-order", "severity": "off" },
+    { "rule": "*-dangle", "severity": "off" },
+    { "rule": "*-newline", "severity": "off" },
+    { "rule": "*quotes", "severity": "off" },
+    { "rule": "*semi", "severity": "off" }
+  ],
+
+  // Enable eslint for all supported languages
   "eslint.validate": [
     "javascript",
-    "typescript",
     "javascriptreact",
+    "typescript",
     "typescriptreact",
     "vue",
     "html",
     "markdown",
     "json",
     "jsonc",
-    "json5"
-  ],
-  "prettier.enable": false,
-  "prettier.printWidth": 200,
-  "prettier.semi": true,
-  "prettier.singleQuote": false
+    "yaml"
+  ]
 }
