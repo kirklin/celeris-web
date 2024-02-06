@@ -48,6 +48,8 @@ Celeris Web的一个特色是它与OpenAI的ChatGPT API集成，提供了强大�
 ```mermaid
  graph TD
    admin{admin}
+   admin --> admin-api
+   admin --> ai-core
    admin --> assets
    admin --> ca-components
    admin --> components
@@ -87,6 +89,12 @@ Celeris Web的一个特色是它与OpenAI的ChatGPT API集成，提供了强大�
    types --> constants
    utils
    utils --> types
+   admin-api
+   admin-api --> constants
+   admin-api --> types
+   ai-core
+   ai-core --> constants
+   ai-core --> types
 
 ```
 

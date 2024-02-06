@@ -1,0 +1,27 @@
+{
+  "name": "@celeris/ai-core",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "ai core for Celeris",
+  "author": "Kirk Lin (https://github.com/kirklin)",
+  "license": "MIT",
+  "homepage": "https://github.com/kirklin/celeris-web",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "scripts": {
+    "clean": "pnpm rimraf node_modules && pnpm rimraf dist",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@azure/openai": "^1.0.0-beta.11",
+    "ai": "^2.2.33",
+    "gpt-tokenizer": "^2.1.2",
+    "openai": "^4.26.1",
+    "promptitude": "^0.0.0"
+  },
+  "devDependencies": {
+    "@celeris/constants": "workspace:*",
+    "@celeris/types": "workspace:*"
+  }
+}

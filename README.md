@@ -48,6 +48,8 @@ Get started with celeris-web today and experience a highly streamlined front-end
 ```mermaid
  graph TD
    admin{admin}
+   admin --> admin-api
+   admin --> ai-core
    admin --> assets
    admin --> ca-components
    admin --> components
@@ -87,6 +89,12 @@ Get started with celeris-web today and experience a highly streamlined front-end
    types --> constants
    utils
    utils --> types
+   admin-api
+   admin-api --> constants
+   admin-api --> types
+   ai-core
+   ai-core --> constants
+   ai-core --> types
 
 ```
 

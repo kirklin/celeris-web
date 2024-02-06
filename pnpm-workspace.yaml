@@ -1,6 +1,7 @@
 packages:
   - "packages/node/*"
   - "packages/web/*"
+  - "packages/ai/*"
   - "apps/*"
   - "services/*"
   - scripts
