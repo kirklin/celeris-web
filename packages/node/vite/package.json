@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@celeris/utils": "workspace:*",
-    "vite": "^5.0.11"
+    "vite": "^5.0.12"
   },
   "devDependencies": {
     "@celeris/styles": "workspace:*",
@@ -23,11 +23,11 @@
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "rollup-plugin-visualizer": "^5.12.0",
     "typescript": "^5.3.3",
-    "unplugin-auto-import": "^0.17.3",
+    "unplugin-auto-import": "^0.17.5",
     "unplugin-config": "^0.1.4",
     "unplugin-vue-components": "^0.26.0",
-    "vite-plugin-inspect": "^0.8.1",
-    "vite-plugin-pwa": "^0.17.4",
-    "vite-plugin-vue-devtools": "^7.0.5"
+    "vite-plugin-inspect": "^0.8.3",
+    "vite-plugin-pwa": "^0.17.5",
+    "vite-plugin-vue-devtools": "^7.0.14"
   }
 }

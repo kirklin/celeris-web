@@ -21,7 +21,7 @@ const maxChatPanelHeight = computed(() => {
 </script>
 
 <template>
-  <NSplit direction="vertical" :default-size="0.8">
+  <NSplit direction="vertical" :default-size="0.8" style="">
     <template #1>
       <ChatPanelToolbar ref="toolbarRef" class="overflow-hidden" />
       <div ref="chatWrapperRef" class="w-full h-full flex flex-col">

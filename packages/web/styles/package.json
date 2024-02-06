@@ -23,10 +23,10 @@
   "devDependencies": {
     "@css-render/plugin-bem": "^0.15.12",
     "@css-render/vue3-ssr": "^0.15.12",
-    "@iconify/json": "^2.2.165",
+    "@iconify/json": "^2.2.180",
     "@iconify/vue": "4.1.1",
     "css-render": "^0.15.12",
-    "unocss": "^0.58.3",
-    "vite": "^5.0.11"
+    "unocss": "^0.58.5",
+    "vite": "^5.0.12"
   }
 }
