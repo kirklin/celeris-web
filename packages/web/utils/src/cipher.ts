@@ -10,13 +10,13 @@ import SHA512 from "crypto-js/sha512";
 // Define an interface for encryption
 // 定义一个加密器的接口
 export interface Encryption {
-  encrypt(plainText: string): string;
-  decrypt(cipherText: string): string;
+  encrypt: (plainText: string) => string;
+  decrypt: (cipherText: string) => string;
 }
 // Define an interface for Hashing
 // 定义一个哈希算法的接口
 export interface Hashing {
-  hash(data: string): string;
+  hash: (data: string) => string;
 }
 
 export interface EncryptionParams {
