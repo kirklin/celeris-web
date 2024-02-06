@@ -1,5 +1,6 @@
 import { OpenAIStream, StreamingTextResponse } from "ai";
 import OpenAI from "openai";
+import { defineEventHandler, defineLazyEventHandler, readBody } from "h3";
 import { getServerConfig } from "../config/server";
 
 export default defineLazyEventHandler(async () => {

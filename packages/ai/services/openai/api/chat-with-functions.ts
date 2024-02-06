@@ -5,6 +5,7 @@ import {
 } from "ai";
 import OpenAI from "openai";
 import type { ChatCompletionCreateParams } from "openai/resources/chat";
+import { defineEventHandler, defineLazyEventHandler, readBody } from "h3";
 import { getServerConfig } from "../config/server";
 
 const functions: ChatCompletionCreateParams.Function[] = [
