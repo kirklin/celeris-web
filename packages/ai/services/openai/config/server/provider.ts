@@ -17,6 +17,9 @@ declare global {
       AZURE_API_VERSION?: string;
       USE_AZURE_OPENAI?: string;
 
+      SERVICES_CIPHER_KEY?: string;
+      SERVICES_CIPHER_IV?: string;
+
       DEBUG_CHAT_COMPLETION?: string;
     }
   }
@@ -44,6 +47,9 @@ export function getProviderConfig() {
     AZURE_API_VERSION: process.env.AZURE_API_VERSION,
     AZURE_ENDPOINT: process.env.AZURE_ENDPOINT,
     USE_AZURE_OPENAI: process.env.USE_AZURE_OPENAI === "1",
+
+    SERVICES_CIPHER_KEY: process.env.SERVICES_CIPHER_KEY,
+    SERVICES_CIPHER_IV: process.env.SERVICES_CIPHER_IV,
 
     DEBUG_CHAT_COMPLETION: process.env.DEBUG_CHAT_COMPLETION === "1",
   };

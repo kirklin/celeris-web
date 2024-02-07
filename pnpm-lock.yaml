@@ -237,6 +237,9 @@ importers:
       promptitude:
         specifier: ^0.0.0
         version: 0.0.0
+      url-join:
+        specifier: ^5.0.0
+        version: 5.0.0
     devDependencies:
       '@celeris/constants':
         specifier: workspace:*
@@ -244,6 +247,9 @@ importers:
       '@celeris/types':
         specifier: workspace:*
         version: link:../../web/types
+      '@celeris/utils':
+        specifier: workspace:*
+        version: link:../../web/utils
 
   packages/ai/services/openai:
     dependencies:
@@ -257,6 +263,9 @@ importers:
       '@celeris/types':
         specifier: workspace:*
         version: link:../../../web/types
+      '@celeris/utils':
+        specifier: workspace:*
+        version: link:../../../web/utils
       h3:
         specifier: ^1.10.1
         version: 1.10.1
@@ -5730,7 +5739,7 @@ packages:
     dev: true
 
   /algorithm-snowflake@0.0.0:
-    resolution: {integrity: sha512-9/ZGcPC1PyGf7Keao7whCrAOb4AY+rux485WN/NEjOHJgyPNvb3IRFdODREEtYZULkYr3cs+BjmoITS/KycOLw==, tarball: https://registry.npmjs.org/algorithm-snowflake/-/algorithm-snowflake-0.0.0.tgz}
+    resolution: {integrity: sha512-9/ZGcPC1PyGf7Keao7whCrAOb4AY+rux485WN/NEjOHJgyPNvb3IRFdODREEtYZULkYr3cs+BjmoITS/KycOLw==}
     dev: false
 
   /animate.css@4.1.1:
@@ -13217,6 +13226,11 @@ packages:
     dependencies:
       punycode: 2.3.0
     dev: true
+
+  /url-join@5.0.0:
+    resolution: {integrity: sha512-n2huDr9h9yzd6exQVnH/jU5mr+Pfx08LRXXZhkLLetAMESRj+anQsTAh940iMrIetKAmry9coFuZQ2jY8/p3WA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: false
 
   /url-parse@1.5.10:
     resolution: {integrity: sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==}

@@ -10,3 +10,6 @@ export const STORAGE_CIPHER_IV = "@celeris-web-admin";
 // This constant determines whether storage encryption using AES should be enabled in the system
 // It is set to true in production mode and false in development mode
 export const SHOULD_ENABLE_STORAGE_ENCRYPTION = !import.meta.env.DEV;
+
+export const SERVICES_CIPHER_KEY = "@celeris/ai-services-openai@";
+export const SERVICES_CIPHER_IV = "@celeris/ai-services-openai";

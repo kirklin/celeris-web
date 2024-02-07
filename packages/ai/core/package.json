@@ -18,10 +18,12 @@
     "ai": "^2.2.33",
     "gpt-tokenizer": "^2.1.2",
     "openai": "^4.26.1",
-    "promptitude": "^0.0.0"
+    "promptitude": "^0.0.0",
+    "url-join": "^5.0.0"
   },
   "devDependencies": {
     "@celeris/constants": "workspace:*",
-    "@celeris/types": "workspace:*"
+    "@celeris/types": "workspace:*",
+    "@celeris/utils": "workspace:*"
   }
 }

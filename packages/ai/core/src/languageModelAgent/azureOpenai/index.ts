@@ -1,0 +1,75 @@
+import type {
+  ChatRequestMessage,
+  GetChatCompletionsOptions,
+} from "@azure/openai";
+import {
+  AzureKeyCredential,
+  OpenAIClient,
+} from "@azure/openai";
+import { OpenAIStream, StreamingTextResponse } from "ai";
+
+import { LanguageModelAgentRuntimeErrorType } from "../utils/error/constants";
+import type { OpenAIChatStreamPayload } from "../../types";
+import { ModelBrandProvider } from "../types";
+import { AgentRuntimeError } from "../utils/error/createError";
+import { debugStream } from "../utils/debugStream";
+import { DEBUG_CHAT_COMPLETION } from "../utils/env";
+import { AbstractLanguageModel } from "../abstractAI";
+
+export class CelerisAzureOpenAI extends AbstractLanguageModel<any> {
+  private _client: OpenAIClient;
+  _baseURL: string;
+  constructor(endpoint?: string, apikey?: string, apiVersion?: string) {
+    super(ModelBrandProvider.Azure);
+    if (!apikey || !endpoint) {
+      throw AgentRuntimeError.createError(LanguageModelAgentRuntimeErrorType.InvalidAzureAPIKey);
+    }
+
+    this._client = new OpenAIClient(endpoint, new AzureKeyCredential(apikey), { apiVersion });
+
+    this._baseURL = endpoint;
+  }
+
+  async chat(payload: OpenAIChatStreamPayload) {
+    // ============  1. preprocess messages   ============ //
+    const { messages, model, ...params } = payload;
+
+    // ============  2. send api   ============ //
+
+    try {
+      const response = await this._client.streamChatCompletions(
+        model,
+        messages as ChatRequestMessage[],
+        params as GetChatCompletionsOptions,
+      );
+
+      const stream = OpenAIStream(response);
+
+      const [debug, prod] = stream.tee();
+
+      if (DEBUG_CHAT_COMPLETION) {
+        debugStream(debug).catch(console.error);
+      }
+
+      return new StreamingTextResponse(prod);
+    } catch (e) {
+      let error = e as { [key: string]: any; code: string; message: string };
+
+      switch (error.code) {
+        case "DeploymentNotFound": {
+          error = { ...error, deployId: model };
+        }
+      }
+
+      const errorType = error.code
+        ? LanguageModelAgentRuntimeErrorType.AzureBusinessError
+        : LanguageModelAgentRuntimeErrorType.AgentRuntimeError;
+
+      throw AgentRuntimeError.chat({
+        error,
+        errorType,
+        provider: this._brandId,
+      });
+    }
+  }
+}
