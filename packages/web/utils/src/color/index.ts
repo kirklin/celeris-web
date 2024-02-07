@@ -1,5 +1,6 @@
-import { generateColorPalette, generateColorPalettes } from "@kirklin/palette";
+import { generateColorPalettes } from "@kirklin/palette";
 
+export { generateColorPalette } from "@kirklin/palette";
 export * from "./utils";
 
 const presetPrimaryColors: Record<string, string> = {
@@ -80,7 +81,6 @@ const grey = presetPalettes.gray;
 export type PalettesProps = Record<string, string[] & { primary?: string }>;
 
 export {
-  generateColorPalette,
   generateColorPalettes,
   presetPalettes,
   presetDarkPalettes,

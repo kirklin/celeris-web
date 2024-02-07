@@ -1,6 +1,6 @@
 export * from "./src";
-export * from "@kirklin/logger";
-export * from "detect-mobile";
+export { field, logger } from "@kirklin/logger";
+export { isClient, isMobile, isServer, isTouchSupported } from "detect-mobile";
 export {
   cloneDeep,
   clone,
