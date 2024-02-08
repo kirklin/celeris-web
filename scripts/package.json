@@ -1,5 +1,6 @@
 {
   "name": "scripts",
+  "version": "0.0.2",
   "private": true,
   "author": "Kirk Lin (https://github.com/kirklin)",
   "license": "MIT",

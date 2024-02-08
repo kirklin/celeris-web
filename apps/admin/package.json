@@ -1,7 +1,7 @@
 {
   "name": "@celeris/admin",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@8.15.1",
   "description": "Celeris Web",
   "author": "Kirk Lin (https://github.com/kirklin)",
