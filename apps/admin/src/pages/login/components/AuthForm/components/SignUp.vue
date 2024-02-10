@@ -26,6 +26,7 @@ const model = ref<SignUpFromType>({
   confirmPassword: "123456",
 });
 const message = useMessage();
+const loading = ref<boolean>(false);
 const notification = useNotification();
 const rules: FormRules = {
   username: [
@@ -60,6 +61,7 @@ const rules: FormRules = {
 
 function signUp(e: Event) {
   e.preventDefault();
+  loading.value = true;
   formRef.value?.validate(async (errors: Array<FormValidationError> | undefined) => {
     if (!errors) {
       // Login the user
@@ -72,12 +74,14 @@ function signUp(e: Event) {
         errorMessageMode: "none",
       });
       if (userInfo) {
+        loading.value = false;
         notification.success({
           title: t("page.login.notification.loginSuccessMessage"),
           content: t("page.login.notification.welcomeBackMessage", { username: userInfo.fullName }),
         });
       }
     } else {
+      loading.value = false;
       message.error("Invalid credentials");
     }
   });
@@ -112,7 +116,7 @@ function signUp(e: Event) {
     </NFormItem>
     <div class="flex flex-col items-end">
       <div class="w-full">
-        <NButton type="primary" class="!w-full" size="large" @click="signUp">
+        <NButton type="primary" :loading="loading" class="!w-full" size="large" @click="signUp">
           {{ t('page.login.form.registerButton') }}
         </NButton>
       </div>

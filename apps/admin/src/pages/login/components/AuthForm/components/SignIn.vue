@@ -34,10 +34,7 @@ async function signIn(e: Event) {
   e.preventDefault();
   try {
     // Validate the login form
-    const errors = await loginFormRef.value?.validate();
-    if (errors) {
-      return;
-    }
+    await loginFormRef.value?.validate();
 
     loading.value = true;
 

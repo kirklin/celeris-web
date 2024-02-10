@@ -16,6 +16,7 @@ import type { ForgotPasswordFromType } from "~/pages/login/types";
 const { t } = useI18n();
 const formRef = ref<FormInst | null>(null);
 const message = useMessage();
+const { loading, setLoading } = useLoading(false);
 const model = ref<ForgotPasswordFromType>({
   phoneNumber: "",
 });
@@ -36,7 +37,9 @@ const rules: FormRules = {
 
 function forgotPassword(e: Event) {
   e.preventDefault();
+  setLoading(true);
   formRef.value?.validate((errors: Array<FormValidationError> | undefined) => {
+    setLoading(false);
     if (!errors) {
       message.success(t("page.login.form.resetLinkSentMessage"));
     }
@@ -56,7 +59,7 @@ function forgotPassword(e: Event) {
     </NFormItem>
     <div class="flex flex-col items-end gap-6">
       <div class="w-full">
-        <NButton type="primary" class="!w-full" size="large" @click="forgotPassword">
+        <NButton type="primary" :loading="loading" class="!w-full" size="large" @click="forgotPassword">
           {{ t('page.login.form.sendResetLinkButton') }}
         </NButton>
       </div>
