@@ -1,5 +1,5 @@
 import type OpenAI from "openai";
-import type { ICelerisAgentRuntimeErrorType } from "../utils/error/constants";
+import type { ICelerisAgentRuntimeErrorType } from "../utils";
 import type { OpenAIChatStreamPayload } from "../../types";
 
 export interface AgentInitErrorPayload {

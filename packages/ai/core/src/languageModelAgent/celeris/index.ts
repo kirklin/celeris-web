@@ -1,7 +1,7 @@
 import { StreamingTextResponse } from "ai";
 import { AbstractLanguageModel } from "../abstractAI";
 import { ModelBrandProvider } from "../types";
-import { AgentRuntimeError, DEBUG_CHAT_COMPLETION, LanguageModelAgentRuntimeErrorType, debugStream } from "../utils";
+import { AgentRuntimeError, LanguageModelAgentRuntimeErrorType } from "../utils";
 import type { OpenAIChatMessage, OpenAIChatStreamPayload } from "../../types";
 
 export class CelerisMockLanguageModel extends AbstractLanguageModel<any> {
@@ -36,9 +36,9 @@ export class CelerisMockLanguageModel extends AbstractLanguageModel<any> {
 
       const [debug, prod] = response.tee();
 
-      if (DEBUG_CHAT_COMPLETION) {
-        debugStream(debug).catch(console.error);
-      }
+      // if (DEBUG_CHAT_COMPLETION) {
+      //   debugStream(debug).catch(console.error);
+      // }
 
       return new StreamingTextResponse(prod);
     } catch (e) {
