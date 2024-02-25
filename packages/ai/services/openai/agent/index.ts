@@ -7,6 +7,7 @@ import type {
   AbstractLanguageModel,
   OpenAIChatStreamPayload,
 } from "@celeris/ai-core";
+import { CelerisMockLanguageModel } from "@celeris/ai-core/src/languageModelAgent/celeris";
 import { getServerConfig } from "../config/server";
 import type { JWTPayload } from "../constants/auth";
 
@@ -37,7 +38,6 @@ class LanguageModelAgent {
     switch (provider) {
       // eslint-disable-next-line default-case-last
       default:
-      case "oneapi":
       case ModelBrandProvider.OpenAI: {
         runtimeModel = this.initOpenAI(payload, azureOpenAI);
         break;
@@ -45,6 +45,11 @@ class LanguageModelAgent {
 
       case ModelBrandProvider.Azure: {
         runtimeModel = this.initAzureOpenAI(payload);
+        break;
+      }
+
+      case ModelBrandProvider.Celeris:{
+        runtimeModel = this.initMockAI();
         break;
       }
     }
@@ -71,6 +76,10 @@ class LanguageModelAgent {
       baseURL,
       useAzure,
     });
+  }
+
+  private static initMockAI() {
+    return new CelerisMockLanguageModel();
   }
 
   private static initAzureOpenAI(payload: JWTPayload) {

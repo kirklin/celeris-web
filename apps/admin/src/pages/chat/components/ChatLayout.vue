@@ -45,7 +45,6 @@ watchEffect(() => {
           :width="360"
           :native-scrollbar="true"
           show-trigger="arrow-circle"
-          bordered
         >
           <ChatHistorySidebar />
         </NLayoutSider>
