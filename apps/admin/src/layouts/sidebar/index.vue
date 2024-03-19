@@ -16,7 +16,7 @@ const sidebar = ref(null);
 <template>
   <aside
     id="sidebar"
-    class="sidebar flex flex-col"
+    class="sidebar flex flex-col h-full"
     :class="{ collapsed: isCollapse, opened: !isCollapse }"
   >
     <div ref="sidebar" class="sidebar-wrap grow flex flex-col">
