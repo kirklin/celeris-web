@@ -16,16 +16,16 @@ const { height: toolbarHeight } = useElementSize(toolbarRef);
 const throttledWrapperHeight = refThrottled(wrapperHeight, 60);
 
 const maxChatPanelHeight = computed(() => {
-  return throttledWrapperHeight.value - toolbarHeight.value;
+  return throttledWrapperHeight.value - toolbarHeight.value - 15;
 });
 </script>
 
 <template>
-  <NSplit direction="vertical" :default-size="0.8" style="">
+  <NSplit direction="vertical" :default-size="0.8">
     <template #1>
       <ChatPanelToolbar ref="toolbarRef" class="overflow-hidden" />
       <div ref="chatWrapperRef" class="w-full h-full flex flex-col">
-        <div class=" common-bg dark:bg-[--action-color] rounded-2xl">
+        <div class="w-full common-bg dark:bg-[--action-color] rounded-2xl" :style="{ height: `${maxChatPanelHeight}px` }">
           <ChatConversation :max-height="maxChatPanelHeight" />
         </div>
       </div>
