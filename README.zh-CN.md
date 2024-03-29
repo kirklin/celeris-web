@@ -245,4 +245,10 @@ docker run --rm -it -p 8080:80 celeris-web:latest
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=kirklin/celeris-web&type=Date)](https://star-history.com/#kirklin/celeris-web&Date)
+<a href="https://star-history.com/#kirklin/celeris-web&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kirklin/celeris-web&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=kirklin/celeris-web&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=kirklin/celeris-web&type=Date" />
+ </picture>
+</a>
