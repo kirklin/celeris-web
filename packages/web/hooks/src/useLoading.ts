@@ -1,13 +1,10 @@
-import { useToggle } from "@vueuse/core";
-
 export function useLoading(initValue = false) {
-  const [value, toggle] = useToggle(initValue);
+  const loading = ref(initValue);
   const setLoading = (loadingValue: boolean) => {
-    value.value = loadingValue;
+    loading.value = loadingValue;
   };
   return {
-    loading: value,
+    loading,
     setLoading,
-    toggle,
   };
 }

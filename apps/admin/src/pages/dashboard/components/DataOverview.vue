@@ -12,7 +12,7 @@ function tooltipItemsHtmlString(items: ToolTipFormatterParams[]) {
         el.color
       }" class="tooltip-item-icon"></span><span>${el.seriesName}</span>
         </p>
-        <span class="tooltip-value">${el.value.toLocaleString()}</span>
+        <span class="tooltip-value">${el.value?.toLocaleString()}</span>
       </div>`,
     )
     .reverse()

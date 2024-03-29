@@ -7,8 +7,8 @@ defineOptions({
   name: "ChatPanel",
 });
 
-const chatWrapperRef = ref();
-const toolbarRef = ref();
+const chatWrapperRef = resolveRef(null);
+const toolbarRef = resolveRef(null);
 
 const { height: wrapperHeight } = useElementSize(chatWrapperRef);
 const { height: toolbarHeight } = useElementSize(toolbarRef);

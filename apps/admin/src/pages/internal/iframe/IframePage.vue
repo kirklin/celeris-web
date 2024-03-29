@@ -1,14 +1,12 @@
 <script setup lang="ts">
 withDefaults(defineProps<{
   iframeLink?: string;
-  width?: number;
-  height?: number;
 }>(), {
   iframeLink: "",
-  width: 0,
-  height: 0,
 });
 const frameRef = ref<HTMLIFrameElement | null>();
+const width = defineModel("width", { default: 0 });
+const height = defineModel("height", { default: 0 });
 const loading = ref(true);
 function finishLoading() {
   loading.value = false;
