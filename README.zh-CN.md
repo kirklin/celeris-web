@@ -242,3 +242,7 @@ docker buildx build . -t celeris-web:latest
 ```bash
 docker run --rm -it -p 8080:80 celeris-web:latest
 ```
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=kirklin/celeris-web&type=Date)](https://star-history.com/#kirklin/celeris-web&Date)
