@@ -34,7 +34,7 @@ export class CelerisMockLanguageModel extends AbstractLanguageModel<any> {
         messages,
       );
 
-      const [debug, prod] = response.tee();
+      const [_debug, prod] = response.tee();
 
       // if (DEBUG_CHAT_COMPLETION) {
       //   debugStream(debug).catch(console.error);
