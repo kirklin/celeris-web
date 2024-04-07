@@ -3,6 +3,7 @@ import type { RendererElement, RendererNode, VNode } from "vue";
 import { renderIcon } from "@celeris/components";
 import type { ChatContextInjectionKey } from "~/pages/chat/chatContext";
 import { chatContextInjectionKey } from "~/pages/chat/chatContext";
+import ActionIcon from "~/component/ActionIcon/src/ActionIcon.vue";
 
 const { selectedAssistantRef } = inject<ChatContextInjectionKey>(chatContextInjectionKey)!;
 const TrashIcon = "carbon:trash-can";
@@ -49,15 +50,11 @@ const menuOptions = ref<MenuItem[]>(menuItems);
     </div>
 
     <div class="actions-groups flex items-center gap-4 opacity-80 mr-4">
-      <NButton text>
-        <CAIcon :name="SHARE_ICON" :size="20" />
-      </NButton>
+      <ActionIcon tooltip-text="分享" :icon="SHARE_ICON" :size="20" transparent />
     </div>
     <div class="menu-options flex justify-center opacity-80">
       <NDropdown :options="menuOptions">
-        <NButton text>
-          <CAIcon :name="MenuHorizontalIcon" :size="24" />
-        </NButton>
+        <ActionIcon :icon="MenuHorizontalIcon" :size="20" transparent />
       </NDropdown>
     </div>
   </div>

@@ -7,7 +7,7 @@ import CardInnerIcon from "~/pages/dashboard/components/CardInnerIcon.vue";
   <NGrid cols="2" item-responsive responsive="screen" :x-gap="16" :y-gap="16">
     <NGridItem>
       <!--  API余额监控：使用 "API Balance Monitoring" 来清晰地表达对API余额的追踪和监控。 -->
-      <DataCard title="API余额监控" centered currency="CNY" :val="642">
+      <DataCard title="API余额" centered currency="CNY" :val="64">
         <template #icon>
           <CardInnerIcon icon-name="material-symbols:account-balance-wallet-outline-rounded" container />
         </template>

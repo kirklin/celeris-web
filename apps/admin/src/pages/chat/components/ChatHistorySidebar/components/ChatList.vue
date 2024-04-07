@@ -1,69 +1,47 @@
 <script setup lang="ts">
-interface Item {
-  uuid: string;
-  title: string;
-  isEdit: boolean;
-}
+import { onMounted, ref } from "vue";
+import type { ChatHistorySidebar } from "~/pages/chat/components/AssistantSidebar/types";
+import ChatHistoryItem from "~/pages/chat/components/ChatHistorySidebar/components/ChatHistoryItem.vue";
 
-const chatHistory = ref<Item[]>([]);
+const chatHistory = ref<ChatHistorySidebar>(); // 使用 ChatHistorySidebar 类型的 ref
 
+// 模拟在组件挂载时获取或设置初始数据
 onMounted(() => {
-  // Fetch or set initial dataSources
-  chatHistory.value = [
-    { uuid: "1", title: "Item 1", isEdit: false },
-    { uuid: "2", title: "Item 2", isEdit: false },
-    // Add more items as needed
-  ];
+  // 这里可以替换为实际获取聊天历史摘要的逻辑
+  chatHistory.value = {
+    assistantId: "1", // 设置相关联的聊天助手 ID
+    chatSummaries: [
+      { id: "1", assistantId: "1", title: "Chat with Customer Support", archived: false },
+      { id: "2", assistantId: "1", title: "Product Inquiry", archived: false },
+      { id: "3", assistantId: "1", title: "Technical Assistance", archived: false },
+      { id: "4", assistantId: "1", title: "Sales Meeting", archived: false },
+      // 添加更多聊天摘要条目
+    ],
+  };
 });
-
-function isActive(uuid: string): boolean {
-  return uuid === chatHistory.value[0]?.uuid;
-}
-
-function handleSelect(_item: Item): void {
-  // Handle selection of an item
-  // For example, update the selected item in your data store
-}
-
-function handleEnter(item: Item, isEdit: boolean, event: KeyboardEvent): void {
-  // Handle pressing Enter when editing an item
-  if (event.key === "Enter") {
-    item.isEdit = false; // Assuming you want to exit editing mode on Enter
-    // You may want to save changes or perform other actions here
-  }
-}
 </script>
 
 <template>
-  <NCollapse :default-expanded-names="['history']" arrow-placement="left" class=" chat-history-list">
+  <NCollapse :default-expanded-names="['history']" arrow-placement="left" class="chat-history-list">
     <NCollapseItem title="历史信息" name="history">
       <template #header-extra>
-        <NBadge :value="chatHistory.length" :max="99" :offset="[0, 0]" color="transparent" />
+        <NBadge :value="chatHistory?.chatSummaries.length" :max="99" :offset="[0, 0]" color="transparent" />
       </template>
-      <NScrollbar class="max-h-full p-2">
-        <div class="flex flex-col gap-2 text-sm overflow-hidden">
-          <template v-if="!chatHistory.length">
+      <NScrollbar class="max-h-full p-1">
+        <div class="flex flex-col text-sm overflow-hidden">
+          <template v-if="!chatHistory?.chatSummaries.length">
+            <!-- 如果没有聊天摘要，显示空状态 -->
             <div class="flex flex-col items-center mt-4 text-center">
               <NEmpty />
             </div>
           </template>
           <template v-else>
-            <div v-for="(item, index) of chatHistory" :key="index">
-              <a
-                class="relative flex items-center gap-3 px-3 py-3 break-all border rounded-md cursor-pointer hover:bg-neutral-100 group dark:border-neutral-800 dark:hover:bg-[#24272e]"
-                :class="isActive(item.uuid) ? ['border-[#4b9e5f]', 'bg-neutral-100', 'text-[#4b9e5f]', 'dark:bg-[#24272e]', 'dark:border-[#4b9e5f]'] : ''"
-                @click="handleSelect(item)"
-              >
-                <div class="relative flex-1 overflow-hidden break-all text-ellipsis whitespace-nowrap">
-                  <NInput
-                    v-if="item.isEdit"
-                    v-model:value="item.title"
-                    size="tiny"
-                    @keypress="handleEnter(item, false, $event)"
-                  />
-                  <span v-else>{{ item.title }}</span>
-                </div>
-              </a>
+            <!-- 渲染聊天历史摘要列表 -->
+            <div
+              v-for="chatSummary in chatHistory?.chatSummaries" :key="chatSummary.id"
+              class="cursor-pointer flex items-center w-full overflow-hidden transition ease-out border-[var(--border-color)]"
+            >
+              <ChatHistoryItem :chat-summary="chatSummary" />
             </div>
           </template>
         </div>

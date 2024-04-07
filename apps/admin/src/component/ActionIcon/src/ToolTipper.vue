@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { computed } from "vue";
 import type { PopoverPlacement } from "naive-ui";
+import { isEmpty } from "@celeris/utils";
 
 interface ToolTipperProps {
   // Tooltip 显示的文本信息
@@ -17,12 +18,12 @@ interface ToolTipperProps {
 }
 
 const props = withDefaults(defineProps<ToolTipperProps>(), {
-  tooltipText: "",
+  tooltipText: undefined,
   placement: "bottom",
   contentClass: "",
 });
 const { tooltipText, placement, contentClass } = toRefs(props);
-const shouldShowTooltip = computed(() => Boolean(tooltipText));
+const shouldShowTooltip = computed(() => isEmpty(tooltipText));
 </script>
 
 <template>
