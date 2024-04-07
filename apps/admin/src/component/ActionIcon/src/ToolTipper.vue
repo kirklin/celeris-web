@@ -23,7 +23,7 @@ const props = withDefaults(defineProps<ToolTipperProps>(), {
   contentClass: "",
 });
 const { tooltipText, placement, contentClass } = toRefs(props);
-const shouldShowTooltip = computed(() => isEmpty(tooltipText));
+const shouldShowTooltip = computed(() => !isEmpty(tooltipText.value));
 </script>
 
 <template>
