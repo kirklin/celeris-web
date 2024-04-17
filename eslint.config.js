@@ -4,6 +4,7 @@ export default kirklin({
   rules: {
     "new-cap": "warn",
   },
+  unocss: true,
   formatters: {
     /**
      * 格式化CSS、LESS、SCSS文件，以及Vue中的`<style>`块
