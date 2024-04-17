@@ -14,11 +14,11 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@azure/openai": "^1.0.0-beta.11",
+    "@azure/openai": "^1.0.0-beta.12",
     "@faker-js/faker": "^8.4.1",
-    "ai": "^3.0.15",
+    "ai": "^3.0.23",
     "gpt-tokenizer": "^2.1.2",
-    "openai": "^4.30.0",
+    "openai": "^4.36.0",
     "promptitude": "^0.0.0",
     "url-join": "^5.0.0"
   },

@@ -19,6 +19,6 @@
     "@celeris/constants": "workspace:*",
     "@celeris/utils": "workspace:*",
     "naive-ui": "2.38.1",
-    "vue": "^3.4.21"
+    "vue": "^3.4.23"
   }
 }

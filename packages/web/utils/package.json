@@ -22,15 +22,15 @@
     "dayjs": "^1.11.10",
     "detect-mobile": "^0.0.0",
     "lodash-es": "^4.17.21",
-    "path-to-regexp": "^6.2.1"
+    "path-to-regexp": "^6.2.2"
   },
   "devDependencies": {
     "@celeris/constants": "workspace:*",
     "@celeris/types": "workspace:*",
     "@types/crypto-js": "^4.2.2",
     "@types/lodash-es": "^4.17.12",
-    "@vue/runtime-core": "3.4.21",
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "@vue/runtime-core": "3.4.23",
+    "vue": "^3.4.23",
+    "vue-router": "^4.3.1"
   }
 }
