@@ -31,7 +31,7 @@ Get started with celeris-web today and experience a highly streamlined front-end
 - 📜 [Chinese font preset](https://github.com/kirklin/unocss-preset-chinese): Includes a preset for Chinese fonts 🇨🇳
 - 🌍 [I18n ready](https://github.com/kirklin/celeris-web/tree/master/packages/web/locale): Ready for internationalization with locales 🌎
 - ☁️ [Netlify ready](https://www.netlify.com/): Zero-config deployment on Netlify ☁️
-- 🤖 Integration with [OpenAI's ChatGPT API](https://openai.com/https://openai.com/): for natural language processing 🤖
+- 🤖 Integration with [OpenAI's ChatGPT API](https://openai.com/): for natural language processing 🤖
 
 ### Coding Style
 
