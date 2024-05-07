@@ -7,3 +7,9 @@
     <slot />
   </div>
 </template>
+
+<style scoped>
+.page-wrapper :deep(.ca-scrollbar-container) {
+  padding: 0 8px;
+}
+</style>
