@@ -45,4 +45,8 @@ defineOptions({
 </template>
 
 <style scoped>
+.rounded-2xl >>> .ca-scrollbar-container {
+  padding-right: 8px;
+  padding-left: 8px;
+}
 </style>
