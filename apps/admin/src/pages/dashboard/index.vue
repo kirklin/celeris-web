@@ -46,7 +46,6 @@ defineOptions({
 
 <style scoped>
 .rounded-2xl :deep(.ca-scrollbar-container) {
-  padding-right: 8px;
-  padding-left: 8px;
+  padding: 0 8px;
 }
 </style>
