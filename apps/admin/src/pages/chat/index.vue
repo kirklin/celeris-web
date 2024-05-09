@@ -8,7 +8,7 @@ defineOptions({
 </script>
 
 <template>
-  <PageWrapper>
+  <PageWrapper :use-scrollbar="false">
     <ChatLayout />
   </PageWrapper>
 </template>

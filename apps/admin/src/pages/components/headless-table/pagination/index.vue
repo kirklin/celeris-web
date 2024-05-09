@@ -59,68 +59,66 @@ function handlePageSizeChange(pageSize: number) {
 
 <template>
   <PageWrapper>
-    <NScrollbar class="rounded-2xl">
-      <NCard title="分页表单">
-        <NTable :bordered="true" :single-line="false" striped>
-          <thead>
-            <tr
-              v-for="headerGroup in table.getHeaderGroups()"
-              :key="headerGroup.id"
+    <NCard title="分页表单">
+      <NTable :bordered="true" :single-line="false" striped>
+        <thead>
+          <tr
+            v-for="headerGroup in table.getHeaderGroups()"
+            :key="headerGroup.id"
+          >
+            <th
+              v-for="(header) in headerGroup.headers"
+              :key="header.id"
+              :colspan="header.colSpan"
+              class="font-bold!"
+              scope="col"
             >
-              <th
-                v-for="(header) in headerGroup.headers"
-                :key="header.id"
-                :colspan="header.colSpan"
-                class="font-bold!"
-                scope="col"
-              >
-                <FlexRender
-                  :render="header.column.columnDef.header"
-                  :props="header.getContext()"
-                />
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="row in table.getRowModel().rows"
-              :key="row.id"
+              <FlexRender
+                :render="header.column.columnDef.header"
+                :props="header.getContext()"
+              />
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="row in table.getRowModel().rows"
+            :key="row.id"
+          >
+            <td
+              v-for="(cell) in row.getVisibleCells()"
+              :key="cell.id"
             >
-              <td
-                v-for="(cell) in row.getVisibleCells()"
-                :key="cell.id"
-              >
+              <div>
                 <div>
-                  <div>
-                    <FlexRender
-                      :render="cell.column.columnDef.cell"
-                      :props="cell.getContext()"
-                    />
-                  </div>
+                  <FlexRender
+                    :render="cell.column.columnDef.cell"
+                    :props="cell.getContext()"
+                  />
                 </div>
-              </td>
-            </tr>
-            <tr v-if="table.getRowModel().rows.length === 0">
-              <td
-                :colspan="table.getAllColumns().length"
-              >
-                <NEmpty />
-              </td>
-            </tr>
-          </tbody>
-        </NTable>
-        <template #action>
-          <NPagination
-            :page="table.getState().pagination.pageIndex + 1"
-            :page-count="table.getPageCount()"
-            show-size-picker
-            :page-sizes="[10, 20, 30, 40, 50]"
-            @update:page="handlePageChange"
-            @update:page-size="handlePageSizeChange"
-          />
-        </template>
-      </NCard>
-    </NScrollbar>
+              </div>
+            </td>
+          </tr>
+          <tr v-if="table.getRowModel().rows.length === 0">
+            <td
+              :colspan="table.getAllColumns().length"
+            >
+              <NEmpty />
+            </td>
+          </tr>
+        </tbody>
+      </NTable>
+      <template #action>
+        <NPagination
+          :page="table.getState().pagination.pageIndex + 1"
+          :page-count="table.getPageCount()"
+          show-size-picker
+          :page-sizes="[10, 20, 30, 40, 50]"
+          @update:page="handlePageChange"
+          @update:page-size="handlePageSizeChange"
+        />
+      </template>
+    </NCard>
   </PageWrapper>
 </template>
 

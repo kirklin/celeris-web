@@ -2,6 +2,7 @@
 import { HttpStatusConstants, PageConstants } from "@celeris/constants";
 import { checkStatus } from "@celeris/request";
 import { getErrorMessage } from "@celeris/utils";
+import PageWrapper from "~/component/PageWrapper/src/PageWrapper.vue";
 
 const props = withDefaults(defineProps<exceptionProps>(), {
   status: HttpStatusConstants.NotFound,
@@ -47,16 +48,18 @@ onMounted(() => {
 </script>
 
 <template>
-  <NResult class="p-4" :status="statusType" :title="title" :description="description" size="large">
-    <template #footer>
-      <NSpace justify="center">
-        <NButton type="primary" @click="router.push(PageConstants.BASE_HOME)">
-          返回主页
-        </NButton>
-        <NButton @click="router.back()">
-          返回上一级
-        </NButton>
-      </NSpace>
-    </template>
-  </NResult>
+  <PageWrapper>
+    <NResult class="p-4" :status="statusType" :title="title" :description="description" size="large">
+      <template #footer>
+        <NSpace justify="center">
+          <NButton type="primary" @click="router.push(PageConstants.BASE_HOME)">
+            返回主页
+          </NButton>
+          <NButton @click="router.back()">
+            返回上一级
+          </NButton>
+        </NSpace>
+      </template>
+    </NResult>
+  </PageWrapper>
 </template>

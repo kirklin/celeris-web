@@ -11,6 +11,7 @@ declare module 'vue' {
     CAAppNaiveUIProvider: typeof import('@celeris/components')['CAAppNaiveUIProvider']
     CACharts: typeof import('@celeris/components')['CACharts']
     CAIcon: typeof import('@celeris/components')['CAIcon']
+    NAlert: typeof import('@celeris/ca-components')['NAlert']
     NAvatar: typeof import('@celeris/ca-components')['NAvatar']
     NBadge: typeof import('@celeris/ca-components')['NBadge']
     NBreadcrumb: typeof import('@celeris/ca-components')['NBreadcrumb']
