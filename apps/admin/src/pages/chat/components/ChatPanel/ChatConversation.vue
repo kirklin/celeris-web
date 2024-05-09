@@ -134,9 +134,4 @@ onMounted(() => {
   background-color: var(--primary-color);
   color: var(--base-color);
 }
-@container (max-width: 500px) {
-  .chat-virtual-list .conversation .messages {
-    max-width: 90%;
-  }
-}
 </style>
