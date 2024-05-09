@@ -1,0 +1,251 @@
+{
+  "routes": {
+    "components": {
+      "components": "组件示例",
+      "table": "表格组件",
+      "headlessTable": "Headless 表格",
+      "headlessTableBasic": "基础表格",
+      "headlessTablePagination": "分页表格"
+    },
+    "chat": {
+      "chat": "Chat"
+    },
+    "profile": {
+      "profile": "个人资料"
+    },
+    "design": {
+      "design": "设计",
+      "palette": "调色板",
+      "typography": "汉字排版"
+    },
+    "dashboard": {
+      "dashboard": "仪表盘"
+    },
+    "directives": {
+      "directives": "指令示例",
+      "permission": "权限指令",
+      "copy": "复制指令",
+      "ripple": "涟漪指令"
+    },
+    "iframe": {
+      "iframe": "内嵌网页",
+      "githubInternal": "GitHub 仓库（内嵌）",
+      "GitHubExternal": "GitHub 仓库（外链）",
+      "viteInternal": "Vite 中文文档 (内嵌)",
+      "ViteExternal": "Vite 官方文档 (外链)"
+    },
+    "permission": {
+      "permission": "权限测试页",
+      "authPageA": "权限测试页A",
+      "authPageB": "权限测试页B",
+      "frontend": "基于前端权限",
+      "backend": "基于后台权限",
+      "pageAuth": "页面权限",
+      "buttonAuth": "按钮权限",
+      "role": "角色权限",
+      "directive": "指令权限"
+    },
+    "result": {
+      "result": "结果页",
+      "success": "成功页",
+      "fail": "失败页"
+    }
+  },
+  "layouts": {
+    "header": {
+      "toggleCollapsed": "折叠菜单",
+      "toggleFullScreen": "切换全屏",
+      "switchLocale": "切换语言",
+      "settingDrawer": "设置抽屉",
+      "openSettingDrawer": "打开设置抽屉",
+      "projectSetting": "项目设置",
+      "darkMode": "深色主题",
+      "followSystem": "跟随系统",
+      "systemDefault": "系统默认",
+      "systemTheme": "系统主题",
+      "themeMode": "主题模式",
+      "lightMode": "浅色主题",
+      "colorWeak": "色弱模式",
+      "themeConfig": {
+        "title": "主题配置",
+        "copyConfigButton": "拷贝当前配置",
+        "resetConfigButton": "重置当前配置",
+        "message": {
+          "copyConfigSuccess": "拷贝配置成功！",
+          "resetConfigSuccess": "重置配置成功！"
+        }
+      },
+      "transitionSetting": {
+        "title": "动画设置",
+        "enableTransition": "开启动画",
+        "enableProgressBar": "开启进度条",
+        "enablePageLoadingTransition": "开启页面加载动画",
+        "routeTransition": "切换路由动画"
+      }
+    },
+    "userInfo": {
+      "userInformation": "用户信息",
+      "greeting": "你好",
+      "rolesList": "角色列表：{roles}",
+      "logoutButton": "退出登录"
+    },
+    "logoutConfirmation": {
+      "title": "警告",
+      "content": "您确定要退出登录吗？",
+      "positiveText": "退出登录",
+      "negativeText": "取消",
+      "onNegativeClickMessage": "取消退出登录",
+      "onPositiveClickMessage": "退出登录成功"
+    }
+  },
+  "searchDialog": {
+    "searchPlaceholder": "搜索",
+    "noResultsFound": "抱歉，未找到符合 { search } 的结果",
+    "toSelectTooltip": "选择",
+    "toNavigateTooltip": "导航",
+    "applications": "应用程序",
+    "chatBot": "ChatBot",
+    "actions": "操作列表",
+    "action": "操作",
+    "shortcut": "快捷方式",
+    "go": "前往"
+  },
+  "page": {
+    "login": {
+      "title": "登录",
+      "form": {
+        "username": {
+          "label": "用户名",
+          "placeholder": "请输入用户名",
+          "error": "用户名不能为空"
+        },
+        "password": {
+          "label": "密码",
+          "placeholder": "请输入密码",
+          "error": "密码不能为空"
+        },
+        "confirmPassword": {
+          "label": "确认密码",
+          "placeholder": "请输入密码",
+          "error": "确认密码不能为空",
+          "validator": "两次密码不一致！"
+        },
+        "forgotPassword": {
+          "label": "手机号码",
+          "placeholder": "示例：15912345678",
+          "requiredError": "手机号码不能为空",
+          "invalidFormatError": "无效的手机号码格式"
+        },
+        "socialButtons": {
+          "signInWithQQ": "使用 QQ 登录",
+          "signInWithWeChat": "使用微信登录"
+        },
+        "signText": {
+          "signIn": "还没有账号吗？",
+          "forgotPassword": "返回登录",
+          "signUp": "已经有账号了吗？"
+        },
+        "welcomeBackTitle": "欢迎回来",
+        "helloTitle": "你好",
+        "forgotPasswordTitle": "忘记密码",
+        "greetingText": "Celeris Web 是一个使用 Vue 3、Vite 和 TypeScript 构建的高性能、可定制的前端开发模板。",
+        "sendResetLinkButton": "发送重置链接",
+        "resetLinkSentMessage": "重置链接已发送",
+        "signUp": "注册",
+        "backToSignIn": "返回登录",
+        "signIn": "登录",
+        "remember": "记住我",
+        "loginButton": "登录",
+        "registerButton": "注册",
+        "forgetPassword": "忘记密码",
+        "incorrectAccountOrPassword": "账号或密码不正确！"
+      },
+      "notification": {
+        "loginSuccessMessage": "登录成功",
+        "welcomeBackMessage": "欢迎回来，{username}！"
+      }
+    },
+    "copyDirective": {
+      "copy": "复制",
+      "copyDirective": "复制指令示例",
+      "copyPlaceholder": "请输入要复制的内容",
+      "copySuccess": "复制成功",
+      "copyError": "复制失败"
+    },
+    "rippleDirective": {
+      "ripple": "涟漪",
+      "rippleDirective": "涟漪指令示例",
+      "description1": "涟漪是用于传达组件或交互元素状态的状态图层。",
+      "description2": "状态图层是放置在元素上的半透明覆盖层，用于指示其状态。"
+    },
+    "permission": {
+      "permissionMode": {
+        "currentMode": "当前权限模式",
+        "backendMode": "后台权限模式",
+        "frontendMode": "前端角色权限模式",
+        "toggleMode": "切换权限模式"
+      },
+      "pageTitles": {
+        "frontend": "前端权限示例",
+        "backend": "后端权限示例",
+        "button": "按钮权限控制"
+      },
+      "roleButtonText": "拥有 { role } 角色权限可见",
+      "codeButtonText": "拥有code { code } 权限可见",
+      "currentPermissionMode": "当前权限模式",
+      "currentRole": "当前角色",
+      "currentCode": "当前code",
+      "clickToSeeButtonChange": "点击后请查看按钮变化",
+      "clickToSeeLeftMenuChange": "点击后请查看左侧菜单变化",
+      "frontendPermissionSwitchTitle": "权限切换(请先切换权限模式为前端角色权限模式)",
+      "backendPermissionSwitchTitle": "权限切换(请先切换权限模式为后端角色权限模式)",
+      "componentWayTitle": "组件方式判断权限(有需要可以自行全局注册)",
+      "functionWayTitle": "函数方式方式判断权限(适用于函数内部过滤)",
+      "functionWayButtonBoth": "拥有[USER,ADMIN]角色权限可见",
+      "directiveWayTitle": "指令方式方式判断权限(该方式不能动态修改权限.)",
+      "backendLeftMenuChangeTitle": "点击后请查看左侧菜单变化(必须处于后台权限模式才可测试此页面所展示的功能)"
+    },
+    "headlessTable": {
+      "pageTitles": {
+        "basic": "基础表格"
+      }
+    },
+    "result": {
+      "status": {
+        "error": "错误",
+        "success": "成功"
+      },
+      "failPage": {
+        "title": "内容发送出错",
+        "subTitle": "很抱歉，发送内容时出现了问题。",
+        "buttons": {
+          "home": "返回主页",
+          "back": "返回上一级"
+        },
+        "errorHeader": "发送内容出错时可能会有以下问题：",
+        "networkIssue": "网络连接问题",
+        "checkNetwork": "检查网络 >",
+        "messageTooLong": "消息过长，请精简一些",
+        "viewHelp": "查看帮助 >"
+      },
+      "successPage": {
+        "title": "操作成功",
+        "subTitle": "ChatGPT 生成的内容已成功创建。",
+        "buttons": {
+          "home": "返回主页"
+        },
+        "contentHeader": "AIGC 生成内容：",
+        "generatedTimeLabel": "生成时间",
+        "generatorLabel": "生成者",
+        "generatedContent": "在此显示生成的内容",
+        "contentLabel": "内容",
+        "step1": "输入内容",
+        "step2": "生成中",
+        "step2Content": "ChatGPT 正在生成内容，请稍等片刻。",
+        "step3": "审核中",
+        "step3Content": "生成的内容正在审核中，将很快完成审核。",
+        "step4": "完成"
+      }
+    }
+  }
+}

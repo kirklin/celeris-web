@@ -220,6 +220,106 @@ importers:
         specifier: ^2.0.16
         version: 2.0.16(typescript@5.4.5)
 
+  apps/thin:
+    dependencies:
+      '@celeris/constants':
+        specifier: workspace:*
+        version: link:../../packages/web/constants
+      '@celeris/directives':
+        specifier: workspace:*
+        version: link:../../packages/web/directives
+      '@celeris/locale':
+        specifier: workspace:*
+        version: link:../../packages/web/locale
+      '@celeris/request':
+        specifier: workspace:*
+        version: link:../../packages/web/request
+      '@celeris/styles':
+        specifier: workspace:*
+        version: link:../../packages/web/styles
+      '@celeris/utils':
+        specifier: workspace:*
+        version: link:../../packages/web/utils
+      destr:
+        specifier: ^2.0.3
+        version: 2.0.3
+      headless-highlighter:
+        specifier: ^0.0.0
+        version: 0.0.0(vue@3.4.27(typescript@5.4.5))
+      nprogress:
+        specifier: ^0.2.0
+        version: 0.2.0
+      pinia:
+        specifier: ^2.1.7
+        version: 2.1.7(typescript@5.4.5)(vue@3.4.27(typescript@5.4.5))
+      pinia-plugin-persistedstate:
+        specifier: ^3.2.1
+        version: 3.2.1(pinia@2.1.7(typescript@5.4.5)(vue@3.4.27(typescript@5.4.5)))
+      pkg-types:
+        specifier: ^1.1.0
+        version: 1.1.0
+      vue:
+        specifier: ^3.4.27
+        version: 3.4.27(typescript@5.4.5)
+      vue-i18n:
+        specifier: ^9.13.1
+        version: 9.13.1(vue@3.4.27(typescript@5.4.5))
+      vue-router:
+        specifier: ^4.3.2
+        version: 4.3.2(vue@3.4.27(typescript@5.4.5))
+    devDependencies:
+      '@celeris/admin-api':
+        specifier: workspace:*
+        version: link:../../services/admin
+      '@celeris/assets':
+        specifier: workspace:*
+        version: link:../../packages/web/assets
+      '@celeris/ca-components':
+        specifier: workspace:*
+        version: link:../../packages/web/CAComponents
+      '@celeris/components':
+        specifier: workspace:*
+        version: link:../../packages/web/components
+      '@celeris/hooks':
+        specifier: workspace:*
+        version: link:../../packages/web/hooks
+      '@celeris/types':
+        specifier: workspace:*
+        version: link:../../packages/web/types
+      '@celeris/vite':
+        specifier: workspace:*
+        version: link:../../packages/node/vite
+      '@vitejs/plugin-vue':
+        specifier: ^5.0.4
+        version: 5.0.4(vite@5.2.11(@types/node@20.12.11)(terser@5.17.6))(vue@3.4.27(typescript@5.4.5))
+      '@vue/compiler-dom':
+        specifier: ^3.4.27
+        version: 3.4.27
+      '@vue/test-utils':
+        specifier: ^2.4.6
+        version: 2.4.6
+      jsdom:
+        specifier: ^24.0.0
+        version: 24.0.0
+      pnpm:
+        specifier: ^9.1.0
+        version: 9.1.0
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+      unocss:
+        specifier: ^0.60.0
+        version: 0.60.0(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.11(@types/node@20.12.11)(terser@5.17.6))
+      vite:
+        specifier: ^5.2.11
+        version: 5.2.11(@types/node@20.12.11)(terser@5.17.6)
+      vitest:
+        specifier: ^1.6.0
+        version: 1.6.0(@types/node@20.12.11)(jsdom@24.0.0)(terser@5.17.6)
+      vue-tsc:
+        specifier: ^2.0.16
+        version: 2.0.16(typescript@5.4.5)
+
   packages/ai/core:
     dependencies:
       '@azure/openai':
@@ -2736,43 +2836,36 @@ packages:
     resolution: {integrity: sha512-L1+D8/wqGnKQIlh4Zre9i4R4b4noxzH5DDciyahX4oOz62CphY7WDWqJoQ66zNR4oScLNOqQJfNSIAe/6TPUmQ==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.13.2':
     resolution: {integrity: sha512-tK5eoKFkXdz6vjfkSTCupUzCo40xueTOiOO6PeEIadlNBkadH1wNOH8ILCPIl8by/Gmb5AGAeQOFeLev7iZDOA==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-powerpc64le-gnu@4.13.2':
     resolution: {integrity: sha512-zvXvAUGGEYi6tYhcDmb9wlOckVbuD+7z3mzInCSTACJ4DQrdSLPNUeDIcAQW39M3q6PDquqLWu7pnO39uSMRzQ==}
     cpu: [ppc64le]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-gnu@4.13.2':
     resolution: {integrity: sha512-C3GSKvMtdudHCN5HdmAMSRYR2kkhgdOfye4w0xzyii7lebVr4riCgmM6lRiSCnJn2w1Xz7ZZzHKuLrjx5620kw==}
     cpu: [riscv64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-s390x-gnu@4.13.2':
     resolution: {integrity: sha512-l4U0KDFwzD36j7HdfJ5/TveEQ1fUTjFFQP5qIt9gBqBgu1G8/kCaq5Ok05kd5TG9F8Lltf3MoYsUMw3rNlJ0Yg==}
     cpu: [s390x]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.13.2':
     resolution: {integrity: sha512-xXMLUAMzrtsvh3cZ448vbXqlUa7ZL8z0MwHp63K2IIID2+DeP5iWIT6g1SN7hg1VxPzqx0xZdiDM9l4n9LRU1A==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.13.2':
     resolution: {integrity: sha512-M/JYAWickafUijWPai4ehrjzVPKRCyDb1SLuO+ZyPfoXgeCEAlgPkNXewFZx0zcnoIe3ay4UjXIMdXQXOZXWqA==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-win32-arm64-msvc@4.13.2':
     resolution: {integrity: sha512-2YWwoVg9KRkIKaXSh0mz3NmfurpmYoBBTAXA9qt7VXk0Xy12PoOP40EFuau+ajgALbbhi4uTj3tSG3tVseCjuA==}
@@ -3272,9 +3365,6 @@ packages:
 
   '@vue/shared@3.3.4':
     resolution: {integrity: sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==}
-
-  '@vue/shared@3.4.23':
-    resolution: {integrity: sha512-wBQ0gvf+SMwsCQOyusNw/GoXPV47WGd1xB5A1Pgzy0sQ3Bi5r5xm3n+92y3gCnB3MWqnRDdvfkRGxhKtbBRNgg==}
 
   '@vue/shared@3.4.27':
     resolution: {integrity: sha512-DL3NmY2OFlqmYYrzp39yi3LDkKxa5vZVwxWdQ3rG0ekuWscHraeIbnI8t+aZK7qhYqEqWKTUdijadunb9pnrgA==}
@@ -8985,7 +9075,7 @@ snapshots:
       '@babel/helper-function-name': 7.22.5
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
-      '@babel/parser': 7.24.4
+      '@babel/parser': 7.24.5
       '@babel/types': 7.22.15
       debug: 4.3.4
       globals: 11.12.0
@@ -9030,7 +9120,7 @@ snapshots:
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
-      '@babel/parser': 7.24.4
+      '@babel/parser': 7.24.5
       '@babel/types': 7.24.0
       debug: 4.3.4
       globals: 11.12.0
@@ -10832,7 +10922,7 @@ snapshots:
 
   '@vue/compiler-core@3.3.4':
     dependencies:
-      '@babel/parser': 7.24.4
+      '@babel/parser': 7.24.5
       '@vue/shared': 3.3.4
       estree-walker: 2.0.2
       source-map-js: 1.2.0
@@ -10870,7 +10960,7 @@ snapshots:
 
   '@vue/compiler-sfc@3.4.27':
     dependencies:
-      '@babel/parser': 7.24.4
+      '@babel/parser': 7.24.5
       '@vue/compiler-core': 3.4.27
       '@vue/compiler-dom': 3.4.27
       '@vue/compiler-ssr': 3.4.27
@@ -10923,7 +11013,7 @@ snapshots:
     dependencies:
       '@volar/language-core': 2.2.1
       '@vue/compiler-dom': 3.4.27
-      '@vue/shared': 3.4.23
+      '@vue/shared': 3.4.27
       computeds: 0.0.1
       minimatch: 9.0.4
       path-browserify: 1.0.1
@@ -10933,7 +11023,7 @@ snapshots:
 
   '@vue/reactivity-transform@3.3.4':
     dependencies:
-      '@babel/parser': 7.24.4
+      '@babel/parser': 7.24.5
       '@vue/compiler-core': 3.3.4
       '@vue/shared': 3.3.4
       estree-walker: 2.0.2
@@ -10982,8 +11072,6 @@ snapshots:
       vue: 3.4.27(typescript@5.4.5)
 
   '@vue/shared@3.3.4': {}
-
-  '@vue/shared@3.4.23': {}
 
   '@vue/shared@3.4.27': {}
 

@@ -36,7 +36,9 @@
   "scripts": {
     "bootstrap": "pnpm install",
     "dev": "run-p dev:admin dev:mock dev:ai-services-openai",
+    "dev:thin": "run-p dev:admin:thin dev:mock",
     "dev:admin": "pnpm --filter @celeris/admin dev",
+    "dev:admin:thin": "pnpm --filter @celeris/admin-thin dev",
     "dev:mock": "pnpm --filter @celeris/admin-api dev",
     "dev:ai-services-openai": "pnpm --filter @celeris/ai-services-openai dev",
     "build": "pnpm --filter @celeris/admin build",

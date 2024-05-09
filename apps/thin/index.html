@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-hans">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Celeris Web</title>
+    <meta
+      name="description"
+      content="Celeris Web is a free and open-source front-end development framework that enables streamlined web development with powerful tools and features, including natural language processing capabilities."
+    />
+    <meta
+      name="keywords"
+      content="Celeris Web, Vue 3, Vite, TypeScript, monorepo approach, OpenAI's ChatGPT API, front-end development, web development, web applications, open-source, natural language processing capabilities, developer tools, modern web development, collaborative development, project management, dependency management, TypeScript syntax, Vue Router, page loading speed, component library, API integration, internationalization support, responsive design"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <style>
+        .app-loading {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          background-color: #f4f7f9;
+        }
+
+        .app-loading .app-loading-wrap {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          display: flex;
+          transform: translate3d(-50%, -50%, 0);
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+
+        .loader {
+          width: 48px;
+          height: 48px;
+          margin: auto;
+          position: relative;
+        }
+
+        .loader:before {
+          content: "";
+          width: 48px;
+          height: 5px;
+          background: #f0808050;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          border-radius: 50%;
+          animation: shadow324 0.5s linear infinite;
+        }
+
+        .loader:after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          background: #f08080;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 4px;
+          animation: jump7456 0.5s linear infinite;
+        }
+
+        @keyframes jump7456 {
+          15% {
+            border-bottom-right-radius: 3px;
+          }
+
+          25% {
+            transform: translateY(9px) rotate(22.5deg);
+          }
+
+          50% {
+            transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+            border-bottom-right-radius: 40px;
+          }
+
+          75% {
+            transform: translateY(9px) rotate(67.5deg);
+          }
+
+          100% {
+            transform: translateY(0) rotate(90deg);
+          }
+        }
+
+        @keyframes shadow324 {
+          0%,
+          100% {
+            transform: scale(1, 1);
+          }
+
+          50% {
+            transform: scale(1.2, 1);
+          }
+        }
+      </style>
+      <div class="app-loading">
+        <div class="app-loading-wrap">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

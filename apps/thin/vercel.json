@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/api",
+      "destination": "https://celeris-web-api.vercel.app"
+    },
+    {
+      "source": "/api/",
+      "destination": "https://celeris-web-api.vercel.app/"
+    },
+    {
+      "source": "/api/:match*",
+      "destination": "https://celeris-web-api.vercel.app/:match*"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
+  ]
+}

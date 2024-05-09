@@ -40,7 +40,7 @@ jobs:
         run: pnpm install
 
       - name: Type check
-        run: pnpm --filter "@celeris/admin" typecheck
+        run: pnpm --filter "@celeris/admin-thin" typecheck
 
   TEST:
     runs-on: ubuntu-latest
