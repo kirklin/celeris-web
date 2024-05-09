@@ -115,24 +115,24 @@ Celeris Web的一个特色是它与OpenAI的ChatGPT API集成，提供了强大�
 4. **示例：**
 
 ```typescript
-   /**
-    * 打开一个新的浏览器窗口
-    * Open a new browser window
-    *
-    * @param {string} url - 要在新窗口中打开的 URL
-    * The URL to open in the new window
-    *
-    * @param {object} options - 打开窗口的选项
-    * Options for opening the window
-    * @param {string} options.target - 新窗口的名称或特殊选项，默认为 "_blank"
-    * @param {string} options.features - 新窗口的特性（大小，位置等），默认为 "noopener=yes,noreferrer=yes"
-    */
-   export function openWindow(url: string, { target = "_blank", features = "noopener=yes,noreferrer=yes" }: {
-     target?: "_blank" | "_self" | "_parent" | "_top"; // 新窗口的名称或特殊选项，默认为 "_blank"
-     features?: string; // 新窗口的特性（大小，位置等），默认为 "noopener=yes,noreferrer=yes"
-   } = {}) {
-     window.open(url, target, features);
-   }
+/**
+ * 打开一个新的浏览器窗口
+ * Open a new browser window
+ *
+ * @param {string} url - 要在新窗口中打开的 URL
+ * The URL to open in the new window
+ *
+ * @param {object} options - 打开窗口的选项
+ * Options for opening the window
+ * @param {string} options.target - 新窗口的名称或特殊选项，默认为 "_blank"
+ * @param {string} options.features - 新窗口的特性（大小，位置等），默认为 "noopener=yes,noreferrer=yes"
+ */
+export function openWindow(url: string, { target = "_blank", features = "noopener=yes,noreferrer=yes" }: {
+  target?: "_blank" | "_self" | "_parent" | "_top"; // 新窗口的名称或特殊选项，默认为 "_blank"
+  features?: string; // 新窗口的特性（大小，位置等），默认为 "noopener=yes,noreferrer=yes"
+} = {}) {
+  window.open(url, target, features);
+}
 ```
 
 通过这样的中英文双语注释，我们希望为开发者提供更愉悦、更高效的编码体验，让Celeris Web成为一个真正容易上手和深入学习的前端模板。
