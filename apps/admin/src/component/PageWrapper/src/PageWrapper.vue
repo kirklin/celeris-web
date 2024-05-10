@@ -27,4 +27,7 @@ withDefaults(defineProps<PageWrapperProps>(), {
 .page-wrapper :deep(.ca-scrollbar-container) {
   padding: 0 8px;
 }
+.page-wrapper :deep(.ca-scrollbar) {
+  margin: 8px 0;
+}
 </style>
