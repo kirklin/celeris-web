@@ -69,7 +69,7 @@ const searchGroups = ref<SearchGroups>([
         iconName: FullScreenIcon,
         iconImage: null,
         key: 7,
-        title: "Toggle fullscreen",
+        title: t("layouts.header.toggleFullScreen"),
         label: t("searchDialog.action"),
         action() {
           toggleFullScreen();
