@@ -33,8 +33,6 @@
     "@celeris/request": "workspace:*",
     "@celeris/styles": "workspace:*",
     "@celeris/utils": "workspace:*",
-    "@formily/core": "^2.3.1",
-    "@formily/vue": "^2.3.1",
     "@tanstack/query-persist-client-core": "^5.35.1",
     "@tanstack/query-sync-storage-persister": "^5.35.1",
     "@tanstack/vue-query": "^5.35.2",

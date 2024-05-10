@@ -10,7 +10,7 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <PageWrapper class="flex flex-row space-x-2xl">
+  <PageWrapper class="flex flex-row space-x-2xl" :use-scrollbar="false">
     <NCard v-ripple content-class="bg-primary rounded-2xl">
       <div class="space-y-3xl text-white text-chinese">
         <h1 class="text-7xl">
