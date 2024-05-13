@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@celeris/constants": "workspace:*",
-    "@celeris/directives": "workspace:*",
+    "@celeris/directives": "^0.0.3",
     "@celeris/locale": "workspace:*",
     "@celeris/request": "workspace:*",
     "@celeris/styles": "workspace:*",
@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@celeris/admin-api": "workspace:*",
-    "@celeris/assets": "workspace:*",
+    "@celeris/assets": "^0.0.3",
     "@celeris/ca-components": "workspace:*",
     "@celeris/components": "workspace:*",
     "@celeris/hooks": "workspace:*",
