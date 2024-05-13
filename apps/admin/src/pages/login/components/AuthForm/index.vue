@@ -17,6 +17,9 @@ const title = computed<string>(() =>
   typeRef.value === "signIn" ? t("page.login.form.welcomeBackTitle") : typeRef.value === "signUp" ? t("page.login.form.helloTitle") : t("page.login.form.forgotPasswordTitle"),
 );
 
+// 计算属性，获取应用程序名称
+const applicationName = computed(() => String(import.meta.env.VITE_GLOB_APP_TITLE));
+
 function gotoSignIn() {
   typeRef.value = "signIn";
 }
@@ -36,7 +39,7 @@ onBeforeMount(() => {
 
 <template>
   <div class="auth-form-wrap w-full ">
-    <CAAppLogo class="mb-4" display-title />
+    <CAAppLogo class="mb-4" display-title :application-name="applicationName" />
     <div class="title mb-4 text-3xl font-bold">
       {{ title }}
     </div>

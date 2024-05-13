@@ -29,15 +29,17 @@ const props = withDefaults(
      * Whether it is a dark theme, optional, defaults to system default
      */
     isDarkMode?: boolean;
+
+    /**
+     * 应用程序名称
+     * Application name
+     */
+    applicationName: string;
   }>(),
   { displayTitle: false, titleSize: "xl", isDarkMode: undefined, isMini: true },
 );
 
-const { displayTitle, titleSize, isMini, isDarkMode } = toRefs(props);
-
-// 计算属性，获取应用程序名称
-const applicationName = computed(() => String(import.meta.env.VITE_GLOB_APP_TITLE));
-
+const { displayTitle, titleSize, isMini, isDarkMode, applicationName } = toRefs(props);
 const router = useRouter();
 
 // 导航到首页的函数
