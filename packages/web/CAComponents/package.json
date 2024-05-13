@@ -1,7 +1,7 @@
 {
   "name": "@celeris/ca-components",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "components for Celeris",
   "author": "Kirk Lin (https://github.com/kirklin)",
   "license": "MIT",

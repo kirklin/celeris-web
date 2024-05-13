@@ -1,7 +1,7 @@
 {
   "name": "@celeris/ai-core",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "ai core for Celeris",
   "author": "Kirk Lin (https://github.com/kirklin)",
   "license": "MIT",
