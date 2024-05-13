@@ -10,7 +10,7 @@ withDefaults(defineProps<PageWrapperProps>(), {
 
 <template>
   <div class="page-wrapper rounded-2xl w-full h-full min-h-full">
-    <NScrollbar v-if="useScrollbar" class="rounded-2xl">
+    <NScrollbar v-if="useScrollbar" content-class="scrollbar-content" class="rounded-2xl">
       <slot />
     </NScrollbar>
     <slot v-else />
@@ -24,10 +24,11 @@ withDefaults(defineProps<PageWrapperProps>(), {
 /*
   Enhance scrollbar appearance within the pageWrapper container to maintain content visibility
 */
-.page-wrapper :deep(.ca-scrollbar-container) {
-  padding: 0 8px;
+.page-wrapper {
+  width: calc(100% + 8px);
 }
-.page-wrapper :deep(.ca-scrollbar) {
-  margin: 8px 0;
+
+.page-wrapper :deep(.scrollbar-content) {
+  padding-right: 8px;
 }
 </style>
