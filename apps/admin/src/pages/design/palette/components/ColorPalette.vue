@@ -25,11 +25,20 @@ defineProps({
 // Extend colord with a11yPlugin
 extend([a11yPlugin]);
 
+const message = useMessage();
+
 // Copy color value to clipboard
 function copyColorValue(hex: string) {
-  copyToClipboard(hex);
+  copyToClipboard(
+    hex,
+    () => {
+      message.success(`Color value ${hex} has been copied to clipboard`);
+    },
+    (error) => {
+      message.error(`Failed to copy color value ${hex} to clipboard: ${error}`);
+    },
+  );
 }
-
 /**
  * Generates a contrasting text color based on the background color's luminance.
  * 根据背景色的亮度生成对比的文本颜色。

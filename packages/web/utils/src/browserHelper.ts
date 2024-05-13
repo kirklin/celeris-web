@@ -21,13 +21,16 @@ export function openWindow(url: string, { target = "_blank", features = "noopene
 
 // copy text to clipboard
 // 将文本复制到剪贴板
-export function copyToClipboard(text: string) {
+export function copyToClipboard(text: string, onSuccess?: (text?: any) => void, onError?: (error?: any) => void) {
   // Try to use the navigator.clipboard.writeText method
   // 尝试使用navigator.clipboard.writeText方法
   void navigator.clipboard.writeText(text).then(() => {
     // Log the success message with the copied content
     // 记录成功信息和复制的内容
     logger.info("Copy Success", field("Content:", text));
+    // Call the onSuccess callback if provided
+    // 如果提供了onSuccess回调函数，就调用它
+    onSuccess && onSuccess(text);
   }).catch((error) => {
     // If there is an error, use the document.execCommand method as a fallback
     // 如果有错误，使用document.execCommand方法作为备选方案
@@ -39,8 +42,14 @@ export function copyToClipboard(text: string) {
     document.body.removeChild(textarea);
     if (!result) {
       logger.error("Copy Failed", field("Content:", text), field("Error:", error));
+      // Call the onError callback if provided
+      // 如果提供了onError回调函数，就调用它
+      onError && onError(error);
     } else {
       logger.info("Copy Success", field("Content:", text));
+      // Call the onSuccess callback if provided
+      // 如果提供了onSuccess回调函数，就调用它
+      onSuccess && onSuccess(text);
     }
   });
 }
