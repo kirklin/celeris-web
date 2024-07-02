@@ -57,8 +57,12 @@ export const isServerRendering = (() => {
 // Define a function isHttpUrl that takes a string argument path and returns true if it is a valid Http URL.
 // 定义一个函数 isHttpUrl，它接受一个字符串参数 path，如果它是有效的Http URL，则返回 true。
 export function isHttpUrl(path: string): boolean {
-  const regex = /^https?:\/\/([\w-]+\.)+[\w-]+(\/[\w- ./?%&=]*)?$/i;
-  return regex.test(path);
+  try {
+    const url = new URL(path);
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch (error) {
+    return false;
+  }
 }
 
 export function isComponentInstance(value: any): value is ComponentPublicInstance {
