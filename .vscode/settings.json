@@ -1,20 +1,18 @@
 {
-  // Enable the ESlint flat config support
-  "eslint.experimental.useFlatConfig": true,
-
-  // Disable the default formatter, use eslint instead
+  // 禁用默认的格式化程序，改用ESLint进行格式化
   "prettier.enable": false,
   "editor.formatOnSave": false,
 
-  // Auto fix
+  // 自动修复
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
 
-  // Silent the stylistic rules in you IDE, but still auto fix them
+  // 在IDE中隐藏样式规则的提示，但仍然自动修复它们
   "eslint.rules.customizations": [
     { "rule": "style/*", "severity": "off" },
+    { "rule": "format/*", "severity": "off" },
     { "rule": "*-indent", "severity": "off" },
     { "rule": "*-spacing", "severity": "off" },
     { "rule": "*-spaces", "severity": "off" },
@@ -25,7 +23,7 @@
     { "rule": "*semi", "severity": "off" }
   ],
 
-  // Enable eslint for all supported languages
+  // 为所有支持的语言启用ESLint
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -36,6 +34,16 @@
     "markdown",
     "json",
     "jsonc",
-    "yaml"
+    "yaml",
+    "toml",
+    "xml",
+    "gql",
+    "graphql",
+    "astro",
+    "css",
+    "less",
+    "scss",
+    "pcss",
+    "postcss"
   ]
 }
