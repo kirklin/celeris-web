@@ -387,9 +387,6 @@ importers:
 
   packages/web/hooks:
     dependencies:
-      '@celeris/types':
-        specifier: workspace:*
-        version: link:../types
       '@celeris/utils':
         specifier: workspace:*
         version: link:../utils

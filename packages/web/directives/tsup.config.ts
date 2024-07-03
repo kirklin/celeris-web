@@ -4,7 +4,7 @@ export default defineConfig({
   entry: ["./index.ts"],
   clean: true,
   format: ["esm", "cjs", "iife"],
-  external: ["vite"],
+  external: ["vue"],
   dts: true,
   minify: true,
 });

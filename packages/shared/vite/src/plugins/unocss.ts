@@ -1,6 +1,6 @@
 import UnoCSS from "unocss/vite";
 import type { PluginOption } from "vite";
-import unoShareConfig from "@celeris/styles/unoconfig";
+import unoShareConfig from "@celeris/styles/uno.config";
 
 export function createUnoCSSPluginConfig(): PluginOption {
   return UnoCSS({

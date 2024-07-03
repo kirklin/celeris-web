@@ -14,7 +14,7 @@
       "require": "./dist/index.cjs"
     }
   },
-  "main": "./dist/index.cjs",
+  "main": "src/index.ts",
   "module": "src/index.ts",
   "types": "./dist/index.d.ts",
   "files": [

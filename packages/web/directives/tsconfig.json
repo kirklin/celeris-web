@@ -8,7 +8,7 @@
     ],
     "baseUrl": ".",
     "module": "esnext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "Node",
     "strict": true,
     "sourceMap": false,
     "allowSyntheticDefaultImports": true,

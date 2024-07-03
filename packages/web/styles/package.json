@@ -7,24 +7,13 @@
   "license": "MIT",
   "homepage": "https://github.com/kirklin/celeris-web",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./unoconfig": "./uno.config.ts"
+    "./*": "./*",
+    ".": "./"
   },
-  "main": "./index.ts",
-  "module": "./index.ts",
   "files": [
-    "src",
-    "uno.config.ts"
+    "**/*.css"
   ],
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --stub",
-    "clean": "pnpm rimraf node_modules && pnpm rimraf dist",
-    "prepublishOnly": "nr build"
   },
   "peerDependencies": {
     "unocss": "^0.61.0"

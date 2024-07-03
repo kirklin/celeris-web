@@ -6,18 +6,29 @@
   "author": "Kirk Lin (https://github.com/kirklin)",
   "license": "MIT",
   "homepage": "https://github.com/kirklin/celeris-web",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "main": "./index.ts",
   "module": "./index.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
+    "build": "tsup",
+    "dev": "tsup --stub",
     "clean": "pnpm rimraf node_modules && pnpm rimraf dist",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run build",
+    "postinstall": "npm run build"
   },
   "peerDependencies": {
     "vue": ">=3.3.4"
   },
   "dependencies": {
-    "@celeris/types": "workspace:*",
     "@celeris/utils": "workspace:*",
     "@vueuse/core": "^10.11.0",
     "@vueuse/integrations": "^10.11.0"
