@@ -1,4 +1,4 @@
-import { withInstall } from "@celeris/utils/src/vue/install";
+import { withInstall } from "@celeris/utils";
 import charts from "./src/Charts.vue";
 
 export * from "./types/echarts";

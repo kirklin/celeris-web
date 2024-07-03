@@ -1,4 +1,4 @@
-import type { ComponentPublicInstance } from "@vue/runtime-core";
+import type { ComponentPublicInstance } from "vue";
 
 export {
   isArguments,

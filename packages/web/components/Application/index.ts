@@ -1,4 +1,4 @@
-import { withInstall } from "@celeris/utils/src/vue/install";
+import { withInstall } from "@celeris/utils";
 import appLogo from "./src/AppLogo.vue";
 import appProvider from "./src/AppNaiveUIProvider.vue";
 

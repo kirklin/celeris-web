@@ -1,4 +1,4 @@
-import { field, logger } from "../index";
+import { field, logger } from "@kirklin/logger";
 
 /**
  * 打开一个新的浏览器窗口

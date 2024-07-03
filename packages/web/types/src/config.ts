@@ -176,7 +176,7 @@ export interface GlobConfig {
   APP_SHORT_NAME: string;
 }
 
-export interface GlobEnvConfig extends ImportMetaEnv {
+export interface GlobEnvConfig {
   BASE_URL: string;
   MODE: string;
   DEV: boolean;

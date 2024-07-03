@@ -3,7 +3,21 @@
   "compilerOptions": {
     "target": "esnext",
     "baseUrl": ".",
-    "module": "esnext"
+    "module": "esnext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": false,
+    "lib": [
+      "esnext",
+      "dom"
+    ]
   },
-  "include": ["src"]
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
