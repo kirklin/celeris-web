@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, toRefs, withDefaults } from "vue";
+import { computed, toRefs } from "vue";
 import { PageConstants, RouterTransitionConstants } from "@celeris/constants";
 import { useRouter } from "vue-router";
 import { logoImage } from "@celeris/assets";
