@@ -14,12 +14,12 @@
     },
     "./unoconfig": "./uno.config.ts"
   },
+  "main": "./index.ts",
+  "module": "./index.ts",
   "files": [
     "src",
     "uno.config.ts"
   ],
-  "main": "./index.ts",
-  "module": "./index.ts",
   "scripts": {
     "build": "tsup",
     "dev": "tsup --stub",

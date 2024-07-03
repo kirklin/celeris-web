@@ -2,17 +2,17 @@
   "extends": "@celeris/tsconfig/tsconfig.base.json",
   "compilerOptions": {
     "target": "esnext",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "baseUrl": ".",
     "module": "esnext",
     "moduleResolution": "Bundler",
     "strict": true,
-    "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
     "sourceMap": false,
-    "lib": [
-      "esnext",
-      "dom"
-    ]
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts"

@@ -16,6 +16,7 @@
   },
   "main": "./dist/index.cjs",
   "module": "src/index.ts",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
