@@ -1,4 +1,4 @@
-import { withInstall } from "@celeris/utils/src/vue/install";
+import { withInstall } from "@celeris/utils";
 import icon from "./src/Icon.vue";
 
 export const Icon = withInstall(icon);

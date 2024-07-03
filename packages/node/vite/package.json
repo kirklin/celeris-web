@@ -14,7 +14,7 @@
     "postinstall": "pnpm unbuild --stub"
   },
   "dependencies": {
-    "@celeris/utils": "workspace:*",
+    "@celeris/utils": "0.0.4-beta.1",
     "vite": "^5.2.11"
   },
   "devDependencies": {

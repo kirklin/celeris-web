@@ -114,8 +114,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/web/styles
       '@celeris/utils':
-        specifier: workspace:*
-        version: link:../../packages/web/utils
+        specifier: 0.0.4-beta.1
+        version: 0.0.4-beta.1
       destr:
         specifier: ^2.0.3
         version: 2.0.3
@@ -201,8 +201,8 @@ importers:
   packages/node/vite:
     dependencies:
       '@celeris/utils':
-        specifier: workspace:*
-        version: link:../../web/utils
+        specifier: 0.0.4-beta.1
+        version: 0.0.4-beta.1
       vite:
         specifier: ^5.2.11
         version: 5.2.11(@types/node@20.12.11)(terser@5.17.6)
@@ -247,8 +247,8 @@ importers:
         specifier: workspace:*
         version: link:../constants
       '@celeris/utils':
-        specifier: workspace:*
-        version: link:../utils
+        specifier: 0.0.4-beta.1
+        version: 0.0.4-beta.1
       naive-ui:
         specifier: 2.38.2
         version: 2.38.2(vue@3.4.27(typescript@5.4.5))
@@ -268,8 +268,8 @@ importers:
         specifier: workspace:*
         version: link:../styles
       '@celeris/utils':
-        specifier: workspace:*
-        version: link:../utils
+        specifier: 0.0.4-beta.1
+        version: 0.0.4-beta.1
       echarts:
         specifier: ^5.5.0
         version: 5.5.0
@@ -302,8 +302,8 @@ importers:
         specifier: workspace:*
         version: link:../types
       '@celeris/utils':
-        specifier: workspace:*
-        version: link:../utils
+        specifier: 0.0.4-beta.1
+        version: 0.0.4-beta.1
       '@vueuse/core':
         specifier: ^10.9.0
         version: 10.9.0(vue@3.3.4)
@@ -326,8 +326,8 @@ importers:
         specifier: workspace:*
         version: link:../types
       '@celeris/utils':
-        specifier: workspace:*
-        version: link:../utils
+        specifier: 0.0.4-beta.1
+        version: 0.0.4-beta.1
       iso-639-1:
         specifier: ^3.1.2
         version: 3.1.2
@@ -350,8 +350,8 @@ importers:
         specifier: workspace:*
         version: link:../types
       '@celeris/utils':
-        specifier: workspace:*
-        version: link:../utils
+        specifier: 0.0.4-beta.1
+        version: 0.0.4-beta.1
       axios:
         specifier: ^1.6.8
         version: 1.6.8
@@ -409,58 +409,6 @@ importers:
       pinia:
         specifier: 2.1.7
         version: 2.1.7(typescript@5.4.5)(vue@3.4.27(typescript@5.4.5))
-      vue:
-        specifier: ^3.4.27
-        version: 3.4.27(typescript@5.4.5)
-      vue-router:
-        specifier: ^4.3.2
-        version: 4.3.2(vue@3.4.27(typescript@5.4.5))
-
-  packages/web/utils:
-    dependencies:
-      '@kirklin/logger':
-        specifier: 0.0.2
-        version: 0.0.2
-      '@kirklin/palette':
-        specifier: ^0.1.1
-        version: 0.1.1
-      algorithm-snowflake:
-        specifier: ^0.0.0
-        version: 0.0.0
-      colord:
-        specifier: ^2.9.3
-        version: 2.9.3
-      crypto-js:
-        specifier: ^4.2.0
-        version: 4.2.0
-      dayjs:
-        specifier: ^1.11.11
-        version: 1.11.11
-      detect-mobile:
-        specifier: ^0.0.0
-        version: 0.0.0
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
-      path-to-regexp:
-        specifier: ^6.2.2
-        version: 6.2.2
-    devDependencies:
-      '@celeris/constants':
-        specifier: workspace:*
-        version: link:../constants
-      '@celeris/types':
-        specifier: workspace:*
-        version: link:../types
-      '@types/crypto-js':
-        specifier: ^4.2.2
-        version: 4.2.2
-      '@types/lodash-es':
-        specifier: ^4.17.12
-        version: 4.17.12
-      '@vue/runtime-core':
-        specifier: 3.4.27
-        version: 3.4.27
       vue:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.4.5)
@@ -1345,6 +1293,9 @@ packages:
 
   '@celeris/utils@0.0.3':
     resolution: {integrity: sha512-nDuSOEjPlIJZdSd8CQTq8GeNyYvt/Hk8+vKH68PU3mT+mfZwXcpbmufjaHHO+R0hP9HaIutDkFxtFXKh7KtduQ==}
+
+  '@celeris/utils@0.0.4-beta.1':
+    resolution: {integrity: sha512-RdEcpYIkxS3+Uej5IvQAj6bWgo56Pitn5c3nbYwWmx6lYiP2XzNW7iJIIEnSUMjH/fD2Xx+N6CaDCbwscDrvJw==}
 
   '@changesets/apply-release-plan@7.0.0':
     resolution: {integrity: sha512-vfi69JR416qC9hWmFGSxj7N6wA5J222XNBmezSVATPWDVPIF7gkd4d8CpbEbXmRWbVrkoli3oerGS6dcL/BGsQ==}
@@ -2287,35 +2238,30 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
 
   '@parcel/watcher-linux-arm64-glibc@2.4.1':
     resolution: {integrity: sha512-BJ7mH985OADVLpbrzCLgrJ3TOpiZggE9FMblfO65PlOCdG++xJpKUJ0Aol74ZUIYfb8WsRlUdgrZxKkz3zXWYA==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@parcel/watcher-linux-arm64-musl@2.4.1':
     resolution: {integrity: sha512-p4Xb7JGq3MLgAfYhslU2SjoV9G0kI0Xry0kuxeG/41UfpjHGOhv7UoUDAz/jb1u2elbhazy4rRBL8PegPJFBhA==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@parcel/watcher-linux-x64-glibc@2.4.1':
     resolution: {integrity: sha512-s9O3fByZ/2pyYDPoLM6zt92yu6P4E39a03zvO0qCHOTjxmt3GHRMLuRZEWhWLASTMSrrnVNWdVI/+pUElJBBBg==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@parcel/watcher-linux-x64-musl@2.4.1':
     resolution: {integrity: sha512-L2nZTYR1myLNST0O632g0Dx9LyMNHrn6TOt76sYxWLdff3cB22/GZX2UPtJnaqQPdCRoszoY5rcOj4oMTtp5fQ==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@parcel/watcher-wasm@2.4.1':
     resolution: {integrity: sha512-/ZR0RxqxU/xxDGzbzosMjh4W6NdYFMqq2nvo2b8SLi7rsl/4jkL8S5stIikorNkdR50oVDvqb/3JT05WM+CRRA==}
@@ -2543,43 +2489,36 @@ packages:
     resolution: {integrity: sha512-L1+D8/wqGnKQIlh4Zre9i4R4b4noxzH5DDciyahX4oOz62CphY7WDWqJoQ66zNR4oScLNOqQJfNSIAe/6TPUmQ==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.13.2':
     resolution: {integrity: sha512-tK5eoKFkXdz6vjfkSTCupUzCo40xueTOiOO6PeEIadlNBkadH1wNOH8ILCPIl8by/Gmb5AGAeQOFeLev7iZDOA==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-powerpc64le-gnu@4.13.2':
     resolution: {integrity: sha512-zvXvAUGGEYi6tYhcDmb9wlOckVbuD+7z3mzInCSTACJ4DQrdSLPNUeDIcAQW39M3q6PDquqLWu7pnO39uSMRzQ==}
     cpu: [ppc64le]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-gnu@4.13.2':
     resolution: {integrity: sha512-C3GSKvMtdudHCN5HdmAMSRYR2kkhgdOfye4w0xzyii7lebVr4riCgmM6lRiSCnJn2w1Xz7ZZzHKuLrjx5620kw==}
     cpu: [riscv64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-s390x-gnu@4.13.2':
     resolution: {integrity: sha512-l4U0KDFwzD36j7HdfJ5/TveEQ1fUTjFFQP5qIt9gBqBgu1G8/kCaq5Ok05kd5TG9F8Lltf3MoYsUMw3rNlJ0Yg==}
     cpu: [s390x]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.13.2':
     resolution: {integrity: sha512-xXMLUAMzrtsvh3cZ448vbXqlUa7ZL8z0MwHp63K2IIID2+DeP5iWIT6g1SN7hg1VxPzqx0xZdiDM9l4n9LRU1A==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.13.2':
     resolution: {integrity: sha512-M/JYAWickafUijWPai4ehrjzVPKRCyDb1SLuO+ZyPfoXgeCEAlgPkNXewFZx0zcnoIe3ay4UjXIMdXQXOZXWqA==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-win32-arm64-msvc@4.13.2':
     resolution: {integrity: sha512-2YWwoVg9KRkIKaXSh0mz3NmfurpmYoBBTAXA9qt7VXk0Xy12PoOP40EFuau+ajgALbbhi4uTj3tSG3tVseCjuA==}
@@ -2637,9 +2576,6 @@ packages:
 
   '@types/conventional-commits-parser@5.0.0':
     resolution: {integrity: sha512-loB369iXNmAZglwWATL+WRe+CRMmmBPtpolYzIebFaX4YA3x+BEfLqhUAV9WanycKI3TG1IMr5bMJDajDKLlUQ==}
-
-  '@types/crypto-js@4.2.2':
-    resolution: {integrity: sha512-sDOLlVbHhXpAUAL0YHDUUwDZf3iN4Bwi4W6a0W0b+QcAezUbRtH4FVb+9J4h+XFPW7l/gQ9F8qC7P+Ec4k8QVQ==}
 
   '@types/eslint@8.56.10':
     resolution: {integrity: sha512-Shavhk87gCtY2fhXDctcfS3e6FdxWkCx1iUZ9eEUbh7rTqlZT0/IzOkCOVt0fCjcFuZ9FPYfuezTBImfHCDBGQ==}
@@ -5722,6 +5658,10 @@ packages:
   path-to-regexp@6.2.2:
     resolution: {integrity: sha512-GQX3SSMokngb36+whdpRXE+3f9V8UzyAorlYvOGx87ufGHehNTn5lCxrKtLyZ4Yl/wEKnNnr98ZzOwwDZV5ogw==}
 
+  path-to-regexp@7.0.0:
+    resolution: {integrity: sha512-58Y94bQqF3zBIASFNiufRPH1NfgZth1qwZ35radL87sg8pgbVqr6uikAhqZtFD+w65MGH6SWnY/ly3GbrM4fbg==}
+    engines: {node: '>=16'}
+
   path-type@3.0.0:
     resolution: {integrity: sha512-T2ZUsdZFHgA3u4e5PfPbjd7HDDpxPnQb5jN0SrDsjNSuVXHJqtwTnWqG0B1jZrgmJ/7lj1EmVIByWt1gxGkWvg==}
     engines: {node: '>=4'}
@@ -8543,6 +8483,18 @@ snapshots:
       lodash-es: 4.17.21
       path-to-regexp: 6.2.2
 
+  '@celeris/utils@0.0.4-beta.1':
+    dependencies:
+      '@kirklin/logger': 0.0.2
+      '@kirklin/palette': 0.1.1
+      algorithm-snowflake: 0.0.0
+      colord: 2.9.3
+      crypto-js: 4.2.0
+      dayjs: 1.11.11
+      detect-mobile: 0.0.0
+      lodash-es: 4.17.21
+      path-to-regexp: 7.0.0
+
   '@changesets/apply-release-plan@7.0.0':
     dependencies:
       '@babel/runtime': 7.21.0
@@ -9714,8 +9666,6 @@ snapshots:
   '@types/conventional-commits-parser@5.0.0':
     dependencies:
       '@types/node': 20.12.11
-
-  '@types/crypto-js@4.2.2': {}
 
   '@types/eslint@8.56.10':
     dependencies:
@@ -13359,6 +13309,8 @@ snapshots:
       minipass: 7.0.4
 
   path-to-regexp@6.2.2: {}
+
+  path-to-regexp@7.0.0: {}
 
   path-type@3.0.0:
     dependencies:

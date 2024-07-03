@@ -31,7 +31,7 @@
     "@celeris/locale": "workspace:*",
     "@celeris/request": "workspace:*",
     "@celeris/styles": "workspace:*",
-    "@celeris/utils": "workspace:*",
+    "@celeris/utils": "0.0.4-beta.1",
     "destr": "^2.0.3",
     "headless-highlighter": "^0.0.0",
     "nprogress": "^0.2.0",

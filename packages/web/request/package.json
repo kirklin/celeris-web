@@ -15,7 +15,7 @@
     "@celeris/constants": "workspace:*",
     "@celeris/locale": "workspace:*",
     "@celeris/types": "workspace:*",
-    "@celeris/utils": "workspace:*",
+    "@celeris/utils": "0.0.4-beta.1",
     "axios": "^1.6.8",
     "qs": "^6.12.1"
   },

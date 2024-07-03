@@ -18,7 +18,7 @@
     "@celeris/ca-components": "workspace:*",
     "@celeris/constants": "workspace:*",
     "@celeris/styles": "workspace:*",
-    "@celeris/utils": "workspace:*",
+    "@celeris/utils": "0.0.4-beta.1",
     "echarts": "^5.5.0",
     "vue-echarts": "^6.7.2"
   },
