@@ -25,7 +25,7 @@ const props = defineProps({
   },
 });
 
-const { loading, setLoading } = useLoading(true);
+const loading = ref<boolean>(true);
 const count = ref();
 const growth = ref(100);
 const chartData = ref<any>([]);
@@ -83,6 +83,7 @@ const { chartOption } = useChartOption(() => {
   };
 });
 async function fetchData(params: { quota: string }) {
+  loading.value = true;
   try {
     const data = await queryUserAnalysisData(params);
     const { chartData: resChartData } = data;
@@ -102,8 +103,9 @@ async function fetchData(params: { quota: string }) {
     });
   } catch (err) {
     // you can report use errorHandler or other
+    loading.value = false;
   } finally {
-    setLoading(false);
+    loading.value = false;
   }
 }
 fetchData({ quota: props.quota });

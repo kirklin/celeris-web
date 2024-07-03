@@ -1,4 +1,5 @@
-import pick from "lodash/pick";
+// eslint-disable-next-line ts/no-require-imports,ts/no-var-requires
+const pick = require("lodash/pick.js");
 
 /**
  * Utility function to determine the raw type of a value.

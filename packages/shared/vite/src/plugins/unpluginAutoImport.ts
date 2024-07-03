@@ -20,7 +20,6 @@ export function createAutoImportPluginConfig(): PluginOption {
       {
         "@celeris/hooks": [
           "useComponentRef",
-          "useLoading",
           "useMergeState",
           "useScreen",
           "useState",

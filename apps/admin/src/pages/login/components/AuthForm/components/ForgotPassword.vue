@@ -16,7 +16,7 @@ import type { ForgotPasswordFromType } from "~/pages/login/types";
 const { t } = useI18n();
 const formRef = ref<FormInst | null>(null);
 const message = useMessage();
-const { loading, setLoading } = useLoading(false);
+const loading = ref<boolean>(true);
 const model = ref<ForgotPasswordFromType>({
   phoneNumber: "",
 });
@@ -37,9 +37,9 @@ const rules: FormRules = {
 
 function forgotPassword(e: Event) {
   e.preventDefault();
-  setLoading(true);
+  loading.value = true;
   formRef.value?.validate((errors: Array<FormValidationError> | undefined) => {
-    setLoading(false);
+    loading.value = false;
     if (!errors) {
       message.success(t("page.login.form.resetLinkSentMessage"));
     }

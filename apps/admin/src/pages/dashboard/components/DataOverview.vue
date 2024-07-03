@@ -50,7 +50,7 @@ function generateSeries(name: string, lineColor: string, itemBorderColor: string
     },
   };
 }
-const { loading, setLoading } = useLoading(true);
+const loading = ref<boolean>(true);
 const { getDarkMode } = useThemeSetting();
 const renderData = computed(() => [
   {
@@ -222,7 +222,7 @@ const { chartOption } = useChartOption((isDark: boolean) => {
   };
 });
 async function fetchData() {
-  setLoading(true);
+  loading.value = true;
   try {
     const data = await queryDataOverview();
     xAxis.value = data.xAxis;
@@ -237,9 +237,9 @@ async function fetchData() {
       likedResponsesData.value = el.value;
     });
   } catch (err) {
-    setLoading(false);
+    loading.value = false;
   } finally {
-    setLoading(false);
+    loading.value = false;
   }
 }
 fetchData();

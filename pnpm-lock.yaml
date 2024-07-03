@@ -408,9 +408,6 @@ importers:
       '@celeris/hooks':
         specifier: workspace:*
         version: link:../hooks
-      '@celeris/types':
-        specifier: workspace:*
-        version: link:../types
       '@celeris/utils':
         specifier: workspace:*
         version: link:../utils

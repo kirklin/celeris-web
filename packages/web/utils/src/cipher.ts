@@ -1,11 +1,6 @@
-import { decrypt as aesDecrypt, encrypt as aesEncrypt } from "crypto-js/aes";
-import UTF8, { parse } from "crypto-js/enc-utf8";
-import pkcs7 from "crypto-js/pad-pkcs7";
-import CTR from "crypto-js/mode-ctr";
-import Base64 from "crypto-js/enc-base64";
-import MD5 from "crypto-js/md5";
-import SHA256 from "crypto-js/sha256";
-import SHA512 from "crypto-js/sha512";
+import CryptoJS from "crypto-js";
+
+const { AES, enc, pad, mode, MD5, SHA256, SHA512 } = CryptoJS;
 
 // Define an interface for encryption
 // 定义一个加密器的接口
@@ -13,6 +8,7 @@ export interface Encryption {
   encrypt: (plainText: string) => string;
   decrypt: (cipherText: string) => string;
 }
+
 // Define an interface for Hashing
 // 定义一个哈希算法的接口
 export interface Hashing {
@@ -29,24 +25,24 @@ class AesEncryption implements Encryption {
   private readonly iv;
 
   constructor({ key, iv }: EncryptionParams) {
-    this.key = parse(key);
-    this.iv = parse(iv);
+    this.key = enc.Utf8.parse(key);
+    this.iv = enc.Utf8.parse(iv);
   }
 
   get getOptions() {
     return {
-      mode: CTR,
-      padding: pkcs7,
+      mode: mode.CTR,
+      padding: pad.Pkcs7,
       iv: this.iv,
     };
   }
 
   encrypt(plainText: string) {
-    return aesEncrypt(plainText, this.key, this.getOptions).toString();
+    return AES.encrypt(plainText, this.key, this.getOptions).toString();
   }
 
   decrypt(cipherText: string) {
-    return aesDecrypt(cipherText, this.key, this.getOptions).toString(UTF8);
+    return AES.decrypt(cipherText, this.key, this.getOptions).toString(enc.Utf8);
   }
 }
 
@@ -54,8 +50,7 @@ class AesEncryption implements Encryption {
 class Base64Encryption implements Encryption {
   private static instance: Base64Encryption;
 
-  private constructor() {
-  }
+  private constructor() {}
 
   // Get the singleton instance
   // 获取单例实例
@@ -67,11 +62,11 @@ class Base64Encryption implements Encryption {
   }
 
   encrypt(plainText: string) {
-    return UTF8.parse(plainText).toString(Base64);
+    return enc.Utf8.parse(plainText).toString(enc.Base64);
   }
 
   decrypt(cipherText: string) {
-    return Base64.parse(cipherText).toString(UTF8);
+    return enc.Base64.parse(cipherText).toString(enc.Utf8);
   }
 }
 
@@ -79,8 +74,7 @@ class Base64Encryption implements Encryption {
 class MD5Hashing implements Hashing {
   private static instance: MD5Hashing;
 
-  private constructor() {
-  }
+  private constructor() {}
 
   // Get the singleton instance
   // 获取单例实例
@@ -100,8 +94,7 @@ class MD5Hashing implements Hashing {
 class SHA256Hashing implements Hashing {
   private static instance: SHA256Hashing;
 
-  private constructor() {
-  }
+  private constructor() {}
 
   // Get the singleton instance
   // 获取单例实例
@@ -121,12 +114,11 @@ class SHA256Hashing implements Hashing {
 class SHA512Hashing implements Hashing {
   private static instance: SHA512Hashing;
 
-  private constructor() {
-  }
+  private constructor() {}
 
   // Get the singleton instance
   // 获取单例实例
-  public static getInstance(): SHA256Hashing {
+  public static getInstance(): SHA512Hashing {
     if (!SHA512Hashing.instance) {
       SHA512Hashing.instance = new SHA512Hashing();
     }

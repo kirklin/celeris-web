@@ -5,7 +5,6 @@ import type {
   SessionTimeoutProcessingConstants,
   SettingButtonPositionConstants,
 } from "@celeris/constants";
-import type { ThemeConfig } from "./theme";
 
 export interface MenuSetting {
   collapsed: boolean;
@@ -67,7 +66,7 @@ export interface ThemeSetting {
 
   // 其他主题颜色
   // Other theme colors
-  otherColor: ThemeConfig;
+  otherColor: Record<string, string>;
 }
 
 /**
