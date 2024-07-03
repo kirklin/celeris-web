@@ -12,6 +12,7 @@ import { setupRouterGuard } from "~/router/guard";
 import App from "~/App.vue";
 
 import "@celeris/styles";
+import "uno.css";
 
 const app = createApp(App);
 

@@ -467,27 +467,15 @@ importers:
         specifier: ^0.0.3
         version: 0.0.3(unocss@0.61.0(postcss@8.4.38)(rollup@4.13.2)(vite@5.3.1(@types/node@20.14.8)(terser@5.17.6)))
     devDependencies:
-      '@css-render/plugin-bem':
-        specifier: ^0.15.14
-        version: 0.15.14(css-render@0.15.14)
-      '@css-render/vue3-ssr':
-        specifier: ^0.15.14
-        version: 0.15.14(vue@3.4.30(typescript@5.5.2))
       '@iconify/json':
         specifier: ^2.2.222
         version: 2.2.222
       '@iconify/vue':
         specifier: 4.1.2
         version: 4.1.2(vue@3.4.30(typescript@5.5.2))
-      css-render:
-        specifier: ^0.15.14
-        version: 0.15.14
       unocss:
         specifier: ^0.61.0
         version: 0.61.0(postcss@8.4.38)(rollup@4.13.2)(vite@5.3.1(@types/node@20.14.8)(terser@5.17.6))
-      vite:
-        specifier: ^5.3.1
-        version: 5.3.1(@types/node@20.14.8)(terser@5.17.6)
 
   packages/web/types:
     dependencies:
