@@ -1,5 +1,6 @@
 import type { FakeUserInfo } from "@celeris/admin-api/models/auth/FakeUserInfo";
-import type { MessageMode, UserInfo } from "@celeris/types";
+import type { UserInfo } from "@celeris/types";
+import type { MessageMode } from "@celeris/request";
 import { request } from "@celeris/request";
 
 // Define the API endpoint URLs as an enum

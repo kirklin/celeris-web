@@ -1,7 +1,5 @@
 import type { RoleConstants, RouterTransitionConstants } from "@celeris/constants";
 
-export {};
-
 // Declare the module "vue-router" to add custom properties
 // 声明模块 "vue-router" 以添加自定义属性
 declare module "vue-router" {

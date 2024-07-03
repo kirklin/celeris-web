@@ -1,9 +1,9 @@
 import { ContentTypeConstants, RequestConstants } from "@celeris/constants";
-import type { RequestOptions, RequestResult } from "@celeris/types/src/httpClient";
 import { cloneDeep, deepMerge } from "@celeris/utils";
 import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import axios from "axios";
 import qs from "qs";
+import type { RequestOptions, RequestResult } from "./types";
 import { AxiosCanceler } from "./axiosCancel";
 import type { CreateAxiosOptions } from "./axiosTransform";
 

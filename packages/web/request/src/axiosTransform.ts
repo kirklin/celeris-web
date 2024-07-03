@@ -2,8 +2,8 @@
  * Data processing class, can be configured according to the project
  * 数据处理类，可以根据项目进行配置
  */
-import type { RequestOptions, RequestResult } from "@celeris/types/src/httpClient";
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
+import type { RequestOptions, RequestResult } from "./types";
 
 /**
  * Options that can be passed to the `createAxios` function when creating a new Axios instance.

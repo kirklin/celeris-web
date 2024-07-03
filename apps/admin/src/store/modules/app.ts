@@ -1,8 +1,8 @@
 import { defineStore } from "pinia";
 import type { DeepPartial } from "unocss";
-import { APP_STORE_ID } from "@celeris/constants";
 import type { HeaderSetting, MenuSetting, ProjectSetting, TransitionSetting } from "@celeris/types";
 import { deepMerge } from "@celeris/utils";
+import { APP_STORE_ID } from "../constants";
 import { resetRouter } from "~/router";
 import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";
 

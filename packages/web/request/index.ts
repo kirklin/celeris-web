@@ -1,5 +1,6 @@
 export { defaultHttpClient as request } from "./src/index";
 export * from "./src/index";
+export * from "./src/types";
 export * from "./src/axiosCancel";
 export * from "./src/axiosTransform";
 export * from "./src/HttpClient";

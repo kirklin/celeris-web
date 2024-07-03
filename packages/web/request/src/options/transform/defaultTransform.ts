@@ -1,7 +1,7 @@
 import { RequestConstants, ResultConstants } from "@celeris/constants";
-import type { RequestOptions, RequestResult } from "@celeris/types/src/httpClient";
 import { isEmpty, isString } from "@celeris/utils";
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
+import type { RequestOptions, RequestResult } from "../../types";
 import { HttpRequestConfiguration } from "../../../requestConfiguration";
 import type { AxiosTransform, CreateAxiosOptions } from "../../axiosTransform";
 import { formatRequestDate, joinTimestamp, setObjToUrlParams } from "../../utils";

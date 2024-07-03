@@ -1,4 +1,4 @@
-import type { MessageMode } from "@celeris/types";
+import type { MessageMode } from "@celeris/request";
 
 export interface HttpRequestOptions {
   errorMessageHandler: (message: string, mode?: MessageMode) => void;
