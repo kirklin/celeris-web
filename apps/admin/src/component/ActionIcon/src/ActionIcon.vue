@@ -20,7 +20,7 @@ withDefaults(
 <template>
   <ToolTipper :tooltip-text="tooltipText">
     <NEl
-      tag="button" type="button" class="text-[var(--text-color-base)] w-8 h-8 text-base flex items-center justify-center rounded-lg p-2
+      tag="button" type="button" class="text-[var(--text-color-base)] w-8 h-8 text-base flex items-center justify-center rounded-lg p-2 cursor-pointer
       hover:bg-[var(--hover-color)]"
       :class="{ 'bg-[var(--action-color)]': !transparent, 'bg-transparent': transparent }"
     >
