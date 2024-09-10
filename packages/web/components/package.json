@@ -19,13 +19,13 @@
     "@celeris/constants": "workspace:*",
     "@celeris/styles": "workspace:*",
     "@celeris/utils": "workspace:*",
-    "echarts": "^5.5.0",
-    "vue-echarts": "^6.7.3"
+    "echarts": "^5.5.1",
+    "vue-echarts": "^7.0.3"
   },
   "devDependencies": {
     "@celeris/assets": "workspace:*",
     "@celeris/types": "workspace:*",
-    "vue": "^3.4.30",
-    "vue-router": "^4.4.0"
+    "vue": "^3.5.3",
+    "vue-router": "^4.4.3"
   }
 }

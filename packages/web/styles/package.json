@@ -13,8 +13,7 @@
   "files": [
     "**/*.css"
   ],
-  "scripts": {
-  },
+  "scripts": {},
   "peerDependencies": {
     "unocss": "^0.61.0"
   },
@@ -25,8 +24,8 @@
     "unocss-preset-ease": "^0.0.3"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.222",
+    "@iconify/json": "^2.2.246",
     "@iconify/vue": "4.1.2",
-    "unocss": "^0.61.0"
+    "unocss": "^0.62.3"
   }
 }

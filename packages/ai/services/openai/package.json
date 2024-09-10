@@ -16,6 +16,6 @@
     "@celeris/types": "workspace:*",
     "@celeris/utils": "workspace:*",
     "h3": "^1.12.0",
-    "nitropack": "^2.9.6"
+    "nitropack": "^2.9.7"
   }
 }

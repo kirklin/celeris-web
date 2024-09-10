@@ -30,6 +30,6 @@
     "@celeris/utils": "workspace:*"
   },
   "devDependencies": {
-    "vue": "^3.4.30"
+    "vue": "^3.5.3"
   }
 }
