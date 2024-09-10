@@ -29,7 +29,7 @@ const rules: FormRules = {
       message: t("page.login.form.forgotPassword.requiredError"),
     },
     {
-      pattern: /^1[3456789]\d{9}$/,
+      pattern: /^1[3-9]\d{9}$/,
       message: t("page.login.form.forgotPassword.invalidFormatError"),
     },
   ],

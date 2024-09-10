@@ -38,8 +38,7 @@ defineOptions({
 
 <style scoped>
 .total-income-indicator-img {
-  animation: total-income-indicator-img-anim 10s linear 0ms infinite normal
-    backwards;
+  animation: total-income-indicator-img-anim 10s linear 0ms infinite normal backwards;
 }
 
 .earnings-indicator-img {

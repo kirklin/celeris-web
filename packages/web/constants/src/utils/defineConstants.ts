@@ -1,4 +1,4 @@
-// eslint-disable-next-line ts/no-require-imports,ts/no-var-requires
+// eslint-disable-next-line ts/no-require-imports
 const pick = require("lodash/pick.js");
 
 /**

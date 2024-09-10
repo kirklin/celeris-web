@@ -1,9 +1,5 @@
 .echarts-tooltip-custom {
-  background: linear-gradient(
-    304.17deg,
-    rgba(253, 254, 255, 0.6) -6.04%,
-    rgba(244, 247, 252, 0.6) 85.2%
-  ) !important;
+  background: linear-gradient(304.17deg, rgba(253, 254, 255, 0.6) -6.04%, rgba(244, 247, 252, 0.6) 85.2%) !important;
   border: none !important;
   backdrop-filter: blur(20px) !important;
   /* Note: backdrop-filter has minimal browser support */

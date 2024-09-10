@@ -1,4 +1,3 @@
-
 <div align='center'>
 <h1>Celeris Web</h1>
 <img src='docs/README.assets/logo.webp' alt='celeris-web - free and open-source front-end development framework' width='344'/>

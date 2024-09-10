@@ -3,6 +3,8 @@ import kirklin from "@kirklin/eslint-config";
 export default kirklin({
   rules: {
     "new-cap": "warn",
+    "unused-imports/no-unused-vars": "warn",
+    "ts/no-unused-expressions": "warn",
   },
   formatters: {
     /**
