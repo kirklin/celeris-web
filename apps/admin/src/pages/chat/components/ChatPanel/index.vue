@@ -33,6 +33,11 @@ const maxChatPanelHeight = computed(() => {
     <template #2>
       <MessageInputArea />
     </template>
+    <template #resize-trigger>
+      <div
+        class="resize-trigger h-full flex justify-center items-center rounded-md bg-transparent hover:bg-[--primary-color] transition-colors duration-300"
+      />
+    </template>
   </NSplit>
 </template>
 
