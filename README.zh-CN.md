@@ -1,3 +1,4 @@
+
 <div align='center'>
 <h1>Celeris Web</h1>
 <img src='docs/README.assets/logo.webp' alt='celeris-web - free and open-source front-end development framework' width='344'/>
@@ -11,11 +12,9 @@
 
 Celeris Web是一个免费开源的前端开发框架，采用最新的技术，包括Vue 3、Vite和TypeScript。其monorepo方法使得依赖管理和多个项目的协作变得轻松，为开发人员提供了构建现代Web应用程序的全面解决方案。
 
-Celeris Web的一个特色是它与OpenAI的ChatGPT API集成，提供了强大的自然语言处理功能。此集成使得开发人员可以轻松地将自然语言处理集成到其应用程序中，是需要此功能的项目的理想选择。
-
 无论您是经验丰富的开发人员还是刚刚入门，Celeris Web都提供了一个简化的前端开发流程，利用最新的工具和技术。
 
-立即开始使用Celeris Web，并体验高度简化的前端开发流程，利用最新技术，包括尖端自然语言处理功能。
+立即开始使用Celeris Web，并体验高度简化的前端开发流程，利用最新技术和高效的开发工具。
 
 ## 特点
 
@@ -31,7 +30,6 @@ Celeris Web的一个特色是它与OpenAI的ChatGPT API集成，提供了强大�
 - 📜 [中文字体预设](https://github.com/kirklin/unocss-preset-chinese)：包含中文字体预设 🇨🇳
 - 🌍 [国际化就绪](https://github.com/kirklin/celeris-web/tree/master/packages/web/locale)：具备使用本地化的国际化功能 🌎
 - ☁️ [Netlify准备就绪](https://www.netlify.com/)：在Netlify上零配置部署 ☁️
-- 🤖 集成[OpenAI的ChatGPT API](https://openai.com/)：用于自然语言处理 🤖
 
 ### 编码风格
 
@@ -49,7 +47,6 @@ Celeris Web的一个特色是它与OpenAI的ChatGPT API集成，提供了强大�
  graph TD
    admin{admin}
    admin --> admin-api
-   admin --> ai-core
    admin --> assets
    admin --> ca-components
    admin --> components
@@ -92,10 +89,6 @@ Celeris Web的一个特色是它与OpenAI的ChatGPT API集成，提供了强大�
    admin-api
    admin-api --> constants
    admin-api --> types
-   ai-core
-   ai-core --> constants
-   ai-core --> types
-
 ```
 
 要更新上面的图表，请编辑README文件，并在修改后打开一个新的PR。
@@ -145,7 +138,9 @@ export function openWindow(url: string, { target = "_blank", features = "noopene
 
 **3. 统一的构建和部署：** Monorepo 可以通过统一的构建和部署流程，简化整个开发过程，减少了配置和管理的复杂性，提高了开发团队的协作效率。
 
-**4. 统一的版本控制：** 所有项目都在同一个版本控制仓库中，使得版本管理更加一致和可控。这有助于团队协同开发时更好地追踪和处理版本问题。 Monorepo设计让Celeris Web不仅是一款后台管理系统模板，同时也是一个快速开发C端产品的前端Web模板。有了Celeris Web，前端开发之路将更加轻松愉快！🚀
+**4. 统一的版本控制：** 所有项目都在同一个版本控制仓库中，使得版本管理更加一致和可控。这有助于团队协同开发时更好地追踪和处理版本问题。
+
+Monorepo设计让Celeris Web不仅是一款后台管理系统模板，同时也是一个快速开发C端产品的前端Web模板。有了Celeris Web，前端开发之路将更加轻松愉快！🚀
 
 ## 设计理念：突破Admin管理的局限性，关注C端用户体验
 
@@ -161,35 +156,13 @@ Celeris Web不仅仅是一个后台管理系统的模板，更是一个注重C�
 
 **特色亮点：**
 
-- **时尚美观的UI设计：** 我们注重界面的美感，采用现代化设计语言，使得Celeris Web的UI不仅仅是功能的堆砌，更是一种视觉盛宴，让C端用户爱不释手。
+- **时尚美观的UI设计：** 我们注重界面的美感，采用现代化设计语言，使得Celeris Web的UI不仅仅是功能的堆
 
-- **用户友好的交互体验：** 考虑到C端用户的习惯和需求，Celeris Web注重交互体验的设计，通过流畅的动画效果和直观的操作，使用户感受到前所未有的愉悦和便捷。
+叠，更是视觉的享受。
 
-- **个性化定制的主题支持：** 我们理解C端产品的多样性，因此提供了丰富的主题定制选项，让每个C端项目都能拥有独一无二的外观，更好地满足产品个性化的需求。
+- **流畅的用户交互：** C端用户对交互的要求往往高于B端，我们特别优化了界面的响应速度和交互效果，确保用户的每一次操作都能得到快速的反馈。
 
-通过这一独特的设计理念，Celeris Web致力于在前端开发领域探索全新的可能性，为C端产品注入更多活力和创意。我们相信，这样的创新将带来更广泛的用户认可和更高的产品价值。在Celeris Web的世界里，前端不再局限于Admin系统，而是融入了更多关于用户体验的精彩元素。
-
-## 后期发展路线：瞄准AIGC，引领互联网产品变革
-
-随着人工智能与图形计算（AIGC）技术的崛起，我们决定将Celeris Web的发展方向更加专注于推动AIGC相关产品的研发和落地。这一战略决策旨在顺应互联网产品的变革浪潮，为未来的科技创新开辟全新的可能性。
-
-**AIGC技术引领变革：**
-
-AIGC的兴起标志着互联网产业迎来了一场技术变革，为产品带来更加智能、交互性更强的体验。Celeris Web将积极响应这一变革，致力于为开发者提供更优秀的工具，助力他们在AIGC领域创造更具前瞻性的产品。
-
-**模板的研发重心：**
-
-在后期的发展中，Celeris Web将更加重视AIGC相关产品的研发需求。我们将推出更多针对人工智能的功能模块，使开发者能够更便捷、高效地构建出色的AIGC应用。
-
-**专注产品落地：**
-
-除了技术研发，我们将加强对AIGC产品落地的支持。通过提供详实的文档、示例和定制化服务，Celeris Web旨在帮助开发者更好地将AIGC技术融入他们的实际项目中，实现技术创新与商业应用的有机结合。
-
-**开放合作生态：**
-
-为了推动AIGC技术的更广泛应用，Celeris Web将积极构建开放合作生态。与行业内优秀的AIGC技术提供商、开发者社区保持密切合作，共同推动AIGC技术的发展，携手打造更加繁荣的互联网产品生态圈。
-
-Celeris Web未来的发展将以AIGC为核心，我们期待在这个快速发展的技术领域中，与开发者们一同探索、创新，共同引领互联网产品的未来。通过持续的努力和创新，Celeris Web将成为AIGC领域的引领者，助力开发者创造更加智能、引人入胜的互联网产品。
+- **多场景适配：** 无论是用于电商、社交、还是内容展示，Celeris Web都提供了丰富的组件和模板，能够轻松适配各种C端应用场景。
 
 ## 快来试试吧！！
 

@@ -11,8 +11,6 @@
 
 Celeris Web is a free and open-source front-end development framework that utilizes the latest technologies, including Vue 3, Vite, and TypeScript. Its monorepo approach makes it easy to manage dependencies and collaborate on multiple projects, providing developers with a comprehensive solution for building modern web applications.
 
-One of the standout features of Celeris Web is its integration with OpenAI's ChatGPT API, which provides access to powerful natural language processing capabilities. This integration allows developers to easily incorporate natural language processing into their applications, making it an ideal choice for projects that require this functionality.
-
 Whether you're a seasoned developer or just starting out, Celeris Web offers a streamlined front-end development process that leverages the latest tools and techniques.
 
 Get started with celeris-web today and experience a highly streamlined front-end development process that harnesses the power of the latest technologies, including cutting-edge natural language processing capabilities.
@@ -31,7 +29,6 @@ Get started with celeris-web today and experience a highly streamlined front-end
 - 📜 [Chinese font preset](https://github.com/kirklin/unocss-preset-chinese): Includes a preset for Chinese fonts 🇨🇳
 - 🌍 [I18n ready](https://github.com/kirklin/celeris-web/tree/master/packages/web/locale): Ready for internationalization with locales 🌎
 - ☁️ [Netlify ready](https://www.netlify.com/): Zero-config deployment on Netlify ☁️
-- 🤖 Integration with [OpenAI's ChatGPT API](https://openai.com/): for natural language processing 🤖
 
 ### Coding Style
 
@@ -49,7 +46,6 @@ Get started with celeris-web today and experience a highly streamlined front-end
  graph TD
    admin{admin}
    admin --> admin-api
-   admin --> ai-core
    admin --> assets
    admin --> ca-components
    admin --> components
@@ -92,9 +88,6 @@ Get started with celeris-web today and experience a highly streamlined front-end
    admin-api
    admin-api --> constants
    admin-api --> types
-   ai-core
-   ai-core --> constants
-   ai-core --> types
 
 ```
 
@@ -166,28 +159,6 @@ Celeris Web is not just a template for admin systems; it's a frontend web templa
 - **Customizable Themes for Personalization:** Recognizing the diversity of C-end products, we provide a rich set of theme customization options, allowing each C-end project to have a unique appearance that perfectly aligns with personalized requirements.
 
 With this unique design philosophy, Celeris Web strives to explore new possibilities in frontend development, injecting more vitality and creativity into C-end products. We believe that such innovation will garner widespread user recognition and contribute to higher product value. In the world of Celeris Web, frontend development transcends the confines of Admin systems, incorporating more exciting elements related to user experience.
-
-## Future Development Roadmap: Targeting AIGC, Leading the Transformation of Internet Products
-
-With the rise of Artificial Intelligence and Graph Computing (AIGC) technologies, we have decided to shift the focus of Celeris Web's development towards driving the research and implementation of AIGC-related products. This strategic decision aims to align with the wave of transformation in internet products, paving the way for new possibilities in future technological innovation.
-
-**AIGC Technology Leading the Transformation:**
-
-The emergence of AIGC signifies a technological revolution in the internet industry, bringing about more intelligent and interactive experiences for products. Celeris Web will actively respond to this transformation, committed to providing developers with superior tools to facilitate the creation of forward-looking AIGC applications.
-
-**Development Focus on Templates:**
-
-In the later stages of development, Celeris Web will pay increased attention to the research and development needs of AIGC-related products. We will introduce more functional modules tailored for artificial intelligence, enabling developers to build exceptional AIGC applications more conveniently and efficiently.
-
-**Emphasis on Product Implementation:**
-
-In addition to technical research and development, we will strengthen support for the implementation of AIGC products. By providing comprehensive documentation, examples, and customized services, Celeris Web aims to assist developers in seamlessly integrating AIGC technology into their actual projects, achieving an organic fusion of technological innovation and business application.
-
-**Open Collaborative Ecosystem:**
-
-To promote the wider application of AIGC technology, Celeris Web will actively build an open collaborative ecosystem. Collaborating closely with outstanding AIGC technology providers and developer communities, we aim to collectively drive the development of AIGC technology, contributing to the flourishing ecosystem of internet products.
-
-The future development of Celeris Web will revolve around AIGC, and we look forward to exploring, innovating, and leading the future of internet products together with developers. Through continuous efforts and innovation, Celeris Web will become a leader in the AIGC field, empowering developers to create more intelligent and engaging internet products.
 
 ## Try it now!
 

@@ -26,7 +26,6 @@
     "preview:dist": "vite preview"
   },
   "dependencies": {
-    "@celeris/ai-services-openai": "workspace:*",
     "@celeris/constants": "workspace:*",
     "@celeris/directives": "workspace:*",
     "@celeris/locale": "workspace:*",
