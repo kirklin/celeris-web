@@ -1,5 +1,5 @@
 {
-  // 禁用默认的格式化程序，改用ESLint进行格式化
+  // 禁用默认格式化器，使用 eslint 代替
   "prettier.enable": false,
   "editor.formatOnSave": false,
 
@@ -9,21 +9,21 @@
     "source.organizeImports": "never"
   },
 
-  // 在IDE中隐藏样式规则的提示，但仍然自动修复它们
+  // 在IDE中静默样式规则，但仍然自动修复
   "eslint.rules.customizations": [
-    { "rule": "style/*", "severity": "off" },
-    { "rule": "format/*", "severity": "off" },
-    { "rule": "*-indent", "severity": "off" },
-    { "rule": "*-spacing", "severity": "off" },
-    { "rule": "*-spaces", "severity": "off" },
-    { "rule": "*-order", "severity": "off" },
-    { "rule": "*-dangle", "severity": "off" },
-    { "rule": "*-newline", "severity": "off" },
-    { "rule": "*quotes", "severity": "off" },
-    { "rule": "*semi", "severity": "off" }
+    { "rule": "style/*", "severity": "off", "fixable": true },
+    { "rule": "format/*", "severity": "off", "fixable": true },
+    { "rule": "*-indent", "severity": "off", "fixable": true },
+    { "rule": "*-spacing", "severity": "off", "fixable": true },
+    { "rule": "*-spaces", "severity": "off", "fixable": true },
+    { "rule": "*-order", "severity": "off", "fixable": true },
+    { "rule": "*-dangle", "severity": "off", "fixable": true },
+    { "rule": "*-newline", "severity": "off", "fixable": true },
+    { "rule": "*quotes", "severity": "off", "fixable": true },
+    { "rule": "*semi", "severity": "off", "fixable": true }
   ],
 
-  // 为所有支持的语言启用ESLint
+  // 为所有支持的语言启用 eslint
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -40,6 +40,7 @@
     "gql",
     "graphql",
     "astro",
+    "svelte",
     "css",
     "less",
     "scss",
