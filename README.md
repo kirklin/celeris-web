@@ -21,8 +21,8 @@ Get started with celeris-web today and experience a highly streamlined front-end
 - 💪 [Strongly typed](https://www.typescriptlang.org/): Uses TypeScript 💻
 - 📂 [Monorepo approach](https://en.wikipedia.org/wiki/Monorepo): Makes it easy to manage dependencies and collaborate on multiple projects 🤝
 - 🔥 [Latest syntax](https://github.com/vuejs/rfcs/pull/227): Uses the new <script setup> syntax 🆕
-- 📦 [Components auto importing](https://github.com/kirklin/celeris-web/blob/master/packages/node/vite/src/plugins/unpluginVueComponets.ts): Automatically imports components 🚚
-- 📥 [APIs auto importing](https://github.com/kirklin/celeris-web/blob/master/packages/node/vite/src/plugins/unpluginAutoImport.ts): Uses unplugin-auto-import to directly import Composition API and others 📨
+- 📦 [Components auto importing](https://github.com/kirklin/celeris-web/blob/master/packages/shared/vite/src/plugins/unpluginVueComponets.ts): Automatically imports components 🚚
+- 📥 [APIs auto importing](https://github.com/kirklin/celeris-web/blob/master/packages/shared/vite/src/plugins/unpluginAutoImport.ts): Uses unplugin-auto-import to directly import Composition API and others 📨
 - 💡 [Official router](https://router.vuejs.org/): Uses Vue Router v4 🛣️
 - 🎉 [Loading feedback](https://github.com/rstacruz/nprogress): Uses NProgress to provide page loading progress feedback 🔄
 - 🍍 [State management](https://pinia.esm.dev/): Uses Pinia for state management 🗃️

@@ -21,8 +21,8 @@ Celeris Web是一个免费开源的前端开发框架，采用最新的技术，
 - 💪 [强类型](https://www.typescriptlang.org/)：使用TypeScript 💻
 - 📂 [单库存储](https://en.wikipedia.org/wiki/Monorepo)：易于管理依赖项和协作多个项目 🤝
 - 🔥 [最新语法](https://github.com/vuejs/rfcs/pull/227)：使用新的< script setup >语法 🆕
-- 📦 [自动导入组件](https://github.com/kirklin/celeris-web/blob/master/packages/node/vite/src/plugins/unpluginVueComponets.ts)：自动导入组件 🚚
-- 📥 [自动导入API](https://github.com/kirklin/celeris-web/blob/master/packages/node/vite/src/plugins/unpluginAutoImport.ts)：使用unplugin-auto-import直接导入Composition API和其他API 📨
+- 📦 [自动导入组件](https://github.com/kirklin/celeris-web/blob/master/packages/shared/vite/src/plugins/unpluginVueComponets.ts)：自动导入组件 🚚
+- 📥 [自动导入API](https://github.com/kirklin/celeris-web/blob/master/packages/shared/vite/src/plugins/unpluginAutoImport.ts)：使用unplugin-auto-import直接导入Composition API和其他API 📨
 - 💡 [官方路由器](https://router.vuejs.org/)：使用Vue Router v4 🛣️
 - 🎉 [加载反馈](https://github.com/rstacruz/nprogress)：使用NProgress提供页面加载进度反馈 🔄
 - 🍍 [状态管理](https://pinia.esm.dev/)：使用Pinia进行状态管理 🗃️
