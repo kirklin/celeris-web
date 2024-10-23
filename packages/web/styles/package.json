@@ -20,12 +20,12 @@
   "dependencies": {
     "@kirklin/reset-css": "^0.0.6",
     "animate.css": "^4.1.1",
-    "unocss-preset-chinese": "^0.3.2",
-    "unocss-preset-ease": "^0.0.3"
+    "unocss-preset-chinese": "^0.3.3",
+    "unocss-preset-ease": "^0.0.4"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.246",
+    "@iconify/json": "^2.2.263",
     "@iconify/vue": "4.1.2",
-    "unocss": "^0.62.3"
+    "unocss": "^0.63.6"
   }
 }

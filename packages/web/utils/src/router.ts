@@ -43,7 +43,7 @@ export function getRawRoute(route: RouteLocationNormalized): RouteLocationNormal
  * @returns A regular expression used for matching the route path 返回用于匹配路径的正则表达式
  */
 export function createPathMatcher(path: string): RegExp {
-  return pathToRegexp(path);
+  return pathToRegexp(path).regexp;
 }
 /**
  * Converts multi-level routing to level 2 routing.

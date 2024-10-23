@@ -30,8 +30,8 @@
   },
   "dependencies": {
     "@celeris/utils": "workspace:*",
-    "@vueuse/core": "^11.0.3",
-    "@vueuse/integrations": "^11.0.3"
+    "@vueuse/core": "^11.1.0",
+    "@vueuse/integrations": "^11.1.0"
   },
   "devDependencies": {}
 }
