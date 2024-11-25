@@ -41,7 +41,7 @@ listenToRouteChange((route) => {
           {{ localize(tab.title) }}
         </span>
         <template #icon>
-          <div class="hover:color-primary-color hover:bg-[var(--action-color)] cursor-pointer mr-1 transition" @click="pinnedTab(tab)">
+          <div class="rounded-full hover:color-primary-color hover:bg-[var(--action-color)] cursor-pointer transition" @click="pinnedTab(tab)">
             <CAIcon :size="14" icon="tabler:pinned" />
           </div>
         </template>
@@ -63,7 +63,7 @@ listenToRouteChange((route) => {
         </div>
       </NTag>
     </TransitionGroup>
-    <div class="bar absolute bottom-[-0.5rem] bg-action-color rounded-2xl left-0 w-full h-1" />
+    <!--    <div class="bar absolute bottom-[-0.5rem] bg-action-color rounded-2xl left-0 w-full h-1" /> -->
   </div>
 </template>
 
