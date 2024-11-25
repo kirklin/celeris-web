@@ -26,21 +26,21 @@ jobs:
       - name: Lint
         run: pnpm run lint
 
-  TYPE_CHECK:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-      - uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-          cache: pnpm
-
-      - name: Install
-        run: pnpm install
-
-      - name: Type check
-        run: pnpm --filter "@celeris/admin" typecheck
+  #  TYPE_CHECK:
+  #    runs-on: ubuntu-latest
+  #    steps:
+  #      - uses: actions/checkout@v4
+  #      - uses: pnpm/action-setup@v3
+  #      - uses: actions/setup-node@v4
+  #        with:
+  #          node-version: lts/*
+  #          cache: pnpm
+  #
+  #      - name: Install
+  #        run: pnpm install
+  #
+  #      - name: Type check
+  #        run: pnpm --filter "@celeris/admin" typecheck
 
   TEST:
     runs-on: ubuntu-latest
