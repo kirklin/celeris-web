@@ -67,7 +67,7 @@
     "@types/node": "^22.9.3",
     "@types/nprogress": "^0.2.3",
     "@unocss/eslint-plugin": "^0.64.1",
-    "@vitest/coverage-c8": "^0.33.0",
+    "@vitest/coverage-v8": "^2.1.5",
     "bumpp": "^9.8.1",
     "cross-env": "^7.0.3",
     "directory-tree": "^3.5.2",
