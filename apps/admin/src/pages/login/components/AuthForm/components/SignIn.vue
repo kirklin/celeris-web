@@ -7,7 +7,7 @@ import { useUserStore } from "~/store/modules/user";
 import type { SignInFromType } from "~/pages/login/types";
 
 const emit = defineEmits<{
-  (e: "forgot-password"): void;
+  (e: "forgotPassword"): void;
 }>();
 
 const { t } = useI18n();
@@ -81,7 +81,7 @@ async function signIn(e: Event) {
         <NCheckbox size="large">
           {{ t('page.login.form.remember') }}
         </NCheckbox>
-        <NButton text type="primary" @click="emit('forgot-password')">
+        <NButton text type="primary" @click="emit('forgotPassword')">
           {{ t('page.login.form.forgetPassword') }}
         </NButton>
       </div>

@@ -51,8 +51,8 @@ onBeforeMount(() => {
       <Transition
         appear :name="RouterTransitionConstants.FADE_SLIDE" mode="out-in"
       >
-        <SignIn v-if="typeRef === 'signIn'" key="signin" @forgot-password="gotoForgotPassword()" />
-        <ForgotPassword v-else-if="typeRef === 'forgotPassword'" key="forgotpassword" />
+        <SignIn v-if="typeRef === 'signIn'" key="signIn" @forgot-password="gotoForgotPassword()" />
+        <ForgotPassword v-else-if="typeRef === 'forgotPassword'" key="forgotPassword" />
         <SignUp v-else-if="typeRef === 'signUp'" key="signup" />
       </Transition>
     </div>
