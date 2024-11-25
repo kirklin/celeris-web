@@ -17,9 +17,9 @@
     "@celeris/types": "workspace:*",
     "@celeris/utils": "workspace:*",
     "axios": "^1.7.7",
-    "qs": "^6.13.0"
+    "qs": "^6.13.1"
   },
   "devDependencies": {
-    "@types/qs": "^6.9.16"
+    "@types/qs": "^6.9.17"
   }
 }
