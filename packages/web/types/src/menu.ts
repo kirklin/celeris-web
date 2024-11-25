@@ -1,5 +1,5 @@
-import type { RouteMeta } from "vue-router";
 import type { RoleConstants } from "@celeris/constants";
+import type { RouteMeta } from "vue-router";
 
 /**
  * Interface for a menu item.

@@ -1,5 +1,5 @@
-import { deepMerge } from "@celeris/utils";
 import type { CreateAxiosOptions } from "./axiosTransform";
+import { deepMerge } from "@celeris/utils";
 import { HttpClient } from "./HttpClient";
 import { defaultAxiosOptions } from "./options/defaultOptions";
 

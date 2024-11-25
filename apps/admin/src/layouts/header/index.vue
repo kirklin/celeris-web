@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import Breadcrumb from "~/layouts/header/components/Breadcrumb.vue";
 import CollapseButton from "~/layouts/header/components/CollapseButton.vue";
 import FullScreenButton from "~/layouts/header/components/FullScreenButton.vue";
 import LocaleSwitcher from "~/layouts/header/components/LocaleSwitcher.vue";
+import SearchAnyWhere from "~/layouts/header/components/SearchAnyWhere.vue";
 import UserInfoButton from "~/layouts/header/components/UserInfoButton.vue";
 import SettingButton from "~/layouts/setting/index.vue";
-import Breadcrumb from "~/layouts/header/components/Breadcrumb.vue";
-import SearchAnyWhere from "~/layouts/header/components/SearchAnyWhere.vue";
 import LayoutTabs from "~/layouts/tabs/index.vue";
 
 defineOptions({

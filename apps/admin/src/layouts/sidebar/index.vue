@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import SidebarHeader from "./components/SidebarHeader.vue";
-import SidebarFooter from "./components/SidebarFooter.vue";
 import { useMenuSetting } from "~/composables";
 import MenuLayout from "~/layouts/sidebar/components/Menu.vue";
+import SidebarFooter from "./components/SidebarFooter.vue";
+import SidebarHeader from "./components/SidebarHeader.vue";
 
 defineOptions({
   name: "SidebarLayout",

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { RouteRecordName } from "vue-router";
-import { useFrameKeepAlive } from "./useFrameKeepAlive";
 import IframePage from "~/pages/internal/iframe/IframePage.vue";
+import { useFrameKeepAlive } from "./useFrameKeepAlive";
 
 defineOptions(
   {

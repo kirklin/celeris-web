@@ -1,10 +1,10 @@
 import type { Menu, MenuModule } from "@celeris/types";
-import { cloneDeep } from "lodash-es";
 import type { RouteRecordRaw } from "vue-router";
+import { cloneDeep } from "lodash-es";
 import { loadDataFromModules } from "./moduleHelper";
+import { createPathMatcher } from "./router";
 import { findFirstNodePath, mapTreeStructure } from "./treeHelper";
 import { isHttpUrl } from "./typeChecks";
-import { createPathMatcher } from "./router";
 
 /**
  * 从模块对象中加载菜单配置并加入到菜单集合中

@@ -1,6 +1,6 @@
+import type { EChartsOption } from "echarts";
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
-import type { EChartsOption } from "echarts";
 
 // Define function type
 interface ChartOptionsGenerator {

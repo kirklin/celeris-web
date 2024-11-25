@@ -1,5 +1,5 @@
-import process from "node:process";
 import type { UserConfig } from "vite";
+import process from "node:process";
 import { defineConfig, mergeConfig } from "vite";
 import { createApplicationViteConfig } from "./configs/application";
 

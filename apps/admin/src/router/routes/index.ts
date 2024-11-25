@@ -1,6 +1,6 @@
+import type { RouteRecordRaw } from "vue-router";
 import { PageConstants } from "@celeris/constants";
 import { loadRoutesFromModules } from "@celeris/utils";
-import type { RouteRecordRaw } from "vue-router";
 import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE } from "~/router/routes/basic";
 
 const modules = import.meta.glob<{ default: any }>("./modules/**/*.ts", { eager: true });

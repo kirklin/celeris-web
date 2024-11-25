@@ -1,6 +1,6 @@
-import { deepMerge } from "@celeris/utils";
 import type { App } from "vue";
 import type { I18nOptions } from "vue-i18n";
+import { deepMerge } from "@celeris/utils";
 import { createI18n } from "vue-i18n";
 import { LocalesConfiguration } from "./config";
 

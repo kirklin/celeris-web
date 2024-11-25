@@ -1,6 +1,6 @@
-import process from "node:process";
 import type { ViteEnvVariables } from "@celeris/types";
 import type { ProxyOptions } from "vite";
+import process from "node:process";
 
 /**
  * 读取所有环境变量配置文件，并将它们添加到process.env中

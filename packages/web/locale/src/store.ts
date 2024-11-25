@@ -1,6 +1,6 @@
-import { computed } from "vue";
-import { useLocalStorage } from "@celeris/hooks";
 import { LOCALES_STORE_KEY } from "@celeris/constants";
+import { useLocalStorage } from "@celeris/hooks";
+import { computed } from "vue";
 
 const store = useLocalStorage(LOCALES_STORE_KEY, "en");
 

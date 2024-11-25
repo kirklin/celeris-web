@@ -1,7 +1,7 @@
 // @unocss-include
 import type { RouteRecordRaw } from "vue-router";
 import { RoleConstants } from "@celeris/constants";
-import { LAYOUT, getParentLayout } from "~/router/constant";
+import { getParentLayout, LAYOUT } from "~/router/constant";
 
 const permission: RouteRecordRaw = {
   path: "/permission",

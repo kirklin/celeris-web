@@ -1,7 +1,7 @@
 <script setup>
-import { useI18n } from "vue-i18n";
-import { isNil } from "@celeris/utils";
 import { renderIcon } from "@celeris/components";
+import { isNil } from "@celeris/utils";
+import { useI18n } from "vue-i18n";
 import { getCurrentParent } from "~/router/menus";
 
 defineOptions({

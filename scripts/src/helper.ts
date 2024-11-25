@@ -1,8 +1,8 @@
 import process from "node:process";
 import { execa } from "execa";
 import prompts from "prompts";
-import scriptPkg from "../package.json";
 import rootPkg from "../../package.json";
+import scriptPkg from "../package.json";
 
 interface WorkspacePackage {
   name: string;

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { RoleConstants } from "@celeris/constants";
-import CurrentPermissionMode from "../CurrentPermissionMode.vue";
+import Authority from "~/component/Authority/src/Authority.vue";
 import { usePermissionStore } from "~/store/modules/permission";
 import { useUserStore } from "~/store/modules/user";
-import Authority from "~/component/Authority/src/Authority.vue";
+import CurrentPermissionMode from "../CurrentPermissionMode.vue";
 
 const { hasPermission, isBackendPermissionMode } = useAppPermission();
 const permissionStore = usePermissionStore();

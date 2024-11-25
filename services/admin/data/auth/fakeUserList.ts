@@ -1,5 +1,5 @@
-import { RoleConstants } from "@celeris/constants";
 import type { FakeUserInfo } from "../../models/auth/FakeUserInfo";
+import { RoleConstants } from "@celeris/constants";
 
 export const fakeUserList: FakeUserInfo[] = [
   {

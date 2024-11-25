@@ -1,13 +1,13 @@
-import { openWindow } from "@celeris/utils";
 import type { RouteLocationNormalized, Router } from "vue-router";
 import { AxiosCanceler } from "@celeris/request";
-import { createPageLoadingGuard } from "~/router/guard/pageLoadingGuard";
-import NProgress from "~/setting/nprogress";
+import { openWindow } from "@celeris/utils";
 import { useTransitionSetting } from "~/composables/setting/useTransitionSetting";
-import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";
+import { createPageLoadingGuard } from "~/router/guard/pageLoadingGuard";
 import { createPermissionGuard } from "~/router/guard/permissionGuard";
 import { createStateGuard } from "~/router/guard/stateGuard";
 import { notifyRouteChange } from "~/router/mitt/routeChange";
+import NProgress from "~/setting/nprogress";
+import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";
 
 // Don't change the order of creation
 // 不要改变创建的顺序

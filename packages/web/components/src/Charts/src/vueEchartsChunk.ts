@@ -1,8 +1,3 @@
-// Import ECharts, loaded asynchronously from main.ts
-import ECharts from "vue-echarts";
-import { use } from "echarts/core";
-import { CanvasRenderer, SVGRenderer } from "echarts/renderers";
-
 import {
   BarChart,
   BoxplotChart,
@@ -27,16 +22,15 @@ import {
   TreeChart,
   TreemapChart,
 } from "echarts/charts";
-
 import {
   AriaComponent,
   AxisPointerComponent,
   BrushComponent,
   CalendarComponent,
+  DatasetComponent,
   DataZoomComponent,
   DataZoomInsideComponent,
   DataZoomSliderComponent,
-  DatasetComponent,
   GeoComponent,
   GraphicComponent,
   GridComponent,
@@ -56,11 +50,17 @@ import {
   VisualMapContinuousComponent,
   VisualMapPiecewiseComponent,
 } from "echarts/components";
+import { use } from "echarts/core";
 
 import {
   LabelLayout,
   UniversalTransition,
 } from "echarts/features";
+
+import { CanvasRenderer, SVGRenderer } from "echarts/renderers";
+
+// Import ECharts, loaded asynchronously from main.ts
+import ECharts from "vue-echarts";
 
 // -----------------
 // Render engines

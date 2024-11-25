@@ -1,15 +1,15 @@
-import { createApp } from "vue";
-
 import { setupDirectives } from "@celeris/directives";
-import { setupI18n } from "@celeris/locale";
-import { router, setupRouter } from "./router";
-import { setupStore } from "./store";
-import { setupPermissionDirective } from "~/directives/permission";
-import { setupVueQuery } from "~/apis";
-import { initializeConfiguration } from "~/AppConfiguration";
-import { setupRouterGuard } from "~/router/guard";
 
+import { setupI18n } from "@celeris/locale";
+import { createApp } from "vue";
+import { setupVueQuery } from "~/apis";
 import App from "~/App.vue";
+import { initializeConfiguration } from "~/AppConfiguration";
+import { setupPermissionDirective } from "~/directives/permission";
+import { setupRouterGuard } from "~/router/guard";
+import { router, setupRouter } from "./router";
+
+import { setupStore } from "./store";
 
 import "@celeris/styles";
 import "uno.css";

@@ -1,7 +1,7 @@
+import type { UserConfig } from "vite";
 import { resolve } from "node:path";
 import { formatToDateTime } from "@celeris/utils";
 import { readPackageJSON } from "pkg-types";
-import type { UserConfig } from "vite";
 import { loadEnv } from "vite";
 import { configVitePlugins } from "../../plugins";
 import { configureProxy, updateEnvVariables } from "../../utils";

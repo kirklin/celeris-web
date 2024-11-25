@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ChatLayout from "./components/ChatLayout.vue";
 import PageWrapper from "~/component/PageWrapper/src/PageWrapper.vue";
+import ChatLayout from "./components/ChatLayout.vue";
 
 defineOptions({
   name: "Chat",

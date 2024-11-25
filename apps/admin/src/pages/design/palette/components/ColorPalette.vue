@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { copyToClipboard, generateColorPalettes } from "@celeris/utils";
 import { colord, extend } from "colord";
 import a11yPlugin from "colord/plugins/a11y";
-import { copyToClipboard, generateColorPalettes } from "@celeris/utils";
 
 defineOptions({
   name: "ColorPalette",

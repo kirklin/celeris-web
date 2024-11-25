@@ -1,6 +1,6 @@
+import type { RouteRecordName, RouteRecordRaw } from "vue-router";
 import { uniqBy } from "@celeris/utils";
 import { computed, toRaw } from "vue";
-import type { RouteRecordName, RouteRecordRaw } from "vue-router";
 import { useRouter } from "vue-router";
 
 export function useFrameKeepAlive() {

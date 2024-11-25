@@ -50,7 +50,7 @@ function handleLogout() {
         {{ t('layouts.userInfo.rolesList', { roles: userInfo?.roles }) }}
       </p>
     </template>
-    <NButton block quaternary @click="router.push({name: 'Profile'})">
+    <NButton block quaternary @click="router.push({ name: 'Profile' })">
       {{ t('routes.profile.profile') }}
     </NButton>
     <template #footer>

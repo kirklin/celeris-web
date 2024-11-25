@@ -1,3 +1,4 @@
+import type { GlobalThemeOverrides } from "naive-ui";
 import {
   convertColorToRgbString,
   convertColorToRgbValues,
@@ -5,9 +6,8 @@ import {
   isColor,
   setCssVariable,
 } from "@celeris/utils";
-import { effectScope, onScopeDispose, watch } from "vue";
-import type { GlobalThemeOverrides } from "naive-ui";
 import { kebabCase } from "lodash-es";
+import { effectScope, onScopeDispose, watch } from "vue";
 import { useDesignStore } from "~/store/modules/design";
 
 /**

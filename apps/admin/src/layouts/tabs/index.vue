@@ -2,8 +2,8 @@
 import { RouterTransitionConstants } from "@celeris/constants";
 import { NTag } from "naive-ui";
 import { useI18n } from "vue-i18n";
-import { listenToRouteChange } from "~/router/mitt/routeChange";
 import { useTabs } from "~/composables/useTabs";
+import { listenToRouteChange } from "~/router/mitt/routeChange";
 
 defineOptions({
   name: "LayoutTabs",

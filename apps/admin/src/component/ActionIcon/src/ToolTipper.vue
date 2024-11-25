@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { computed } from "vue";
 import type { PopoverPlacement } from "naive-ui";
 import { isEmpty } from "@celeris/utils";
+import { computed } from "vue";
 
 interface ToolTipperProps {
   // Tooltip 显示的文本信息

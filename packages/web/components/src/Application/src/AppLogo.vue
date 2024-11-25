@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed, toRefs } from "vue";
-import { PageConstants, RouterTransitionConstants } from "@celeris/constants";
-import { useRouter } from "vue-router";
 import { logoImage } from "@celeris/assets";
+import { PageConstants, RouterTransitionConstants } from "@celeris/constants";
+import { computed, toRefs } from "vue";
+import { useRouter } from "vue-router";
 
 const props = withDefaults(
   defineProps<{

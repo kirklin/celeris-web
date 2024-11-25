@@ -1,16 +1,16 @@
+import type { RoleConstants } from "@celeris/constants";
 import type { MessageMode } from "@celeris/request";
 import type { UserInfo } from "@celeris/types/src/user";
-import { defineStore } from "pinia";
-import { field, getErrorMessage, logger } from "@celeris/utils";
-import type { RoleConstants } from "@celeris/constants";
 import { PageConstants, PermissionCacheTypeConstants } from "@celeris/constants";
-import { APP_USER_STORE_ID } from "../constants";
+import { field, getErrorMessage, logger } from "@celeris/utils";
+import { defineStore } from "pinia";
 import { loginApi, logoutApi, userInfoApi } from "~/apis/internal/auth";
 import type { LoginParams } from "~/apis/internal/auth";
-import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";
 import { router } from "~/router";
 import { PAGE_NOT_FOUND_ROUTE } from "~/router/routes/basic";
+import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";
 import { usePermissionStore } from "~/store/modules/permission";
+import { APP_USER_STORE_ID } from "../constants";
 
 interface UserState {
   // Whether the user should be logged in

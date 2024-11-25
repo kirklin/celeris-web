@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import HeroImg from "./images/ripple/hero.gif";
 import PageWrapper from "~/component/PageWrapper/src/PageWrapper.vue";
+import HeroImg from "./images/ripple/hero.gif";
 
 defineOptions({
   name: "Ripple",

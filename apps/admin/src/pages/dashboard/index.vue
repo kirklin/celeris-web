@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import UserAnalysis from "~/pages/dashboard/components/UserAnalysis.vue";
+import PageWrapper from "~/component/PageWrapper/src/PageWrapper.vue";
+import APIHealthMetrics from "~/pages/dashboard/components/APIHealthMetrics.vue";
 import DataOverview from "~/pages/dashboard/components/DataOverview.vue";
 import PerformanceMetrics from "~/pages/dashboard/components/PerformanceMetrics.vue";
-import APIHealthMetrics from "~/pages/dashboard/components/APIHealthMetrics.vue";
-import PageWrapper from "~/component/PageWrapper/src/PageWrapper.vue";
+import UserAnalysis from "~/pages/dashboard/components/UserAnalysis.vue";
 
 defineOptions({
   name: "Dashboard",

@@ -137,9 +137,9 @@ export function memo<TDeps extends readonly any[], TResult>(
             font-size: .6rem;
             font-weight: bold;
             color: hsl(${Math.max(
-    0,
-    Math.min(120 - 120 * computationFpsPercentage, 120),
-  )}deg 100% 31%);`,
+              0,
+              Math.min(120 - 120 * computationFpsPercentage, 120),
+            )}deg 100% 31%);`,
           options?.key,
         );
       }

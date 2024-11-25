@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-
 import {
   type FormInst,
   type FormItemRule,
@@ -13,8 +11,10 @@ import {
   useMessage,
 } from "naive-ui";
 
-import { useUserStore } from "~/store/modules/user";
+import { ref } from "vue";
+
 import type { SignUpFromType } from "~/pages/login/types";
+import { useUserStore } from "~/store/modules/user";
 
 const { t } = useI18n();
 

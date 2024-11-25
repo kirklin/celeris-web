@@ -1,7 +1,7 @@
 import { generateColorPalettes } from "@kirklin/palette";
 
-export { generateColorPalette } from "@kirklin/palette";
 export * from "./utils";
+export { generateColorPalette } from "@kirklin/palette";
 
 const presetPrimaryColors: Record<string, string> = {
   red: "#F53F3F",
@@ -81,25 +81,25 @@ const grey = presetPalettes.gray;
 export type PalettesProps = Record<string, string[] & { primary?: string }>;
 
 export {
-  generateColorPalettes,
-  presetPalettes,
-  presetDarkPalettes,
-  presetPrimaryColors,
-  red,
-  orangered,
-  orange,
-  gold,
-  yellow,
-  lime,
-  green,
-  cyan,
+  black,
   blue,
   celerisBlue,
-  purple,
-  pinkpurple,
-  magenta,
-  grey,
+  cyan,
+  generateColorPalettes,
+  gold,
   gray,
-  black,
+  green,
+  grey,
+  lime,
+  magenta,
+  orange,
+  orangered,
+  pinkpurple,
+  presetDarkPalettes,
+  presetPalettes,
+  presetPrimaryColors,
+  purple,
+  red,
   white,
+  yellow,
 };

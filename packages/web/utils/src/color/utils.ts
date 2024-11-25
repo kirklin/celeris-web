@@ -1,5 +1,5 @@
-import { colord } from "colord";
 import type { RgbaColor } from "colord/types";
+import { colord } from "colord";
 
 export function isWhiteColor(color: string) {
   return colord(color).isEqual("#ffffff");

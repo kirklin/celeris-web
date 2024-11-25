@@ -1,6 +1,6 @@
 import type { Component } from "vue";
-import { h } from "vue";
 import { isNil } from "@celeris/utils";
+import { h } from "vue";
 import { Icon } from "../index";
 
 /**

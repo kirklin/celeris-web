@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useMenuSetting } from "~/composables/setting/useMenuSetting";
 import { ActionIcon } from "~/component/ActionIcon";
+import { useMenuSetting } from "~/composables/setting/useMenuSetting";
 
 const { t } = useI18n();
 

@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import type { ToolTipFormatterParams } from "../../../../types/echarts";
 import { useThemeVars } from "@celeris/ca-components";
 import { isNil } from "@celeris/utils";
-import type { ToolTipFormatterParams } from "../../../../types/echarts";
+import { queryUserAnalysisData } from "~/apis/internal/dashboard";
 import { DataInsightCard } from "~/component/Card";
 import CardInnerIcon from "~/pages/dashboard/components/CardInnerIcon.vue";
-import { queryUserAnalysisData } from "~/apis/internal/dashboard";
 
 const props = defineProps({
   title: {

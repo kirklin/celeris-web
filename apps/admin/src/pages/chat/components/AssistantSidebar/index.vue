@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AssistantSidebarActionBar from "./components/AssistantSidebarActionBar.vue";
 import RoleList from "~/pages/chat/components/AssistantSidebar/components/AssistantList.vue";
+import AssistantSidebarActionBar from "./components/AssistantSidebarActionBar.vue";
 
 defineOptions({
   name: "AssistantSidebar",

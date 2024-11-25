@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { getTransitionName } from "~/layouts/transition";
 import { useTransitionSetting } from "~/composables";
+import { getTransitionName } from "~/layouts/transition";
 
 defineOptions({
   name: "ContentLayout",

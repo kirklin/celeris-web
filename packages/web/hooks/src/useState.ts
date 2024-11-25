@@ -1,7 +1,7 @@
 import type { Ref } from "vue";
-import { ref } from "vue";
-import { isFunction } from "@celeris/utils";
 import type { BasicStateAction, Dispatch } from "./types";
+import { isFunction } from "@celeris/utils";
+import { ref } from "vue";
 
 export function useState<S>(
   initialState?: (() => S) | S,

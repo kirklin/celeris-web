@@ -1,10 +1,10 @@
-import { defineStore } from "pinia";
+import type { RouteLocationNormalized, RouteRecordName } from "vue-router";
 import { PageConstants } from "@celeris/constants";
 import { isGreaterOrEqual2xl } from "@celeris/hooks";
-import type { RouteLocationNormalized, RouteRecordName } from "vue-router";
 import { takeRight, uniqBy } from "@celeris/utils";
-import { APP_TABS_STORE_ID } from "../constants";
+import { defineStore } from "pinia";
 import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE } from "~/router/routes/basic";
+import { APP_TABS_STORE_ID } from "../constants";
 
 interface AppTabsState {
   tabs: Tab[];

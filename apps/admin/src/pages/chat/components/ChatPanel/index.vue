@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import MessageInputArea from "./MessageInputArea/index.vue";
-import ChatConversation from "./ChatConversation.vue";
 import ChatPanelToolbar from "~/pages/chat/components/ChatPanel/ChatPanelToolbar.vue";
+import ChatConversation from "./ChatConversation.vue";
+import MessageInputArea from "./MessageInputArea/index.vue";
 
 defineOptions({
   name: "ChatPanel",

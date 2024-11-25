@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import type { UserInfo } from "@celeris/types";
-import { useUserStore } from "~/store/modules/user";
 import ToolTipper from "~/component/ActionIcon/src/ToolTipper.vue";
 import PageWrapper from "~/component/PageWrapper/src/PageWrapper.vue";
+import { useUserStore } from "~/store/modules/user";
 
 const ROLE_ICON = "tabler:user";
 const LOCATION_ICON = "tabler:map-pin";

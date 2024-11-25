@@ -2,9 +2,9 @@
 import { createColumnHelper, getCoreRowModel, useVueTable } from "@tanstack/vue-table";
 
 import { AppTable } from "~/component/AppTable";
+import PageWrapper from "~/component/PageWrapper/src/PageWrapper.vue";
 import type { ChatGPTDemoTableRow } from "~/pages/components/headless-table/basic/data";
 import { chatGPTDemoTestData } from "~/pages/components/headless-table/basic/data";
-import PageWrapper from "~/component/PageWrapper/src/PageWrapper.vue";
 
 defineOptions({
   name: "HeadlessTableBasic",

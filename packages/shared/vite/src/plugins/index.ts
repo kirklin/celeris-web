@@ -3,9 +3,9 @@ import type { PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 
+import { createVueDevToolsPluginConfig } from "./devTools";
 import { createConfigPluginConfig } from "./generateConfig";
 import { createInspectPluginConfig } from "./inspect";
-import { createVueDevToolsPluginConfig } from "./devTools";
 import { createPWAPluginConfig } from "./pwa";
 import { createUnoCSSPluginConfig } from "./unocss";
 import { createAutoImportPluginConfig } from "./unpluginAutoImport";

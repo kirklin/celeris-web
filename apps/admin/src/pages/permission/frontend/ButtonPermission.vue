@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { RoleConstants } from "@celeris/constants";
 
-import CurrentPermissionMode from "../CurrentPermissionMode.vue";
 import Authority from "~/component/Authority/src/Authority.vue";
 import { useUserStore } from "~/store/modules/user";
+import CurrentPermissionMode from "../CurrentPermissionMode.vue";
 
 const { changeRole, hasPermission } = useAppPermission();
 const { t } = useI18n();

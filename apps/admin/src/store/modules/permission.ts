@@ -1,10 +1,9 @@
-import type { Menu } from "@celeris/types";
 import type { RoleConstants } from "@celeris/constants";
+import type { Menu } from "@celeris/types";
+import type { RouteRecordRaw } from "vue-router";
 import { PermissionModeConstants } from "@celeris/constants";
 import { filterTree, flattenMultiLevelRoutes, transformRouteToMenu } from "@celeris/utils";
 import { defineStore } from "pinia";
-import type { RouteRecordRaw } from "vue-router";
-import { APP_PERMISSION_STORE_ID } from "../constants";
 import { permissionCodeApi } from "~/apis/internal/auth";
 import { menusApi } from "~/apis/internal/menu";
 import { asyncRoutes } from "~/router/routes";
@@ -12,6 +11,7 @@ import { PAGE_NOT_FOUND_ROUTE } from "~/router/routes/basic";
 import { transformBackendDataToRoutes } from "~/router/routes/utils";
 import { useAppStore } from "~/store/modules/app";
 import { useUserStore } from "~/store/modules/user";
+import { APP_PERMISSION_STORE_ID } from "../constants";
 
 // 定义权限状态接口
 // Define the interface for permission state

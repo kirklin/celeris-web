@@ -6,11 +6,11 @@
  */
 import type { GlobEnvConfig } from "@celeris/types";
 import type { Encryption } from "@celeris/utils";
-import { EncryptionFactory, createStorageName } from "@celeris/utils";
 import type { Pinia } from "pinia";
+import type { PersistedStateFactoryOptions, Serializer } from "pinia-plugin-persistedstate";
+import { createStorageName, EncryptionFactory } from "@celeris/utils";
 import destr from "destr";
 import { createPersistedState } from "pinia-plugin-persistedstate";
-import type { PersistedStateFactoryOptions, Serializer } from "pinia-plugin-persistedstate";
 import {
   SHOULD_ENABLE_STORAGE_ENCRYPTION,
   STORAGE_CIPHER_IV,

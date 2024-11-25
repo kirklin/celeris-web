@@ -1,5 +1,5 @@
-import { describe, expect, it, vi } from "vitest";
 import { field, logger } from "@kirklin/logger";
+import { describe, expect, it, vi } from "vitest";
 import { memo } from "../util";
 
 describe("memo", () => {

@@ -1,6 +1,6 @@
 import type { ComputedRef, Ref } from "vue";
-import { computed, toRef, watch } from "vue";
 import { isUndefined } from "@celeris/utils";
+import { computed, toRef, watch } from "vue";
 import { useState } from "./useState";
 
 export function useMergeState<T, E = T | undefined>(

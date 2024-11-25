@@ -1,7 +1,7 @@
-import { ContentTypeConstants } from "@celeris/constants";
 import type { GlobEnvConfig } from "@celeris/types";
-import { getAppGlobalConfig } from "@celeris/utils";
 import type { CreateAxiosOptions } from "../axiosTransform";
+import { ContentTypeConstants } from "@celeris/constants";
+import { getAppGlobalConfig } from "@celeris/utils";
 import { defaultTransform } from "./transform/defaultTransform";
 
 const globalConfig = getAppGlobalConfig(<GlobEnvConfig>import.meta.env);

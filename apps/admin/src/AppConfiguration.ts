@@ -1,9 +1,9 @@
-import { HttpRequestEngine } from "@celeris/request";
-import { LocalesEngine } from "@celeris/locale";
 import { createDiscreteApi } from "@celeris/ca-components";
+import { LocalesEngine } from "@celeris/locale";
+import { HttpRequestEngine } from "@celeris/request";
 import { field, logger } from "@celeris/utils";
-import { useUserStoreWithOut } from "~/store/modules/user";
 import { useAppSetting, useNaiveUIConfigProvider } from "~/composables";
+import { useUserStoreWithOut } from "~/store/modules/user";
 
 function initializeHttpRequest() {
   const { configProviderProps } = useNaiveUIConfigProvider();

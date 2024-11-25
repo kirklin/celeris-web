@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { Menu } from "@celeris/types";
+import type { RouteLocationNormalizedLoaded } from "vue-router";
 import { renderIcon } from "@celeris/components";
 import { mapTreeStructure } from "@celeris/utils";
-import type { RouteLocationNormalizedLoaded } from "vue-router";
-import { RouterLink } from "vue-router";
 import { useI18n } from "vue-i18n";
+import { RouterLink } from "vue-router";
 import { REDIRECT_NAME } from "~/router/constant";
 import { getMenus } from "~/router/menus";
 import { listenToRouteChange } from "~/router/mitt/routeChange";

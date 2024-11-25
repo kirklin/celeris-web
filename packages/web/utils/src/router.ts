@@ -1,7 +1,7 @@
+import type { RouteLocationNormalized, Router, RouteRecordNormalized, RouteRecordRaw } from "vue-router";
 import { cloneDeep, omit } from "lodash-es";
 import { pathToRegexp } from "path-to-regexp";
 import { createRouter, createWebHashHistory } from "vue-router";
-import type { RouteLocationNormalized, RouteRecordNormalized, RouteRecordRaw, Router } from "vue-router";
 import { loadDataFromModules } from "./moduleHelper";
 
 /**

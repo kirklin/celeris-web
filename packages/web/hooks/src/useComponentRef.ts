@@ -1,5 +1,5 @@
-import { isComponentInstance } from "@celeris/utils";
 import type { ComponentPublicInstance } from "vue";
+import { isComponentInstance } from "@celeris/utils";
 import { onMounted, ref, watch } from "vue";
 
 export function useComponentRef(name: string) {

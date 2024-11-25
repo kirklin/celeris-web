@@ -1,10 +1,10 @@
-import { defineStore } from "pinia";
-import type { DeepPartial } from "unocss";
 import type { HeaderSetting, MenuSetting, ProjectSetting, TransitionSetting } from "@celeris/types";
+import type { DeepPartial } from "unocss";
 import { deepMerge } from "@celeris/utils";
-import { APP_STORE_ID } from "../constants";
+import { defineStore } from "pinia";
 import { resetRouter } from "~/router";
 import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";
+import { APP_STORE_ID } from "../constants";
 
 interface AppState {
   // project config

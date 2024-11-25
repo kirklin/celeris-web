@@ -1,7 +1,7 @@
 import type { RoleConstants } from "@celeris/constants";
+import type { RouteRecordRaw } from "vue-router";
 import { PermissionModeConstants } from "@celeris/constants";
 import { intersection, isArray } from "@celeris/utils";
-import type { RouteRecordRaw } from "vue-router";
 import { resetRouter, router } from "~/router";
 import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";
 import { useAppStoreWithOut } from "~/store/modules/app";

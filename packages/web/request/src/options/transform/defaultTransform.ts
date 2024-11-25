@@ -1,9 +1,9 @@
+import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
+import type { AxiosTransform, CreateAxiosOptions } from "../../axiosTransform";
+import type { RequestOptions, RequestResult } from "../../types";
 import { RequestConstants, ResultConstants } from "@celeris/constants";
 import { isEmpty, isString } from "@celeris/utils";
-import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
-import type { RequestOptions, RequestResult } from "../../types";
 import { HttpRequestConfiguration } from "../../../requestConfiguration";
-import type { AxiosTransform, CreateAxiosOptions } from "../../axiosTransform";
 import { formatRequestDate, joinTimestamp, setObjToUrlParams } from "../../utils";
 
 export const defaultTransform: AxiosTransform = {
