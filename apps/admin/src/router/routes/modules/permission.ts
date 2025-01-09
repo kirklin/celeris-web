@@ -5,7 +5,7 @@ import { getParentLayout, LAYOUT } from "~/router/constant";
 
 const permission: RouteRecordRaw = {
   path: "/permission",
-  name: "Permission",
+  name: "PermissionRoot",
   component: LAYOUT,
   redirect: "/permission/frontend/page",
   meta: {
@@ -17,8 +17,8 @@ const permission: RouteRecordRaw = {
   children: [
     {
       path: "frontend",
-      name: "PermissionFrontDemo",
-      component: getParentLayout("PermissionFrontDemo"),
+      name: "PermissionFrontend",
+      component: getParentLayout("PermissionFrontend"),
       redirect: "/permission/frontend/page",
       meta: {
         title: "routes.permission.frontend",
@@ -26,7 +26,7 @@ const permission: RouteRecordRaw = {
       children: [
         {
           path: "page",
-          name: "FrontPageAuth",
+          name: "PermissionFrontendPage",
           component: () => import("~/pages/permission/frontend/index.vue"),
           meta: {
             title: "routes.permission.pageAuth",
@@ -34,7 +34,7 @@ const permission: RouteRecordRaw = {
         },
         {
           path: "button-permission",
-          name: "FrontButtonAuth",
+          name: "PermissionFrontendButton",
           component: () => import("~/pages/permission/frontend/ButtonPermission.vue"),
           meta: {
             title: "routes.permission.buttonAuth",
@@ -42,7 +42,7 @@ const permission: RouteRecordRaw = {
         },
         {
           path: "auth-pageA",
-          name: "FrontAuthPageA",
+          name: "PermissionFrontendPageA",
           component: () => import("~/pages/permission/frontend/AuthPageA.vue"),
           meta: {
             title: "routes.permission.authPageA",
@@ -51,7 +51,7 @@ const permission: RouteRecordRaw = {
         },
         {
           path: "auth-pageB",
-          name: "FrontAuthPageB",
+          name: "PermissionFrontendPageB",
           component: () => import("~/pages/permission/frontend/AuthPageB.vue"),
           meta: {
             title: "routes.permission.authPageB",
@@ -62,8 +62,8 @@ const permission: RouteRecordRaw = {
     },
     {
       path: "back",
-      name: "PermissionBackDemo",
-      component: getParentLayout("PermissionBackDemo"),
+      name: "PermissionBackend",
+      component: getParentLayout("PermissionBackend"),
       redirect: "/permission/back/page",
       meta: {
         title: "routes.permission.backend",
@@ -71,7 +71,7 @@ const permission: RouteRecordRaw = {
       children: [
         {
           path: "page",
-          name: "BackAuthPage",
+          name: "PermissionBackendPage",
           component: () => import("~/pages/permission/backend/index.vue"),
           meta: {
             title: "routes.permission.pageAuth",
@@ -79,7 +79,7 @@ const permission: RouteRecordRaw = {
         },
         {
           path: "button-permission",
-          name: "BackButtonAuth",
+          name: "PermissionBackendButton",
           component: () => import("~/pages/permission/backend/ButtonPermission.vue"),
           meta: {
             title: "routes.permission.buttonAuth",

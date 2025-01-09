@@ -4,7 +4,7 @@ import { LAYOUT } from "~/router/constant";
 
 const directive: RouteRecordRaw = {
   path: "/directive",
-  name: "Directives",
+  name: "DirectivesRoot",
   component: LAYOUT,
   redirect: "/directive/copy",
   meta: {
@@ -14,7 +14,7 @@ const directive: RouteRecordRaw = {
   children: [
     {
       path: "ripple",
-      name: "Ripple",
+      name: "DirectivesRipple",
       component: () => import("~/pages/directives/ripple/index.vue"),
       meta: {
         title: "routes.directives.ripple",
@@ -23,7 +23,7 @@ const directive: RouteRecordRaw = {
     },
     {
       path: "copy",
-      name: "Copy",
+      name: "DirectivesCopy",
       component: () => import("~/pages/directives/copy/index.vue"),
       meta: {
         title: "routes.directives.copy",

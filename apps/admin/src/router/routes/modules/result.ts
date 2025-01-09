@@ -4,7 +4,7 @@ import { LAYOUT } from "~/router/constant";
 
 const result: RouteRecordRaw = {
   path: "/result",
-  name: "Result",
+  name: "ResultRoot",
   component: LAYOUT,
   redirect: "/result/success",
   meta: {

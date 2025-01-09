@@ -3,7 +3,7 @@ import { LAYOUT } from "~/router/constant";
 
 const dashboard: RouteRecordRaw = {
   path: "/dashboard",
-  name: "Dashboard",
+  name: "DashboardRoot",
   component: LAYOUT,
   redirect: "/dashboard/index",
   meta: {

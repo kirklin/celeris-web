@@ -4,7 +4,7 @@ import { LAYOUT } from "~/router/constant";
 
 const components: RouteRecordRaw = {
   path: "/components",
-  name: "Components",
+  name: "ComponentsRoot",
   component: LAYOUT,
   redirect: "/components/headlessTable/basic",
   meta: {
@@ -15,7 +15,7 @@ const components: RouteRecordRaw = {
   children: [
     {
       path: "headlessTable",
-      name: "HeadlessTable",
+      name: "ComponentsHeadlessTable",
       component: LAYOUT,
       redirect: "/components/headlessTable/basic",
       meta: {

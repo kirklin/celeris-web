@@ -3,7 +3,7 @@ import { LAYOUT } from "~/router/constant";
 
 const design: RouteRecordRaw = {
   path: "/design",
-  name: "Design",
+  name: "DesignRoot",
   component: LAYOUT,
   redirect: "/design/palette",
   meta: {
@@ -13,7 +13,7 @@ const design: RouteRecordRaw = {
   children: [
     {
       path: "palette",
-      name: "Palette",
+      name: "DesignPalette",
       component: () => import("~/pages/design/palette/index.vue"),
       meta: {
         title: "routes.design.palette",
@@ -22,7 +22,7 @@ const design: RouteRecordRaw = {
     },
     {
       path: "typography",
-      name: "Typography",
+      name: "DesignTypography",
       component: () => import("~/pages/design/typography/index.vue"),
       meta: {
         title: "routes.design.typography",

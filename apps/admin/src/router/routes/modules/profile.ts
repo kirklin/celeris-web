@@ -3,7 +3,7 @@ import { LAYOUT } from "~/router/constant";
 
 const profile: RouteRecordRaw = {
   path: "/profile",
-  name: "Profile",
+  name: "ProfileRoot",
   component: LAYOUT,
   redirect: "/profile/index",
   meta: {

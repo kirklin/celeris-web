@@ -4,7 +4,7 @@ import { LAYOUT } from "~/router/constant";
 
 const chat: RouteRecordRaw = {
   path: "/chat",
-  name: "Chat",
+  name: "ChatRoot",
   component: LAYOUT,
   redirect: "/chat/index",
   meta: {
