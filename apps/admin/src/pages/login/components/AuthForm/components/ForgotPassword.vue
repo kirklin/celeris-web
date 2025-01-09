@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import type { ForgotPasswordFromType } from "~/pages/login/types";
+
 import {
   type FormInst,
   type FormRules,
@@ -9,9 +11,7 @@ import {
   NInput,
   useMessage,
 } from "naive-ui";
-
 import { ref } from "vue";
-import type { ForgotPasswordFromType } from "~/pages/login/types";
 
 const { t } = useI18n();
 const formRef = ref<FormInst | null>(null);

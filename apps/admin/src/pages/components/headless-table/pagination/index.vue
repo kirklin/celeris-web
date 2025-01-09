@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { createColumnHelper, FlexRender, getCoreRowModel, getPaginationRowModel, useVueTable } from "@tanstack/vue-table";
-
-import PageWrapper from "~/component/PageWrapper/src/PageWrapper.vue";
 import type { ChatGPTDemoTableRow } from "~/pages/components/headless-table/basic/data";
+
+import { createColumnHelper, FlexRender, getCoreRowModel, getPaginationRowModel, useVueTable } from "@tanstack/vue-table";
+import PageWrapper from "~/component/PageWrapper/src/PageWrapper.vue";
 
 defineOptions({
   name: "HeadlessTablePagination",

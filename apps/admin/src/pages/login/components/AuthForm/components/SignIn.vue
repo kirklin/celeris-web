@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { FormInst, FormRules } from "naive-ui";
-import { useI18n } from "@celeris/locale";
-import { useUserStore } from "~/store/modules/user";
-
 // 登录表单数据
 import type { SignInFromType } from "~/pages/login/types";
+import { useI18n } from "@celeris/locale";
+
+import { useUserStore } from "~/store/modules/user";
 
 const emit = defineEmits<{
   (e: "forgotPassword"): void;

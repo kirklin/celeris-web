@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { RendererElement, RendererNode, VNode } from "vue";
+import type { ChatContextInjectionKey } from "~/pages/chat/chatContext";
 import { renderIcon } from "@celeris/components";
 import ActionIcon from "~/component/ActionIcon/src/ActionIcon.vue";
-import type { ChatContextInjectionKey } from "~/pages/chat/chatContext";
 import { chatContextInjectionKey } from "~/pages/chat/chatContext";
 
 const { selectedAssistantRef } = inject<ChatContextInjectionKey>(chatContextInjectionKey)!;

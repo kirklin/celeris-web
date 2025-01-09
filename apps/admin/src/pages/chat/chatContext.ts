@@ -1,6 +1,6 @@
 import type { Ref } from "vue";
-import { createInjectionKey } from "@celeris/utils";
 import type { Assistant } from "~/pages/chat/components/AssistantSidebar/types";
+import { createInjectionKey } from "@celeris/utils";
 
 export interface ChatContextInjectionKey {
   selectedAssistantRef: Ref<Assistant>;

@@ -1,8 +1,8 @@
 import type { RouteLocationNormalized, Router } from "vue-router";
 
+import type { Tab } from "~/store/modules/tabs";
 import { unref } from "vue";
 import { useRouter } from "vue-router";
-import type { Tab } from "~/store/modules/tabs";
 import { useTabsStore } from "~/store/modules/tabs";
 
 export function useTabs(_router?: Router) {

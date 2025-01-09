@@ -1,11 +1,11 @@
 import type { RoleConstants } from "@celeris/constants";
 import type { MessageMode } from "@celeris/request";
 import type { UserInfo } from "@celeris/types/src/user";
+import type { LoginParams } from "~/apis/internal/auth";
 import { PageConstants, PermissionCacheTypeConstants } from "@celeris/constants";
 import { field, getErrorMessage, logger } from "@celeris/utils";
 import { defineStore } from "pinia";
 import { loginApi, logoutApi, userInfoApi } from "~/apis/internal/auth";
-import type { LoginParams } from "~/apis/internal/auth";
 import { router } from "~/router";
 import { PAGE_NOT_FOUND_ROUTE } from "~/router/routes/basic";
 import { DEFAULT_PROJECT_SETTING } from "~/setting/projectSetting";

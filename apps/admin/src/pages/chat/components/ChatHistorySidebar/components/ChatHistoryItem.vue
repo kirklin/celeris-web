@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { RendererElement, RendererNode, VNode } from "vue";
+import type { ChatSummary } from "~/pages/chat/components/AssistantSidebar/types";
 import { renderIcon } from "@celeris/components";
 import ActionIcon from "~/component/ActionIcon/src/ActionIcon.vue";
-import type { ChatSummary } from "~/pages/chat/components/AssistantSidebar/types";
 
 defineProps({
   chatSummary: {

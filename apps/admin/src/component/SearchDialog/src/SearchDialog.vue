@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import type { Menu } from "@celeris/types";
 import type { ScrollbarInst } from "naive-ui";
+import type { SearchGroup, SearchGroupItem, SearchGroups } from "~/component/SearchDialog/src/types";
 import { isWindows } from "@celeris/utils";
 import Highlighter from "headless-highlighter";
-import type { SearchGroup, SearchGroupItem, SearchGroups } from "~/component/SearchDialog/src/types";
 import { useSearchDialog } from "~/composables/useSearchDialog";
 import { getShallowMenus } from "~/router/menus";
 

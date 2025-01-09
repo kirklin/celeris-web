@@ -1,11 +1,11 @@
 <script lang="ts" setup>
+import type { AuthFormType } from "~/pages/login/types";
 import { RouterTransitionConstants } from "@celeris/constants";
 import { NButton, NDivider } from "naive-ui";
 import { computed, onBeforeMount, ref } from "vue";
 import ForgotPassword from "~/pages/login/components/AuthForm/components/ForgotPassword.vue";
 import SignIn from "~/pages/login/components/AuthForm/components/SignIn.vue";
 import SignUp from "~/pages/login/components/AuthForm/components/SignUp.vue";
-import type { AuthFormType } from "~/pages/login/types";
 
 const props = defineProps<{
   type?: AuthFormType;

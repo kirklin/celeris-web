@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
 import type { ChatHistorySidebar } from "~/pages/chat/components/AssistantSidebar/types";
+import { onMounted, ref } from "vue";
 import ChatHistoryItem from "~/pages/chat/components/ChatHistorySidebar/components/ChatHistoryItem.vue";
 
 const chatHistory = ref<ChatHistorySidebar>(); // 使用 ChatHistorySidebar 类型的 ref
