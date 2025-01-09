@@ -390,7 +390,6 @@ defineOptions({
                   <td>
                     <section>
                       <figure>
-                        <!--                      <img src="./assets/orange.jpg" alt="" style="width: 200px;"> -->
                         <figcaption>橘子</figcaption>
                       </figure>
                     </section>
@@ -403,18 +402,20 @@ defineOptions({
                     <section>
                       <table>
                         <caption>当时的情形</caption>
-                        <tr>
-                          <th>角色</th>
-                          <th>物品</th>
-                        </tr>
-                        <tr>
-                          <td>父亲</td>
-                          <td>橘子</td>
-                        </tr>
-                        <tr>
-                          <td>我</td>
-                          <td>车票</td>
-                        </tr>
+                        <tbody>
+                          <tr>
+                            <th>角色</th>
+                            <th>物品</th>
+                          </tr>
+                          <tr>
+                            <td>父亲</td>
+                            <td>橘子</td>
+                          </tr>
+                          <tr>
+                            <td>我</td>
+                            <td>车票</td>
+                          </tr>
+                        </tbody>
                       </table>
                     </section>
                   </td>
@@ -448,72 +449,74 @@ defineOptions({
           <section class="section">
             <table>
               <caption>常用标签样式示例表</caption>
-              <tr>
-                <th style="width: 72px;">
-                  类型
-                </th>
-                <th style="width: 320px;">
-                  标签
-                </th>
-                <th style="width: 240px;">
-                  效果
-                </th>
-              </tr>
-              <tr>
-                <td>链接</td>
-                <td><code>&lt;a href=&quot;https://github.com/kirklin/unocss-preset-chinese&quot; title=&quot;赫蹏&quot;&gt;unocss-preset-chinese&lt;/a&gt;</code></td>
-                <td><a href="https://github.com/kirklin/unocss-preset-chinese" title="unocss-preset-chinese">unocss-preset-chinese</a></td>
-              </tr>
-              <tr>
-                <td>缩写</td>
-                <td><code>&lt;abbr title=&quot;Cascading Style Sheets&quot;&gt;CSS&lt;/abbr&gt;</code></td>
-                <td><abbr title="Cascading Style Sheets">CSS</abbr></td>
-              </tr>
-              <tr>
-                <td>代码</td>
-                <td><code>&lt;code&gt;.chinese { star: 5; }&lt;/code&gt;</code></td>
-                <td><code>.chinese { star: 5; }</code></td>
-              </tr>
-              <tr>
-                <td>专名号</td>
-                <td><code>此时来自&lt;u title=&quot;位于山东省聊城市阳谷县城东&quot;&gt;景阳冈&lt;/u&gt;的&lt;u&gt;武松&lt;/u&gt;大喝一声：&lt;q&gt;纳命来！&lt;/q&gt;</code></td>
-                <td>此时来自<u title="位于山东省聊城市阳谷县城东">景阳冈</u>的<u>武松</u>大喝一声：<q>纳命来！</q></td>
-              </tr>
-              <tr>
-                <td>文本变动</td>
-                <td><code>我写错&lt;del datetime=&quot;17:00:00&quot;&gt;拉&lt;/del&gt;&lt;ins datetime=&quot;18:15:00&quot;&gt;啦&lt;/ins&gt;！</code></td>
-                <td>我写错<del datetime="17:00:00">拉</del><ins datetime="18:15:00">啦</ins>！</td>
-              </tr>
-              <tr>
-                <td>文本更新</td>
-                <td><code>在陌生的城市里迷路，所以最后我们决定跟着&lt;s&gt;导航&lt;/s&gt;地图。</code></td>
-                <td>在陌生的城市里迷路，所以最后我们决定跟着<s>导航</s>地图。</td>
-              </tr>
-              <tr>
-                <td>引号</td>
-                <td><code>她说：&lt;q&gt;嘿，你好。&lt;/q&gt;</code></td>
-                <td>她说：<q>嘿，你好。</q></td>
-              </tr>
-              <tr>
-                <td>术语</td>
-                <td><code>在固定版面内，&lt;dfn&gt;排版&lt;/dfn&gt;(英语：Typesetting) 摆置各种不同类型的资料。</code></td>
-                <td>在固定版面内，<dfn>排版</dfn>(英语：Typesetting) 摆置各种不同类型的资料。</td>
-              </tr>
-              <tr>
-                <td>标记</td>
-                <td><code>这个公式<mark>很重要</mark>，请记住。</code></td>
-                <td>这个公式<mark>很重要</mark>，请记住。</td>
-              </tr>
-              <tr>
-                <td>强调</td>
-                <td><code>相信自己，<em>你可以做到</em>！</code></td>
-                <td>相信自己，<em>你可以做到</em>！</td>
-              </tr>
-              <tr>
-                <td>着重号</td>
-                <td><code>我们<span class="chinese-em">绝不会</span>放弃。</code></td>
-                <td>我们<span class="chinese-em">绝不会</span>放弃。</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <th style="width: 72px;">
+                    类型
+                  </th>
+                  <th style="width: 320px;">
+                    标签
+                  </th>
+                  <th style="width: 240px;">
+                    效果
+                  </th>
+                </tr>
+                <tr>
+                  <td>链接</td>
+                  <td><code>&lt;a href=&quot;https://github.com/kirklin/unocss-preset-chinese&quot; title=&quot;赫蹏&quot;&gt;unocss-preset-chinese&lt;/a&gt;</code></td>
+                  <td><a href="https://github.com/kirklin/unocss-preset-chinese" title="unocss-preset-chinese">unocss-preset-chinese</a></td>
+                </tr>
+                <tr>
+                  <td>缩写</td>
+                  <td><code>&lt;abbr title=&quot;Cascading Style Sheets&quot;&gt;CSS&lt;/abbr&gt;</code></td>
+                  <td><abbr title="Cascading Style Sheets">CSS</abbr></td>
+                </tr>
+                <tr>
+                  <td>代码</td>
+                  <td><code>&lt;code&gt;.chinese { star: 5; }&lt;/code&gt;</code></td>
+                  <td><code>.chinese { star: 5; }</code></td>
+                </tr>
+                <tr>
+                  <td>专名号</td>
+                  <td><code>此时来自&lt;u title=&quot;位于山东省聊城市阳谷县城东&quot;&gt;景阳冈&lt;/u&gt;的&lt;u&gt;武松&lt;/u&gt;大喝一声：&lt;q&gt;纳命来！&lt;/q&gt;</code></td>
+                  <td>此时来自<u title="位于山东省聊城市阳谷县城东">景阳冈</u>的<u>武松</u>大喝一声：<q>纳命来！</q></td>
+                </tr>
+                <tr>
+                  <td>文本变动</td>
+                  <td><code>我写错&lt;del datetime=&quot;17:00:00&quot;&gt;拉&lt;/del&gt;&lt;ins datetime=&quot;18:15:00&quot;&gt;啦&lt;/ins&gt;！</code></td>
+                  <td>我写错<del datetime="17:00:00">拉</del><ins datetime="18:15:00">啦</ins>！</td>
+                </tr>
+                <tr>
+                  <td>文本更新</td>
+                  <td><code>在陌生的城市里迷路，所以最后我们决定跟着&lt;s&gt;导航&lt;/s&gt;地图。</code></td>
+                  <td>在陌生的城市里迷路，所以最后我们决定跟着<s>导航</s>地图。</td>
+                </tr>
+                <tr>
+                  <td>引号</td>
+                  <td><code>她说：&lt;q&gt;嘿，你好。&lt;/q&gt;</code></td>
+                  <td>她说：<q>嘿，你好。</q></td>
+                </tr>
+                <tr>
+                  <td>术语</td>
+                  <td><code>在固定版面内，&lt;dfn&gt;排版&lt;/dfn&gt;(英语：Typesetting) 摆置各种不同类型的资料。</code></td>
+                  <td>在固定版面内，<dfn>排版</dfn>(英语：Typesetting) 摆置各种不同类型的资料。</td>
+                </tr>
+                <tr>
+                  <td>标记</td>
+                  <td><code>这个公式<mark>很重要</mark>，请记住。</code></td>
+                  <td>这个公式<mark>很重要</mark>，请记住。</td>
+                </tr>
+                <tr>
+                  <td>强调</td>
+                  <td><code>相信自己，<em>你可以做到</em>！</code></td>
+                  <td>相信自己，<em>你可以做到</em>！</td>
+                </tr>
+                <tr>
+                  <td>着重号</td>
+                  <td><code>我们<span class="chinese-em">绝不会</span>放弃。</code></td>
+                  <td>我们<span class="chinese-em">绝不会</span>放弃。</td>
+                </tr>
+              </tbody>
             </table>
           </section>
         </details>
