@@ -19,6 +19,14 @@ export function createPWAPluginConfig(env: Partial<ViteEnvVariables>) {
       manifest: {
         name: VITE_GLOB_APP_TITLE,
         short_name: VITE_GLOB_APP_SHORT_NAME,
+        theme_color: "#165DFF",
+        icons: [
+          {
+            src: "/favicon.ico",
+            sizes: "48x48",
+            type: "image/x-icon",
+          },
+        ],
       },
     });
   }
