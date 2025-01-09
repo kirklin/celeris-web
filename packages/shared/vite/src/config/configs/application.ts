@@ -40,7 +40,7 @@ export async function createApplicationViteConfig(command: "build" | "serve", mo
       proxy: !VITE_USE_HTTPS ? configureProxy(VITE_PROXY) : {},
     },
     esbuild: {
-      pure: VITE_DROP_CONSOLE ? ["console.log", "debugger"] : [],
+      pure: VITE_DROP_CONSOLE ? ["console.log"] : [],
     },
     define: defineData,
     build: {
