@@ -15,7 +15,7 @@
   ],
   "scripts": {},
   "peerDependencies": {
-    "unocss": "^0.61.0"
+    "unocss": "catalog:"
   },
   "dependencies": {
     "@kirklin/reset-css": "^0.0.6",
@@ -26,6 +26,6 @@
   "devDependencies": {
     "@iconify/json": "^2.2.293",
     "@iconify/vue": "4.1.2",
-    "unocss": "^0.65.4"
+    "unocss": "catalog:"
   }
 }

@@ -39,12 +39,12 @@
     "destr": "^2.0.3",
     "headless-highlighter": "^0.0.0",
     "nprogress": "^0.2.0",
-    "pinia": "^2.3.0",
-    "pinia-plugin-persistedstate": "^4.2.0",
+    "pinia": "catalog:",
+    "pinia-plugin-persistedstate": "catalog:",
     "pkg-types": "^1.3.0",
-    "vue": "^3.5.13",
-    "vue-i18n": "^11.0.1",
-    "vue-router": "^4.5.0"
+    "vue": "catalog:",
+    "vue-i18n": "catalog:",
+    "vue-router": "catalog:"
   },
   "devDependencies": {
     "@celeris/admin-api": "workspace:*",
@@ -54,15 +54,15 @@
     "@celeris/hooks": "workspace:*",
     "@celeris/types": "workspace:*",
     "@celeris/vite": "workspace:*",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "@vue/compiler-dom": "^3.5.13",
-    "@vue/test-utils": "^2.4.6",
-    "jsdom": "^26.0.0",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/compiler-dom": "catalog:",
+    "@vue/test-utils": "catalog:",
+    "jsdom": "catalog:",
     "pnpm": "^9.15.3",
-    "typescript": "^5.7.3",
-    "unocss": "^0.65.4",
-    "vite": "^6.0.7",
-    "vitest": "^2.1.8",
-    "vue-tsc": "^2.2.0"
+    "typescript": "catalog:",
+    "unocss": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:",
+    "vue-tsc": "catalog:"
   }
 }

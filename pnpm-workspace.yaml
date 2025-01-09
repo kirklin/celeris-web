@@ -5,3 +5,47 @@ packages:
   - "apps/*"
   - "services/*"
   - scripts
+
+# 定义默认catalog来管理核心开发依赖版本
+catalog:
+  # 构建工具
+  vite: ^6.0.7
+  vitest: ^2.1.8
+  typescript: ^5.7.3
+  tsup: ^8.3.5
+  unbuild: ^3.2.0
+
+  # 代码质量工具
+  eslint: ^9.17.0
+  husky: ^9.1.7
+
+  # 工具库
+  dotenv: ^16.4.7
+  rimraf: ^6.0.1
+  cross-env: ^7.0.3
+
+  # 类型定义
+  "@types/node": ^22.10.5
+  "@types/fs-extra": ^11.0.4
+
+  # Vue生态
+  vue: ^3.0.13
+  vue-router: ^4.5.0
+  vue-i18n: ^11.0.1
+  vue-tsc: ^2.2.0
+  "@vitejs/plugin-vue": ^5.2.1
+  "@vitejs/plugin-vue-jsx": ^4.1.1
+  "@vue/test-utils": ^2.4.6
+  "@vue/compiler-dom": ^3.5.13
+
+  # UI/样式
+  unocss: ^0.65.4
+
+  # 状态管理
+  pinia: ^2.3.0
+  pinia-plugin-persistedstate: ^4.2.0
+
+  # 工具库
+  "@vueuse/core": ^12.3.0
+  "@vueuse/integrations": ^12.3.0
+  jsdom: ^26.0.0
