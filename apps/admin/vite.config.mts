@@ -1,3 +1,10 @@
 import { createViteConfig } from "@celeris/vite";
 
-export default createViteConfig();
+export default createViteConfig({
+  overrides: {
+    assetsInclude: ["**/*.svg"],
+    build: {
+      assetsInlineLimit: 0,
+    },
+  },
+});
