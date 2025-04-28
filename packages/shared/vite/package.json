@@ -23,11 +23,11 @@
     "@vitejs/plugin-vue-jsx": "catalog:",
     "rollup-plugin-visualizer": "^5.14.0",
     "typescript": "catalog:",
-    "unplugin-auto-import": "^19.0.0",
+    "unplugin-auto-import": "^19.1.2",
     "unplugin-config": "^0.1.5",
-    "unplugin-vue-components": "^28.0.0",
-    "vite-plugin-inspect": "^10.0.6",
-    "vite-plugin-pwa": "^0.21.1",
-    "vite-plugin-vue-devtools": "^7.7.0"
+    "unplugin-vue-components": "^28.5.0",
+    "vite-plugin-inspect": "^11.0.1",
+    "vite-plugin-pwa": "^1.0.0",
+    "vite-plugin-vue-devtools": "^7.7.6"
   }
 }

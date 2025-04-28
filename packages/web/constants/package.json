@@ -7,23 +7,19 @@
   "license": "MIT",
   "homepage": "https://github.com/kirklin/celeris-web",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
+    ".": "./dist/index.mjs"
   },
-  "main": "./index.ts",
-  "module": "./index.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup",
+    "build": "unbuild",
     "dev": "tsup --stub",
-    "clean": "pnpm rimraf node_modules && pnpm rimraf dist",
+    "clean": "pnpm exec rimraf node_modules && pnpm exec rimraf dist",
     "prepublishOnly": "npm run build",
     "postinstall": "npm run build"
   },
   "dependencies": {
-    "lodash.pick": "4.4.0"
+    "lodash-es": "^4.17.21"
   }
 }

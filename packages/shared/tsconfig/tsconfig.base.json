@@ -3,7 +3,9 @@
   "compilerOptions": {
     "composite": false,
     "jsx": "preserve",
+    "lib": ["esnext"],
     "experimentalDecorators": true,
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowJs": true,

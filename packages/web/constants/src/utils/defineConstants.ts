@@ -1,5 +1,5 @@
-// eslint-disable-next-line ts/no-require-imports
-const pick = require("lodash/pick.js");
+// const pick = require("lodash/pick.js"); // Remove require
+import { pick } from "lodash-es"; // Use import from lodash-es
 
 /**
  * Utility function to determine the raw type of a value.

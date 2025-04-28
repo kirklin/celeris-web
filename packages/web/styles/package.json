@@ -24,7 +24,7 @@
     "unocss-preset-ease": "^0.0.4"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.293",
+    "@iconify/json": "^2.2.332",
     "@iconify/vue": "4.1.2",
     "unocss": "catalog:"
   }

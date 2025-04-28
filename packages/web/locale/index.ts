@@ -1,4 +1,6 @@
-export * from "./src/config";
+import { LocalesConfiguration, LocalesEngine } from "./src/config";
+
+export { LocalesConfiguration, LocalesEngine };
 export * from "./src/index";
 export * from "./src/langugage";
 export {

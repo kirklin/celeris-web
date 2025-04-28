@@ -8,22 +8,18 @@
   "homepage": "https://github.com/kirklin/celeris-web",
   "sideEffects": false,
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
+    ".": "./dist/index.mjs"
   },
-  "main": "src/index.ts",
-  "module": "src/index.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "unbuild",
     "dev": "tsup --stub",
-    "clean": "pnpm rimraf node_modules && pnpm rimraf dist",
+    "clean": "pnpm exec rimraf node_modules && pnpm exec rimraf dist",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "release": "bumpp",
@@ -33,7 +29,7 @@
   },
   "dependencies": {
     "@kirklin/logger": "0.0.2",
-    "@kirklin/palette": "^0.1.1",
+    "@kirklin/palette": "^0.2.1",
     "algorithm-snowflake": "^0.0.0",
     "colord": "^2.9.3",
     "crypto-js": "^4.2.0",

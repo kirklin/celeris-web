@@ -1,4 +1,4 @@
 export * from "./config";
-export * from "./global";
-export * from "./menu";
-export * from "./user";
+export type * from "./global";
+export type * from "./menu";
+export type * from "./user";
