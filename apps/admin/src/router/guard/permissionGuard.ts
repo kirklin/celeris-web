@@ -78,7 +78,7 @@ export function createPermissionGuard(router: Router) {
     if (userStore.getUpdatedAt === 0) {
       try {
         await userStore.getUserInfoAction();
-      } catch (err) {
+      } catch {
         next();
         return;
       }

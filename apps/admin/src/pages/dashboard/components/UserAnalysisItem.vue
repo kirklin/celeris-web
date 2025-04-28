@@ -101,7 +101,7 @@ async function fetchData(params: { quota: string }) {
         chartData.value.push(el);
       }
     });
-  } catch (err) {
+  } catch {
     // you can report use errorHandler or other
     loading.value = false;
   } finally {

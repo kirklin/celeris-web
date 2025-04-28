@@ -88,7 +88,7 @@ async function createDefineData(root: string) {
     return {
       __APP_INFO__: JSON.stringify(__APP_INFO__),
     };
-  } catch (error) {
+  } catch {
     return {};
   }
 }

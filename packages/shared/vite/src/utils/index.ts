@@ -33,7 +33,7 @@ export function updateEnvVariables(envConf: Recordable<string>): Partial<ViteEnv
             // 将VITE_PROXY转换为JSON对象，并替换单引号为双引号，如果失败则设置为空对象
             // Convert VITE_PROXY to a JSON object and replace single quotes with double quotes, if it fails then set it to an empty object
             realValue = JSON.parse(realValue.replace(/'/g, "\""));
-          } catch (error) {
+          } catch {
             realValue = {};
           }
         }

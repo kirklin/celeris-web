@@ -236,7 +236,7 @@ async function fetchData() {
       }
       likedResponsesData.value = el.value;
     });
-  } catch (err) {
+  } catch {
     loading.value = false;
   } finally {
     loading.value = false;

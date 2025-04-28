@@ -95,7 +95,7 @@ export function memo<TDeps extends readonly any[], TResult>(
     // Check if the dependency parameters have changed
     const dependenciesChanged
       = newDependencies.length !== dependencies.length
-      || newDependencies.some((dep: any, index: number) => dependencies[index] !== dep);
+        || newDependencies.some((dep: any, index: number) => dependencies[index] !== dep);
 
     if (!dependenciesChanged) {
       return result!;

@@ -1,6 +1,7 @@
+import type { GlobalThemeOverrides } from "naive-ui";
 import type { ButtonColorScene, ColorAction, ColorType, ColorTypeCase, ThemeColor, ThemeConfig } from "./types";
 import { deepMerge, generateColorPalettes } from "@celeris/utils";
-import { commonDark, commonLight, type GlobalThemeOverrides } from "naive-ui";
+import { commonDark, commonLight } from "naive-ui";
 
 /**
  * 将字符串的第一个字符大写

@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import type { IconifyIcon } from "@iconify/vue";
 import { isNil } from "@celeris/utils";
-import { Icon, type IconifyIcon, loadIcon } from "@iconify/vue";
+import { Icon, loadIcon } from "@iconify/vue";
 import { NIcon, NIconWrapper } from "naive-ui";
 import { computed, ref, watchEffect } from "vue";
 import { normalizeIconName } from "./utils";

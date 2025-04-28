@@ -1,9 +1,9 @@
+import type { VNode, VNodeChild } from "vue";
 import {
   Comment,
   createTextVNode,
   Fragment,
-  type VNode,
-  type VNodeChild,
+
 } from "vue";
 
 /**

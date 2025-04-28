@@ -18,14 +18,14 @@
     "unocss": "catalog:"
   },
   "dependencies": {
-    "@kirklin/reset-css": "^0.0.6",
-    "animate.css": "^4.1.1",
-    "unocss-preset-chinese": "^0.3.3",
-    "unocss-preset-ease": "^0.0.4"
+    "@kirklin/reset-css": "catalog:",
+    "animate.css": "catalog:",
+    "unocss-preset-chinese": "catalog:",
+    "unocss-preset-ease": "catalog:"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.332",
-    "@iconify/vue": "4.1.2",
+    "@iconify/json": "catalog:",
+    "@iconify/vue": "catalog:",
     "unocss": "catalog:"
   }
 }

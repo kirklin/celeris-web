@@ -21,13 +21,13 @@
     "@celeris/styles": "workspace:*",
     "@celeris/types": "workspace:*",
     "@vitejs/plugin-vue-jsx": "catalog:",
-    "rollup-plugin-visualizer": "^5.14.0",
+    "rollup-plugin-visualizer": "catalog:",
     "typescript": "catalog:",
-    "unplugin-auto-import": "^19.1.2",
-    "unplugin-config": "^0.1.5",
-    "unplugin-vue-components": "^28.5.0",
-    "vite-plugin-inspect": "^11.0.1",
-    "vite-plugin-pwa": "^1.0.0",
-    "vite-plugin-vue-devtools": "^7.7.6"
+    "unplugin-auto-import": "catalog:",
+    "unplugin-config": "catalog:",
+    "unplugin-vue-components": "catalog:",
+    "vite-plugin-inspect": "catalog:",
+    "vite-plugin-pwa": "catalog:",
+    "vite-plugin-vue-devtools": "catalog:"
   }
 }

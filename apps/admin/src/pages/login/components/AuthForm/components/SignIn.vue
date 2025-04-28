@@ -51,7 +51,7 @@ async function signIn(e: Event) {
           content: t("page.login.notification.welcomeBackMessage", { username: userInfo.fullName }),
         });
       }
-    } catch (error) {
+    } catch {
       message.error(t("page.login.form.incorrectAccountOrPassword"));
     }
   } finally {

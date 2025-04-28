@@ -27,7 +27,7 @@
     "@celeris/constants": "workspace:*",
     "@celeris/hooks": "workspace:*",
     "@celeris/utils": "workspace:*",
-    "iso-639-1": "^3.1.5",
+    "iso-639-1": "catalog:",
     "vue": "catalog:",
     "vue-i18n": "catalog:"
   }

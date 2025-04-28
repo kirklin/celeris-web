@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-import type { ForgotPasswordFromType } from "~/pages/login/types";
+import type { FormInst, FormRules, FormValidationError } from "naive-ui";
 
+import type { ForgotPasswordFromType } from "~/pages/login/types";
 import {
-  type FormInst,
-  type FormRules,
-  type FormValidationError,
+
   NButton,
   NForm,
   NFormItem,

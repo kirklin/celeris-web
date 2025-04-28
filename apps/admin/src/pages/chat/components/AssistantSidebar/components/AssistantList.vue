@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import type { ChatContextInjectionKey } from "~/pages/chat/chatContext";
 import type { Assistant } from "~/pages/chat/components/AssistantSidebar/types";
-import { type ChatContextInjectionKey, chatContextInjectionKey } from "~/pages/chat/chatContext";
+import { chatContextInjectionKey } from "~/pages/chat/chatContext";
 import AssistantItem from "~/pages/chat/components/AssistantSidebar/components/AssistantItem.vue";
 import { defaultAssistant, fakeAssistants } from "~/pages/chat/data";
 

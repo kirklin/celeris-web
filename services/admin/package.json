@@ -12,7 +12,7 @@
   "devDependencies": {
     "@celeris/constants": "workspace:*",
     "@celeris/types": "workspace:*",
-    "h3": "^1.15.3",
-    "nitropack": "^2.11.11"
+    "h3": "catalog:",
+    "nitropack": "catalog:"
   }
 }

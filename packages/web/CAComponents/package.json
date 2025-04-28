@@ -27,7 +27,7 @@
   "devDependencies": {
     "@celeris/constants": "workspace:*",
     "@celeris/utils": "workspace:*",
-    "naive-ui": "2.40.1",
-    "vue": "^3.5.13"
+    "naive-ui": "catalog:",
+    "vue": "catalog:"
   }
 }

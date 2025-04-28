@@ -4,7 +4,7 @@ import ToolTipper from "./ToolTipper.vue";
 withDefaults(
   defineProps<{
     tooltipText?: string;
-    icon: string;
+    icon?: string;
     transparent?: boolean; // 是否设置背景透明
     size?: number; // 按钮大小
   }>(),

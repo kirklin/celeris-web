@@ -49,7 +49,7 @@ export {
 export const isServerRendering = (() => {
   try {
     return !(typeof window !== "undefined" && document !== undefined);
-  } catch (e) {
+  } catch {
     return true;
   }
 })();
@@ -60,7 +60,7 @@ export function isHttpUrl(path: string): boolean {
   try {
     const url = new URL(path);
     return url.protocol === "http:" || url.protocol === "https:";
-  } catch (error) {
+  } catch {
     return false;
   }
 }

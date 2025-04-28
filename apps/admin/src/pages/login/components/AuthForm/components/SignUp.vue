@@ -1,11 +1,9 @@
 <script lang="ts" setup>
-import type { SignUpFromType } from "~/pages/login/types";
+import type { FormInst, FormItemRule, FormRules, FormValidationError } from "naive-ui";
 
+import type { SignUpFromType } from "~/pages/login/types";
 import {
-  type FormInst,
-  type FormItemRule,
-  type FormRules,
-  type FormValidationError,
+
   NButton,
   NForm,
   NFormItem,
