@@ -15,6 +15,10 @@ Whether you're a seasoned developer or just starting out, Celeris Web offers a s
 
 Get started with celeris-web today and experience a highly streamlined front-end development process that harnesses the power of the latest technologies, including cutting-edge natural language processing capabilities.
 
+## Documentation
+
+📚 **For comprehensive documentation and guides, visit our [DeepWiki documentation](https://deepwiki.com/kirklin/celeris-web).**
+
 ## Features
 
 - ⚡ [Lightning fast](https://github.com/kirklin/celeris-web#readme): Built with Vue 3, Vite, and pnpm 🔥
