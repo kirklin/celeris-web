@@ -3,4 +3,4 @@ import actionIcon from "./src/ActionIcon.vue";
 import toolTipper from "./src/ToolTipper.vue";
 
 export const ActionIcon = withInstall(actionIcon);
-export const ToolTipper = withInstall(toolTipper);
+export const ToolTipper = withInstall(toolTipper) as typeof toolTipper;
