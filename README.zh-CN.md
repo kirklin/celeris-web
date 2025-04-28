@@ -1,6 +1,6 @@
 <div align='center'>
+<img src='docs/README.assets/logo.svg' alt='celeris-web - free and open-source front-end development framework' width='256'/>
 <h1>Celeris Web</h1>
-<img src='docs/README.assets/logo.webp' alt='celeris-web - free and open-source front-end development framework' width='344'/>
 </div>
 
 <div align='center'>
