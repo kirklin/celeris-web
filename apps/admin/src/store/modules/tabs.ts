@@ -16,13 +16,12 @@ export interface Tab {
   fullPath: string;
   title: string;
 }
-export const useTabsStore = defineStore({
-  id: APP_TABS_STORE_ID,
+export const useTabsStore = defineStore(APP_TABS_STORE_ID, {
   persist: [{
-    paths: ["pinnedTabs"],
+    pick: ["pinnedTabs"],
     storage: localStorage,
   }, {
-    paths: ["tabs"],
+    pick: ["tabs"],
     storage: sessionStorage,
   }],
   state: (): AppTabsState => ({

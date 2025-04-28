@@ -7,7 +7,7 @@
 import type { GlobEnvConfig } from "@celeris/types";
 import type { Encryption } from "@celeris/utils";
 import type { Pinia } from "pinia";
-import type { PersistedStateFactoryOptions, Serializer } from "pinia-plugin-persistedstate";
+import type { Serializer } from "pinia-plugin-persistedstate";
 import { createStorageName, EncryptionFactory } from "@celeris/utils";
 import destr from "destr";
 import { createPersistedState } from "pinia-plugin-persistedstate";
@@ -69,7 +69,7 @@ export function registerPiniaPersistPlugin(pinia: Pinia) {
  * @param keyPrefix prefix for storage key 储存键前缀
  * @returns persisted state factory options
  */
-export function createPersistedStateOptions(keyPrefix: string): PersistedStateFactoryOptions {
+export function createPersistedStateOptions(keyPrefix: string) {
   return {
     storage: localStorage,
     key: id => `${keyPrefix}__${id}`,

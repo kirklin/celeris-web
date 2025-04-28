@@ -42,10 +42,9 @@ interface UserState {
   updatedAt?: Date | number;
 }
 
-export const useUserStore = defineStore({
-  id: APP_USER_STORE_ID,
+export const useUserStore = defineStore(APP_USER_STORE_ID, {
   persist: {
-    paths: ["userInfo", "token", "refreshToken", "roleList", "updatedAt"],
+    pick: ["userInfo", "token", "refreshToken", "roleList", "updatedAt"],
     storage: DEFAULT_PROJECT_SETTING.permissionCacheType === PermissionCacheTypeConstants.LOCAL_STORAGE ? localStorage : sessionStorage,
   },
   state: (): UserState => ({

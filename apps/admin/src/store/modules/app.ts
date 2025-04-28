@@ -14,10 +14,9 @@ interface AppState {
 }
 
 let pageLoadingTimeout: ReturnType<typeof setTimeout>;
-export const useAppStore = defineStore({
-  id: APP_STORE_ID,
+export const useAppStore = defineStore(APP_STORE_ID, {
   persist: {
-    paths: ["projectSetting"],
+    pick: ["projectSetting"],
   },
   state: (): AppState => ({
     projectSetting: DEFAULT_PROJECT_SETTING,

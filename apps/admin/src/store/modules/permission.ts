@@ -33,8 +33,7 @@ interface PermissionState {
   frontendMenuList: Menu[];
 }
 
-export const usePermissionStore = defineStore({
-  id: APP_PERMISSION_STORE_ID,
+export const usePermissionStore = defineStore(APP_PERMISSION_STORE_ID, {
   state: (): PermissionState => ({
     // 存储用户的权限码列表，可以是字符串或数字
     // Store the user's permission code list, which can be strings or numbers

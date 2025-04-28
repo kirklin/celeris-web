@@ -14,10 +14,9 @@ const colorMode = useColorMode({
   initialValue: DEFAULT_THEME_SETTING.shouldFollowSystemTheme ? "auto" : (DEFAULT_THEME_SETTING.shouldEnableDarkMode ? "dark" : "light"),
 });
 const isOsDarkTheme = usePreferredDark();
-export const useDesignStore = defineStore({
-  id: APP_DESIGN_STORE_ID,
+export const useDesignStore = defineStore(APP_DESIGN_STORE_ID, {
   persist: {
-    paths: ["themeSetting"],
+    pick: ["themeSetting"],
   },
   state: (): DesignState => ({
     themeSetting: DEFAULT_THEME_SETTING,
